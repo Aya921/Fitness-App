@@ -58,10 +58,6 @@ dependencies:
   flutter_secure_storage: ^9.2.2
   package_info_plus: ^9.0.0
   equatable:
-
-  #isar dependecy
-  isar: 4.0.0-dev.10
-  isar_flutter_libs: 4.0.0-dev.10
   firebase_core: ^4.1.1
   mockito: ^5.4.4
 
