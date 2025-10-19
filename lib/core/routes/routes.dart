@@ -9,8 +9,8 @@ abstract class Routes{
     switch(url.path){
       case AppRoutes.registerScreen:
       default:
-        return MaterialPageRoute(builder: (_)=>Scaffold(
-          body: Center(
+        return MaterialPageRoute(builder: (_)=>const Scaffold(
+          body:  Center(
 
           ),
         ));
