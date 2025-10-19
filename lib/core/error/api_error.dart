@@ -30,6 +30,7 @@ class ServerFailure extends Failure{
         }
         return ServerFailure('Unexpected Error, Please try again!');
 
+
       }
   }
   factory ServerFailure.fromResponse(int? statusCode, dynamic response) {
