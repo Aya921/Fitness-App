@@ -8,6 +8,8 @@ import 'package:provider/provider.dart';
 import 'config/app_language/app_language_config.dart';
 import 'config/di/di.dart';
 import 'package:device_preview/device_preview.dart';
+
+import 'core/theme/app_theme.dart';
 void main() async {
   ///ensure engine is Oky
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,13 +37,15 @@ class FitnessApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appLanguageConfig = Provider.of<AppLanguageConfig>(context);
     return SizeProvider(
         baseSize: const Size(375, 812),
         height: context.screenHight,
-        width: context.screenWidth, child:  const MaterialApp(
+        width: context.screenWidth, child:  MaterialApp(
           supportedLocales:AppLocalizations.supportedLocales ,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
-          locale: Locale("en"),
+          locale: Locale(appLanguageConfig.selectedLocal),
+         theme: AppTheme.darkTheme,
           debugShowCheckedModeBanner: false,
           onGenerateRoute: Routes.onGenerate,
         ))
