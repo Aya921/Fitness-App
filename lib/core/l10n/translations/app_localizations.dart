@@ -97,6 +97,12 @@ abstract class AppLocalizations {
     Locale('ar'),
     Locale('en'),
   ];
+
+  /// No description provided for @noRouteFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No Route Found'**
+  String get noRouteFound;
 }
 
 class _AppLocalizationsDelegate
