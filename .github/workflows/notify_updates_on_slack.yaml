@@ -18,18 +18,12 @@ jobs:
       - name: Determine Event Info
         id: info
         run: |
-          escape_for_github_output() {
-            # Escape %, \r, \n for GitHub Actions output
-            printf '%s' "$1" | sed 's/%/%25/g; s/\r/%0D/g; s/\n/%0A/g'
-          }
-
           if [ "${{ github.event_name }}" == "push" ]; then
             COMMIT_MSG="${{ github.event.head_commit.message }}"
             SHORT_SHA=$(echo "${{ github.sha }}" | cut -c1-7)
-            COMMIT_MSG_ESCAPED=$(escape_for_github_output "$COMMIT_MSG")
 
             echo "title=🚀 Push Event" >> $GITHUB_OUTPUT
-            echo "details=• Repo: *${{ github.repository }}*%0A• Branch: *${{ github.ref_name }}*%0A• Actor: *${{ github.actor }}*%0A• Commit: <${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}|${SHORT_SHA}>%0A• Message: ${COMMIT_MSG_ESCAPED}" >> $GITHUB_OUTPUT
+            echo "details=• Repo: *${{ github.repository }}*\n• Branch: *${{ github.ref_name }}*\n• Actor: *${{ github.actor }}*\n• Commit: <${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}|${SHORT_SHA}>\n• Message: ${COMMIT_MSG}" >> $GITHUB_OUTPUT
             echo "color=#439FE0" >> $GITHUB_OUTPUT
 
           elif [ "${{ github.event_name }}" == "pull_request" ]; then
@@ -51,11 +45,10 @@ jobs:
             fi
 
             PR_TITLE="${EMOJI} Pull Request *${PR_ACTION}*"
-            DETAILS_RAW="• Repo: *${{ github.repository }}*%0A• PR: <${{ github.event.pull_request.html_url }}|#${PR_NUMBER}>%0A• From: *${PR_BRANCH}* → To: *${PR_BASE}*%0A• Actor: *${PR_ACTOR}*"
-            DETAILS_ESCAPED=$(escape_for_github_output "$DETAILS_RAW")
+            DETAILS="• Repo: *${{ github.repository }}*\n• PR: <${{ github.event.pull_request.html_url }}|#${PR_NUMBER}>\n• From: *${PR_BRANCH}* → To: *${PR_BASE}*\n• Actor: *${PR_ACTOR}*"
 
             echo "title=${PR_TITLE}" >> $GITHUB_OUTPUT
-            echo "details=${DETAILS_ESCAPED}" >> $GITHUB_OUTPUT
+            echo "details=${DETAILS}" >> $GITHUB_OUTPUT
             echo "color=$COLOR" >> $GITHUB_OUTPUT
 
           else
