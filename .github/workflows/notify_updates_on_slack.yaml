@@ -44,7 +44,11 @@ jobs:
             fi
 
             echo "title=${EMOJI} Pull Request *${PR_ACTION}*" >> $GITHUB_OUTPUT
-            echo "details=• Repo: *${{ github.repository }}*\n• PR: <${{ github.event.pull_request.html_url }}|#${PR_NUMBER}>\n• From: *${PR_BRANCH}* → To: *${PR_BASE}*\n• Actor: *${PR_ACTOR}*" >> $GITHUB_OUTPUT
+            escape_for_github_output() {
+            printf '%s' "$1" | sed 's/%/%25/g; s/\r/%0D/g; s/\n/%0A/g'
+            }
+            COMMIT_MSG_ESCAPED=$(escape_for_github_output "$COMMIT_MSG")
+            echo "details=• Repo: *${{ github.repository }}*%0A• Branch: *${{ github.ref_name }}*%0A• Actor: *${{ github.actor }}*%0A• Commit: <${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}|${SHORT_SHA}>%0A• Message: ${COMMIT_MSG_ESCAPED}" >> $GITHUB_OUTPUT
             echo "color=$COLOR" >> $GITHUB_OUTPUT
 
           else

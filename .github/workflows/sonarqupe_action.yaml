@@ -47,7 +47,7 @@ jobs:
           args: >
             -Dsonar.projectKey=mariam2MOHMED_Fitness-App
             -Dsonar.sources=lib/features,pubspec.yaml
-            -Dsonar.tests=test/features
+            -Dsonar.tests=test
             -Dsonar.dart.analyzer.mode=FLUTTER
             -Dsonar.branch.name=main
             -Dsonar.exclusions=/.g.dart,/.freezed.dart,/*.config.dart 
