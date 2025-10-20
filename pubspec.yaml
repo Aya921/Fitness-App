@@ -69,10 +69,7 @@ flutter:
    - assets/images/
 
   fonts:
-    - family: Cairo
-      fonts:
-        - asset: assets/fonts/Cairo-Regular.ttf
-
+   
     - family: BalooThambi2
       fonts:
         - asset: assets/fonts/BalooThambi2-Regular.ttf
