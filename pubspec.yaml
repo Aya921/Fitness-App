@@ -58,7 +58,7 @@ dependencies:
   flutter_secure_storage: ^9.2.2
   package_info_plus: ^9.0.0
   equatable:
-  firebase_core: ^4.1.1
+  firebase_core: ^4.2.0
   mockito: ^5.4.4
   connectivity_plus: ^7.0.0
 

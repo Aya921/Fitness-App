@@ -46,11 +46,11 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=mariam2MOHMED_Fitness-App
-            -Dsonar.sources=lib,pubspec.yaml
-            -Dsonar.tests=test
+            -Dsonar.sources=lib/features,pubspec.yaml
+            -Dsonar.tests=test/features
             -Dsonar.dart.analyzer.mode=FLUTTER
             -Dsonar.branch.name=main
-            -Dsonar.exclusions=/.g.dart,/.freezed.dart,/*.config.dart
+            -Dsonar.exclusions=/.g.dart,/.freezed.dart,/*.config.dart 
             -Dsonar.coverage.exclusions=/.g.dart,/.freezed.dart,/*.config.dart
             -Dsonar.dart.lcov.reportPaths=coverage/lcov.info
 
