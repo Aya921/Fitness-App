@@ -1,7 +1,6 @@
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/routes/app_routes.dart';
 import 'package:flutter/material.dart';
-
 abstract class Routes {
   static final GlobalKey<NavigatorState> navigatorKey =
       GlobalKey<NavigatorState>();

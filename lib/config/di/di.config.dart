@@ -27,6 +27,7 @@ import '../../features/auth/data/repository_impl/auth_repo_impl.dart' as _i4;
 import '../../features/auth/domain/repository/auth_repo.dart' as _i976;
 import '../app_language/app_language_config.dart' as _i549;
 import 'modules/dio_modules.dart' as _i288;
+import 'modules/shared_prefrence_module.dart' as _i470;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -40,19 +41,21 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     final dioModule = _$DioModule();
+    final registerModule = _$RegisterModule();
     gh.factory<_i695.CacheOptions>(() => dioModule.cacheOptions);
     gh.lazySingleton<_i528.PrettyDioLogger>(() => dioModule.prettyDioLogger);
     gh.lazySingleton<_i361.Dio>(() => dioModule.provieDio());
-    gh.factory<_i896.AuthApiServices>(() => _i896.AuthApiServices(
-          gh<_i361.Dio>(),
-          baseUrl: gh<String>(),
-        ));
-    gh.singleton<_i549.AppLanguageConfig>(() => _i549.AppLanguageConfig(
-        sharedPreferences: gh<_i460.SharedPreferences>()));
-    gh.factory<_i146.AuthRemoteDs>(
-        () => _i969.AuthRemoteDsImpl(gh<_i896.AuthApiServices>()));
+    gh.lazySingletonAsync<_i460.SharedPreferences>(
+        () => registerModule.sharedPreferences);
+    gh.factory<_i896.AuthApiServices>(
+        () => _i896.AuthApiServices(gh<_i361.Dio>()));
     gh.factory<_i945.AuthLocalDs>(
         () => _i204.AuthLocalDsImpl(gh<_i896.AuthApiServices>()));
+    gh.singletonAsync<_i549.AppLanguageConfig>(() async =>
+        _i549.AppLanguageConfig(
+            sharedPreferences: await getAsync<_i460.SharedPreferences>()));
+    gh.factory<_i146.AuthRemoteDs>(
+        () => _i969.AuthRemoteDsImpl(gh<_i896.AuthApiServices>()));
     gh.factory<_i976.AuthRepo>(() => _i4.AuthRepoImpl(
           gh<_i146.AuthRemoteDs>(),
           gh<_i945.AuthLocalDs>(),
@@ -62,3 +65,5 @@ extension GetItInjectableX on _i174.GetIt {
 }
 
 class _$DioModule extends _i288.DioModule {}
+
+class _$RegisterModule extends _i470.RegisterModule {}

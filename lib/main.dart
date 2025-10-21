@@ -4,23 +4,23 @@ import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/routes/routes.dart';
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
-
 import 'config/app_language/app_language_config.dart';
 import 'config/di/di.dart';
 import 'package:device_preview/device_preview.dart';
-
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'core/theme/app_theme.dart';
 
 
 void main() async {
-  ///ensure engine is Oky
+  ///ensure engine is Oky before run app
+  FlutterNativeSplash.preserve(widgetsBinding: WidgetsFlutterBinding.ensureInitialized());
   WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies();
   await getIt.allReady(); 
   final appLanguageConfig = getIt.get<AppLanguageConfig>();
   await appLanguageConfig.setSelectedLocal();
+  FlutterNativeSplash.remove();
 
   runApp(
     DevicePreview(
@@ -50,7 +50,7 @@ class FitnessApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           onGenerateRoute: Routes.onGenerate,
           navigatorKey: Routes.navigatorKey,
-        
+          // initialRoute: AppRoutes.splash,
         ));
   }
 }
