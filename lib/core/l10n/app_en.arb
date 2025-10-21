@@ -1,4 +1,6 @@
 {
   "@@locale": "en",
-  "noRouteFound":"No Route Found"
+  "noRouteFound":"No Route Found",
+  "heyThere":"Hey There",
+  "createAnAccount":"Create An Account"
 }

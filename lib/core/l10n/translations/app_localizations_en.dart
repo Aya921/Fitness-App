@@ -7,4 +7,13 @@ import 'app_localizations.dart';
 /// The translations for English (`en`).
 class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
+
+  @override
+  String get noRouteFound => 'No Route Found';
+
+  @override
+  String get heyThere => 'Hey There';
+
+  @override
+  String get createAnAccount => 'Create An Account';
 }

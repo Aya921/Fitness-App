@@ -2,6 +2,7 @@
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
+import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/routes/routes.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ void main() async {
 
   runApp(
     DevicePreview(
-      enabled: false,
+      enabled: true,
       builder: (context) => ChangeNotifierProvider.value(
         value: appLanguageConfig, // Use the instance here
         child: const FitnessApp(),
@@ -50,6 +51,7 @@ class FitnessApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           onGenerateRoute: Routes.onGenerate,
           navigatorKey: Routes.navigatorKey,
+          initialRoute: AppRoutes.registerScreen,
         
         ));
   }

@@ -1,4 +1,6 @@
 {
   "@@locale": "ar",
-  "noRouteFound":"لا توجد صفحه"
+  "noRouteFound":"لا توجد صفحه",
+  "heyThere":"مرحبًا بك",
+  "createAnAccount":"إنشاء حساب"
 }

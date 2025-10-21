@@ -97,6 +97,24 @@ abstract class AppLocalizations {
     Locale('ar'),
     Locale('en'),
   ];
+
+  /// No description provided for @noRouteFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No Route Found'**
+  String get noRouteFound;
+
+  /// No description provided for @heyThere.
+  ///
+  /// In en, this message translates to:
+  /// **'Hey There'**
+  String get heyThere;
+
+  /// No description provided for @createAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create An Account'**
+  String get createAnAccount;
 }
 
 class _AppLocalizationsDelegate

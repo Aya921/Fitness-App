@@ -1,5 +1,6 @@
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/routes/app_routes.dart';
+import 'package:fitness/features/auth/presentation/views/screens/register/register_screen.dart';
 import 'package:flutter/material.dart';
 
 abstract class Routes {
@@ -9,6 +10,11 @@ abstract class Routes {
     final url = Uri.parse(setting.name ?? "");
     switch (url.path) {
       case AppRoutes.registerScreen:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const RegisterScreen();
+          },
+        );
       default:
         return MaterialPageRoute(
           builder: (context) {
