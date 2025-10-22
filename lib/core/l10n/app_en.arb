@@ -1,6 +1,21 @@
 {
   "@@locale": "en",
-  "noRouteFound":"No Route Found",
+  "noRouteFound": "No Route Found",
+  "sendOTP": "Send OTP",
+  "forgetPassword": "Forget Password",
+  "email": "Email",
+  "enterYourEmail": "Enter Your Email",
+  "oTPCode": "OTP CODE",
+  "enterYourOtp": "Eneter Your OTP Check your Email",
+  "confirm": "Confirm",
+  "didnotReciveCode": "Didnt Recieve Verification Code?",
+  "resendCode": "Resend Code?",
+  "makeSure8Char": "Make Sure Its 8 Characters Or More",
+  "createNewPass": "Create New Password",
+  "password": "Password",
+  "confirmPass": "Confirm Password",
+  "done":"Done",
+
 
 
    "fieldRequired": "This field is required",
