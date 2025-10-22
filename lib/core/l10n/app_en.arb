@@ -2,7 +2,15 @@
   "@@locale": "en",
   "noRouteFound":"No Route Found",
   "heyThere":"Hey There",
-  "createAnAccount":"Create An Account"
+  "createAnAccount":"CREATE AN ACCOUNT",
+  "register": "Register",
+  "or": "Or",
+  "alreadyHaveAnAccount": "Already Have An Account?",
+  "loginRegister": "Login",
+  "firtNameRegister": "First Name",
+  "lastNameRegister": "Last Name",
+  "emailRegister": "Email",
+  "passwordRegister": "Password",
 
 
    "fieldRequired": "This field is required",

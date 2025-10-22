@@ -47,17 +47,15 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i361.Dio>(() => dioModule.provieDio());
     gh.lazySingletonAsync<_i460.SharedPreferences>(
         () => registerModule.sharedPreferences);
-    gh.factory<_i896.AuthApiServices>(() => _i896.AuthApiServices(
-          gh<_i361.Dio>(),
-          baseUrl: gh<String>(),
-        ));
+    gh.factory<_i896.AuthApiServices>(
+        () => _i896.AuthApiServices(gh<_i361.Dio>()));
+    gh.factory<_i945.AuthLocalDs>(
+        () => _i204.AuthLocalDsImpl(gh<_i896.AuthApiServices>()));
     gh.singletonAsync<_i549.AppLanguageConfig>(() async =>
         _i549.AppLanguageConfig(
             sharedPreferences: await getAsync<_i460.SharedPreferences>()));
     gh.factory<_i146.AuthRemoteDs>(
         () => _i969.AuthRemoteDsImpl(gh<_i896.AuthApiServices>()));
-    gh.factory<_i945.AuthLocalDs>(
-        () => _i204.AuthLocalDsImpl(gh<_i896.AuthApiServices>()));
     gh.factory<_i976.AuthRepo>(() => _i4.AuthRepoImpl(
           gh<_i146.AuthRemoteDs>(),
           gh<_i945.AuthLocalDs>(),

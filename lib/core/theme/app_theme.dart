@@ -63,7 +63,7 @@ class AppTheme {
           ),
           elevation: WidgetStateProperty.all(0),
           padding: WidgetStateProperty.all(
-            const EdgeInsets.symmetric(vertical: 14),
+            const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           ),
           shape: WidgetStateProperty.all(
             RoundedRectangleBorder(

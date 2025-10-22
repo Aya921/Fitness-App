@@ -2,7 +2,15 @@
   "@@locale": "ar",
   "noRouteFound":"لا توجد صفحه",
   "heyThere":"مرحبًا بك",
-  "createAnAccount":"إنشاء حساب"
+  "createAnAccount":"إنشاء حساب",
+  "register": "تسجيل",
+  "or": "أو",
+   "alreadyHaveAnAccount": "لديك حساب بالفعل؟",
+  "loginRegister": "سجل الدخول",
+  "firtNameRegister": "الإسم الأول",
+  "lastNameRegister": "الإسم الأخير",
+  "emailRegister": "البريد الإلكتروني",
+  "passwordRegister": "كلمة المرور",
 
    "fieldRequired": "هذا الحقل مطلوب",
   "emailRequired": "البريد الإلكتروني مطلوب",
