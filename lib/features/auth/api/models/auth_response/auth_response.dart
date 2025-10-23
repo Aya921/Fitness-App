@@ -24,10 +24,7 @@ class AuthResponse {
     return _$AuthResponseToJson(this);
   }
 
-  AuthEntity toEntity(){
-    return AuthEntity(
-      token: token,
-      user: user!.toEntity()
-    );
+  AuthEntity toEntity() {
+    return AuthEntity(token: token, user: user?.toEntity());
   }
 }

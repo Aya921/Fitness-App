@@ -39,3 +39,9 @@ TextStyle getSemiBoldStyle(
     {double fontSize = FontSize.s12, required Color color}) {
   return _getTextStyle(fontSize, FontWeightManager.semiBold, color);
 }
+
+// font weight --> 800
+TextStyle getExtraBoldStyle(
+    {double fontSize = FontSize.s12, required Color color}) {
+  return _getTextStyle(fontSize, FontWeightManager.extraBold, color);
+}

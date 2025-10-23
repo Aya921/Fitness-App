@@ -12,8 +12,8 @@ class LoadingCircle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: width ?? context.setWidth(24),
-        height: height ??context.setHight(24),
+        width: width ?? context.setWidth(20),
+        height: height ??context.setHight(20),
         child: LoadingAnimationWidget.staggeredDotsWave
 
           (color: circleColor ?? AppColors.white,size: context.setMinSize(30)),
