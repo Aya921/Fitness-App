@@ -4,23 +4,20 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/compelete_register/page_view.dart';
 
-
 class CompeleteRegisterScreen extends StatelessWidget {
   const CompeleteRegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: AppBackground(child:
-    Column(
-      children: [
-SizedBox(height: context.setHight(60),),
-const Expanded(child:
-PageViewCompeleteRegister()
+    return const Scaffold(
+      body: AppBackground(
+        child: Column(
+          children: [
 
-)
-      ],
-    )),
+            Expanded(child: PageViewCompeleteRegister()),
+          ],
+        ),
+      ),
     );
   }
 }

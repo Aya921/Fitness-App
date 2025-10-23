@@ -271,6 +271,168 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'level5'**
   String get level5;
+
+  /// No description provided for @heyThere.
+  ///
+  /// In en, this message translates to:
+  /// **'Hey There'**
+  String get heyThere;
+
+  /// No description provided for @createAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'CREATE AN ACCOUNT'**
+  String get createAnAccount;
+
+  /// No description provided for @register.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get register;
+
+  /// No description provided for @or.
+  ///
+  /// In en, this message translates to:
+  /// **'Or'**
+  String get or;
+
+  /// No description provided for @alreadyHaveAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already Have An Account?'**
+  String get alreadyHaveAnAccount;
+
+  /// No description provided for @loginRegister.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get loginRegister;
+
+  /// No description provided for @firtNameRegister.
+  ///
+  /// In en, this message translates to:
+  /// **'First Name'**
+  String get firtNameRegister;
+
+  /// No description provided for @lastNameRegister.
+  ///
+  /// In en, this message translates to:
+  /// **'Last Name'**
+  String get lastNameRegister;
+
+  /// No description provided for @emailRegister.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get emailRegister;
+
+  /// No description provided for @passwordRegister.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get passwordRegister;
+
+  /// No description provided for @fieldRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'This field is required'**
+  String get fieldRequired;
+
+  /// No description provided for @emailRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Email is required'**
+  String get emailRequired;
+
+  /// No description provided for @emailNotValid.
+  ///
+  /// In en, this message translates to:
+  /// **'This email is not valid'**
+  String get emailNotValid;
+
+  /// No description provided for @passwordRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is required'**
+  String get passwordRequired;
+
+  /// No description provided for @passwordMinLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 6 characters'**
+  String get passwordMinLength;
+
+  /// No description provided for @passwordUppercase.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one uppercase letter'**
+  String get passwordUppercase;
+
+  /// No description provided for @passwordNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one number'**
+  String get passwordNumber;
+
+  /// No description provided for @passwordsNotMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match'**
+  String get passwordsNotMatch;
+
+  /// No description provided for @usernameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Username is required'**
+  String get usernameRequired;
+
+  /// No description provided for @usernameNotValid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid username'**
+  String get usernameNotValid;
+
+  /// No description provided for @fullnameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Full name is required'**
+  String get fullnameRequired;
+
+  /// No description provided for @fullnameMinLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Full name must be at least 3 characters long'**
+  String get fullnameMinLength;
+
+  /// No description provided for @phoneRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone number is required'**
+  String get phoneRequired;
+
+  /// No description provided for @phoneNumbersOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter numbers only'**
+  String get phoneNumbersOnly;
+
+  /// No description provided for @phoneLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Value must be 11 digits after country code'**
+  String get phoneLength;
+
+  /// No description provided for @numberRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'This field is required'**
+  String get numberRequired;
+
+  /// No description provided for @numberOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter numbers only'**
+  String get numberOnly;
 }
 
 class _AppLocalizationsDelegate

@@ -22,9 +22,10 @@ void main() async {
 
   runApp(
     DevicePreview(
-      enabled: false,
-      builder: (context) => ChangeNotifierProvider.value(
-        value: appLanguageConfig, // Use the instance here
+      enabled: true,
+      builder: (context) =>
+          ChangeNotifierProvider.value(
+        value: appLanguageConfig,
         child: const FitnessApp(),
       ),
     ),
@@ -48,7 +49,6 @@ class FitnessApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           onGenerateRoute: Routes.onGenerate,
           navigatorKey: Routes.navigatorKey,
-//home: Scaffold(),
          initialRoute: AppRoutes.completeRegisterScreen,
         ));
   }

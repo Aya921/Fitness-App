@@ -24,7 +24,7 @@ class RegisterCubit extends Cubit<RegisterState> {
    final TextEditingController lastNameController
   =TextEditingController(text: "mohmed");
    final TextEditingController emailController=
-   TextEditingController(text: "mariam7966855@gmail.com");
+   TextEditingController(text: "mariam0599@gmail.com");
    final TextEditingController passwordController  =
    TextEditingController(text: "Pass123@");
    final TextEditingController confirmPasswordController =
@@ -91,7 +91,6 @@ void _chooseHeight({required int heigh}){
   }
   void _onInit() {
     registerFormKey = GlobalKey<FormState>();
-
     // firstNameController = TextEditingController();
     // lastNameController = TextEditingController();
     // emailController = TextEditingController();
@@ -115,26 +114,6 @@ void _chooseHeight({required int heigh}){
   Future<void> _register() async {
 
     emit(state.copyWith(registerStatus: const StateStatus.loading()));
-     // final request = RegisterRequest(
-     //
-     //
-     //    userBodyInfo: UserBodyInfo(
-     //      height: 170,
-     //      weight: 70,
-     //
-     //      age: 70,
-     //      goal: "Gain weight",
-     //      activityLevel: "level1",
-     //    ),
-     //    userInfo: UserInfo(
-     //
-     //      firstName: "Elevate",
-     //      lastName: "Tech",
-     //      email: "mariam2@gmail.com",
-     //      password: "Mariam257@",
-     //      rePassword: "Mariam257@",
-     //      gender: "female",
-     //    ),);
     final request = RegisterRequest(
       userInfo: UserInfo(
         firstName: firstNameController.text.trim(),

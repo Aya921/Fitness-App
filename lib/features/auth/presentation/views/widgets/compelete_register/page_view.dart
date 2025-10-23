@@ -170,7 +170,6 @@ import 'package:fitness/features/auth/presentation/views/widgets/compelete_regis
 import 'package:fitness/features/auth/presentation/views/widgets/compelete_register/custom_pop_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../../../config/di/di.dart';
 import '../../../../../../core/widget/logo.dart';
 import '../../../../api/models/register/text_model.dart';
@@ -191,7 +190,7 @@ class _PageViewCompeleteRegisterState extends State<PageViewCompeleteRegister> {
   bool isLast = false;
 
   final List<Widget> tabs = const [
-
+    //RegisterTab(),
     SelectGender(),
     SelectAge(),
     SelectWeight(),
@@ -203,6 +202,7 @@ class _PageViewCompeleteRegisterState extends State<PageViewCompeleteRegister> {
   @override
   Widget build(BuildContext context) {
     final List<TextModel> texts = [
+
       TextModel(
         title: context.loc.tellUsAboutYourself,
         subTitle: context.loc.weNeedToKnowYourGender,
@@ -246,7 +246,9 @@ class _PageViewCompeleteRegisterState extends State<PageViewCompeleteRegister> {
   Widget _buildPage(BuildContext context, int index, TextModel textModel) {
     return SizedBox.expand(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const Spacer(flex: 1),
           Padding(
             padding: EdgeInsetsDirectional.symmetric(
               horizontal: context.setWidth(20),
@@ -254,7 +256,7 @@ class _PageViewCompeleteRegisterState extends State<PageViewCompeleteRegister> {
             child: Row(
               spacing: 130,
               children: [
-                if (index > 0)
+                if (index > 1)
                   CustomPopIcon(
                     onTap: () {
                       pageController.previousPage(
@@ -269,11 +271,19 @@ class _PageViewCompeleteRegisterState extends State<PageViewCompeleteRegister> {
               ],
             ),
           ),
-          const Spacer(flex: 2),
-          CustomLoadingCircleProgressIndictor(index: index + 1),
+          const Spacer(flex: 1),
+        index!=0?
+        Align(
+          alignment: Alignment.center,
+          child: CustomLoadingCircleProgressIndictor(index: index),
+        ):const
+        SizedBox.shrink(),
           SizedBox(height: context.setHight(30)),
-          AnimateText(textModel: textModel),
+        Padding(padding: const EdgeInsetsDirectional.only(
+          start: 22
+        ),child:   AnimateText(textModel: textModel),),
           SizedBox(height: context.setHight(12)),
+
 
           ContainerDetialsCompleteRegister(
             child: Column(
@@ -286,7 +296,8 @@ class _PageViewCompeleteRegisterState extends State<PageViewCompeleteRegister> {
                   child: BlocListener<RegisterCubit, RegisterState>(
                     listener: (context, state) {
                     },
-                    child: ElevatedButton(
+                    child:
+                    ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(
                           MediaQuery.of(context).size.width,
