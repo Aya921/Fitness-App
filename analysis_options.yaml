@@ -1,4 +1,5 @@
 include: package:flutter_lints/flutter.yaml
+
 analyzer:
   exclude:
     - "**/*.g.dart"
@@ -11,6 +12,10 @@ analyzer:
     unused_import: warning
     dead_code: warning
     deprecated_member_use: ignore
+    unused_field: ignore
+    unused_element: ignore
+
+
 linter:
   rules:
     # ==== CONST RULES ====
@@ -18,6 +23,7 @@ linter:
     prefer_const_constructors_in_immutables: true
     prefer_const_literals_to_create_immutables: true
     prefer_const_declarations: true
+
     # ==== STYLE ====
     avoid_print: true
     prefer_single_quotes: false
@@ -25,10 +31,12 @@ linter:
     prefer_final_fields: true
     prefer_final_in_for_each: true
     prefer_final_locals: true
+
     # ==== PERFORMANCE ====
     avoid_unnecessary_containers: true
     sized_box_for_whitespace: true
     use_full_hex_values_for_flutter_colors: true
+
     # ==== CLEAN CODE ====
     always_declare_return_types: true
     require_trailing_commas: true
