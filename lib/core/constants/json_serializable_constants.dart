@@ -17,6 +17,7 @@ abstract class JsonSerializableConstants{
   static const String photo = "photo";
   static const String id = "_id";
   static const String createdAt = "createdAt";
-
+  static const String password = "password";
+  static const String rePassword = "rePassword";
 
 }

@@ -7,12 +7,12 @@ class UserEntity extends Equatable {
   final BodyInfoEntity? bodyInfo;
   final String? activityLevel;
   final String? goal;
-
+final String? createdAt;
   const UserEntity({
     this.personalInfo,
     this.bodyInfo,
     this.activityLevel,
-    this.goal,
+    this.goal,this.createdAt
   });
 
   @override
@@ -20,6 +20,7 @@ class UserEntity extends Equatable {
     personalInfo,
     bodyInfo,
     activityLevel,
-    goal
+    goal,
+    createdAt
   ];
 }
