@@ -33,10 +33,10 @@ class UserResponse {
 
   Map<String, dynamic> toJson() => _$UserResponseToJson(this);
 
-  UserEntity toEntity(){
+  UserEntity toEntity() {
     return UserEntity(
-      personalInfo: personalInfo!.toEntity(),
-      bodyInfo: bodyInfo!.toEntity(),
+      personalInfo: personalInfo?.toEntity(),
+      bodyInfo: bodyInfo?.toEntity(),
       activityLevel: activityLevel,
       goal: goal,
     );
