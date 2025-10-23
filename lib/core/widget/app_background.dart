@@ -1,7 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:fitness/core/constants/assets_maneger.dart';
 import 'package:fitness/core/theme/app_colors.dart';
+
+import '../constants/assets_manager.dart';
 
 class AppBackground extends StatelessWidget {
   final Widget child;
