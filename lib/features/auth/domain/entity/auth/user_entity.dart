@@ -16,7 +16,6 @@ final String? createdAt;
   });
 
   @override
-  // TODO: implement props
   List<Object?> get props => [
     personalInfo,bodyInfo,activityLevel,goal,createdAt
   ];

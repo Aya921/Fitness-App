@@ -1,8 +1,5 @@
 import 'package:fitness/core/extension/app_localization_extension.dart';
-import 'package:fitness/core/routes/app_navigator.dart';
-import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/widget/custom_elevated_button.dart';
-import 'package:fitness/core/widget/loading_button.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_cubit.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_intent.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_states.dart';

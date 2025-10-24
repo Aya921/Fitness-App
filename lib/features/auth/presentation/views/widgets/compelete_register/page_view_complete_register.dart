@@ -1,5 +1,4 @@
 import 'package:fitness/core/extension/app_localization_extension.dart';
-import 'package:fitness/core/loaders/full_screen_loader.dart';
 import 'package:fitness/core/loaders/loaders.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/widget/loading_button.dart';
@@ -15,7 +14,6 @@ import 'package:fitness/features/auth/presentation/views/widgets/compelete_regis
 import 'package:fitness/features/auth/presentation/views/widgets/compelete_register/custom_pop_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../../config/di/di.dart';
 import '../../../../../../core/widget/logo.dart';
 import '../../../../api/models/register/text_model.dart';
 import '../../screens/compelete_register/tabs/choose_activity.dart';

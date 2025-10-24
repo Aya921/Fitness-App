@@ -5,7 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'auth_response.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class AuthResponse {
   @JsonKey(name: JsonSerializableConstants.message)
   final String? message;

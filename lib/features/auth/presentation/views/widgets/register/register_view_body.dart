@@ -9,7 +9,6 @@ import 'package:fitness/features/auth/presentation/views/widgets/register/regist
 import 'package:fitness/features/auth/presentation/views/widgets/register/register_screen_social_row.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/register/register_screen_welcome_message.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../../../../../core/constants/assets_manager.dart';
 import '../../../../../../core/widget/blur_container.dart';

@@ -20,7 +20,6 @@ class PersonalInfoEntity extends Equatable{
   });
 
   @override
-  // TODO: implement props
   List<Object?> get props => [
     id,firstName,lastName,email,gender,age,photo
   ];
