@@ -75,6 +75,7 @@ void main() {
                   myChild:const Text( "click") ,
                   valueNotify: valueNotify,
                   onPress: null,
+               
                 ),
               ),
             ),
