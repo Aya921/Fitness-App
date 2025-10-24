@@ -1,9 +1,10 @@
+import 'package:equatable/equatable.dart';
 
 import '../error/response_exception.dart';
 
 enum Status { initial, loading, success, failure }
 
-class StateStatus<T> {
+class StateStatus<T> extends Equatable {
   final Status status;
   final T? data;
   final ResponseException? error;
@@ -15,10 +16,10 @@ class StateStatus<T> {
   const StateStatus.loading() : this._(status: Status.loading);
 
   const StateStatus.success(T data)
-      : this._(status: Status.success, data: data);
+    : this._(status: Status.success, data: data);
 
   const StateStatus.failure(ResponseException error)
-      : this._(status: Status.failure, error: error);
+    : this._(status: Status.failure, error: error);
 
   bool get isInitial => status == Status.initial;
 
@@ -27,4 +28,8 @@ class StateStatus<T> {
   bool get isSuccess => status == Status.success;
 
   bool get isFailure => status == Status.failure;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [status, data, error];
 }
