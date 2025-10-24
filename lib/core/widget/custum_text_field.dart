@@ -46,9 +46,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
         ),
         suffixIcon: widget.isPassword
             ? IconButton(
-                icon: Icon(
-                  _obscure ? Icons.visibility_off : Icons.visibility,
-                  color: AppColors.white,
+                icon: Padding(
+                  padding: const EdgeInsets.only(right: 12),
+                  child: Icon(
+                    _obscure ? Icons.visibility_off : Icons.visibility,
+                    color: AppColors.white,
+                  ),
                 ),
                 onPressed: () {
                   setState(() {

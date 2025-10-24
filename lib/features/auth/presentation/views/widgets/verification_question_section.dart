@@ -5,10 +5,20 @@ import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
+import 'package:fitness/features/auth/domain/entity/auth/forgetPassEntity/forget_pass_request.dart';
+import 'package:fitness/features/auth/presentation/view_model/forget_pass_cubit/forget_pass_cubit.dart';
+import 'package:fitness/features/auth/presentation/view_model/forget_pass_cubit/forget_pass_event.dart';
 import 'package:flutter/material.dart';
 
 class VerifcationQuestionSection extends StatefulWidget {
-  const VerifcationQuestionSection({super.key});
+  final String email;
+  final ForgetPassCubit forgetPassBloc;
+
+  const VerifcationQuestionSection({
+    super.key,
+    required this.email,
+    required this.forgetPassBloc,
+  });
 
   @override
   State<VerifcationQuestionSection> createState() =>
@@ -79,8 +89,16 @@ class _VerifcationQuestionSectionState
             children: [
               GestureDetector(
                 onTap: () {
-                  //start timer and send otp
-                  _canResend ? _startTimer() : null;
+                  if (_canResend) {
+                    _startTimer();
+                    widget.forgetPassBloc.doIntent(
+                      SendForgetPassEmailEvent(
+                        forgetPassRequest: ForgetPassRequest(
+                          email: widget.email,
+                        ),
+                      ),
+                    );
+                  }
                 },
                 child: MouseRegion(
                   cursor: SystemMouseCursors.click,
@@ -103,8 +121,8 @@ class _VerifcationQuestionSectionState
                 ),
               ),
               SizedBox(width: context.setWidth(10)),
-
-              Text(timerText, style: getRegularStyle(color: AppColors.white)),
+              if (_seconds != 0)
+                Text(timerText, style: getRegularStyle(color: AppColors.white)),
             ],
           ),
         ],

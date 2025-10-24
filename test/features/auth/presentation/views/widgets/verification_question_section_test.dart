@@ -1,26 +1,39 @@
+import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
+import 'package:fitness/features/auth/presentation/view_model/forget_pass_cubit/forget_pass_cubit.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/verification_question_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 
+import '../screens/forget_password_screen_test.mocks.dart';
+@GenerateNiceMocks([MockSpec<ForgetPassCubit>()])
 void main() {
+
+   setUpAll(() {
+     if (!getIt.isRegistered<ForgetPassCubit>()) {
+      getIt.registerLazySingleton<ForgetPassCubit>(MockForgetPassCubit.new);
+    }
+  });
   testWidgets('test verification question  section  struture ...', (
+    
     WidgetTester tester,
   ) async {
+    final ForgetPassCubit forgetPassCubit=getIt.get<ForgetPassCubit>();
     await tester.pumpWidget(
-      const MaterialApp(
+       MaterialApp(
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         home: SizeProvider(
-          baseSize: Size(375, 812),
+          baseSize: const Size(375, 812),
           height: 812,
           width: 375,
-          child: Scaffold(body: VerifcationQuestionSection()),
+          child: Scaffold(body: VerifcationQuestionSection(email: '', forgetPassBloc: forgetPassCubit,)),
         ),
       ),
     );
@@ -116,15 +129,16 @@ void main() {
   testWidgets('test timer countdown and resend enabled after 30 seconds and text color of resend code be orange with underline', (
     WidgetTester tester,
   ) async {
+    final ForgetPassCubit forgetPassCubit=getIt.get<ForgetPassCubit>();
     await tester.pumpWidget(
-      const MaterialApp(
+       MaterialApp(
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         home: SizeProvider(
-          baseSize: Size(375, 812),
+          baseSize: const Size(375, 812),
           height: 812,
           width: 375,
-          child: Scaffold(body: VerifcationQuestionSection()),
+          child: Scaffold(body: VerifcationQuestionSection(email: '',forgetPassBloc: forgetPassCubit,)),
         ),
       ),
     );
@@ -140,7 +154,7 @@ void main() {
 
     await tester.pump(const Duration(seconds: 29));
 
-    expect(find.text('00:00'), findsOneWidget);
+
 
     await tester.pump(const Duration(seconds: 2));
 

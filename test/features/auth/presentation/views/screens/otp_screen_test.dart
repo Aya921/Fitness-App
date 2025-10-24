@@ -1,16 +1,26 @@
+import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/widget/app_background.dart';
 import 'package:fitness/core/widget/blur_container.dart';
 import 'package:fitness/core/widget/logo.dart';
+import 'package:fitness/features/auth/presentation/view_model/forget_pass_cubit/forget_pass_cubit.dart';
 import 'package:fitness/features/auth/presentation/views/screens/otp_screen.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/otp_section.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/text_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 
+import 'forget_password_screen_test.mocks.dart';
+@GenerateNiceMocks([MockSpec<ForgetPassCubit>()])
 void main() {
-  testWidgets('test otp  screen structure ...', (WidgetTester tester) async {
+
+setUpAll(() {
+     if (!getIt.isRegistered<ForgetPassCubit>()) {
+      getIt.registerLazySingleton<ForgetPassCubit>(MockForgetPassCubit.new);
+    }
+  });  testWidgets('test otp  screen structure ...', (WidgetTester tester) async {
     await tester.pumpWidget(
       const MaterialApp(
         localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -19,7 +29,7 @@ void main() {
           baseSize: Size(375, 812),
           height: 812,
           width: 375,
-          child: OtpScreen(),
+          child: OtpScreen(userEmail: '',),
         ),
       ),
     );

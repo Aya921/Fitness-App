@@ -8,14 +8,14 @@ import 'package:flutter/services.dart';
 // ignore: must_be_immutable
 class CustomOtpField extends StatefulWidget {
   final int numberOfFields;
-  final Function(String)? onSubmit;
   ValueNotifier<bool> isOtpCompleted;
+  ValueNotifier<String> codeValue;
 
   CustomOtpField({
     super.key,
     this.numberOfFields = 4,
-    this.onSubmit,
     required this.isOtpCompleted,
+    required this.codeValue,
   });
 
   @override
@@ -41,14 +41,19 @@ class _CustomOtpFieldState extends State<CustomOtpField> {
     for (final c in controllers) {
       c.dispose();
     }
-
+    for (final f in focusNodes) {
+      f.dispose();
+    }
     super.dispose();
   }
 
-  void _checkSubmit() {  // will put in bloc when made it
+  void _checkSubmit() {
     final String otp = controllers.map((e) => e.text).join();
-    if (otp.length == widget.numberOfFields) {
-      widget.isOtpCompleted.value = true;
+    widget.isOtpCompleted.value = otp.length == widget.numberOfFields;
+    if (widget.isOtpCompleted.value) {
+      widget.codeValue.value = otp;
+    } else {
+      widget.codeValue.value = '';
     }
   }
 
@@ -57,62 +62,59 @@ class _CustomOtpFieldState extends State<CustomOtpField> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(widget.numberOfFields, (index) {
-       
-        return Container(
-          width: 55,
-          margin:  EdgeInsets.symmetric(horizontal: context.setWidth(10)),
-          child: 
-          TextField(
-            focusNode: focusNodes[index],
-            controller: controllers[index],
-            textAlign: TextAlign.center,
-            keyboardType: TextInputType.number,
-            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-            style: getMediumStyle(
-              color: AppColors.orange,
-              fontSize: context.setSp(FontSize.s22),
-            ),
-            decoration: InputDecoration(
-              counterText: "",
-              enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(
-                  color: controllers[index].text.isNotEmpty
-                      ? AppColors.orange
-                      : Colors.grey.shade400,
-                  width: 2,
+        return Flexible(
+          child: Container(
+            margin: EdgeInsets.symmetric(horizontal: context.setWidth(8)),
+            child: TextField(
+              controller: controllers[index],
+              focusNode: focusNodes[index],
+              textAlign: TextAlign.center,
+              keyboardType: TextInputType.number,
+              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+              style: getMediumStyle(
+                color: AppColors.orange,
+                fontSize: context.setSp(FontSize.s18),
+              ),
+              decoration: InputDecoration(
+                counterText: "",
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: controllers[index].text.isNotEmpty
+                        ? AppColors.orange
+                        : Colors.grey.shade400,
+                    width: 2,
+                  ),
+                ),
+                focusedBorder: const UnderlineInputBorder(
+                  borderSide: BorderSide(color: AppColors.orange, width: 2),
                 ),
               ),
-              focusedBorder: const UnderlineInputBorder(
-                borderSide: BorderSide(color: AppColors.orange, width: 2),
-              ),
-            ),
-            onChanged: (value) {
-              if (value.isEmpty) {
-                widget.isOtpCompleted.value = false;
-                setState(() {});
-                if (index > 0) FocusScope.of(context).previousFocus();
-                return;
-              }
-
-              
-              final int startIndex = index;
-              for (int i = 0; i < value.length; i++) {
-                if (startIndex + i < widget.numberOfFields) {
-                  controllers[startIndex + i].text = value[i];
+              onChanged: (value) {
+                if (value.isEmpty) {
+                  widget.isOtpCompleted.value = false;
+                  setState(() {});
+                  if (index > 0) FocusScope.of(context).previousFocus();
+                  return;
                 }
-              }
 
-            
-             final  int nextFocus = index + value.length;
-              if (nextFocus < widget.numberOfFields) {
-                FocusScope.of(context).requestFocus(focusNodes[nextFocus]);
-              } else {
-                FocusScope.of(context).unfocus();
-              }
+                final chars = value.split('');
+                for (int i = 0; i < chars.length; i++) {
+                  if (index + i < widget.numberOfFields) {
+                    controllers[index + i].text = chars[i];
+                  }
+                }
 
-              _checkSubmit();
-              setState(() {});
-            },
+                final nextFocus = index + chars.length;
+                if (nextFocus < widget.numberOfFields) {
+                  FocusScope.of(context).requestFocus(focusNodes[nextFocus]);
+                } else {
+                  FocusScope.of(context).unfocus();
+                }
+
+                _checkSubmit();
+                setState(() {});
+              },
+            ),
           ),
         );
       }),

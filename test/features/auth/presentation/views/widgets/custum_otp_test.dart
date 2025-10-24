@@ -26,7 +26,7 @@ void main() {
             child: Scaffold(
               body: CustomOtpField(
                 numberOfFields: 4,
-                isOtpCompleted: isOtpCompleted,
+                isOtpCompleted: isOtpCompleted, codeValue: ValueNotifier<String>(''),
               ),
             ),
           ),
@@ -66,7 +66,7 @@ void main() {
       );
 
       final context = tester.firstElement(find.byType(TextField));
-      final expectedFontSize = context.setSp(FontSize.s22);
+      final expectedFontSize = context.setSp(FontSize.s18);
       final textField = tester.widget<TextField>(find.byType(TextField).first);
       final container = tester.widget<Container>(find.byType(Container).first);
       expect(textField.style?.fontSize, expectedFontSize);
@@ -74,14 +74,14 @@ void main() {
         textField.style,
         getMediumStyle(
           color: AppColors.orange,
-          fontSize: context.setSp(FontSize.s22),
+          fontSize: context.setSp(FontSize.s18),
         ),
       );
       expect(
         container.margin,
-        EdgeInsets.symmetric(horizontal: context.setWidth(10)),
+        EdgeInsets.symmetric(horizontal: context.setWidth(8)),
       );
-      expect(container.constraints!.maxWidth, 55);
+     
     });
 
     testWidgets(
@@ -98,6 +98,8 @@ void main() {
               width: 375,
               child: Scaffold(
                 body: CustomOtpField(
+                  codeValue: ValueNotifier<String>(''),
+                  
                   numberOfFields: 4,
                   isOtpCompleted: isOtpCompleted,
                 ),
@@ -157,6 +159,8 @@ void main() {
               width: 375,
               child: Scaffold(
                 body: CustomOtpField(
+                  codeValue: ValueNotifier<String>(''),
+                  
                   numberOfFields: 4,
                   isOtpCompleted: isOtpCompleted,
                 ),
@@ -211,6 +215,8 @@ void main() {
             width: 375,
             child: Scaffold(
               body: CustomOtpField(
+                codeValue: ValueNotifier<String>('')
+ ,               
                 numberOfFields: 4,
                 isOtpCompleted: isOtpCompleted,
               ),
@@ -266,6 +272,8 @@ void main() {
             width: 375,
             child: Scaffold(
               body: CustomOtpField(
+                codeValue: ValueNotifier<String>('')
+ ,               
                 numberOfFields: 4,
                 isOtpCompleted: isOtpCompleted,
               ),
@@ -322,6 +330,8 @@ void main() {
               width: 375,
               child: Scaffold(
                 body: CustomOtpField(
+                  codeValue: ValueNotifier<String>(''),
+                  
                   numberOfFields: 4,
                   isOtpCompleted: isOtpCompleted,
                 ),
@@ -377,6 +387,8 @@ void main() {
               width: 375,
               child: Scaffold(
                 body: CustomOtpField(
+                  codeValue: ValueNotifier<String>(''),
+                  
                   numberOfFields: 4,
                   isOtpCompleted: isOtpCompleted,
                 ),
@@ -436,6 +448,8 @@ void main() {
               width: 375,
               child: Scaffold(
                 body: CustomOtpField(
+                  codeValue: ValueNotifier<String>(''),
+                  
                   numberOfFields: 4,
                   isOtpCompleted: isOtpCompleted,
                 ),

@@ -7,7 +7,8 @@ import 'package:fitness/features/auth/presentation/views/widgets/text_section.da
 import 'package:flutter/material.dart';
 
 class OtpScreen extends StatelessWidget {
-  const OtpScreen({super.key});
+  final String userEmail;
+  const OtpScreen({super.key,required this.userEmail});
 
   @override
   Widget build(BuildContext context) {
@@ -18,16 +19,16 @@ class OtpScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            const  Logo(),
-      
+              const Logo(),
+
               const Spacer(),
               TextSection(
                 text1: context.loc.oTPCode,
                 text2: context.loc.enterYourOtp,
                 reverseStyles: true,
               ),
-      
-               BlurContainer(blurChild: OtpSection()),
+
+              BlurContainer(blurChild: OtpSection(email:userEmail)),
               const Spacer(),
               const Spacer(),
             ],

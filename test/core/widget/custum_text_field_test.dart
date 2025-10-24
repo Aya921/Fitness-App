@@ -75,6 +75,8 @@ void main() {
   });
 
   testWidgets('test custum text field struture when passwrod is true and initial icon visibility is off and when click on it switch to visiblility icon ...', (
+
+
     WidgetTester tester,
   ) async {
     final TextEditingController controller = TextEditingController();
@@ -101,15 +103,15 @@ void main() {
 
  
     expect(find.byType(IconButton), findsOneWidget);
-    final iconButton = tester.widget<IconButton>(find.byType(IconButton));
-    Icon icon = iconButton.icon as Icon;
+    final icon = tester.widget<Icon>(find.byIcon(Icons.visibility_off));
+ 
     expect(icon.icon, Icons.visibility_off);
     expect(icon.color, AppColors.white);
 
     await tester.tap(find.byType(IconButton));
     await tester.pumpAndSettle();
 
-    icon = tester.widget<Icon>(find.byIcon(Icons.visibility));
-    expect(icon.icon, Icons.visibility);
+    final toggledIcons = tester.widget<Icon>(find.byIcon(Icons.visibility));
+    expect(toggledIcons.icon, Icons.visibility);
   });
 }

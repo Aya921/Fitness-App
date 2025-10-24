@@ -7,11 +7,12 @@ import 'package:fitness/features/auth/presentation/views/widgets/text_section.da
 import 'package:flutter/material.dart';
 
 class CreatePasswordScreen extends StatelessWidget {
-  const CreatePasswordScreen({super.key});
+  final String email;
+
+  const CreatePasswordScreen({super.key, required this.email});
 
   @override
   Widget build(BuildContext context) {
-  
     return Scaffold(
       body: AppBackground(
         child: SafeArea(
@@ -25,7 +26,7 @@ class CreatePasswordScreen extends StatelessWidget {
                 text1: context.loc.makeSure8Char,
                 text2: context.loc.createNewPass,
               ),
-              const BlurContainer(blurChild:CreateNewPassSection() ),
+               BlurContainer(blurChild: CreateNewPassSection(email:email)),
               const Spacer(),
               const Spacer(),
             ],

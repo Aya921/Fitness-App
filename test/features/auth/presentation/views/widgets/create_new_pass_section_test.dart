@@ -1,14 +1,27 @@
+import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/constants/assets_maneger.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/widget/custum_fields_button.dart';
 import 'package:fitness/core/widget/custum_text_field.dart';
+import 'package:fitness/features/auth/presentation/view_model/forget_pass_cubit/forget_pass_cubit.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/create_new_pass_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
+import '../screens/forget_password_screen_test.mocks.dart';
 
+
+@GenerateNiceMocks([MockSpec<ForgetPassCubit>()])
 void main() {
+
+  setUpAll(() {
+     if (!getIt.isRegistered<ForgetPassCubit>()) {
+      getIt.registerLazySingleton<ForgetPassCubit>(MockForgetPassCubit.new);
+    }
+  });
+
   group("test create new pass section", () {
     testWidgets('test create new pass section  struture ...', (
       WidgetTester tester,
@@ -23,7 +36,7 @@ void main() {
             baseSize: Size(375, 812),
             height: 812,
             width: 375,
-            child: Scaffold(body: CreateNewPassSection()),
+            child: Scaffold(body: CreateNewPassSection(email: '',)),
           ),
         ),
       );
@@ -82,7 +95,7 @@ void main() {
             baseSize: Size(375, 812),
             height: 812,
             width: 375,
-            child: Scaffold(body: CreateNewPassSection()),
+            child: Scaffold(body: CreateNewPassSection(email: '',)),
           ),
         ),
       );
@@ -119,7 +132,7 @@ void main() {
               baseSize: Size(375, 812),
               height: 812,
               width: 375,
-              child: Scaffold(body: CreateNewPassSection()),
+              child: Scaffold(body: CreateNewPassSection(email: '',)),
             ),
           ),
         );
@@ -153,7 +166,7 @@ void main() {
               baseSize: Size(375, 812),
               height: 812,
               width: 375,
-              child: Scaffold(body: CreateNewPassSection()),
+              child: Scaffold(body: CreateNewPassSection(email: '',)),
             ),
           ),
         );
@@ -178,7 +191,7 @@ void main() {
             baseSize: Size(375, 812),
             height: 812,
             width: 375,
-            child: Scaffold(body: CreateNewPassSection()),
+            child: Scaffold(body: CreateNewPassSection(email: '',)),
           ),
         ),
       );
@@ -206,7 +219,7 @@ void main() {
               baseSize: Size(375, 812),
               height: 812,
               width: 375,
-              child: Scaffold(body: CreateNewPassSection()),
+              child: Scaffold(body: CreateNewPassSection(email: '',)),
             ),
           ),
         );
@@ -234,7 +247,7 @@ void main() {
               baseSize: Size(375, 812),
               height: 812,
               width: 375,
-              child: Scaffold(body: CreateNewPassSection()),
+              child: Scaffold(body: CreateNewPassSection(email: '',)),
             ),
           ),
         );
