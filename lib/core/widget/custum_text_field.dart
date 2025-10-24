@@ -10,6 +10,7 @@ class CustomTextField extends StatefulWidget {
   final String icon;
   final String? Function(String?)? validator;
   final bool isPassword;
+  final void Function(String)? onChanged;
 
   const CustomTextField({
     super.key,
@@ -18,6 +19,7 @@ class CustomTextField extends StatefulWidget {
     required this.icon,
     required this.validator,
     this.isPassword = false,
+    this.onChanged
   });
 
   @override
@@ -30,7 +32,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      
+      onChanged: widget.onChanged,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       controller: widget.controller,
       obscureText: widget.isPassword ? _obscure : false,
@@ -45,17 +47,20 @@ class _CustomTextFieldState extends State<CustomTextField> {
           ),
         ),
         suffixIcon: widget.isPassword
-            ? IconButton(
-                icon: Icon(
-                  _obscure ? Icons.visibility_off : Icons.visibility,
-                  color: AppColors.white,
+            ? Padding(
+              padding: const EdgeInsets.only(right: 12),
+              child: IconButton(
+                  icon: Icon(
+                    _obscure ? Icons.visibility_off : Icons.visibility,
+                    color: AppColors.white,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _obscure = !_obscure;
+                    });
+                  },
                 ),
-                onPressed: () {
-                  setState(() {
-                    _obscure = !_obscure;
-                  });
-                },
-              )
+            )
             : null,
         hintText: widget.hintText,
       ),

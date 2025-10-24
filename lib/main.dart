@@ -2,6 +2,7 @@
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
+import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/routes/routes.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,7 @@ import 'package:device_preview/device_preview.dart';
 
 import 'core/routes/app_routes.dart';
 import 'core/theme/app_theme.dart';
+import 'core/user/user_session_handler.dart';
 
 
 void main() async {
@@ -23,19 +25,23 @@ void main() async {
   final appLanguageConfig = getIt.get<AppLanguageConfig>();
   await appLanguageConfig.setSelectedLocal();
 
+  final userSession = getIt<UserSessionHandler>();
+  final isLoggedIn = await userSession.checkIfUserLoggedIn();
+
   runApp(
     DevicePreview(
-      enabled: false,
+      enabled: true,
       builder: (context) => ChangeNotifierProvider.value(
         value: appLanguageConfig, // Use the instance here
-        child: const FitnessApp(),
+        child: FitnessApp(isLoggedIn: isLoggedIn,),
       ),
     ),
   );
 }
 
 class FitnessApp extends StatelessWidget {
-  const FitnessApp({super.key});
+  final bool isLoggedIn;
+   const FitnessApp({required this.isLoggedIn,super.key});
   @override
   Widget build(BuildContext context) {
     final appLanguageConfig = Provider.of<AppLanguageConfig>(context);
@@ -50,6 +56,7 @@ class FitnessApp extends StatelessWidget {
           theme: AppTheme.darkTheme,
           debugShowCheckedModeBanner: false,
           onGenerateRoute: Routes.onGenerate,
+          initialRoute: isLoggedIn ? AppRoutes.home : AppRoutes.loginRoute,
           navigatorKey: Routes.navigatorKey,
           initialRoute: AppRoutes.onBoarding,
         

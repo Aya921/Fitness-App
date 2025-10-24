@@ -19,5 +19,15 @@
   "phoneNumbersOnly": "Enter numbers only",
   "phoneLength": "Value must be 11 digits after country code",
   "numberRequired": "This field is required",
-  "numberOnly": "Enter numbers only"
+  "numberOnly": "Enter numbers only",
+  "loginSuccess":"Login successful ✔︎",
+  "login":"Login",
+  "forgetPass":"Forget Password?",
+  "email":"Email",
+  "password":"Password",
+  "heyThere":"Hey There",
+  "welcomeBack":"WELCOME BACK",
+  "doNotHaveAccount": "Don’t have an account? ",
+  "register":"Register",
+  "or":"Or"
 }
