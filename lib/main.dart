@@ -3,9 +3,7 @@ import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/routes/routes.dart';
-import 'package:fitness/features/auth/presentation/views/screens/forget_password_screen.dart';
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
 
 import 'config/app_language/app_language_config.dart';
