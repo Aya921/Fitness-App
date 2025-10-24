@@ -1,3 +1,5 @@
+import 'package:fitness/core/enum/levels.dart';
+
 sealed class RegisterIntent {
   const RegisterIntent();
 }
@@ -27,7 +29,7 @@ final class SelectGoalIntent extends RegisterIntent {
   const SelectGoalIntent({required this.goal});
 }
 final class SelectLevelIntent extends RegisterIntent {
-  final String? level;
+  final ActivityLevel? level;
   const SelectLevelIntent({required this.level});
 }
 final class RegisterFormIntent extends RegisterIntent {
@@ -36,5 +38,12 @@ final class RegisterFormIntent extends RegisterIntent {
 
 final class ToggleObscurePasswordIntent extends RegisterIntent {
   const ToggleObscurePasswordIntent();
+}
+
+final class ValidateBasicInfoIntent extends RegisterIntent {
+  const ValidateBasicInfoIntent();
+}
+final class IsTypingIntent extends RegisterIntent {
+  const IsTypingIntent();
 }
 

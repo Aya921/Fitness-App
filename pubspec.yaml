@@ -64,6 +64,7 @@ dependencies:
   animate_do: ^4.2.0
   percent_indicator: ^4.2.5
   numberpicker: ^2.1.2
+  another_flushbar: ^1.12.32
 
 
 

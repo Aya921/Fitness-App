@@ -12,47 +12,47 @@ class SelectWidgetItem extends StatelessWidget {
 final Function()onTap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        color: AppColors.lightGray.withValues(
-          alpha: 0.3
-        ),
-        border: Border.all(
-          width: context.setWidth(2),
-          color: AppColors.shadeWhite,
-        ),
-      ),
-      margin: EdgeInsetsDirectional.symmetric(
-        horizontal: context.setWidth(16),
-          vertical: context.setHight(8)
-      ),
-      padding: EdgeInsetsDirectional.symmetric(
-        horizontal: context.setWidth(16),
-        vertical: context.setHight(12)
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-
-          Text(
-          title,
-          style: getBoldStyle(
-            color: AppColors.white,
-            fontSize: context.setSp(18),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          color: AppColors.lightGray.withValues(
+            alpha: 0.3
+          ),
+          border: Border.all(
+            width: context.setWidth(2),
+            color: AppColors.shadeWhite,
           ),
         ),
-      GestureDetector(
-        onTap:onTap,
-        child:     Container(
+        margin: EdgeInsetsDirectional.symmetric(
+          horizontal: context.setWidth(16),
+            vertical: context.setHight(8)
+        ),
+        padding: EdgeInsetsDirectional.symmetric(
+          horizontal: context.setWidth(16),
+          vertical: context.setHight(12)
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+      
+            Text(
+            title,
+            style: getBoldStyle(
+              color: AppColors.white,
+              fontSize: context.setSp(18),
+            ),
+          ),
+        Container(
             width: context.setWidth(20),
             height: context.setHight(20),
             padding: const EdgeInsetsDirectional.all(4),
             decoration: BoxDecoration(
-
+        
                 shape: BoxShape.circle,
                 border: Border.all(
-
+        
                     width: context.setWidth(2),
                     color: AppColors.shadeWhite
                 )
@@ -61,10 +61,10 @@ final Function()onTap;
               radius: 8,
               backgroundColor: AppColors.orange[AppColors.baseColor],
             ):const SizedBox.shrink()
+        )
+      
+          ],
         ),
-      )
-
-        ],
       ),
     );
   }

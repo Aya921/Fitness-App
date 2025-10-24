@@ -1,8 +1,8 @@
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/widget/app_background.dart';
+import 'package:fitness/features/auth/presentation/views/widgets/compelete_register/page_view_complete_register.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/compelete_register/page_view.dart';
 
 class CompeleteRegisterScreen extends StatelessWidget {
   const CompeleteRegisterScreen({super.key});
@@ -13,7 +13,6 @@ class CompeleteRegisterScreen extends StatelessWidget {
       body: AppBackground(
         child: Column(
           children: [
-
             Expanded(child: PageViewCompeleteRegister()),
           ],
         ),

@@ -1,13 +1,13 @@
 import 'dart:ui';
 
-import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
-import 'package:fitness/core/theme/font_manager.dart';
-import 'package:fitness/core/theme/font_style.dart';
-import 'package:fitness/core/validator/validator.dart';
-import 'package:fitness/core/widget/custom_elevated_button.dart';
-import 'package:fitness/core/widget/custom_text_form_field.dart';
+import 'package:fitness/features/auth/presentation/views/widgets/register/register_screen_already_have_an_account.dart';
+import 'package:fitness/features/auth/presentation/views/widgets/register/register_screen_button.dart';
+import 'package:fitness/features/auth/presentation/views/widgets/register/register_screen_form.dart';
+import 'package:fitness/features/auth/presentation/views/widgets/register/register_screen_or_row.dart';
+import 'package:fitness/features/auth/presentation/views/widgets/register/register_screen_social_row.dart';
+import 'package:fitness/features/auth/presentation/views/widgets/register/register_screen_welcome_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -46,191 +46,20 @@ class RegisterScreenViewBody extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.all(context.setMinSize(16)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          FittedBox(
-                            child: Text(
-                              context.loc.heyThere,
-                              style: getRegularStyle(
-                                color: AppColors.white,
-                                fontSize: context.setSp(FontSize.s18),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: context.setHight(8)),
-                          FittedBox(
-                            child: Text(
-                              context.loc.createAnAccount,
-                              style: getExtraBoldStyle(
-                                color: AppColors.white,
-                                fontSize: context.setSp(FontSize.s20),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                      child: const RegisterScreenWelcomeMessage(),
                     ),
                     BlurContainer(
                       blurChild: Column(
                         children: [
-                          FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Text(
-                              context.loc.register,
-                              style: getExtraBoldStyle(
-                                color: AppColors.white,
-                                fontSize: context.setSp(FontSize.s24),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: context.setHight(16)),
-                          CustomTextFormField(
-                            label: context.loc.firtNameRegister,
-                            keyboardType: TextInputType.name,
-                            textInputAction: TextInputAction.next,
-                            hintText: context.loc.firtNameRegister,
-                            prefixIcon: SvgPicture.asset(AssetsManeger.userIcon),
-                            validator:Validator.validateUsername
-                            ,
-                          ),
-                          SizedBox(height: context.setHight(16)),
-                          CustomTextFormField(
-                              label: context.loc.lastNameRegister,
-                              hintText: context.loc.lastNameRegister,
-                              keyboardType: TextInputType.name,
-                              textInputAction: TextInputAction.next,
-                              prefixIcon: SvgPicture.asset(AssetsManeger.userIcon),
-                              validator:Validator.validateUsername
-                          ),
-                          SizedBox(height: context.setHight(16)),
-                          CustomTextFormField(
-                              label: context.loc.emailRegister,
-                              hintText: context.loc.emailRegister,
-                              keyboardType: TextInputType.emailAddress,
-                              textInputAction: TextInputAction.next,
-                              prefixIcon: SvgPicture.asset(AssetsManeger.emailIcon),
-                              validator:Validator.validateEmail
-
-                          ),
-                          SizedBox(height: context.setHight(16)),
-                          CustomTextFormField(
-                              label: context.loc.passwordRegister,
-                              hintText: context.loc.passwordRegister,
-                              keyboardType: TextInputType.visiblePassword,
-                              textInputAction: TextInputAction.done,
-                              obscureText: true,
-                              prefixIcon: SvgPicture.asset(AssetsManeger.lockIcon),
-                              suffixIcon: IconButton(
-                                onPressed: () {},
-                                icon: const Icon(Icons.visibility_outlined),
-                              ),
-                              validator:
-                              Validator.validatePassword
-                          ),
+                          const RegisterScreenForm(),
                           SizedBox(height: context.setHight(24)),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Divider(
-                                  color: AppColors.gray[AppColors.colorCode10],
-                                  thickness: 1,
-                                  indent: 65,
-                                  endIndent: 20,
-                                ),
-                              ),
-                              Text(
-                                context.loc.or,
-                                style: getRegularStyle(
-                                  color: AppColors.gray[AppColors.colorCode10]!,
-                                  fontSize: context.setSp(FontSize.s12),
-                                ),
-                              ),
-                              Expanded(
-                                child: Divider(
-                                  color: AppColors.gray[AppColors.colorCode10],
-                                  thickness: 1,
-                                  indent: 20,
-                                  endIndent: 65,
-                                ),
-                              ),
-                            ],
-                          ),
+                          const RegisterScreenOrRow(),
                           SizedBox(height: context.setHight(24)),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: context.setWidth(32),
-                                height: context.setHight(32),
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: AppColors.gray[AppColors.colorCode90],
-                                ),
-                                child: SvgPicture.asset(
-                                  AssetsManeger.facebookIcon,
-                                  fit: BoxFit.scaleDown,
-                                ),
-                              ),
-                              SizedBox(width: context.setWidth(16)),
-                              Container(
-                                width: context.setWidth(32),
-                                height: context.setHight(32),
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: AppColors.gray[AppColors.colorCode90],
-                                ),
-                                child: SvgPicture.asset(
-                                  AssetsManeger.googleIcon,
-                                  fit: BoxFit.scaleDown,
-                                ),
-                              ),
-                              SizedBox(width: context.setWidth(16)),
-                              Container(
-                                width: context.setWidth(32),
-                                height: context.setHight(32),
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: AppColors.gray[AppColors.colorCode90],
-                                ),
-                                child: SvgPicture.asset(
-                                  AssetsManeger.appleIcon,
-                                  fit: BoxFit.scaleDown,
-                                ),
-                              ),
-                            ],
-                          ),
+                          const RegisterScreenSocialRow(),
                           SizedBox(height: context.setHight(24)),
-                          CustomElevatedButton(
-                            onPressed: () {},
-                            buttonTitle: context.loc.register,
-                          ),
+                          const RegisterScreenButton(),
                           SizedBox(height: context.setHight(8)),
-                          FittedBox(
-                            child: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: context.loc.alreadyHaveAnAccount,
-                                    style: getRegularStyle(
-                                      color: AppColors.white,
-                                      fontSize: context.setSp(FontSize.s14),
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: context.loc.loginRegister,
-                                    style:
-                                    getBoldStyle(
-                                      color: AppColors.lightOrange,
-                                      fontSize: context.setSp(FontSize.s14),
-                                    ).copyWith(
-                                      decoration: TextDecoration.underline,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
+                          const RegisterScreenAlreadyHaveAnAccount(),
                         ],
                       ),
                     ),
@@ -244,3 +73,15 @@ class RegisterScreenViewBody extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+

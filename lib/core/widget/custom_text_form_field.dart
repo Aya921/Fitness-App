@@ -29,7 +29,7 @@ class CustomTextFormField extends StatelessWidget {
     this.prefixIconConstraints,
     required this.label,
     this.labelStyle,
-    this.borderRadius = 20,
+    this.borderRadius = 100,
     this.disabledBorderColor,
     this.isReadOnly = false,
     this.floatingLabelBehavior = FloatingLabelBehavior.auto,
@@ -112,7 +112,7 @@ class CustomTextFormField extends StatelessWidget {
         ),
         errorBorder: buildOutlinedBorder(
           context: context,
-          borderColor: Theme.of(context).colorScheme.error,
+          borderColor: AppColors.red,
           borderRadius: borderRadius,
         ),
         disabledBorder: buildOutlinedBorder(
@@ -135,7 +135,7 @@ class CustomTextFormField extends StatelessWidget {
           padding: const EdgeInsets.only(left: 16,right:8),
           child: suffixIcon,
         ),
-        errorStyle: Theme.of(context).textTheme.bodySmall,
+        errorStyle: getRegularStyle(color: AppColors.red),
         errorMaxLines: 3,
       ),
       maxLength: maxLength,

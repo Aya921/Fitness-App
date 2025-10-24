@@ -12,11 +12,11 @@ final TextModel textModel;
   Widget build(BuildContext context) {
     return FadeInLeft(
 duration: const Duration(
-    milliseconds: 1500
+    milliseconds: 800
 
 ),
          delay: const Duration(
-           milliseconds: 1500
+           milliseconds: 800
          ),
         child:  Column(
           mainAxisAlignment: MainAxisAlignment.start,

@@ -39,6 +39,7 @@ class UserResponse {
       bodyInfo: bodyInfo?.toEntity(),
       activityLevel: activityLevel,
       goal: goal,
+      createdAt: createdAt
     );
   }
 }

@@ -46,10 +46,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get learnTheBasic => 'Learn the basics';
 
   @override
-  String get male => 'male';
+  String get male => 'Male';
 
   @override
-  String get female => 'female';
+  String get female => 'Female';
 
   @override
   String get year => 'Year';

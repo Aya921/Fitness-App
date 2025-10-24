@@ -1,3 +1,4 @@
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_cubit.dart';
@@ -13,41 +14,40 @@ class SelectGender extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<
-        RegisterCubit,RegisterState>(builder: (context,state){
-          return  Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+    return BlocBuilder<RegisterCubit, RegisterState>(
+      builder: (context, state) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            GenderWidget(
+              iconData: AssetsManeger.maleGenderIcon,
+              title: context.loc.male,
+              isSelected: context.loc.male == state.selectedGender,
+              onTap: () {
+                context.read<RegisterCubit>().doIntent(
+                  intent: ChangeGenderIntent(selectedGender: context.loc.male),
+                );
+              },
+            ),
+            SizedBox(height: context.setHight(24)),
+            GenderWidget(
+              isSelected: context.loc.female == state.selectedGender,
 
-              GenderWidget(
-                iconData: Icons.male_rounded, title: context.loc.male,
-isSelected: context.loc.male==state.selectedGender,
-                onTap: (){
-                  context.read<RegisterCubit>().doIntent(intent: ChangeGenderIntent(
-                      selectedGender: context.loc.male
-                  ));
-                },
-              ),
-              SizedBox(height: context.setHight(8),),
-              GenderWidget(
-                isSelected: context.loc.female==state.selectedGender,
+              iconData: AssetsManeger.femaleGenderIcon,
+              title: context.loc.female,
 
-                iconData: Icons.female, title: context.loc.female,
-
-                onTap: (){
-
-                  context.read<RegisterCubit>()
-                      .doIntent(intent: ChangeGenderIntent(
-                      selectedGender: context.loc.female
-                  ));
-                },
-              ),
-
-            ],
-          );
-    },
+              onTap: () {
+                context.read<RegisterCubit>().doIntent(
+                  intent: ChangeGenderIntent(
+                    selectedGender: context.loc.female,
+                  ),
+                );
+              },
+            ),
+          ],
+        );
+      },
     );
-
   }
 }

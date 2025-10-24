@@ -1,3 +1,4 @@
+import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_cubit.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_intent.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_states.dart';
@@ -19,10 +20,10 @@ class ChooseActivity extends StatelessWidget {
       return       Column(
         children:ActivityLevel.values.map((e){
           return SelectWidgetItem(
-              isSelected: e.title==selectedLevel,
-              title: e.title, onTap: (){
+              isSelected: e ==selectedLevel,
+              title: e.getLocalizedName(context), onTap: (){
             context.read<RegisterCubit>().doIntent(intent: SelectLevelIntent
-              (level: e.title));
+              (level: e));
           });
         }).toList()
       );

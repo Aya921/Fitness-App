@@ -26,6 +26,7 @@ class AuthResponse {
 
   AuthEntity toEntity(){
     return AuthEntity(
+      message: message,
       token: token,
       user: user?.toEntity()
     );

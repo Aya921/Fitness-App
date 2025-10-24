@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:fitness/core/enum/levels.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/enum/request_state.dart';
 class RegisterState extends Equatable {
@@ -12,7 +13,9 @@ class RegisterState extends Equatable {
   final int weight;
 final int age;
   final String? goal;
-  final String? level;
+  final ActivityLevel? level;
+  final bool isBasicInfoValid;
+  final bool isTyping;
 
   const RegisterState({
     this.registerStatus = const StateStatus.initial(),
@@ -25,7 +28,9 @@ final int age;
     this.weight=60,
     this.age=24,
     this.goal,
-    this.level
+    this.level,
+    this.isBasicInfoValid =false,
+    this.isTyping=false
   });
   RegisterState copyWith({
     StateStatus<void>? registerStatus,
@@ -38,7 +43,9 @@ final int age;
     int? weight,
     int? age,
      String? goal,
-    String? level
+    ActivityLevel? level,
+    bool? isBasicInfoValid,
+    bool? isTyping
 
 
   }) {
@@ -53,7 +60,10 @@ age: age??this.age,
       height: height??this.height,
       weight: weight??this.weight,
       goal: goal??this.goal,
-      level: level??this.level
+      level: level??this.level,
+      isBasicInfoValid: isBasicInfoValid??this.isBasicInfoValid,
+      isTyping: isTyping??this.isTyping
+
     );
   }
 
@@ -69,6 +79,8 @@ age: age??this.age,
     weight,
     age,
     goal,
-    level
+    level,
+    isBasicInfoValid,
+    isTyping
   ];
 }

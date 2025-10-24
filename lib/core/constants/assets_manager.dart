@@ -9,5 +9,7 @@ abstract class AssetsManeger {
   static const String userIcon = "assets/images/user_icon.svg";
   static const String emailIcon = "assets/images/mail_icon.svg";
   static const String lockIcon = "assets/images/lock_icon.svg";
+  static const String maleGenderIcon = "assets/images/male_gender_icon.svg";
+  static const String femaleGenderIcon = "assets/images/female_gender_icon.svg";
 
 }

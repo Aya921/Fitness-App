@@ -84,8 +84,17 @@ class AppTheme{
                   )
               ),
               foregroundColor: WidgetStateProperty.all(AppColors.white),
-              backgroundColor:WidgetStateProperty.all
-                (AppColors.orange[AppColors.baseColor]) ,
+               backgroundColor: WidgetStateProperty.resolveWith<Color>(
+      (states) {
+        if (states.contains(WidgetState.disabled)) {
+          // when onPressed == null
+          return AppColors.orange[AppColors.baseColor]!.withOpacity(0.4);
+          // or use a gray tone like:
+          // return Colors.grey.shade400;
+        }
+        return AppColors.orange[AppColors.baseColor]!;
+      },
+    ), 
             )
         )
     );

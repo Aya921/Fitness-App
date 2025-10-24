@@ -49,7 +49,7 @@ class FitnessApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           onGenerateRoute: Routes.onGenerate,
           navigatorKey: Routes.navigatorKey,
-         initialRoute: AppRoutes.completeRegisterScreen,
+         initialRoute: AppRoutes.registerScreen,
         ));
   }
 }

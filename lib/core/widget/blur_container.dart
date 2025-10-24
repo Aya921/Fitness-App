@@ -12,7 +12,7 @@ class BlurContainer extends StatelessWidget {
       borderRadius: BorderRadius.circular(context.setWidth(50)),
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: context.setHight(25), horizontal: context.setWidth(18)),
+        padding: EdgeInsets.symmetric(vertical: context.setHight(25), horizontal: context.setWidth(30)),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
           child: blurChild,
