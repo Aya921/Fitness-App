@@ -44,6 +44,7 @@ dependencies:
   firebase_core: ^4.2.0
   mockito: ^5.4.4
   connectivity_plus: ^7.0.0
+  flutter_svg: ^2.2.1
 
 
 
@@ -62,11 +63,13 @@ dev_dependencies:
 
 
 
+
 flutter:
   uses-material-design: true
   generate: true
   assets:
    - assets/images/
+   - assets/icons/
 
   fonts:
    
