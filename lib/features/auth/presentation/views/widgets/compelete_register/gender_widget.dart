@@ -1,4 +1,3 @@
-import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
@@ -7,12 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class GenderWidget extends StatelessWidget {
-   GenderWidget({super.key, this.isSelected=false
+   const GenderWidget({super.key, this.isSelected=false
     ,required this.iconData, required this.title,this.onTap});
 
   final String iconData;
-  final String title;void Function()? onTap;
-bool isSelected;
+  final String title;
+  final void Function()? onTap;
+final bool isSelected;
   @override
   Widget build(BuildContext context) {
     return

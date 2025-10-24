@@ -64,13 +64,11 @@ void main() {
         expect(actualResult.user?.activityLevel, equals(authResponse.user?.activityLevel));
         expect(actualResult.user?.createdAt, equals(authResponse.user?.createdAt));
         expect(actualResult.user?.goal, equals(authResponse.user?.goal));
-        
-        // Test bodyInfo
+      
         expect(actualResult.user?.bodyInfo, isNotNull);
         expect(actualResult.user?.bodyInfo?.height, equals(authResponse.user?.bodyInfo?.height));
         expect(actualResult.user?.bodyInfo?.weight, equals(authResponse.user?.bodyInfo?.weight));
-        
-        // Test personalInfo
+      
         expect(actualResult.user?.personalInfo, isNotNull);
         expect(actualResult.user?.personalInfo?.age, equals(authResponse.user?.personalInfo?.age));
         expect(actualResult.user?.personalInfo?.email, equals(authResponse.user?.personalInfo?.email));

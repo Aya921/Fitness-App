@@ -65,8 +65,7 @@ dependencies:
   percent_indicator: ^4.2.5
   numberpicker: ^2.1.2
   another_flushbar: ^1.12.32
-
-
+  flutter_svg: ^2.2.1
 
 
 dev_dependencies:
@@ -79,7 +78,7 @@ dev_dependencies:
   build_runner: ^2.4.13
   json_serializable: ^6.7.1
   retrofit_generator: ^8.1.0
-  flutter_svg: ^2.2.1
+  
 
 
 # For information on the generic Dart part of this file, see the

@@ -345,7 +345,7 @@ void main() {
         id: longString,
         firstName: longString,
         lastName: longString,
-        email: "${longString}@example.com",
+        email: "$longString@example.com",
         gender: longString,
         age: 25,
         photo: longString,

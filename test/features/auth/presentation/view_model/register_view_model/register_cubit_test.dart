@@ -1,8 +1,6 @@
 
 import 'package:fitness/core/enum/levels.dart';
-import 'package:fitness/core/error/api_error.dart';
 import 'package:fitness/core/result/result.dart';
-import 'package:fitness/features/auth/api/models/register/request/register_request.dart';
 import 'package:fitness/features/auth/domain/entity/auth/body_info_entity.dart';
 import 'package:fitness/features/auth/domain/entity/auth/personal_info_entity.dart';
 import 'package:fitness/features/auth/domain/entity/auth/user_entity.dart';
@@ -10,7 +8,6 @@ import 'package:fitness/features/auth/domain/use_case/register_use_case.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_cubit.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_intent.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_states.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
