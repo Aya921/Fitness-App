@@ -1,0 +1,23 @@
+{
+  "@@locale": "en",
+  "noRouteFound":"No Route Found",
+
+
+   "fieldRequired": "This field is required",
+  "emailRequired": "Email is required",
+  "emailNotValid": "This email is not valid",
+  "passwordRequired": "Password is required",
+  "passwordMinLength": "Password must be at least 6 characters",
+  "passwordUppercase": "Password must contain at least one uppercase letter",
+  "passwordNumber": "Password must contain at least one number",
+  "passwordsNotMatch": "Passwords do not match",
+  "usernameRequired": "Username is required",
+  "usernameNotValid": "Enter a valid username",
+  "fullnameRequired": "Full name is required",
+  "fullnameMinLength": "Full name must be at least 3 characters long",
+  "phoneRequired": "Phone number is required",
+  "phoneNumbersOnly": "Enter numbers only",
+  "phoneLength": "Value must be 11 digits after country code",
+  "numberRequired": "This field is required",
+  "numberOnly": "Enter numbers only"
+}

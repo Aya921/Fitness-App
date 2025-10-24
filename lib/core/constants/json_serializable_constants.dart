@@ -1,0 +1,23 @@
+abstract class JsonSerializableConstants{
+  //auth response
+  static const String message = "message";
+  static const String user = "user";
+  static const String token = "token";
+
+  //user response
+  static const String firstName = "firstName";
+  static const String lastName = "lastName";
+  static const String email = "email";
+  static const String gender = "gender";
+  static const String age = "age";
+  static const String weight = "weight";
+  static const String height = "height";
+  static const String activityLevel = "activityLevel";
+  static const String goal = "goal";
+  static const String photo = "photo";
+  static const String id = "_id";
+  static const String createdAt = "createdAt";
+  static const String password = "password";
+  static const String rePassword = "rePassword";
+
+}
