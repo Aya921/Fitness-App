@@ -50,7 +50,7 @@ class ForgetPassCubit extends Cubit<ForgetPasswordState> {
           ),
         );
       case FailedResult<ForgetPassResponse>():
-        emit(state.copyWith(status: StateStatus.failure(ResponseException(message: res.errorMessage))));
+        emit(state.copyWith(status: StateStatus<ForgetPassResponse>.failure(ResponseException(message: res.errorMessage))));
     }
   }
 

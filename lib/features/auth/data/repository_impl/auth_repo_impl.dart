@@ -11,7 +11,6 @@ import 'package:injectable/injectable.dart';
 class AuthRepoImpl implements AuthRepo {
   final AuthRemoteDs _authRemoteDs;
 
-
   AuthRepoImpl(this._authRemoteDs);
 
   @override
@@ -28,6 +27,6 @@ class AuthRepoImpl implements AuthRepo {
 
   @override
   Future<Result<void>> resetPass({required ResetPassRequest resetReq}) async {
-    return await _authRemoteDs.resetCode(code: resetReq);
+    return await _authRemoteDs.resetPassword(code: resetReq);
   }
 }

@@ -19,9 +19,7 @@ class AuthRemoteDsImpl implements AuthRemoteDs {
   @override
   Future<Result<ForgetPassResponse>> forgetPass({
     required ForgetPassRequest forgetPassReq,
-  })async {
-
-   
+  }) async {
     return safeApiCall(() async {
       final forgetPassResponseModel = await _authApiServices.forgetPassword(
         ForgetPassRequestModel.toModel(forgetPassReq),
@@ -32,14 +30,14 @@ class AuthRemoteDsImpl implements AuthRemoteDs {
 
   @override
   Future<Result<void>> sendCode({required SendCodeRequest code}) {
-   return safeApiCall(() async {
+    return safeApiCall(() async {
       await _authApiServices.sendCode(SendCodeRequestModel.toModel(code));
       return (null);
     });
   }
 
   @override
-  Future<Result<void>> resetCode({required ResetPassRequest code}) {
+  Future<Result<void>> resetPassword({required ResetPassRequest code}) {
     return safeApiCall(() async {
       await _authApiServices.resetPass(ResetPassRequestModel.toModel(code));
       return (null);

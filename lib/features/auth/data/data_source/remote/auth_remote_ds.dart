@@ -4,15 +4,10 @@ import 'package:fitness/features/auth/domain/entity/auth/forgetPassEntity/forget
 import 'package:fitness/features/auth/domain/entity/auth/forgetPassEntity/reset_pass_request.dart';
 import 'package:fitness/features/auth/domain/entity/auth/forgetPassEntity/send_code_request.dart';
 
-abstract interface  class AuthRemoteDs {
-   Future<Result<ForgetPassResponse>> forgetPass({required
-    ForgetPassRequest forgetPassReq,
+abstract interface class AuthRemoteDs {
+  Future<Result<ForgetPassResponse>> forgetPass({
+    required ForgetPassRequest forgetPassReq,
   });
-   Future<Result<void>> sendCode({required 
-    SendCodeRequest code,
-  });
-   Future<Result<void>> resetCode({required 
-    ResetPassRequest code,
-  });
-
+  Future<Result<void>> sendCode({required SendCodeRequest code});
+  Future<Result<void>> resetPassword({required ResetPassRequest code});
 }
