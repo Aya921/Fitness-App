@@ -1,3 +1,4 @@
+import 'package:fitness/core/constants/app_widgets_key.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness/core/theme/app_colors.dart';
@@ -11,8 +12,9 @@ class RegisterText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      key: const Key(WidgetKey.registerTextKey),
       onTap: () {
-        // navigate ti register
+        // navigate to register screen
       },
       child: RichText(
         text: TextSpan(
@@ -26,14 +28,13 @@ class RegisterText extends StatelessWidget {
             ),
             TextSpan(
               text: context.loc.register,
-              style:
-                  getExtraBoldStyle(
-                    color: AppColors.orange,
-                    fontSize: context.setSp(FontSize.s14),
-                  ).copyWith(
-                    decoration: TextDecoration.underline,
-                    decorationColor: AppColors.orange,
-                  ),
+              style: getExtraBoldStyle(
+                color: AppColors.orange,
+                fontSize: context.setSp(FontSize.s14),
+              ).copyWith(
+                decoration: TextDecoration.underline,
+                decorationColor: AppColors.orange,
+              ),
             ),
           ],
         ),

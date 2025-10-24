@@ -11,15 +11,15 @@ import 'package:injectable/injectable.dart';
 
 @Injectable(as: AuthRemoteDs)
 class AuthRemoteDsImpl implements AuthRemoteDs {
-  final AuthApiServices _api;
+  final AuthApiServices _authApiServices;
   final SecureStorageService _secureStorage;
 
-  AuthRemoteDsImpl(this._api, this._secureStorage);
+  AuthRemoteDsImpl(this._authApiServices, this._secureStorage);
 
   @override
   Future<Result<AuthEntity>> logIn(String email, String password) {
     return safeApiCall(() async {
-      final response = await _api.logIn({
+      final response = await _authApiServices.logIn({
         Constants.email: email,
         Constants.password: password,
       });
@@ -40,7 +40,7 @@ class AuthRemoteDsImpl implements AuthRemoteDs {
   @override
   Future<Result<AuthEntity>> getLoggedUser() {
     return safeApiCall(() async {
-      final response = await _api.getLoggedUser();
+      final response = await _authApiServices.getLoggedUser();
 
       if (response.error != null) {
         throw ResponseException(message: response.error!);
