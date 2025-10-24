@@ -1,8 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:fitness/core/constants/end_points_constants.dart';
-import 'package:fitness/features/auth/api/models/auth_response/auth_response.dart';
 import 'package:injectable/injectable.dart';
-//import 'package:json_annotation/json_annotation.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'auth_api_services.g.dart';

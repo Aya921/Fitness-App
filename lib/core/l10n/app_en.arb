@@ -19,5 +19,9 @@
   "phoneNumbersOnly": "Enter numbers only",
   "phoneLength": "Value must be 11 digits after country code",
   "numberRequired": "This field is required",
-  "numberOnly": "Enter numbers only"
+  "numberOnly": "Enter numbers only",
+"explore": "Explore",
+  "chatAi": "chat bot",
+  "gym": "Gym",
+  "profile": "Profile"
 }
