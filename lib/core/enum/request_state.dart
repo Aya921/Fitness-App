@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
-
-import '../error/response_exception.dart';
+import 'package:fitness/core/error/response_exception.dart';
 
 enum Status { initial, loading, success, failure }
 
@@ -22,14 +21,10 @@ class StateStatus<T> extends Equatable {
     : this._(status: Status.failure, error: error);
 
   bool get isInitial => status == Status.initial;
-
   bool get isLoading => status == Status.loading;
-
   bool get isSuccess => status == Status.success;
-
   bool get isFailure => status == Status.failure;
 
   @override
-  // TODO: implement props
   List<Object?> get props => [status, data, error];
 }

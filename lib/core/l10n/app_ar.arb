@@ -1,6 +1,21 @@
 {
   "@@locale": "ar",
-  "noRouteFound":"لا توجد صفحه",
+  "noRouteFound": "لا يوجد صفحه",
+  "sendOTP": "ارسال الكود",
+  "forgetPassword": "استعاده كلمه المرور",
+  "email": "الايميل",
+  "enterYourEmail": "ادخل الايميل الخاص بك",
+  "oTPCode": "رمز التحقق",
+  "enterYourOtp": "أدخل رمز التحقق الذي وصلك على الإيميل",
+  "confirm": "تأكيد",
+  "didnotReciveCode": "ما وصلكش رمز التحقق؟",
+  "resendCode": "إعادة إرسال الرمز؟",
+  "makeSure8Char": "تأكد أن كلمة المرور 8 أحرف أو أكثر",
+  "createNewPass": "إنشاء كلمة مرور جديدة",
+  "password": "كلمة المرور",
+  "confirmPass": "تأكيد كلمة المرور",
+  "done":"تأكيد",
+
 
    "fieldRequired": "هذا الحقل مطلوب",
   "emailRequired": "البريد الإلكتروني مطلوب",

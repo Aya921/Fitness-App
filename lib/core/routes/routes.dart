@@ -1,6 +1,8 @@
 import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/routes/app_routes.dart';
+import 'package:fitness/features/auth/presentation/views/screens/create_password_screen.dart';
+import 'package:fitness/features/auth/presentation/views/screens/otp_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/home_tab.dart';
 import 'package:fitness/features/auth/presentation/view_model/login_view_model/login_cubit.dart';
 import 'package:fitness/features/auth/presentation/views/screens/home_screen.dart';
@@ -17,27 +19,37 @@ abstract class Routes {
     final url = Uri.parse(setting.name ?? "");
     switch (url.path) {
       case AppRoutes.onBoarding:
-        return MaterialPageRoute(
-          builder: (context) => const OnBoardingView(),
-        );
+        return MaterialPageRoute(builder: (context) => const OnBoardingView());
       case AppRoutes.home:
-        return MaterialPageRoute(
-          builder: (context) => const HomeTab(),
-        );
+        return MaterialPageRoute(builder: (context) => const HomeTab());
       case AppRoutes.registerScreen:
-
       case AppRoutes.loginRoute:
-        return MaterialPageRoute(builder: (context) {
-          return BlocProvider(
-            create: (context) => getIt<LoginCubit>(),
-            child: const LoginScreen(),
-          );
-
-        },);
+        return MaterialPageRoute(
+          builder: (context) {
+            return BlocProvider(
+              create: (context) => getIt<LoginCubit>(),
+              child: const LoginScreen(),
+            );
+          },
+        );
 
       case AppRoutes.home:
-        return MaterialPageRoute(builder: (context) => const HomeScreen(),);
+        return MaterialPageRoute(builder: (context) => const HomeScreen());
 
+      case AppRoutes.otpScreen:
+        final email = setting.arguments as String;
+        return MaterialPageRoute(
+          builder: (context) {
+            return OtpScreen(userEmail: email);
+          },
+        );
+      case AppRoutes.resetPass:
+        final email = setting.arguments as String;
+        return MaterialPageRoute(
+          builder: (context) {
+            return CreatePasswordScreen(email: email);
+          },
+        );
       default:
         return MaterialPageRoute(
           builder: (context) {

@@ -1,3 +1,5 @@
+import 'package:dio/dio.dart';
+import 'package:fitness/core/error/api_error.dart';
 import 'package:fitness/core/result/result.dart';
 import 'package:fitness/core/storage/secure_storage_service.dart';
 import 'package:fitness/features/auth/api/client/auth_api_services.dart';
@@ -6,7 +8,14 @@ import 'package:fitness/features/auth/api/models/auth_response/auth_response.dar
 import 'package:fitness/features/auth/api/models/auth_response/body_info.dart';
 import 'package:fitness/features/auth/api/models/auth_response/personal_info.dart';
 import 'package:fitness/features/auth/api/models/auth_response/user_response.dart';
+import 'package:fitness/features/auth/api/models/forget_pass_models/forget_pass_response_model.dart';
+import 'package:fitness/features/auth/api/models/forget_pass_models/reset_pass_response_model.dart';
+import 'package:fitness/features/auth/api/models/forget_pass_models/send_code_response_model.dart';
 import 'package:fitness/features/auth/domain/entity/auth/auth_entity.dart';
+import 'package:fitness/features/auth/domain/entity/auth/forgetPassEntity/forget_pass_request.dart';
+import 'package:fitness/features/auth/domain/entity/auth/forgetPassEntity/forget_pass_response.dart';
+import 'package:fitness/features/auth/domain/entity/auth/forgetPassEntity/reset_pass_request.dart';
+import 'package:fitness/features/auth/domain/entity/auth/forgetPassEntity/send_code_request.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -19,19 +28,18 @@ void main() {
   late MockAuthApiServices mockAuthApiServices;
   late MockSecureStorageService mockSecureStorageService;
 
-  setUp(() {
-    mockAuthApiServices = MockAuthApiServices();
-    mockSecureStorageService = MockSecureStorageService();
-    authRemoteDsImpl = AuthRemoteDsImpl(
-      mockAuthApiServices,
-      mockSecureStorageService,
-    );
-  });
+  // Forget Password / Send Code / Reset Password variables
+  late ForgetPassResponseModel forgetPassResponseModel;
+  late ForgetPassRequest forgetPassRequest;
+  late SendCodeRequest sendCodeRequest;
+  late SendCodeResponseModel sendCodeResponseModel;
+  late ResetPassRequest resetPassRequest;
+  late ResetPassResponseModel resetPassResponseModel;
 
+  // Login / GetLoggedUser variables
   const String email = "test@gmail.com";
   const String password = "password";
-
-  final fakeResponse = AuthResponse(
+  final fakeAuthResponse = AuthResponse(
     message: "message",
     token: "token",
     user: UserResponse(
@@ -51,72 +59,218 @@ void main() {
     ),
   );
 
-  group('logIn', () {
-    test("Should return SuccessResult when API call success", () async {
-      // Arrange
+  setUpAll(() {
+    mockAuthApiServices = MockAuthApiServices();
+    mockSecureStorageService = MockSecureStorageService();
+    authRemoteDsImpl = AuthRemoteDsImpl(
+      mockAuthApiServices,
+      mockSecureStorageService,
+    );
+
+    forgetPassResponseModel = ForgetPassResponseModel(
+      message: "success",
+      info: '',
+    );
+    forgetPassRequest = ForgetPassRequest(email: "");
+    sendCodeRequest = SendCodeRequest(otpCode: "1234");
+    sendCodeResponseModel = SendCodeResponseModel(status: "");
+    resetPassResponseModel = ResetPassResponseModel(email: '', token: '');
+    resetPassRequest = ResetPassRequest(email: '', newPass: '');
+  });
+
+  //======================= Forget Password Tests =======================//
+  group("Forget Password Tests", () {
+    test("forgetPass returns SuccessResult on success", () async {
+      when(
+        mockAuthApiServices.forgetPassword(any),
+      ).thenAnswer((_) async => forgetPassResponseModel);
+
+      final res = await authRemoteDsImpl.forgetPass(
+        forgetPassReq: forgetPassRequest,
+      );
+
+      expect(res, isA<SuccessResult<ForgetPassResponse>>());
+      final acResult = res as SuccessResult<ForgetPassResponse>;
+      expect(acResult.successResult.info, forgetPassResponseModel.info);
+
+      verify(mockAuthApiServices.forgetPassword(any)).called(1);
+    });
+
+    test("forgetPass returns FailedResult on DioException", () async {
+      final dioEx = DioException(
+        requestOptions: RequestOptions(path: ''),
+        message: "dio Exception",
+      );
+      when(mockAuthApiServices.forgetPassword(any)).thenThrow(dioEx);
+
+      final res = await authRemoteDsImpl.forgetPass(
+        forgetPassReq: forgetPassRequest,
+      );
+
+      expect(res, isA<FailedResult<ForgetPassResponse>>());
+      final acResult = res as FailedResult<ForgetPassResponse>;
+      expect(acResult.errorMessage, ServerFailure.fromDioError(dioEx).error);
+
+      verify(mockAuthApiServices.forgetPassword(any)).called(1);
+    });
+
+    test("forgetPass returns FailedResult on other Exception", () async {
+      final ex = Exception("Some error");
+      when(mockAuthApiServices.forgetPassword(any)).thenThrow(ex);
+
+      final res = await authRemoteDsImpl.forgetPass(
+        forgetPassReq: forgetPassRequest,
+      );
+
+      expect(res, isA<FailedResult<ForgetPassResponse>>());
+      final acResult = res as FailedResult<ForgetPassResponse>;
+      expect(acResult.errorMessage.toString(), "Exception: Some error");
+
+      verify(mockAuthApiServices.forgetPassword(any)).called(1);
+    });
+
+    // Send Code
+    test("sendCode returns SuccessResult<void> on success", () async {
+      when(
+        mockAuthApiServices.sendCode(any),
+      ).thenAnswer((_) async => sendCodeResponseModel);
+
+      final res = await authRemoteDsImpl.sendCode(code: sendCodeRequest);
+
+      expect(res, isA<SuccessResult<void>>());
+      verify(mockAuthApiServices.sendCode(any)).called(1);
+    });
+
+    test("sendCode returns FailedResult<void> on DioException", () async {
+      final dioEx = DioException(
+        requestOptions: RequestOptions(path: ''),
+        message: "dio Exception",
+      );
+      when(mockAuthApiServices.sendCode(any)).thenThrow(dioEx);
+
+      final res = await authRemoteDsImpl.sendCode(code: sendCodeRequest);
+
+      expect(res, isA<FailedResult<void>>());
+      final acResult = res as FailedResult<void>;
+      expect(acResult.errorMessage, ServerFailure.fromDioError(dioEx).error);
+      verify(mockAuthApiServices.sendCode(any)).called(1);
+    });
+
+    test("sendCode returns FailedResult<void> on other Exception", () async {
+      final ex = Exception("Unexpected Exception");
+      when(mockAuthApiServices.sendCode(any)).thenThrow(ex);
+
+      final res = await authRemoteDsImpl.sendCode(code: sendCodeRequest);
+
+      expect(res, isA<FailedResult<void>>());
+      final acResult = res as FailedResult<void>;
+      expect(
+        acResult.errorMessage.toString(),
+        "Exception: Unexpected Exception",
+      );
+      verify(mockAuthApiServices.sendCode(any)).called(1);
+    });
+
+    // Reset Password
+    test("resetPassword returns SuccessResult<void> on success", () async {
+      when(
+        mockAuthApiServices.resetPass(any),
+      ).thenAnswer((_) async => resetPassResponseModel);
+
+      final res = await authRemoteDsImpl.resetPassword(code: resetPassRequest);
+
+      expect(res, isA<SuccessResult<void>>());
+      verify(mockAuthApiServices.resetPass(any)).called(1);
+    });
+
+    test("resetPassword returns FailedResult<void> on DioException", () async {
+      final dioEx = DioException(
+        requestOptions: RequestOptions(path: ''),
+        message: "dio Exception",
+      );
+      when(mockAuthApiServices.resetPass(any)).thenThrow(dioEx);
+
+      final res = await authRemoteDsImpl.resetPassword(code: resetPassRequest);
+
+      expect(res, isA<FailedResult<void>>());
+      final acResult = res as FailedResult<void>;
+      expect(acResult.errorMessage, ServerFailure.fromDioError(dioEx).error);
+      verify(mockAuthApiServices.resetPass(any)).called(1);
+    });
+
+    test(
+      "resetPassword returns FailedResult<void> on other Exception",
+      () async {
+        final ex = Exception("Unexpected Exception");
+        when(mockAuthApiServices.resetPass(any)).thenThrow(ex);
+
+        final res = await authRemoteDsImpl.resetPassword(
+          code: resetPassRequest,
+        );
+
+        expect(res, isA<FailedResult<void>>());
+        final acResult = res as FailedResult<void>;
+        expect(
+          acResult.errorMessage.toString(),
+          "Exception: Unexpected Exception",
+        );
+        verify(mockAuthApiServices.resetPass(any)).called(1);
+      },
+    );
+  });
+
+  //======================= Login / GetLoggedUser Tests =======================//
+  group("Login Tests", () {
+    test("logIn returns SuccessResult on success", () async {
       when(
         mockAuthApiServices.logIn(any),
-      ).thenAnswer((_) async => fakeResponse);
-      when(
-        mockSecureStorageService.saveToken(any),
-      ).thenAnswer((_) async => Future.value());
+      ).thenAnswer((_) async => fakeAuthResponse);
+      when(mockSecureStorageService.saveToken(any)).thenAnswer((_) async {});
 
-      // Act
-      final result = await authRemoteDsImpl.logIn(email, password);
+      final res = await authRemoteDsImpl.logIn(email, password);
 
-      // Assert
-      expect(result, isA<SuccessResult<AuthEntity>>());
-      final success = (result as SuccessResult<AuthEntity>).successResult;
+      expect(res, isA<SuccessResult<AuthEntity>>());
+      final success = (res as SuccessResult<AuthEntity>).successResult;
       expect(success.token, "token");
       expect(success.user?.personalInfo?.firstName, "Rana");
       expect(success.user?.bodyInfo?.height, 165);
+
       verify(mockSecureStorageService.saveToken("token")).called(1);
     });
 
-    test("Should return FailedResult when API throws Exception", () async {
-      // Arrange
+    test("logIn returns FailedResult on Exception", () async {
       when(mockAuthApiServices.logIn(any)).thenThrow(Exception("error"));
 
-      // Act
-      final result = await authRemoteDsImpl.logIn(email, password);
+      final res = await authRemoteDsImpl.logIn(email, password);
 
-      // Assert
-      expect(result, isA<FailedResult<AuthEntity>>());
-      final error = (result as FailedResult<AuthEntity>).errorMessage;
+      expect(res, isA<FailedResult<AuthEntity>>());
+      final error = (res as FailedResult<AuthEntity>).errorMessage;
       expect(error, contains("error"));
     });
-  });
 
-  group("getLoggedUser test", () {
-    test("Should return SuccessResult when API returns valid user", () async {
-      // Arrange
+    test("getLoggedUser returns SuccessResult on success", () async {
       when(
         mockAuthApiServices.getLoggedUser(),
-      ).thenAnswer((_) async => fakeResponse);
+      ).thenAnswer((_) async => fakeAuthResponse);
 
-      // Act
-      final result = await authRemoteDsImpl.getLoggedUser();
+      final res = await authRemoteDsImpl.getLoggedUser();
 
-      // Assert
-      expect(result, isA<SuccessResult<AuthEntity>>());
-      final success = (result as SuccessResult<AuthEntity>).successResult;
+      expect(res, isA<SuccessResult<AuthEntity>>());
+      final success = (res as SuccessResult<AuthEntity>).successResult;
       expect(success.user?.personalInfo?.firstName, "Rana");
       expect(success.user?.bodyInfo?.height, 165);
       verify(mockAuthApiServices.getLoggedUser()).called(1);
     });
 
-    test("Should return FailedResult when API throws exception", () async {
-      // Arrange
+    test("getLoggedUser returns FailedResult on Exception", () async {
       when(
         mockAuthApiServices.getLoggedUser(),
       ).thenThrow(Exception("Server error"));
 
-      // Act
-      final result = await authRemoteDsImpl.getLoggedUser();
+      final res = await authRemoteDsImpl.getLoggedUser();
 
-      // Assert
-      expect(result, isA<FailedResult<AuthEntity>>());
-      final error = (result as FailedResult<AuthEntity>).errorMessage;
+      expect(res, isA<FailedResult<AuthEntity>>());
+      final error = (res as FailedResult<AuthEntity>).errorMessage;
       expect(error, contains("Server error"));
     });
   });

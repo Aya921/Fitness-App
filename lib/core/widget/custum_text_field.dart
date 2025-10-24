@@ -19,7 +19,7 @@ class CustomTextField extends StatefulWidget {
     required this.icon,
     required this.validator,
     this.isPassword = false,
-    this.onChanged
+    this.onChanged,
   });
 
   @override
@@ -36,10 +36,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       controller: widget.controller,
       obscureText: widget.isPassword ? _obscure : false,
-       obscuringCharacter: '•',
+      obscuringCharacter: '•',
       decoration: InputDecoration(
         prefixIcon: Padding(
-          padding: EdgeInsets.only(left: context.setWidth(20),right: context.setWidth(10) ),
+          padding: EdgeInsets.only(
+            left: context.setWidth(20),
+            right: context.setWidth(10),
+          ),
           child: Image.asset(
             widget.icon,
             width: context.setWidth(20),
@@ -47,20 +50,20 @@ class _CustomTextFieldState extends State<CustomTextField> {
           ),
         ),
         suffixIcon: widget.isPassword
-            ? Padding(
-              padding: const EdgeInsets.only(right: 12),
-              child: IconButton(
-                  icon: Icon(
+            ? IconButton(
+                icon: Padding(
+                  padding: const EdgeInsets.only(right: 12),
+                  child: Icon(
                     _obscure ? Icons.visibility_off : Icons.visibility,
                     color: AppColors.white,
                   ),
-                  onPressed: () {
-                    setState(() {
-                      _obscure = !_obscure;
-                    });
-                  },
                 ),
-            )
+                onPressed: () {
+                  setState(() {
+                    _obscure = !_obscure;
+                  });
+                },
+              )
             : null,
         hintText: widget.hintText,
       ),

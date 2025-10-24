@@ -1,9 +1,11 @@
+import 'package:equatable/equatable.dart';
 import '../constants/constants.dart';
 import 'package:dio/dio.dart';
-class ResponseException {
-  const ResponseException({required this.message});
 
+class ResponseException extends Equatable implements Exception {
   final String message;
+
+  const ResponseException({required this.message});
 
   static ResponseException empty() =>
       ResponseException(message: Constants.noResponseReceivedMessage.trim());
@@ -18,4 +20,7 @@ class ResponseException {
       return empty();
     }
   }
+
+  @override
+  List<Object?> get props => [message];
 }
