@@ -28,8 +28,26 @@ class UserResponse {
     this.createdAt,
   });
 
-  factory UserResponse.fromJson(Map<String, dynamic> json) =>
-      _$UserResponseFromJson(json);
+  factory UserResponse.fromJson(Map<String, dynamic> json) {
+    return UserResponse(
+      personalInfo: PersonalInfo(
+        id: json[JsonSerializableConstants.id],
+        firstName: json[JsonSerializableConstants.firstName],
+        lastName: json[JsonSerializableConstants.lastName],
+        email: json[JsonSerializableConstants.email],
+        gender: json[JsonSerializableConstants.gender],
+        age: json[JsonSerializableConstants.age],
+        photo: json[JsonSerializableConstants.photo],
+      ),
+      bodyInfo: BodyInfo(
+        weight: json[JsonSerializableConstants.weight],
+        height: json[JsonSerializableConstants.height],
+      ),
+      activityLevel: json[JsonSerializableConstants.activityLevel],
+      goal: json[JsonSerializableConstants.goal],
+      createdAt: json[JsonSerializableConstants.createdAt],
+    );
+  }
 
   Map<String, dynamic> toJson() => _$UserResponseToJson(this);
 

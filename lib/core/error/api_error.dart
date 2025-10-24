@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:fitness/core/constants/constants.dart';
 import '../constants/exception_constant.dart';
 
 abstract class Failure {
@@ -12,7 +13,6 @@ class ServerFailure extends Failure {
 
   factory ServerFailure.fromDioError(DioException dioException) {
     switch (dioException.type) {
-
       case DioExceptionType.connectionTimeout:
         return ServerFailure(ExceptionConstants.connectionTimeout);
       case DioExceptionType.sendTimeout:
@@ -39,7 +39,15 @@ class ServerFailure extends Failure {
 
   factory ServerFailure.fromResponse(int? statusCode, dynamic response) {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
-      return ServerFailure(response['error']['message']);
+      if (response is Map &&
+          response[Constants.error] is Map &&
+          response[Constants.error][Constants.message] != null) {
+        return ServerFailure(response[Constants.error][Constants.message]);
+      } else if (response is Map && response[Constants.error] is String) {
+        return ServerFailure(response[Constants.error]);
+      } else {
+        return ServerFailure(ExceptionConstants.generalError);
+      }
     } else if (statusCode == 404) {
       return ServerFailure(ExceptionConstants.notFound);
     } else if (statusCode == 500) {

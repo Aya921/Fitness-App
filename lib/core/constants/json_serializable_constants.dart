@@ -3,6 +3,7 @@ abstract class JsonSerializableConstants{
   static const String message = "message";
   static const String user = "user";
   static const String token = "token";
+  static const String error = "error";
 
   //user response
   static const String firstName = "firstName";

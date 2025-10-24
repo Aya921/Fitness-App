@@ -35,7 +35,8 @@ void main() async {
 }
 
 class FitnessApp extends StatelessWidget {
-  const FitnessApp({super.key});
+  final bool isLoggedIn;
+   const FitnessApp({required this.isLoggedIn,super.key});
   @override
   Widget build(BuildContext context) {
     final appLanguageConfig = Provider.of<AppLanguageConfig>(context);
@@ -50,8 +51,9 @@ class FitnessApp extends StatelessWidget {
           theme: AppTheme.darkTheme,
           debugShowCheckedModeBanner: false,
           onGenerateRoute: Routes.onGenerate,
+          initialRoute: isLoggedIn ? AppRoutes.home : AppRoutes.onBoarding,
           navigatorKey: Routes.navigatorKey,
-          initialRoute: AppRoutes.home,
+          //initialRoute: AppRoutes.onBoarding,
         
         ));
   }

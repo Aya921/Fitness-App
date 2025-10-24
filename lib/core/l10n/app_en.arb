@@ -25,4 +25,15 @@
   "chatAi": "chat bot",
   "gym": "Gym",
   "profile": "Profile"
+  "numberOnly": "Enter numbers only",
+  "loginSuccess":"Login successful ✔︎",
+  "login":"Login",
+  "forgetPass":"Forget Password?",
+  "email":"Email",
+  "password":"Password",
+  "heyThere":"Hey There",
+  "welcomeBack":"WELCOME BACK",
+  "doNotHaveAccount": "Don’t have an account? ",
+  "register":"Register",
+  "or":"Or"
 }

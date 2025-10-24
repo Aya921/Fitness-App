@@ -13,8 +13,10 @@ class AuthResponse {
   final UserResponse? user;
   @JsonKey(name: JsonSerializableConstants.token)
   final String? token;
+  @JsonKey(name: JsonSerializableConstants.error)
+  final String? error;
 
-  AuthResponse({this.message, this.user, this.token});
+  AuthResponse({this.message, this.user, this.token,this.error});
 
   factory AuthResponse.fromJson(Map<String, dynamic> json) {
     return _$AuthResponseFromJson(json);

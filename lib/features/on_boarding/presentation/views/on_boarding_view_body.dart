@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:fitness/core/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -81,7 +82,9 @@ class OnBoardingViewBody extends StatelessWidget {
                     right: 16,
                     child: GestureDetector(
                       onTap: () {
-                        cubit.pageController.jumpToPage(images.length - 1);
+                        // cubit.pageController.jumpToPage(images.length - 1);
+                        Navigator.pushNamedAndRemoveUntil(context, AppRoutes.loginRoute,(route) => false,);
+
                       },
                       child: const Text(
                         Constants.skip,
@@ -173,7 +176,7 @@ class OnBoardingViewBody extends StatelessWidget {
                                       ),
                                       onPressed: () {
                                         if (isLastPage) {
-                                          ///////////////////////
+                                          Navigator.pushNamedAndRemoveUntil(context, AppRoutes.loginRoute,(route) => false,);
                                         } else {
                                           cubit.intent(
                                             NextPageIntent(),
