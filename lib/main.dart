@@ -52,7 +52,6 @@ class FitnessApp extends StatelessWidget {
           onGenerateRoute: Routes.onGenerate,
           navigatorKey: Routes.navigatorKey,
           initialRoute: AppRoutes.onBoarding,
-        
         ));
   }
 }

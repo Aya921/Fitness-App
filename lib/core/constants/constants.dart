@@ -8,9 +8,9 @@ abstract class Constants {
   static const String doIt = "Do It";
   static const String noResponseReceivedMessage = "noResponseReceivedMessage";
   static const String anUnknownErrorOccurred = "anUnknownErrorOccurred";
-  static const String titleOnBoarding = "the price of excellent is discipline";
-  static const String titleTwoBoarding = "Fitness has never been so much fun";
-  static const String titleThreeBoarding = "NO MORE EXCUSES Do It Now";
+  static const String titleOnBoarding = "the price of excellent\n is discipline";
+  static const String titleTwoBoarding = "Fitness has never been so \n much fun";
+  static const String titleThreeBoarding = "NO MORE EXCUSES \n Do It Now";
   static const String descriptionOnBoarding = "Lorem ipsum dolor sit amet consectetur. Eu urna ut gravida quis id pretium purus. Mauris massa";
 
 
