@@ -1,5 +1,5 @@
 import 'package:fitness/config/di/di.dart';
-import 'package:fitness/core/constants/assets_maneger.dart';
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
@@ -48,7 +48,7 @@ void main() {
         find.byType(CustomTextField),
       );
       expect(firstCustumTextFields.hintText, l10n.email);
-      expect(firstCustumTextFields.icon, AssetsManeger.mail);
+      expect(firstCustumTextFields.icon, AssetsManager.mail);
 
       final context = tester.element(find.byType(CustomFieldsButton));
 

@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:fitness/core/constants/assets_maneger.dart';
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/widget/app_background.dart';
@@ -53,6 +53,6 @@ void main() {
     expect(imageFinder, findsOneWidget);
     final Image imageWidget = tester.widget(imageFinder);
     final AssetImage assetImage = imageWidget.image as AssetImage;
-    expect(assetImage.assetName, AssetsManeger.backGroundImage);
+    expect(assetImage.assetName, AssetsManager.backGroundImage);
   });
 }

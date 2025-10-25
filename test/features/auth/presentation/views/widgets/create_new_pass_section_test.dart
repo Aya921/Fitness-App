@@ -1,5 +1,5 @@
 import 'package:fitness/config/di/di.dart';
-import 'package:fitness/core/constants/assets_maneger.dart';
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
@@ -51,7 +51,7 @@ void main() {
       );
       expect(firstCustumTextFields.controller.value, newPassController.value);
       expect(firstCustumTextFields.hintText, l10n.password);
-      expect(firstCustumTextFields.icon, AssetsManeger.lock);
+      expect(firstCustumTextFields.icon, AssetsManager.lock);
 
       final context = tester.element(find.byType(CustomFieldsButton));
 
@@ -71,7 +71,7 @@ void main() {
         confirmPassController.value,
       );
       expect(secondCustumTextFields.hintText, l10n.confirmPass);
-      expect(secondCustumTextFields.icon, AssetsManeger.lock);
+      expect(secondCustumTextFields.icon, AssetsManager.lock);
 
       expect(
         find.byWidgetPredicate(

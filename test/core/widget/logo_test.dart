@@ -1,4 +1,4 @@
-import 'package:fitness/core/constants/assets_maneger.dart';
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
@@ -35,7 +35,7 @@ void main() {
 
     final AssetImage assetImage = imageWidget.image as AssetImage;
 
-    expect(assetImage.assetName, AssetsManeger.logo);
+    expect(assetImage.assetName, AssetsManager.logo);
 
     expect(imageWidget.height, context.setHight(70));
   });
