@@ -102,10 +102,12 @@ class OnBoardingViewBody extends StatelessWidget {
                   left: 0,
                   right: 0,
                   top: context.setHight(540),
+
                   child: ClipRRect(
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(context.setWidth(30)),
                     ),
+
                     child: BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                       child: Container(
