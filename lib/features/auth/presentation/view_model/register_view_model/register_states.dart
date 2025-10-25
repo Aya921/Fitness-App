@@ -1,9 +1,11 @@
 import 'package:equatable/equatable.dart';
 import 'package:fitness/core/enum/levels.dart';
+import 'package:fitness/features/auth/domain/entity/auth/auth_entity.dart';
+import 'package:fitness/features/auth/domain/entity/auth/user_entity.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/enum/request_state.dart';
 class RegisterState extends Equatable {
-  final StateStatus<void> registerStatus;
+  final StateStatus<UserEntity> registerStatus;
   final bool isObscure;
   final bool isObscureConfirm;
   final AutovalidateMode autoValidateMode;
@@ -33,7 +35,7 @@ final int age;
     this.isTyping=false
   });
   RegisterState copyWith({
-    StateStatus<void>? registerStatus,
+    StateStatus<UserEntity>? registerStatus,
     bool? isObscure,
     bool? isObscureConfirm,
     AutovalidateMode? autoValidateMode,

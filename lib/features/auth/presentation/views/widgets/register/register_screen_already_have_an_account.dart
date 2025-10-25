@@ -1,8 +1,10 @@
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
+import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreenAlreadyHaveAnAccount extends StatelessWidget {
@@ -24,6 +26,10 @@ class RegisterScreenAlreadyHaveAnAccount extends StatelessWidget {
               ),
             ),
             TextSpan(
+              recognizer: TapGestureRecognizer()
+              ..onTap =(){
+                Navigator.pushReplacementNamed(context, AppRoutes.loginRoute);
+              },
               text: context.loc.loginRegister,
               style:
                   getBoldStyle(

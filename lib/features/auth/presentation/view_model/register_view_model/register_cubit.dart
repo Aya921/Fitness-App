@@ -5,6 +5,7 @@ import 'package:fitness/core/result/result.dart';
 import 'package:fitness/features/auth/api/models/register/request/register_request.dart';
 import 'package:fitness/features/auth/api/models/register/request/user_body_info.dart';
 import 'package:fitness/features/auth/api/models/register/request/user_info.dart';
+import 'package:fitness/features/auth/domain/entity/auth/user_entity.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_intent.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_states.dart';
 import 'package:flutter/material.dart';
@@ -136,28 +137,17 @@ void _validateBasicInfo() {
     final result = await _registerUseCase.register(request);
 
     switch (result) {
-      case SuccessResult<void>():
-        emit(state.copyWith(registerStatus: const StateStatus.success(null)));
+      case SuccessResult<UserEntity>():
+        emit(state.copyWith(registerStatus:  StateStatus.success(result.successResult)));
         break;
-      case FailedResult<void>():
-        final error = (result as FailedResult).errorMessage;
-        if (error is ResponseException) {
+      case FailedResult<UserEntity>():
           emit(
             state.copyWith(
-              error: error,
-              registerStatus: StateStatus.failure(error as ResponseException),
-            ),
-          );
-        } else {
-          emit(
-            state.copyWith(
-              error: error,
               registerStatus: StateStatus.failure(
-                ResponseException(message: error.toString()),
+                ResponseException(message: result.errorMessage),
               ),
             ),
           );
-        }
         break;
     }
   }

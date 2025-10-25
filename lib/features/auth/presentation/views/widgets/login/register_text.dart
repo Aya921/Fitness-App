@@ -1,5 +1,7 @@
 import 'package:fitness/core/constants/app_widgets_key.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
+import 'package:fitness/core/routes/app_routes.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
@@ -27,6 +29,10 @@ class RegisterText extends StatelessWidget {
               ),
             ),
             TextSpan(
+              recognizer:TapGestureRecognizer()
+              ..onTap =(){
+                Navigator.pushReplacementNamed(context, AppRoutes.registerScreen);
+              },
               text: context.loc.register,
               style: getExtraBoldStyle(
                 color: AppColors.orange,

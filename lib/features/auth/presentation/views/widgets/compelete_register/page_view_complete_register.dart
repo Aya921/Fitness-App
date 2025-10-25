@@ -1,6 +1,7 @@
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/loaders/loaders.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
+import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/widget/loading_button.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_cubit.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_intent.dart';
@@ -70,12 +71,12 @@ class _PageViewCompeleteRegisterState extends State<PageViewCompeleteRegister> {
 
     return BlocListener<RegisterCubit, RegisterState>(
       listenWhen: (previous, current) =>
-         previous.registerStatus != current.registerStatus,
+         current.registerStatus!.isSuccess||
+         current.registerStatus!.isFailure,
       listener: (context, state) {
         if (state.registerStatus.isSuccess) {
           Loaders.showSuccessMessage(message: "Registerd Successfully!", context: context);
-          //navigate to home or login
-          // Navigator.pushReplacementNamed(context, AppRoutes.homeScreen);
+          Navigator.pushReplacementNamed(context, AppRoutes.loginRoute);
         } else if (state.registerStatus.isFailure) {
           Loaders.showErrorMessage(
             message: state.registerStatus.error?.message ?? "",
