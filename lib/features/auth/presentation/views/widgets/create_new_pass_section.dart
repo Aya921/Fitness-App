@@ -1,5 +1,5 @@
 import 'package:fitness/config/di/di.dart';
-import 'package:fitness/core/constants/assets_maneger.dart';
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/routes/app_routes.dart';
@@ -67,7 +67,7 @@ class _CreateNewPassSectionState extends State<CreateNewPassSection> {
             CustomTextField(
               controller: _newPassController,
               hintText: context.loc.password,
-              icon: AssetsManeger.lock,
+              icon: AssetsManager.lock,
               validator: (val) {
                 final res = Validator.validatePassword(context, val);
                 isPasswordCorrect.value = res == null;
@@ -85,7 +85,7 @@ class _CreateNewPassSectionState extends State<CreateNewPassSection> {
             CustomTextField(
               controller: _confirmPassController,
               hintText: context.loc.confirmPass,
-              icon: AssetsManeger.lock,
+              icon: AssetsManager.lock,
               validator: (val) {
                 final res = Validator.validateConfirmPassword(
                   context,

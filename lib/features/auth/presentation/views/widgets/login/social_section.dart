@@ -1,4 +1,4 @@
-import 'package:fitness/core/constants/assets_maneger.dart';
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
@@ -51,11 +51,11 @@ class SocialSection extends StatelessWidget {
         const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SocialIconBuilder(icon: AssetsManeger.facebookIcon),
+            SocialIconBuilder(icon: AssetsManager.facebookIcon),
             SizedBox(width: 10),
-            SocialIconBuilder(icon: AssetsManeger.googleIcon),
+            SocialIconBuilder(icon: AssetsManager.googleIcon),
             SizedBox(width: 10),
-            SocialIconBuilder(icon: AssetsManeger.appleIcon),
+            SocialIconBuilder(icon: AssetsManager.appleIcon),
           ],
         ),
 

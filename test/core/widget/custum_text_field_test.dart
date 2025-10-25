@@ -1,4 +1,4 @@
-import 'package:fitness/core/constants/assets_maneger.dart';
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
@@ -26,7 +26,7 @@ void main() {
             body: CustomTextField(
               controller: controller,
               hintText: "Email",
-              icon: AssetsManeger.lock,
+              icon: AssetsManager.lock,
               validator: null,
             ),
           ),
@@ -71,7 +71,7 @@ void main() {
     final image = paddingWidget.child as Image;
     expect(image.image, isA<AssetImage>());
     final assetImage = image.image as AssetImage;
-    expect(assetImage.assetName, AssetsManeger.lock);
+    expect(assetImage.assetName, AssetsManager.lock);
   });
 
   testWidgets('test custum text field struture when passwrod is true and initial icon visibility is off and when click on it switch to visiblility icon ...', (
@@ -92,7 +92,7 @@ void main() {
             body: CustomTextField(
               controller: controller,
               hintText: "Email",
-              icon: AssetsManeger.lock,
+              icon: AssetsManager.lock,
               validator: null,
               isPassword: true,
             ),

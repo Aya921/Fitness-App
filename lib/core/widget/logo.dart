@@ -1,4 +1,3 @@
-
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:flutter/material.dart';
 

@@ -42,7 +42,7 @@ class PersonalInfo {
 
   Map<String, dynamic> toJson() => _$PersonalInfoToJson(this);
 
-  PersonalInfoEntity toEntity(){
+  PersonalInfoEntity toEntity() {
     return PersonalInfoEntity(
       id: id,
       firstName: firstName,

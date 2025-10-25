@@ -19,7 +19,7 @@ class BodyInfo {
 
   Map<String, dynamic> toJson() => _$BodyInfoToJson(this);
 
-  BodyInfoEntity toEntity(){
+  BodyInfoEntity toEntity() {
     return BodyInfoEntity(
       weight: weight,
       height: height

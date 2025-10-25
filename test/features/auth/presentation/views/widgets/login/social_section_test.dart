@@ -1,4 +1,4 @@
-import 'package:fitness/core/constants/assets_maneger.dart';
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/theme/app_colors.dart';
@@ -64,9 +64,9 @@ void main() {
       expect(
         socialIcons.map((e) => e.icon),
         equals([
-          AssetsManeger.facebookIcon,
-          AssetsManeger.googleIcon,
-          AssetsManeger.appleIcon,
+          AssetsManager.facebookIcon,
+          AssetsManager.googleIcon,
+          AssetsManager.appleIcon,
         ]),
       );
     });

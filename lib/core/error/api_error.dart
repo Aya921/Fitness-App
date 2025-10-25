@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:fitness/core/constants/constants.dart';
 import '../constants/exception_constant.dart';
 
 abstract class Failure {

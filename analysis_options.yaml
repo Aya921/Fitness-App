@@ -42,3 +42,5 @@ linter:
     require_trailing_commas: true
     unnecessary_lambdas: true
     unnecessary_null_checks: true
+
+

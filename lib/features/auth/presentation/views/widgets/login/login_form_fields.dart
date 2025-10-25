@@ -1,4 +1,4 @@
-import 'package:fitness/core/constants/assets_maneger.dart';
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/validator/validator.dart';
@@ -16,7 +16,7 @@ class LoginFormFields extends StatelessWidget {
     return Column(
       children: [
         CustomTextField(
-          icon: AssetsManeger.mail,
+          icon: AssetsManager.mail,
           onChanged: (val) {
             cubit.doIntent(intent: UpdateEmailIntent());
           },
@@ -26,7 +26,7 @@ class LoginFormFields extends StatelessWidget {
         ),
         SizedBox(height: context.setHight(16)),
         CustomTextField(
-          icon: AssetsManeger.lock,
+          icon: AssetsManager.lock,
           onChanged: (val) {
             cubit.doIntent(intent: UpdatePasswordIntent());
           },

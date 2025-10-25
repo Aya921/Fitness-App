@@ -17,6 +17,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.4.1"
+  animate_do:
+    dependency: "direct main"
+    description:
+      name: animate_do
+      sha256: e5c8b92e8495cba5adfff17c0b017d50f46b2766226e9faaf68bc08c91aef034
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.0"
+  another_flushbar:
+    dependency: "direct main"
+    description:
+      name: another_flushbar
+      sha256: "2b99671c010a7d5770acf5cb24c9f508b919c3a7948b6af9646e773e7da7b757"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.12.32"
   ansicolor:
     dependency: transitive
     description:
@@ -93,10 +109,10 @@ packages:
     dependency: transitive
     description:
       name: build_daemon
-      sha256: "8e928697a82be082206edb0b9c99c5a4ad6bc31c9e9b8b2f291ae65cd4a25daa"
+      sha256: "409002f1adeea601018715d613115cfaf0e31f512cb80ae4534c79867ae2363d"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.4"
+    version: "4.1.0"
   build_resolvers:
     dependency: transitive
     description:
@@ -581,6 +597,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.5.4"
+  infinite_listview:
+    dependency: transitive
+    description:
+      name: infinite_listview
+      sha256: f6062c1720eb59be553dfa6b89813d3e8dd2f054538445aaa5edaddfa5195ce6
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   injectable:
     dependency: "direct main"
     description:
@@ -765,6 +789,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.2"
+  numberpicker:
+    dependency: "direct main"
+    description:
+      name: numberpicker
+      sha256: "4c129154944b0f6b133e693f8749c3f8bfb67c4d07ef9dcab48b595c22d1f156"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.2"
   package_config:
     dependency: transitive
     description:
@@ -853,6 +885,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.0"
+  percent_indicator:
+    dependency: "direct main"
+    description:
+      name: percent_indicator
+      sha256: "157d29133bbc6ecb11f923d36e7960a96a3f28837549a20b65e5135729f0f9fd"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.5"
   petitparser:
     dependency: transitive
     description:

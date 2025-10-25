@@ -2,6 +2,7 @@
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
+import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -9,12 +10,11 @@ import 'package:provider/provider.dart';
 import 'config/app_language/app_language_config.dart';
 import 'config/di/di.dart';
 import 'package:device_preview/device_preview.dart';
-
-import 'core/routes/app_routes.dart';
 import 'core/theme/app_theme.dart';
 
 void main() async {
   ///ensure engine is Oky
+//  final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies();
   await getIt.allReady();

@@ -1,5 +1,5 @@
 import 'package:fitness/config/di/di.dart';
-import 'package:fitness/core/constants/assets_maneger.dart';
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/routes/app_routes.dart';
@@ -63,7 +63,7 @@ class _ForgetPassSectionState extends State<ForgetPassSection> {
             CustomTextField(
               controller: _emailController,
               hintText: context.loc.email,
-              icon: AssetsManeger.mail,
+              icon: AssetsManager.mail,
               validator: (val) {
                 final res = Validator.validateEmail(context, val);
                 WidgetsBinding.instance.addPostFrameCallback((_) {
