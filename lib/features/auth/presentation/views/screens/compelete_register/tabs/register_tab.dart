@@ -34,8 +34,8 @@ class RegisterTab extends StatelessWidget {
           keyboardType: TextInputType.name,
           textInputAction: TextInputAction.next,
           hintText: context.loc.firtNameRegister,
-          prefixIcon: SvgPicture.asset(AssetsManeger.userIcon),
-          validator:Validator.validateUsername,
+          prefixIcon: SvgPicture.asset(AssetsManager.userIcon),
+          validator:(value)=>Validator.validateUsername(context, value),
         ),
         SizedBox(height: context.setHight(16)),
         CustomTextFormField(
@@ -43,8 +43,8 @@ class RegisterTab extends StatelessWidget {
             hintText: context.loc.lastNameRegister,
             keyboardType: TextInputType.name,
             textInputAction: TextInputAction.next,
-            prefixIcon: SvgPicture.asset(AssetsManeger.userIcon),
-            validator:Validator.validateUsername
+            prefixIcon: SvgPicture.asset(AssetsManager.userIcon),
+            validator:(value)=>Validator.validateUsername(context, value)
         ),
         SizedBox(height: context.setHight(16)),
         CustomTextFormField(
@@ -52,8 +52,8 @@ class RegisterTab extends StatelessWidget {
             hintText: context.loc.emailRegister,
             keyboardType: TextInputType.emailAddress,
             textInputAction: TextInputAction.next,
-            prefixIcon: SvgPicture.asset(AssetsManeger.emailIcon),
-            validator:Validator.validateEmail
+            prefixIcon: SvgPicture.asset(AssetsManager.emailIcon),
+            validator:(value)=>Validator.validateEmail(context, value)
         ),
         SizedBox(height: context.setHight(16)),
         CustomTextFormField(
@@ -62,12 +62,12 @@ class RegisterTab extends StatelessWidget {
             keyboardType: TextInputType.visiblePassword,
             textInputAction: TextInputAction.done,
             obscureText: true,
-            prefixIcon: SvgPicture.asset(AssetsManeger.lockIcon),
+            prefixIcon: SvgPicture.asset(AssetsManager.lockIcon),
             suffixIcon: IconButton(
               onPressed: () {},
               icon: const Icon(Icons.visibility_outlined),
             ),
-            validator:Validator.validatePassword
+            validator:(value)=>Validator.validatePassword(context, value)
         ),
         SizedBox(height: context.setHight(24)),
         Row(
@@ -109,7 +109,7 @@ class RegisterTab extends StatelessWidget {
                 color: AppColors.gray[AppColors.colorCode90],
               ),
               child: SvgPicture.asset(
-                AssetsManeger.facebookIcon,
+                AssetsManager.facebookIcon,
                 fit: BoxFit.scaleDown,
               ),
             ),
@@ -122,7 +122,7 @@ class RegisterTab extends StatelessWidget {
                 color: AppColors.gray[AppColors.colorCode90],
               ),
               child: SvgPicture.asset(
-                AssetsManeger.googleIcon,
+                AssetsManager.googleIcon,
                 fit: BoxFit.scaleDown,
               ),
             ),
@@ -135,7 +135,7 @@ class RegisterTab extends StatelessWidget {
                 color: AppColors.gray[AppColors.colorCode90],
               ),
               child: SvgPicture.asset(
-                AssetsManeger.appleIcon,
+                AssetsManager.appleIcon,
                 fit: BoxFit.scaleDown,
               ),
             ),

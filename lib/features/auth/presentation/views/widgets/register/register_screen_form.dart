@@ -43,8 +43,8 @@ class RegisterScreenForm extends StatelessWidget {
                 keyboardType: TextInputType.name,
                 textInputAction: TextInputAction.next,
                 hintText: context.loc.firtNameRegister,
-                prefixIcon: SvgPicture.asset(AssetsManeger.userIcon),
-                validator: Validator.validateUsername,
+                prefixIcon: SvgPicture.asset(AssetsManager.userIcon),
+                validator:(value)=>Validator.validateUsername(context, value),
                 onChanged: (_) {
                   registerCubit.doIntent(intent: const IsTypingIntent());
                 },
@@ -56,8 +56,8 @@ class RegisterScreenForm extends StatelessWidget {
                 hintText: context.loc.lastNameRegister,
                 keyboardType: TextInputType.name,
                 textInputAction: TextInputAction.next,
-                prefixIcon: SvgPicture.asset(AssetsManeger.userIcon),
-                validator: Validator.validateUsername,
+                prefixIcon: SvgPicture.asset(AssetsManager.userIcon),
+                validator: (value)=>Validator.validateUsername(context, value),
                  onChanged: (_) {
                   registerCubit.doIntent(intent: const IsTypingIntent());
                 }
@@ -69,8 +69,8 @@ class RegisterScreenForm extends StatelessWidget {
                 hintText: context.loc.emailRegister,
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
-                prefixIcon: SvgPicture.asset(AssetsManeger.emailIcon),
-                validator: Validator.validateEmail,
+                prefixIcon: SvgPicture.asset(AssetsManager.emailIcon),
+                validator: (value)=>Validator.validateEmail(context, value),
                  onChanged: (_) {
                   registerCubit.doIntent(intent: const IsTypingIntent());
                 }
@@ -83,7 +83,7 @@ class RegisterScreenForm extends StatelessWidget {
                 keyboardType: TextInputType.visiblePassword,
                 textInputAction: TextInputAction.done,
                 obscureText: state.isObscure,
-                prefixIcon: SvgPicture.asset(AssetsManeger.lockIcon),
+                prefixIcon: SvgPicture.asset(AssetsManager.lockIcon),
                 suffixIcon: IconButton(
                   onPressed: () {
                     registerCubit.doIntent(intent: const ToggleObscurePasswordIntent());
@@ -91,7 +91,7 @@ class RegisterScreenForm extends StatelessWidget {
                   icon: Icon(state.isObscure? 
                     Icons.visibility_off_outlined :Icons.visibility_outlined),
                 ),
-                validator: Validator.validatePassword,
+                validator:(value)=>Validator.validatePassword(context, value),
                  onChanged: (_) {
                   registerCubit.doIntent(intent: const IsTypingIntent());
                 }

@@ -19,7 +19,7 @@ class CustomPopIcon extends StatelessWidget {
             shape: BoxShape.circle,
             color: AppColors.orange[AppColors.baseColor]
         ),
-        child: ImageIcon(const AssetImage(AssetsManeger.popIcon),
+        child: ImageIcon(const AssetImage(AssetsManager.popIcon),
           size: context.setMinSize(24),
           color: AppColors.white,),
       ),

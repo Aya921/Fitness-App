@@ -22,7 +22,7 @@ class RegisterScreenSocialRow extends StatelessWidget {
             color: AppColors.gray[AppColors.colorCode90],
           ),
           child: SvgPicture.asset(
-            AssetsManeger.facebookIcon,
+            AssetsManager.facebookIcon,
             fit: BoxFit.scaleDown,
           ),
         ),
@@ -35,7 +35,7 @@ class RegisterScreenSocialRow extends StatelessWidget {
             color: AppColors.gray[AppColors.colorCode90],
           ),
           child: SvgPicture.asset(
-            AssetsManeger.googleIcon,
+            AssetsManager.googleIcon,
             fit: BoxFit.scaleDown,
           ),
         ),
@@ -48,7 +48,7 @@ class RegisterScreenSocialRow extends StatelessWidget {
             color: AppColors.gray[AppColors.colorCode90],
           ),
           child: SvgPicture.asset(
-            AssetsManeger.appleIcon,
+            AssetsManager.appleIcon,
             fit: BoxFit.scaleDown,
           ),
         ),

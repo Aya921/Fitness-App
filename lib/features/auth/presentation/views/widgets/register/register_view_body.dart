@@ -22,7 +22,7 @@ class RegisterScreenViewBody extends StatelessWidget {
       fit: StackFit.expand,
       children: [
         const Image(
-          image: AssetImage(AssetsManeger.backGroundImage),
+          image: AssetImage(AssetsManager.backGroundImage),
           fit: BoxFit.cover,
         ),
         BackdropFilter(
@@ -35,7 +35,7 @@ class RegisterScreenViewBody extends StatelessWidget {
               children: [
                 Center(
                   child: Image(
-                    image: const AssetImage(AssetsManeger.logo),
+                    image: const AssetImage(AssetsManager.logo),
                     height: context.setHight(70),
                     width: context.setWidth(48),
                   ),
