@@ -48,7 +48,9 @@ class ServerFailure extends Failure {
     } else if (statusCode == 500) {
       return ServerFailure(ExceptionConstants.internalServer);
     } else {
-      return ServerFailure(ExceptionConstants.generalError);
+      final errorMessage =
+          response['message'] ?? response['error'] ?? 'Unknown error occurred';
+      return ServerFailure(errorMessage);
     }
   }
 }

@@ -3,6 +3,7 @@ import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class GenderWidget extends StatelessWidget {
    const GenderWidget({super.key, this.isSelected=false
@@ -33,14 +34,16 @@ final bool isSelected;
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Flexible(child: Image.asset(fit: BoxFit.contain,iconData)),
+              Flexible(child:
+              SvgPicture.asset(fit: BoxFit.contain,iconData)),
               SizedBox(height: context.setHight(8)),
               SizedBox(
                 width: context.setMinSize(39),
                 child: FittedBox(
                   alignment: Alignment.center,
                   fit: BoxFit.scaleDown,
-                  child: Text(title, style: getSemiBoldStyle(color: AppColors.white,fontSize:
+                  child: Text(title,
+                    style: getSemiBoldStyle(color: AppColors.white,fontSize:
                   context.setSp(FontSize.s12)),textAlign: TextAlign.center,),
                 ),
               ),

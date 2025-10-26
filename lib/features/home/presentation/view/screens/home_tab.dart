@@ -10,6 +10,7 @@ import 'package:fitness/features/home/presentation/view/widgets/app_section_widg
 import 'package:flutter/material.dart';
 
 import '../../../../../core/constants/assets_manager.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -37,11 +38,13 @@ class _HomeTabState extends State<HomeTab> {
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           onTap: (index) {
-            currIndex = index;
-            setState(() {});
+            setState(() {
+              currIndex = index;
+
+            });
           },
           currentIndex: currIndex,
-
+          iconSize: context.setMinSize(30),
           selectedItemColor: AppColors.orange[AppColors.baseColor],
           unselectedItemColor: AppColors.white,
           showSelectedLabels: true,
@@ -55,22 +58,26 @@ class _HomeTabState extends State<HomeTab> {
             BottomNavigationBarItem(
               label: context.loc.explore,
               backgroundColor: AppColors.gray[AppColors.colorCode90],
-              icon: const ImageIcon(AssetImage(AssetsManager.homeSvg)),
+              icon:const ImageIcon(Svg(
+                AssetsManager.homeSvg,)),
             ),
             BottomNavigationBarItem(
               label: context.loc.chatAi,
 
-              icon: const ImageIcon(AssetImage(AssetsManager.chatSvg)),
+              icon:  const ImageIcon(Svg(
+                AssetsManager.chatSvg,)),
             ),
             BottomNavigationBarItem(
               label: context.loc.gym,
 
-              icon: const ImageIcon(AssetImage(AssetsManager.gymSvg)),
+              icon: const ImageIcon(Svg(
+                AssetsManager.gymSvg,)),
             ),
             BottomNavigationBarItem(
               label: context.loc.profile,
 
-              icon: const ImageIcon(AssetImage(AssetsManager.profileSvg)),
+              icon: const ImageIcon(Svg(
+                AssetsManager.profileSvg,)),
             ),
           ],
         ),

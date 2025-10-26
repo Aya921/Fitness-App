@@ -173,13 +173,13 @@ abstract class AppLocalizations {
   /// No description provided for @male.
   ///
   /// In en, this message translates to:
-  /// **'Male'**
+  /// **'male'**
   String get male;
 
   /// No description provided for @female.
   ///
   /// In en, this message translates to:
-  /// **'Female'**
+  /// **'female'**
   String get female;
 
   /// No description provided for @year.
