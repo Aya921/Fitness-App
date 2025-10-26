@@ -54,7 +54,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 icon: Padding(
                   padding: const EdgeInsets.only(right: 12),
                   child: Icon(
-                    _obscure ? Icons.visibility_off : Icons.visibility,
+                    _obscure ? Icons.visibility_off_outlined : Icons.visibility_outlined,
                     color: AppColors.white,
                   ),
                 ),
