@@ -79,11 +79,7 @@ flutter:
    - assets/icons/
 
   fonts:
-<<<<<<< HEAD
-
-=======
    
->>>>>>> origin/auth
     - family: BalooThambi2
       fonts:
         - asset: assets/fonts/BalooThambi2-Regular.ttf
