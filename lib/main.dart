@@ -22,7 +22,6 @@ void main() async {
 
   final userSession = getIt<UserSessionHandler>();
   final isLoggedIn = await userSession.checkIfUserLoggedIn();
-
   runApp(
     DevicePreview(
       enabled: true,
