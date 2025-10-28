@@ -78,5 +78,7 @@
   "login": "تسجيل الدخول",
   "forgetPass": "نسيت كلمة المرور؟",
   "welcomeBack": "مرحبًا بعودتك",
-  "doNotHaveAccount": "ليس لديك حساب؟ "
+  "doNotHaveAccount": "ليس لديك حساب؟ ",
+  "recommendation":"اقتراحات",
+  "ingredients":"المكونات"
 }

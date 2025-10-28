@@ -1,5 +1,6 @@
 import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/routes/app_routes.dart';
+import 'package:fitness/core/widget/video_widgets/vido_player_screen.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_cubit.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_intent.dart';
 import 'package:fitness/features/auth/presentation/views/screens/compelete_register/screen/complete_register_screen.dart';
@@ -35,10 +36,12 @@ abstract class Routes {
             return const ForgetPasswordScreen();
           },
         );
- case AppRoutes.registerScreen:
+      case AppRoutes.registerScreen:
         return MaterialPageRoute(
           builder: (context) => BlocProvider<RegisterCubit>(
-            create: (context) => getIt.get<RegisterCubit>()..doIntent(intent: const RegisterInitializationIntent()),
+            create: (context) =>
+                getIt.get<RegisterCubit>()
+                  ..doIntent(intent: const RegisterInitializationIntent()),
             child: const RegisterScreen(),
           ),
         );
@@ -56,8 +59,6 @@ abstract class Routes {
           },
         );
 
-   
-
       case AppRoutes.otpScreen:
         final email = setting.arguments as String;
         return MaterialPageRoute(
@@ -72,6 +73,15 @@ abstract class Routes {
             return CreatePasswordScreen(email: email);
           },
         );
+      case AppRoutes.videoPage:
+        final videourl = setting.arguments as String;
+        return PageRouteBuilder(
+          opaque: false,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              VideoPlayerScreen(videoUrl: videourl),
+        
+        );
+
       default:
         return MaterialPageRoute(
           builder: (context) {
