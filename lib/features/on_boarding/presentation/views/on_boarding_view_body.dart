@@ -1,3 +1,4 @@
+import 'package:fitness/core/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fitness/core/constants/assets_manager.dart';
@@ -35,7 +36,7 @@ class OnBoardingViewBody extends StatelessWidget {
                   right: context.setWidth(16),
                   child: GestureDetector(
                     onTap: () {
-                     ////////////////////////////////// skip Action//////////////
+                     Navigator.pushReplacementNamed(context, AppRoutes.loginRoute);
                     },
                     child: isLastPage
                         ? const SizedBox.shrink()

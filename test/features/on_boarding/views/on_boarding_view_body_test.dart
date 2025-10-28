@@ -81,4 +81,7 @@ TestWidgetsFlutterBinding.ensureInitialized();
     expect(assetImage.assetName, AssetsManager.onBoardingBackGround);
     expect(backgroundImage.fit, BoxFit.cover);
   });
+    tearDown(() async {
+    await getIt.reset();
+  });
 }
