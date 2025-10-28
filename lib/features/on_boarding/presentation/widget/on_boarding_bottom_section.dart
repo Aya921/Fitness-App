@@ -1,11 +1,13 @@
 import 'dart:ui';
+import 'package:fitness/core/extension/app_localization_extension.dart';
+import 'package:fitness/core/routes/app_routes.dart';
+import 'package:fitness/core/theme/font_manager.dart';
+import 'package:fitness/core/theme/font_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fitness/core/constants/constants.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/widget/custom_fitness_button.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
-import 'package:fitness/core/responsive/device_utils.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../cubit/on_boarding_cubit.dart';
 import '../cubit/on_boarding_intent.dart';
@@ -51,19 +53,10 @@ class OnBoardingBottomSection extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(top: context.setHight(31)),
                           child: Text(
-                            cubit.titles[pageIndex],
+                                getTitle(context, pageIndex),
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: context.setSp(
-                                DeviceUtils.valueDecider(
-                                  context,
-                                  onMobile: 24.0,
-                                  onTablet: 28.0,
-                                ),
-                              ),
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: getExtraBoldStyle(color: AppColors.white)
+                                  .copyWith(fontSize: FontSize.s24),
                           ),
                         ),
                         const DiscretionSection(),
@@ -78,18 +71,9 @@ class OnBoardingBottomSection extends StatelessWidget {
                               onPressed: () {
                                 cubit.intent(NextPageIntent());
                               },
-                              buttonTitle: Constants.next,
-                              titleStyle: TextStyle(
-                                color: AppColors.white,
-                                fontSize: context.setSp(
-                                  DeviceUtils.valueDecider(
-                                    context,
-                                    onMobile: 14.0,
-                                    onTablet: 16.0,
-                                  ),
-                                ),
-                                fontWeight: FontWeight.bold,
-                              ),
+                              buttonTitle: context.loc.next,
+                              titleStyle: getExtraBoldStyle(color: AppColors.lightWhite)
+                                  .copyWith(fontSize: FontSize.s14),
                             ),
                           )
                               : Row(
@@ -99,21 +83,12 @@ class OnBoardingBottomSection extends StatelessWidget {
                                 height: context.setHight(50),
                                 child: CustomElevatedButton(
                                   onPressed: () => cubit.intent(PreviousPageIntent()),
-                                  buttonTitle: Constants.skip,
+                                  buttonTitle: context.loc.back,
                                   backgroundColor: Colors.transparent,
                                   borderColor:
                                   Theme.of(context).colorScheme.primary,
-                                  titleStyle: TextStyle(
-                                    color: AppColors.white,
-                                    fontSize: context.setSp(
-                                      DeviceUtils.valueDecider(
-                                        context,
-                                        onMobile: 14.0,
-                                        onTablet: 16.0,
-                                      ),
-                                    ),
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                                  titleStyle: getExtraBoldStyle(color: AppColors.lightWhite)
+                                  .copyWith(fontSize: FontSize.s14),
                                 ),
                               ),
                               const Spacer(),
@@ -121,10 +96,10 @@ class OnBoardingBottomSection extends StatelessWidget {
                                 count: images.length,
                                 controller: cubit.controller(),
                                 axisDirection: Axis.horizontal,
-                                effect: const ExpandingDotsEffect(
+                                effect:  ExpandingDotsEffect(
                                   activeDotColor: AppColors.orange,
-                                  dotHeight: 6,
-                                  dotWidth: 6,
+                                  dotHeight: context.setHight(6),
+                                  dotWidth: context.setWidth(6),
                                 ),
                               ),
                               const Spacer(),
@@ -134,25 +109,16 @@ class OnBoardingBottomSection extends StatelessWidget {
                                 child: CustomElevatedButton(
                                   onPressed: () {
                                     if (isLastPage) {
-                                    /// xxxxxxxxxxxxxxxx  /// TODO: Navigate to main screen////xxxxxxxxxxxxxx
+                                    Navigator.pushReplacementNamed(context,AppRoutes.loginRoute);
                                     } else {
                                       cubit.intent(NextPageIntent());
                                     }
                                   },
                                   buttonTitle: isLastPage
-                                      ? Constants.doIt
-                                      : Constants.next,
-                                  titleStyle: TextStyle(
-                                    color: AppColors.white,
-                                    fontSize: context.setSp(
-                                      DeviceUtils.valueDecider(
-                                        context,
-                                        onMobile: 14.0,
-                                        onTablet: 16.0,
-                                      ),
-                                    ),
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                      ? context.loc.doIt
+                                      : context.loc.next,
+                                  titleStyle:getExtraBoldStyle(color: AppColors.lightWhite)
+                                  .copyWith(fontSize: FontSize.s14),
                                 ),
                               ),
                             ],
@@ -170,4 +136,9 @@ class OnBoardingBottomSection extends StatelessWidget {
       },
     );
   }
+}
+String getTitle(BuildContext context, int index) {
+  if (index == 0) return context.loc.onBoardingtitleOne;
+  if (index == 1) return context.loc.onBoardingtitletwo;
+  return context.loc.onBoardingtitlethree;
 }

@@ -428,6 +428,60 @@ abstract class AppLocalizations {
   /// **'Done'**
   String get done;
 
+  /// No description provided for @back.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get back;
+
+  /// No description provided for @doIt.
+  ///
+  /// In en, this message translates to:
+  /// **'Do IT'**
+  String get doIt;
+
+  /// No description provided for @skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// No description provided for @onBoardingtitleOne.
+  ///
+  /// In en, this message translates to:
+  /// **'The Price of Excellence\nis Discipline'**
+  String get onBoardingtitleOne;
+
+  /// No description provided for @onBoardingtitletwo.
+  ///
+  /// In en, this message translates to:
+  /// **'Fitness Has Never Been So\nMuch Fun'**
+  String get onBoardingtitletwo;
+
+  /// No description provided for @onBoardingtitlethree.
+  ///
+  /// In en, this message translates to:
+  /// **'NO MORE EXCUSES\nDo It Now'**
+  String get onBoardingtitlethree;
+
+  /// No description provided for @onBoardingdescriptionOne.
+  ///
+  /// In en, this message translates to:
+  /// **'Build a routine that sticks. Personalized plans, daily reminders, and clear tracking small steps, big results'**
+  String get onBoardingdescriptionOne;
+
+  /// No description provided for @onBoardingdescriptionTwo.
+  ///
+  /// In en, this message translates to:
+  /// **'Make fitness a game. Quick workouts, challenges, and friend leaderboards keep you moving and coming back'**
+  String get onBoardingdescriptionTwo;
+
+  /// No description provided for @onBoardingdescriptionThree.
+  ///
+  /// In en, this message translates to:
+  /// **'Busy day? No problem. Train anywhere in minutes and watch your progress climb start today'**
+  String get onBoardingdescriptionThree;
+
   /// No description provided for @emailRequired.
   ///
   /// In en, this message translates to:

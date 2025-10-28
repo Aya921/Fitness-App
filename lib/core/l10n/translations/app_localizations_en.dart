@@ -175,6 +175,36 @@ class AppLocalizationsEn extends AppLocalizations {
   String get done => 'Done';
 
   @override
+  String get back => 'Back';
+
+  @override
+  String get doIt => 'Do IT';
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get onBoardingtitleOne => 'The Price of Excellence\nis Discipline';
+
+  @override
+  String get onBoardingtitletwo => 'Fitness Has Never Been So\nMuch Fun';
+
+  @override
+  String get onBoardingtitlethree => 'NO MORE EXCUSES\nDo It Now';
+
+  @override
+  String get onBoardingdescriptionOne =>
+      'Build a routine that sticks. Personalized plans, daily reminders, and clear tracking small steps, big results';
+
+  @override
+  String get onBoardingdescriptionTwo =>
+      'Make fitness a game. Quick workouts, challenges, and friend leaderboards keep you moving and coming back';
+
+  @override
+  String get onBoardingdescriptionThree =>
+      'Busy day? No problem. Train anywhere in minutes and watch your progress climb start today';
+
+  @override
   String get emailRequired => 'Email is required';
 
   @override

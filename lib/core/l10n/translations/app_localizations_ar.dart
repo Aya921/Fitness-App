@@ -175,6 +175,36 @@ class AppLocalizationsAr extends AppLocalizations {
   String get done => 'تأكيد';
 
   @override
+  String get back => 'رجوع';
+
+  @override
+  String get doIt => 'ابدأ الآن';
+
+  @override
+  String get skip => 'تخطي';
+
+  @override
+  String get onBoardingtitleOne => 'ثمن التميز\nهو الانضباط';
+
+  @override
+  String get onBoardingtitletwo => 'اللياقة لم تكن أبدًا\nبهذا القدر من المتعة';
+
+  @override
+  String get onBoardingtitlethree => 'لا مزيد من الأعذار\nابدأ الآن';
+
+  @override
+  String get onBoardingdescriptionOne =>
+      'ابنِ روتينًا ثابتًا. خطط مخصصة، تذكيرات يومية، وتتبع دقيق—خطوات صغيرة ونتائج كبيرة.';
+
+  @override
+  String get onBoardingdescriptionTwo =>
+      'حوّل التمارين إلى لعبة. جلسات قصيرة، تحديات ممتعة، ولوحات صدارة للأصدقاء تبقيك متحمسًا.';
+
+  @override
+  String get onBoardingdescriptionThree =>
+      'يومك مزدحم؟ لا مشكلة. تمرن في أي وقت وأي مكان وشاهد تقدمك يزداد يومًا بعد يوم.';
+
+  @override
   String get emailRequired => 'البريد الإلكتروني مطلوب';
 
   @override
