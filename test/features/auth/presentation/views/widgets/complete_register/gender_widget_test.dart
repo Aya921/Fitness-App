@@ -53,8 +53,8 @@ void main() {
     expect(find.byType(SvgPicture), findsOneWidget);
     expect(find.byType(Text), findsOneWidget);
     expect(find.text(testTitle), findsOneWidget);
-    expect(find.byType(SizedBox), findsNWidgets(2));
-    expect(find.byType(FittedBox), findsOneWidget);
+    expect(find.byType(SizedBox), findsNWidgets(4));
+    expect(find.byType(FittedBox), findsNWidgets(2));
     expect(find.byType(Flexible), findsOneWidget);
   });
 
