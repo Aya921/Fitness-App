@@ -4,6 +4,8 @@ import 'package:fitness/features/auth/presentation/view_model/register_view_mode
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_intent.dart';
 import 'package:fitness/features/auth/presentation/views/screens/compelete_register/screen/complete_register_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/register/register_screen.dart';
+import 'package:fitness/features/home/presentation/view/screens/tabs/gym_screen.dart';
+import 'package:fitness/features/home/presentation/view_model/workout_view_model/workout_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,7 +21,8 @@ import '../../features/on_boarding/view/on_boarding_view.dart';
 
 abstract class Routes {
   static final GlobalKey<NavigatorState> navigatorKey =
-      GlobalKey<NavigatorState>();
+  GlobalKey<NavigatorState>();
+
   static Route onGenerate(RouteSettings setting) {
     final url = Uri.parse(setting.name ?? "");
     switch (url.path) {
@@ -35,12 +38,15 @@ abstract class Routes {
             return const ForgetPasswordScreen();
           },
         );
- case AppRoutes.registerScreen:
+      case AppRoutes.registerScreen:
         return MaterialPageRoute(
-          builder: (context) => BlocProvider<RegisterCubit>(
-            create: (context) => getIt.get<RegisterCubit>()..doIntent(intent: const RegisterInitializationIntent()),
-            child: const RegisterScreen(),
-          ),
+          builder: (context) =>
+              BlocProvider<RegisterCubit>(
+                create: (context) =>
+                getIt.get<RegisterCubit>()
+                  ..doIntent(intent: const RegisterInitializationIntent()),
+                child: const RegisterScreen(),
+              ),
         );
       case AppRoutes.completeRegisterScreen:
         return MaterialPageRoute(
@@ -56,7 +62,6 @@ abstract class Routes {
           },
         );
 
-   
 
       case AppRoutes.otpScreen:
         final email = setting.arguments as String;
@@ -72,6 +77,30 @@ abstract class Routes {
             return CreatePasswordScreen(email: email);
           },
         );
+
+      case AppRoutes.exe:
+        final level = setting.arguments as String;
+        final initialLevel = setting.arguments as String;
+        return MaterialPageRoute(
+          builder: (context) {
+            return BlocProvider(
+
+              create: (context) => getIt<WorkoutCubit>(),
+              child: ExercisesScreen(initialLevel:initialLevel ,),
+            );
+          },
+        );
+
+      // case AppRoutes.pop:
+      //   return MaterialPageRoute(
+      //     builder: (context) {
+      //       return BlocProvider(
+      //           create: (context) => getIt<ExercisesCubit>(),
+      //           child: const LevelsScreen());
+      //     },
+      //   );
+
+
       default:
         return MaterialPageRoute(
           builder: (context) {

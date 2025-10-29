@@ -8,4 +8,6 @@ abstract class EndPointsConstants {
   static const String forgetPassEndPoint = "forgotPassword";
   static const String verifyResetCode = "verifyResetCode";
   static const String resetPass = "resetPassword";
+  static const String allExercises = "exercises";
+  static const String difficultyLevels = "levels";
 }
