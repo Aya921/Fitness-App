@@ -58,7 +58,7 @@ class _DetailsFoodScreenState extends State<DetailsFoodScreen> {
                    
                     SmallImage(
                       videoUrl: mealInfo.media.strYoutube,
-                      imageUrl: AssetsManager.test,
+                      imageUrl: mealInfo.media.strMealThumb,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       txt1: mealInfo.strMeal,
                       txt2: mealInfo.strInstructions,

@@ -18,7 +18,7 @@ class SmallBackGroundImage extends StatelessWidget {
         borderRadius: BorderRadius.circular(context.setMinSize(40)),
         child: Stack(
           children: [
-            Image.asset(
+            Image.network(
              smallImage,
               fit: BoxFit.cover,
               alignment: const Alignment(0, -0.4),
