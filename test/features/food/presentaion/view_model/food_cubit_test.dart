@@ -1,6 +1,8 @@
 import 'package:bloc_test/bloc_test.dart';
+import 'package:fitness/core/enum/request_state.dart';
 import 'package:fitness/core/error/response_exception.dart';
 import 'package:fitness/core/result/result.dart';
+import 'package:fitness/features/food/domain/entities/meals_by_category.dart';
 import 'package:fitness/features/food/domain/entities/meals_categories.dart';
 import 'package:fitness/features/food/domain/use_case/get_meals_by_category.dart';
 import 'package:fitness/features/food/domain/use_case/get_meals_categories_use_case.dart';
@@ -13,16 +15,22 @@ import 'package:mockito/mockito.dart';
 
 import 'food_cubit_test.mocks.dart';
 
-@GenerateMocks([GetMealsCategoriesUseCase,GetMealsByCategoriesUseCase])
+@GenerateMocks([GetMealsCategoriesUseCase, GetMealsByCategoriesUseCase])
 void main() {
   late MockGetMealsCategoriesUseCase mockGetMealsCategoriesUseCase;
   late MockGetMealsByCategoriesUseCase mockGetMealsByCategoriesUseCase;
   late FoodCubit foodCubit;
   setUp(() {
-    mockGetMealsByCategoriesUseCase=MockGetMealsByCategoriesUseCase();
+    mockGetMealsByCategoriesUseCase = MockGetMealsByCategoriesUseCase();
     mockGetMealsCategoriesUseCase = MockGetMealsCategoriesUseCase();
-    foodCubit = FoodCubit(mockGetMealsCategoriesUseCase,mockGetMealsByCategoriesUseCase);
+    foodCubit = FoodCubit(
+      mockGetMealsCategoriesUseCase,
+      mockGetMealsByCategoriesUseCase,
+    );
     provideDummy<Result<List<MealCategoryEntity>>>(
+      FailedResult("failed to load data"),
+    );
+    provideDummy<Result<List<MealsByCategory>>>(
       FailedResult("failed to load data"),
     );
   });
@@ -101,5 +109,71 @@ void main() {
       ],
       verify: (_) => verify(mockGetMealsCategoriesUseCase.call()).called(1),
     );
+  });
+  group("Get Meals By Category", () {
+    final List<MealsByCategory> fakeSuccessResponse = [
+      const MealsByCategory(
+        strMeal: "15-minute chicken & halloumi burgers",
+        strMealThumb:
+            "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg",
+        idMeal: "53085",
+      ),
+      const MealsByCategory(
+        strMeal: "Ayam Percik",
+        strMealThumb:
+            "https://www.themealdb.com/images/media/meals/020z181619788503.jpg",
+        idMeal: "53050",
+      ),
+    ];
+    const category = "Chicken";
+    blocTest<FoodCubit, FoodStates>(
+      "emit [loading,success] when use case success on get meals by category ",
+      build: () {
+        when(
+          mockGetMealsByCategoriesUseCase.call(category),
+        ).thenAnswer((_) async => SuccessResult(fakeSuccessResponse));
+
+        return foodCubit;
+      },
+      act: (cubit) =>
+          cubit..doIntent(intent: MealsByCategoriesIntent(category)),
+      expect: () => [
+        foodCubit.state.copyWith(
+          mealsByCategorieStatus: const StateStatus.loading(),
+        ),
+        foodCubit.state.copyWith(
+          mealsByCategorieStatus: StateStatus.success(fakeSuccessResponse),
+        ),
+      ],
+      verify: (_) =>
+          verify(mockGetMealsByCategoriesUseCase.call(category)).called(1),
+    );
+
+    blocTest<FoodCubit, FoodStates>(
+      "emit [loading, failure] when use case failed on get meals by category",
+      build: () {
+        when(mockGetMealsByCategoriesUseCase.call(category))
+            .thenAnswer((_) async => FailedResult("failed to load data"));
+        return foodCubit;
+      },
+      act: (cubit) => cubit.doIntent(intent: MealsByCategoriesIntent(category)),
+      expect: () => [
+        const FoodStates().copyWith(
+          mealsByCategorieStatus: const StateStatus.loading(),
+          errorMealsByCategories: null,
+        ),
+
+        const FoodStates().copyWith(
+          mealsByCategorieStatus: const StateStatus.failure(
+            ResponseException(message: "failed to load data"),
+          ),
+          errorMealsByCategories: "failed to load data",
+        ),
+      ],
+      verify: (_) =>
+          verify(mockGetMealsByCategoriesUseCase.call(category)).called(1),
+    );
+
+
   });
 }

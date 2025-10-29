@@ -26,12 +26,13 @@ class FoodCubit extends Cubit<FoodStates>{
     }
   }
   void _getMealsByCategory(String category)async{
-    final result=await _getMealsByCategoriesUseCase.call(category);
     emit(
         state.copyWith(
           mealsByCategorieStatus: const StateStatus.loading(),
         )
     );
+    final result=await _getMealsByCategoriesUseCase.call(category);
+
     switch(result){
 
       case SuccessResult<List<MealsByCategory>>():
@@ -51,12 +52,13 @@ class FoodCubit extends Cubit<FoodStates>{
     }
   }
   Future<void> _getMealsCategories()async{
-    final result=await _getMealsCategoriesUseCase.call();
     emit(
         state.copyWith(
           mealsCategories: const StateStatus.loading(),
         )
     );
+    final result=await _getMealsCategoriesUseCase.call();
+
     switch(result){
 
       case SuccessResult<List<MealCategoryEntity>>():

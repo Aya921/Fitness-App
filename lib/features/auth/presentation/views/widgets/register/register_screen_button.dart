@@ -14,41 +14,43 @@ class RegisterScreenButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<RegisterCubit, RegisterState>(
       builder: (context, state) {
-          return CustomElevatedButton(
-          onPressed: state.isTyping ? () {
-         final cubit = context.read<RegisterCubit>();
-         cubit.doIntent(intent: const ValidateBasicInfoIntent());
-         if(cubit.state.isBasicInfoValid){
- Navigator.of(context).push(
-    PageRouteBuilder(
-      transitionDuration: const Duration(milliseconds: 400),
-      pageBuilder: (context, animation, secondaryAnimation) {
-        return BlocProvider.value(
-          value: cubit,
-          child: const CompeleteRegisterScreen(),
-        );
-      },
-      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        const begin = Offset(1.0, 0.0);
-        const end = Offset.zero;
-        final tween = Tween(begin: begin, end: end)
-            .chain(CurveTween(curve: Curves.easeInOut));
+        return CustomElevatedButton(
+          onPressed: state.isTyping
+              ? () {
+                  final cubit = context.read<RegisterCubit>();
+                  cubit.doIntent(intent: const ValidateBasicInfoIntent());
+                  if (cubit.state.isBasicInfoValid) {
+                    Navigator.of(context).push(
+                      PageRouteBuilder(
+                        transitionDuration: const Duration(milliseconds: 400),
+                        pageBuilder: (context, animation, secondaryAnimation) {
+                          return BlocProvider.value(
+                            value: cubit,
+                            child: const CompeleteRegisterScreen(),
+                          );
+                        },
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
+                              const begin = Offset(1.0, 0.0);
+                              const end = Offset.zero;
+                              final tween = Tween(
+                                begin: begin,
+                                end: end,
+                              ).chain(CurveTween(curve: Curves.easeInOut));
 
-        return SlideTransition(
-          position: animation.drive(tween),
-          child: child,
-        );
-      },
-    ),
-  );
-         }
- 
-          } : null,
+                              return SlideTransition(
+                                position: animation.drive(tween),
+                                child: child,
+                              );
+                            },
+                      ),
+                    );
+                  }
+                }
+              : null,
           buttonTitle: context.loc.register,
         );
-        }
-        
-      
+      },
     );
   }
 }

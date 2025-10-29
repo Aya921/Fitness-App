@@ -381,6 +381,7 @@ class _PageViewCompeleteRegisterState extends State<PageViewCompeleteRegister> {
                         return const LoadingButton();
                       }
                       return ElevatedButton(
+                        key: const Key("page_view_button"),
                         style: ElevatedButton.styleFrom(
                           fixedSize: Size(
                             MediaQuery.of(context).size.width,

@@ -30,7 +30,6 @@ duration: const Duration(
         getRegularStyle(color: AppColors.white,
             fontSize:context.setSp(16) ),),
       ],
-    ))
-     ;
+    ));
   }
 }

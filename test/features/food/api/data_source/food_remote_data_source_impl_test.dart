@@ -18,7 +18,8 @@ void main() {
   late FoodRemoteDataSourceImpl foodRemoteDataSourceImpl;
   setUpAll(() {
     mockFoodApiServices = MockFoodApiServices();
-    foodRemoteDataSourceImpl = FoodRemoteDataSourceImpl(mockFoodApiServices);
+    foodRemoteDataSourceImpl = FoodRemoteDataSourceImpl
+      (mockFoodApiServices);
   });
   group("Food Meals Categories", () {
     final successResponse = MealCaregoriesResponse(
@@ -109,7 +110,7 @@ void main() {
       when(mockFoodApiServices.getMealsByCategories(category)).thenAnswer((_)async=>
       fakeSuccessResponse);
       final result= await foodRemoteDataSourceImpl.getMealsByCategories(category);
-      var meals=fakeSuccessResponse.meals?.map((e)=>e.toEntity()).toList();
+      final meals=fakeSuccessResponse.meals?.map((e)=>e.toEntity()).toList();
 
       expect(result, isA<SuccessResult>());
       expect((result as SuccessResult).successResult,meals );
