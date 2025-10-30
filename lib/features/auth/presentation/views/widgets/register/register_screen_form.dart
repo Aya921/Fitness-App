@@ -38,6 +38,7 @@ class RegisterScreenForm extends StatelessWidget {
               ),
               SizedBox(height: context.setHight(16)),
               CustomTextFormField(
+                key: const Key("firstNameRegisterForm"),
                 controller: registerCubit.firstNameController,
                 label: context.loc.firtNameRegister,
                 keyboardType: TextInputType.name,
@@ -51,6 +52,7 @@ class RegisterScreenForm extends StatelessWidget {
               ),
               SizedBox(height: context.setHight(16)),
               CustomTextFormField(
+                key: const Key("LastNameRegisterForm"),
                 controller: registerCubit.lastNameController,
                 label: context.loc.lastNameRegister,
                 hintText: context.loc.lastNameRegister,
@@ -64,6 +66,7 @@ class RegisterScreenForm extends StatelessWidget {
               ),
               SizedBox(height: context.setHight(16)),
               CustomTextFormField(
+                key: const Key("emailNameRegisterForm"),
                 controller: registerCubit.emailController,
                 label: context.loc.emailRegister,
                 hintText: context.loc.emailRegister,
@@ -77,6 +80,7 @@ class RegisterScreenForm extends StatelessWidget {
               ),
               SizedBox(height: context.setHight(16)),
               CustomTextFormField(
+                key: const Key("passwordRegisterForm"),
                 controller: registerCubit.passwordController,
                 label: context.loc.passwordRegister,
                 hintText: context.loc.passwordRegister,
