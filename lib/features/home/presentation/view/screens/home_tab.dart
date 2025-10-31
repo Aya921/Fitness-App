@@ -1,4 +1,3 @@
-import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
@@ -8,9 +7,7 @@ import 'package:fitness/features/home/presentation/view/screens/tabs/explore_scr
 import 'package:fitness/features/home/presentation/view/screens/tabs/gym_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/tabs/profile_screen.dart';
 import 'package:fitness/features/home/presentation/view/widgets/app_section_widget.dart';
-import 'package:fitness/features/home/presentation/view_model/workout_view_model/workout_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/constants/assets_manager.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
@@ -24,15 +21,9 @@ class HomeTab extends StatefulWidget {
 
 class _HomeTabState extends State<HomeTab> {
   List<Widget> screens = [
-    BlocProvider(
-      create: (context) => getIt<WorkoutCubit>(),
-      child: const LevelsScreen(),
-    ),
+    const ExploreScreen(),
     const ChatAiScreen(),
-    BlocProvider(
-      create: (context) => getIt<WorkoutCubit>(),
-      child: const ExercisesScreen(),
-    ),
+    const GymScreen(),
     const ProfileScreen(),
   ];
   int currIndex = 0;
@@ -49,6 +40,7 @@ class _HomeTabState extends State<HomeTab> {
           onTap: (index) {
             setState(() {
               currIndex = index;
+
             });
           },
           currentIndex: currIndex,
@@ -66,22 +58,26 @@ class _HomeTabState extends State<HomeTab> {
             BottomNavigationBarItem(
               label: context.loc.explore,
               backgroundColor: AppColors.gray[AppColors.colorCode90],
-              icon: const ImageIcon(Svg(AssetsManager.homeSvg)),
+              icon:const ImageIcon(Svg(
+                AssetsManager.homeSvg,)),
             ),
             BottomNavigationBarItem(
               label: context.loc.chatAi,
 
-              icon: const ImageIcon(Svg(AssetsManager.chatSvg)),
+              icon:  const ImageIcon(Svg(
+                AssetsManager.chatSvg,)),
             ),
             BottomNavigationBarItem(
               label: context.loc.gym,
 
-              icon: const ImageIcon(Svg(AssetsManager.gymSvg)),
+              icon: const ImageIcon(Svg(
+                AssetsManager.gymSvg,)),
             ),
             BottomNavigationBarItem(
               label: context.loc.profile,
 
-              icon: const ImageIcon(Svg(AssetsManager.profileSvg)),
+              icon: const ImageIcon(Svg(
+                AssetsManager.profileSvg,)),
             ),
           ],
         ),

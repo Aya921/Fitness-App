@@ -46,7 +46,6 @@
             <data android:scheme="https" />
         </intent>
 
-        <!-- لدعم روابط يوتيوب المباشرة مثل youtube:// -->
         <intent>
             <action android:name="android.intent.action.VIEW" />
             <data android:scheme="youtube" />
