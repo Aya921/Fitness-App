@@ -26,7 +26,6 @@ class _TabBarWidgetState extends State<TabBarWidget> {
     super.initState();
     selectedIndex = widget.initialSelectedIndex;
   }
-
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
