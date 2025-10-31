@@ -4,16 +4,17 @@ import 'package:fitness/features/auth/presentation/view_model/register_view_mode
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_intent.dart';
 import 'package:fitness/features/auth/presentation/views/screens/compelete_register/screen/complete_register_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/register/register_screen.dart';
+import 'package:fitness/features/foods/presentaion/view/screens/food_detials_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/features/auth/presentation/views/screens/forget_pass/create_password_screen.dart';
-import 'package:fitness/features/auth/presentation/views/screens/forget_pass/forget_password_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/forget_pass/otp_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/home_tab.dart';
 import 'package:fitness/features/auth/presentation/view_model/login_view_model/login_cubit.dart';
 import 'package:fitness/features/auth/presentation/views/screens/login/login_screen.dart';
+
 
 import '../../features/on_boarding/view/on_boarding_view.dart';
 
@@ -29,12 +30,20 @@ abstract class Routes {
       case AppRoutes.home:
         return MaterialPageRoute(builder: (context) => const HomeTab());
 
-      case AppRoutes.forgetPassScreen:
+
+      case AppRoutes.food:
+        final index = setting.arguments as int;
+
         return MaterialPageRoute(
+
           builder: (context) {
-            return const ForgetPasswordScreen();
+            return
+             FoodDetialsScreen(index: index,
+
+              );
           },
         );
+
  case AppRoutes.registerScreen:
         return MaterialPageRoute(
           builder: (context) => BlocProvider<RegisterCubit>(

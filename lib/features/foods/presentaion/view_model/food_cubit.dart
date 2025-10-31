@@ -3,7 +3,6 @@ import 'package:fitness/core/error/response_exception.dart';
 import 'package:fitness/core/result/result.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-
 import '../../domain/entities/meals_by_category.dart';
 import '../../domain/entities/meals_categories.dart';
 import '../../domain/use_case/get_meal_by_categories_use_case.dart';
@@ -16,10 +15,8 @@ class FoodCubit extends Cubit<FoodStates>{
   final GetMealsCategoriesUseCase _getMealsCategoriesUseCase;
   final GetMealsByCategoriesUseCase _getMealsByCategoriesUseCase;
   Future<void> doIntent({required FoodIntent intent})async {
-    switch(intent){
-
+    switch(intent) {
       case FoodInitializationIntent():
-
         _getMealsCategories();
       case MealsByCategoriesIntent():
         _getMealsByCategory(intent.category);
@@ -62,15 +59,19 @@ class FoodCubit extends Cubit<FoodStates>{
     switch(result){
 
       case SuccessResult<List<MealCategoryEntity>>():
+
         emit(
             state.copyWith(
+
               mealsCategories: StateStatus.success(result.successResult),
             )
         );
+
         break;
       case FailedResult<List<MealCategoryEntity>>():
         emit(
             state.copyWith(
+
               errorCategories: result.errorMessage,
               mealsCategories: StateStatus.failure(
                   ResponseException(message: result.errorMessage)),
@@ -80,3 +81,7 @@ class FoodCubit extends Cubit<FoodStates>{
     }
   }
 }
+
+
+
+

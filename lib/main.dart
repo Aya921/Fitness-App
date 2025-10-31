@@ -2,8 +2,8 @@
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
-import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/routes/routes.dart';
+import 'package:fitness/test_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'config/app_language/app_language_config.dart';
@@ -32,7 +32,6 @@ void main() async {
     ),
   );
 }
-
 class FitnessApp extends StatelessWidget {
   final bool isLoggedIn;
   const FitnessApp({required this.isLoggedIn, super.key});
@@ -50,8 +49,9 @@ class FitnessApp extends StatelessWidget {
         theme: AppTheme.darkTheme,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: Routes.onGenerate,
-        // initialRoute: AppRoutes.onBoarding,
-        initialRoute: isLoggedIn ? AppRoutes.home : AppRoutes.onBoarding,
+        home: const TestScreen(),
+       //  initialRoute: AppRoutes.food,
+       // initialRoute: isLoggedIn ? AppRoutes.home : AppRoutes.onBoarding,
         navigatorKey: Routes.navigatorKey,
       ),
     );

@@ -9,7 +9,6 @@ class FoodStates extends Equatable {
   final String? errorCategories;
   final StateStatus<List<MealsByCategory>> mealsByCategorieStatus;
   final String? errorMealsByCategories;
-
   const FoodStates({
     this.mealsCategories = const StateStatus.initial(),
     this.errorCategories,
@@ -22,6 +21,7 @@ class FoodStates extends Equatable {
     String? errorCategories,
     StateStatus<List<MealsByCategory>>? mealsByCategorieStatus,
     String? errorMealsByCategories,
+    String? selectedCategory
   }) {
     return FoodStates(
       mealsCategories: mealsCategories ?? this.mealsCategories,
