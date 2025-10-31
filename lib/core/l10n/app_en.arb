@@ -93,5 +93,7 @@
   "login": "Login",
   "forgetPass": "Forget Password?",
   "welcomeBack": "WELCOME BACK",
-  "doNotHaveAccount": "Don’t have an account? "
+  "doNotHaveAccount": "Don’t have an account? ",
+  "recommendation":"Recommendation",
+  "ingredients":"Ingredients"
 }

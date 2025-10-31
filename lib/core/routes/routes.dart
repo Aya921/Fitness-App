@@ -1,9 +1,11 @@
 import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/routes/app_routes.dart';
+import 'package:fitness/core/widget/video_widgets/vido_player_screen.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_cubit.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_intent.dart';
 import 'package:fitness/features/auth/presentation/views/screens/compelete_register/screen/complete_register_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/register/register_screen.dart';
+import 'package:fitness/features/meal_details/presentaion/view/pages/details_food_sceen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -35,10 +37,12 @@ abstract class Routes {
             return const ForgetPasswordScreen();
           },
         );
- case AppRoutes.registerScreen:
+      case AppRoutes.registerScreen:
         return MaterialPageRoute(
           builder: (context) => BlocProvider<RegisterCubit>(
-            create: (context) => getIt.get<RegisterCubit>()..doIntent(intent: const RegisterInitializationIntent()),
+            create: (context) =>
+                getIt.get<RegisterCubit>()
+                  ..doIntent(intent: const RegisterInitializationIntent()),
             child: const RegisterScreen(),
           ),
         );
@@ -56,8 +60,6 @@ abstract class Routes {
           },
         );
 
-   
-
       case AppRoutes.otpScreen:
         final email = setting.arguments as String;
         return MaterialPageRoute(
@@ -72,6 +74,22 @@ abstract class Routes {
             return CreatePasswordScreen(email: email);
           },
         );
+      case AppRoutes.videoPage:
+        final videourl = setting.arguments as String;
+        return PageRouteBuilder(
+          opaque: false,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              VideoPlayerScreen(videoUrl: videourl),
+        
+        );
+      case AppRoutes.detailsFoodPage:
+        final mealId = setting.arguments as String;
+        return MaterialPageRoute(
+          builder: (context) {
+            return DetailsFoodScreen(mealId: mealId);
+          },
+        );
+
       default:
         return MaterialPageRoute(
           builder: (context) {

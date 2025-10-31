@@ -54,6 +54,7 @@ dependencies:
   smooth_page_indicator: ^1.2.1
   flutter_svg_provider: ^1.0.7
   skeletonizer: ^2.1.0+1
+  youtube_player_flutter: ^9.1.3
 
 
 
