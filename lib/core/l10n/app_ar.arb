@@ -24,7 +24,7 @@
   "trueBeast": "محترف قوي",
   "yourRegularPhysical": "ما هو مستوى نشاطك البدني المعتاد؟",
   "next": "التالي",
-
+  "foodRecommendation": "الاطعمة الموصى بها",
   "heyThere": "مرحبًا",
   "createAnAccount": "إنشاء حساب",
   "register": "تسجيل",
@@ -88,5 +88,7 @@
   "login": "تسجيل الدخول",
   "forgetPass": "نسيت كلمة المرور؟",
   "welcomeBack": "مرحبًا بعودتك",
-  "doNotHaveAccount": "ليس لديك حساب؟ "
+  "doNotHaveAccount": "ليس لديك حساب؟ ",
+  "recommendation":"اقتراحات",
+  "ingredients":"المكونات"
 }

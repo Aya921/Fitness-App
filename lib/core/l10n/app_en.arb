@@ -29,7 +29,7 @@
   "level3": "level3",
   "level4": "level4",
   "level5": "level5",
-
+"foodRecommendation": "Food Recommendation",
   "heyThere": "Hey There",
   "createAnAccount": "CREATE AN ACCOUNT",
   "register": "Register",
@@ -93,5 +93,7 @@
   "login": "Login",
   "forgetPass": "Forget Password?",
   "welcomeBack": "WELCOME BACK",
-  "doNotHaveAccount": "Don’t have an account? "
+  "doNotHaveAccount": "Don’t have an account? ",
+  "recommendation":"Recommendation",
+  "ingredients":"Ingredients"
 }
