@@ -4,7 +4,6 @@ import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/widget/tab_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 
 void main() {
   const String testTitle = 'Workouts';
@@ -68,9 +67,7 @@ void main() {
     expect(animatedDecoration.color, AppColors.orange[AppColors.baseColor]);
   });
   testWidgets("Tab Item when click on this container", (WidgetTester tester)async{
-    bool isTapped=false;
     await tester.pumpWidget(prepareWidget(title: testTitle, onTap: (){
-      isTapped=true;
     }));
     await tester.tap(find.byType(GestureDetector));
     await tester.pumpAndSettle();

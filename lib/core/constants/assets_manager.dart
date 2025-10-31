@@ -20,7 +20,7 @@ abstract class AssetsManager {
   static const String profileSvg = "assets/icons/profile.svg";
   static const String userSvg = "assets/icons/user.svg";
   static const String logoPng = "assets/icons/fitpng.png";
-  static const String homeBackground="assets/images/home_bg.png";
+  static const String homeBackground="assets/images/bg.jpg";
   static const String gymCategory1="assets/images/gym_category1.png";
   static const String gymCategory2="assets/images/gym_category2.png";
   static const String gymCategory3="assets/images/gym_category3.png";

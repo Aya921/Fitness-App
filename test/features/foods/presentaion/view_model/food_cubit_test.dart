@@ -18,7 +18,6 @@ import 'food_cubit_test.mocks.dart';
 
 @GenerateMocks([GetMealsCategoriesUseCase, GetMealsByCategoriesUseCase])
 void main() {
-
   late MockGetMealsCategoriesUseCase mockGetMealsCategoriesUseCase;
   late MockGetMealsByCategoriesUseCase mockGetMealsByCategoriesUseCase;
   late FoodCubit foodCubit;
@@ -36,6 +35,20 @@ void main() {
       FailedResult("failed to load data"),
     );
   });
+  final List<MealsByCategory> fakeSuccessResponseMeals = [
+    const MealsByCategory(
+      strMeal: "15-minute chicken & halloumi burgers",
+      strMealThumb:
+      "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg",
+      idMeal: "53085",
+    ),
+    const MealsByCategory(
+      strMeal: "Ayam Percik",
+      strMealThumb:
+      "https://www.themealdb.com/images/media/meals/020z181619788503.jpg",
+      idMeal: "53050",
+    ),
+  ];
   group("Meals Categories", () {
     final fakeSuccessResponse = [
       const MealCategoryEntity(
@@ -82,10 +95,11 @@ void main() {
           equals(fakeSuccessResponse),
         ),
 
-        // isA<FoodStates>().having((state)=>state.mealsCategories.isFailure,
-        //     "isFailure",  equals('failed to load data'))
+
       ],
-      verify: (_) => verify(mockGetMealsCategoriesUseCase.call()).called(1),
+      verify: (_) {
+        verify(mockGetMealsCategoriesUseCase.call()).called(1);
+      },
     );
     blocTest<FoodCubit, FoodStates>(
       "emit [loading,failure] when use case failed",
@@ -112,28 +126,16 @@ void main() {
       verify: (_) => verify(mockGetMealsCategoriesUseCase.call()).called(1),
     );
   });
+
   group("Get Meals By Category", () {
-    final List<MealsByCategory> fakeSuccessResponse = [
-      const MealsByCategory(
-        strMeal: "15-minute chicken & halloumi burgers",
-        strMealThumb:
-        "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg",
-        idMeal: "53085",
-      ),
-      const MealsByCategory(
-        strMeal: "Ayam Percik",
-        strMealThumb:
-        "https://www.themealdb.com/images/media/meals/020z181619788503.jpg",
-        idMeal: "53050",
-      ),
-    ];
+
     const category = "Chicken";
     blocTest<FoodCubit, FoodStates>(
       "emit [loading,success] when use case success on get meals by category ",
       build: () {
         when(
           mockGetMealsByCategoriesUseCase.call(category),
-        ).thenAnswer((_) async => SuccessResult(fakeSuccessResponse));
+        ).thenAnswer((_) async => SuccessResult(fakeSuccessResponseMeals));
 
         return foodCubit;
       },
@@ -144,7 +146,7 @@ void main() {
           mealsByCategorieStatus: const StateStatus.loading(),
         ),
         foodCubit.state.copyWith(
-          mealsByCategorieStatus: StateStatus.success(fakeSuccessResponse),
+          mealsByCategorieStatus: StateStatus.success(fakeSuccessResponseMeals),
         ),
       ],
       verify: (_) =>
