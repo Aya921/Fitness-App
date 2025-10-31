@@ -280,4 +280,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get doNotHaveAccount => 'Don’t have an account? ';
+
+  @override
+  String get hiHomeText => 'Hi';
+
+  @override
+  String get letsStartDoingYourDay => 'Let\'s Start Your Day';
+
+  @override
+  String get categoryHomeText => 'Category';
+
+  @override
+  String get recommendationTodyText => 'Recommendation To Day';
+
+  @override
+  String get upcomingWorkOutsText => 'Upcoming Workouts';
+
+  @override
+  String get seeAllHomeText => 'See All';
+
+  @override
+  String get recommendationForYouText => 'Recommendation For You';
+
+  @override
+  String get popularTrainingText => 'Popular Training';
 }

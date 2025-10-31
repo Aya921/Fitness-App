@@ -88,5 +88,14 @@
   "login": "تسجيل الدخول",
   "forgetPass": "نسيت كلمة المرور؟",
   "welcomeBack": "مرحبًا بعودتك",
-  "doNotHaveAccount": "ليس لديك حساب؟ "
+  "doNotHaveAccount": "ليس لديك حساب؟ ",
+
+   "hiHomeText": "مرحبًا",
+  "letsStartDoingYourDay": "لنبدأ يومك",
+  "categoryHomeText": "الفئات",
+  "recommendationTodyText": "توصيات اليوم",
+  "upcomingWorkOutsText": "التمارين القادمة",
+  "seeAllHomeText": "عرض الكل",
+  "recommendationForYouText": "توصيات لك",
+  "popularTrainingText": "التمارين الشائعة"
 }

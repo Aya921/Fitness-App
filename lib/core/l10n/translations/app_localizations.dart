@@ -631,6 +631,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Don’t have an account? '**
   String get doNotHaveAccount;
+
+  /// No description provided for @hiHomeText.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi'**
+  String get hiHomeText;
+
+  /// No description provided for @letsStartDoingYourDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s Start Your Day'**
+  String get letsStartDoingYourDay;
+
+  /// No description provided for @categoryHomeText.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get categoryHomeText;
+
+  /// No description provided for @recommendationTodyText.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommendation To Day'**
+  String get recommendationTodyText;
+
+  /// No description provided for @upcomingWorkOutsText.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming Workouts'**
+  String get upcomingWorkOutsText;
+
+  /// No description provided for @seeAllHomeText.
+  ///
+  /// In en, this message translates to:
+  /// **'See All'**
+  String get seeAllHomeText;
+
+  /// No description provided for @recommendationForYouText.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommendation For You'**
+  String get recommendationForYouText;
+
+  /// No description provided for @popularTrainingText.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular Training'**
+  String get popularTrainingText;
 }
 
 class _AppLocalizationsDelegate

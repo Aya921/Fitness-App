@@ -27,5 +27,7 @@ abstract class AssetsManager {
   static const String gymCategory4="assets/images/gym_category4.png";
   static const String gymCategory5="assets/images/gym_category5.png";
   static const String chatBackground="assets/images/chat_bg.png";
+  static const String profileTestImage="assets/images/profile_test_image.png";
+  static const String homeImageTest="assets/images/home_image_test.png";
 
 }

@@ -281,4 +281,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get doNotHaveAccount => 'ليس لديك حساب؟ ';
+
+  @override
+  String get hiHomeText => 'مرحبًا';
+
+  @override
+  String get letsStartDoingYourDay => 'لنبدأ يومك';
+
+  @override
+  String get categoryHomeText => 'الفئات';
+
+  @override
+  String get recommendationTodyText => 'توصيات اليوم';
+
+  @override
+  String get upcomingWorkOutsText => 'التمارين القادمة';
+
+  @override
+  String get seeAllHomeText => 'عرض الكل';
+
+  @override
+  String get recommendationForYouText => 'توصيات لك';
+
+  @override
+  String get popularTrainingText => 'التمارين الشائعة';
 }
