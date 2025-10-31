@@ -5,13 +5,14 @@ import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
+import 'package:fitness/features/foods/domain/entities/meals_categories.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/meals_categories_entity/meals_categories_entity.dart';
 import 'package:flutter/material.dart';
 
 class ExploreFoodListItem extends StatelessWidget {
-  final MealsCategoriesEntity mealsCategoriesEntity;
+  final MealCategoryEntity mealCategoryEntity;
   const ExploreFoodListItem({
-    super.key, required this.mealsCategoriesEntity,
+    super.key, required this.mealCategoryEntity,
   });
 
   @override
@@ -29,7 +30,7 @@ class ExploreFoodListItem extends StatelessWidget {
                 Radius.circular(context.setMinSize(20)),
               ),
               image: DecorationImage(
-                image: NetworkImage(mealsCategoriesEntity.strCategoryThumb ?? ""),
+                image: NetworkImage(mealCategoryEntity.strCategoryThumb ?? ""),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
                   AppColors.black.withValues(alpha: 0.2),
@@ -65,7 +66,7 @@ class ExploreFoodListItem extends StatelessWidget {
                     fit: BoxFit.scaleDown,
                     child: Text(
                       textAlign: TextAlign.center,
-                       mealsCategoriesEntity.strCategory ?? "",
+                       mealCategoryEntity.strCategory ?? "",
                       style: getRegularStyle(
                         color: AppColors.white,
                       ).copyWith(fontFamily: "BalooThambi2",

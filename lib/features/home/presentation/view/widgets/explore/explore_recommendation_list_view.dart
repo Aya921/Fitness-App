@@ -8,6 +8,7 @@ import 'package:fitness/features/home/presentation/view_model/explore_view_model
 import 'package:fitness/features/home/presentation/view_model/explore_view_model/explore_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class ExploreRecommendationListView extends StatelessWidget {
   const ExploreRecommendationListView({super.key});
@@ -34,7 +35,16 @@ class ExploreRecommendationListView extends StatelessWidget {
                 itemCount: state.randomMusclesState.data?.length ?? 0,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return ExploreRecommendationListItem(randomMusclesData:state.randomMusclesState.data![index]);
+                  return Skeletonizer(
+                    effect: ShimmerEffect(
+                  baseColor: AppColors.gray[AppColors.colorCode70]!,
+                  highlightColor: AppColors.gray[AppColors.colorCode40]!,
+                ),
+                     enabled:
+                    state.randomMusclesState.isLoading ||
+                    state.randomMusclesState.isInitial ||
+                    state.randomMusclesState.isFailure,
+                    child: ExploreRecommendationListItem(randomMusclesData:state.randomMusclesState.data![index]));
                 },
               ),
             );

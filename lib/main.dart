@@ -3,6 +3,7 @@ import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/routes/routes.dart';
+import 'package:fitness/features/home/presentation/view/screens/home_tab.dart';
 import 'package:fitness/test_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -49,7 +50,7 @@ class FitnessApp extends StatelessWidget {
         theme: AppTheme.darkTheme,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: Routes.onGenerate,
-        home: const TestScreen(),
+        home: const HomeTab(),
        //  initialRoute: AppRoutes.food,
        // initialRoute: isLoggedIn ? AppRoutes.home : AppRoutes.onBoarding,
         navigatorKey: Routes.navigatorKey,
