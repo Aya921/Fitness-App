@@ -1,5 +1,7 @@
 abstract class AssetsManager {
+
   static const String backGroundImage = "assets/images/background_image.png";
+  static const String backGroundImageGym = "assets/images/Rectangle 1.png";
   static const String onBoardingBackGround ="assets/images/onBoarding_backGround.png";
   static const String onBoardingOne = "assets/images/onBoardingOne.png";
   static const String onBoardingTwo = "assets/images/onBoardingTwo.png";

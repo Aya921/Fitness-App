@@ -1,3 +1,4 @@
+
 import 'dart:async';
 
 import 'package:fitness/config/di/di.dart';
@@ -89,7 +90,6 @@ void main() {
     when(mockCubit.stream).thenAnswer(
       (_) => Stream.fromIterable([const OnBoardingState(pageIndex: 1)]),
     );
-
     await tester.pumpWidget(prepareWidget());
     await tester.pumpAndSettle();
 

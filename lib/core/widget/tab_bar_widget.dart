@@ -3,16 +3,29 @@ import 'package:fitness/core/widget/tab_item_widget.dart';
 import 'package:flutter/material.dart';
 
 class TabBarWidget extends StatefulWidget {
-  const TabBarWidget({super.key, required this.titles});
+  const TabBarWidget({
+    super.key,
+    required this.titles,
+    this.initialSelectedIndex = 0,
+    this.onTabSelected,
+  });
 
   final List<String> titles;
+  final int initialSelectedIndex;
+  final ValueChanged<int>? onTabSelected; // 👈 هنا
 
   @override
   State<TabBarWidget> createState() => _TabBarWidgetState();
 }
 
 class _TabBarWidgetState extends State<TabBarWidget> {
-  int selecteIndex = 0;
+  late int selectedIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedIndex = widget.initialSelectedIndex;
+  }
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
@@ -20,17 +33,17 @@ class _TabBarWidgetState extends State<TabBarWidget> {
       itemBuilder: (context, index) {
         return TabItemWidget(
           title: widget.titles[index],
-          isSelected: selecteIndex == index,
+          isSelected: selectedIndex == index,
           onTap: () {
-            selecteIndex = index;
-            setState(() {});
+            setState(() => selectedIndex = index);
+            widget.onTabSelected?.call(index);
           },
         );
       },
-      separatorBuilder: (context, index) {
-        return SizedBox(width: context.setWidth(10));
-      },
+      separatorBuilder: (context, index) =>
+          SizedBox(width: context.setWidth(10)),
       itemCount: widget.titles.length,
     );
   }
 }
+
