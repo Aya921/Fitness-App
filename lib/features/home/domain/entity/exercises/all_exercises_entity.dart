@@ -1,4 +1,4 @@
-import 'package:fitness/features/home/domain/entity/workout/exercise_entity.dart';
+import 'package:fitness/features/home/domain/entity/exercises/exercise_entity.dart';
 
 class AllExercisesEntity {
   String? message;

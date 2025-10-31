@@ -1,11 +1,11 @@
-import 'package:fitness/features/home/domain/entity/workout/difficulty_level_entitiy.dart';
+import 'package:fitness/features/home/domain/entity/exercises/difficulty_level_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'level_response.g.dart';
 
 @JsonSerializable()
 class LevelResponse {
-  @JsonKey(name: "_id")
+  @JsonKey(name: "id")
   final String? id;
   @JsonKey(name: "name")
   final String? name;

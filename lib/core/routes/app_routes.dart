@@ -12,6 +12,5 @@ abstract class AppRoutes {
 
   static const String home = '/home';
   static const String onBoarding = "/onBoarding";
-  static const String exe = "ExercisesScreen";
-  static const String pop="pop";
+  static const String exercises = "ExercisesScreen";
 }

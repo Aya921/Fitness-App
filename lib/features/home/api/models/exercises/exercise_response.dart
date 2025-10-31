@@ -1,8 +1,8 @@
-import 'package:fitness/features/home/domain/entity/workout/equipment_entity.dart';
-import 'package:fitness/features/home/domain/entity/workout/exercise_entity.dart';
-import 'package:fitness/features/home/domain/entity/workout/exercise_video_entity.dart';
-import 'package:fitness/features/home/domain/entity/workout/motion_entity.dart';
-import 'package:fitness/features/home/domain/entity/workout/muscle_entity.dart';
+import 'package:fitness/features/home/domain/entity/exercises/equipment_entity.dart';
+import 'package:fitness/features/home/domain/entity/exercises/exercise_entity.dart';
+import 'package:fitness/features/home/domain/entity/exercises/exercise_video_entity.dart';
+import 'package:fitness/features/home/domain/entity/exercises/motion_entity.dart';
+import 'package:fitness/features/home/domain/entity/exercises/muscle_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'exercise_response.g.dart';
@@ -24,17 +24,17 @@ class ExerciseResponse {
   @JsonKey(name: "prime_mover_muscle")
   final String? primeMoverMuscle;
   @JsonKey(name: "secondary_muscle")
-  final dynamic? secondaryMuscle;
+  final String? secondaryMuscle;
   @JsonKey(name: "tertiary_muscle")
-  final dynamic? tertiaryMuscle;
+  final String? tertiaryMuscle;
   @JsonKey(name: "primary_equipment")
   final String? primaryEquipment;
   @JsonKey(name: "_primary_items")
-  final int? PrimaryItems;
+  final int? primaryItems;
   @JsonKey(name: "secondary_equipment")
-  final dynamic? secondaryEquipment;
+  final String? secondaryEquipment;
   @JsonKey(name: "_secondary_items")
-  final int? SecondaryItems;
+  final int? secondaryItems;
   @JsonKey(name: "posture")
   final String? posture;
   @JsonKey(name: "single_or_double_arm")
@@ -54,15 +54,15 @@ class ExerciseResponse {
   @JsonKey(name: "movement_pattern_1")
   final String? movementPattern1;
   @JsonKey(name: "movement_pattern_2")
-  final dynamic? movementPattern2;
+  final String? movementPattern2;
   @JsonKey(name: "movement_pattern_3")
-  final dynamic? movementPattern3;
+  final String? movementPattern3;
   @JsonKey(name: "plane_of_motion_1")
   final String? planeOfMotion1;
   @JsonKey(name: "plane_of_motion_2")
-  final dynamic? planeOfMotion2;
+  final String? planeOfMotion2;
   @JsonKey(name: "plane_of_motion_3")
-  final dynamic? planeOfMotion3;
+  final String? planeOfMotion3;
   @JsonKey(name: "body_region")
   final String? bodyRegion;
   @JsonKey(name: "force_type")
@@ -78,7 +78,7 @@ class ExerciseResponse {
   @JsonKey(name: "in_depth_youtube_explanation_link")
   final String? inDepthYoutubeExplanationLink;
 
-  ExerciseResponse ({
+  ExerciseResponse({
     this.id,
     this.exercise,
     this.shortYoutubeDemonstration,
@@ -89,9 +89,9 @@ class ExerciseResponse {
     this.secondaryMuscle,
     this.tertiaryMuscle,
     this.primaryEquipment,
-    this.PrimaryItems,
+    this.primaryItems,
     this.secondaryEquipment,
-    this.SecondaryItems,
+    this.secondaryItems,
     this.posture,
     this.singleOrDoubleArm,
     this.continuousOrAlternatingArms,
@@ -136,9 +136,9 @@ class ExerciseResponse {
       ),
       equipment: EquipmentEntity(
         primaryEquipment: primaryEquipment,
-        primaryItems: PrimaryItems,
+        primaryItems: primaryItems,
         secondaryEquipment: secondaryEquipment?.toString(),
-        secondaryItems: SecondaryItems,
+        secondaryItems: secondaryItems,
       ),
       motion: MotionEntity(
         movementPattern: movementPattern1,
@@ -156,4 +156,3 @@ class ExerciseResponse {
     );
   }
 }
-

@@ -1,7 +1,7 @@
-import 'package:fitness/features/home/domain/entity/workout/equipment_entity.dart';
-import 'package:fitness/features/home/domain/entity/workout/exercise_video_entity.dart';
-import 'package:fitness/features/home/domain/entity/workout/motion_entity.dart';
-import 'package:fitness/features/home/domain/entity/workout/muscle_entity.dart';
+import 'package:fitness/features/home/domain/entity/exercises/equipment_entity.dart';
+import 'package:fitness/features/home/domain/entity/exercises/exercise_video_entity.dart';
+import 'package:fitness/features/home/domain/entity/exercises/motion_entity.dart';
+import 'package:fitness/features/home/domain/entity/exercises/muscle_entity.dart';
 
 class ExerciseEntity {
   final String? id;

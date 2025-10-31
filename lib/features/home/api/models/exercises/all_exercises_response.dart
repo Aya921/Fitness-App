@@ -1,7 +1,6 @@
-import 'package:fitness/features/home/api/models/workout/exercise_response.dart';
-import 'package:fitness/features/home/domain/entity/workout/all_exercises_entity.dart';
+import 'package:fitness/features/home/api/models/exercises/exercise_response.dart';
+import 'package:fitness/features/home/domain/entity/exercises/all_exercises_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
-
 
 part 'all_exercises_response.g.dart';
 
@@ -18,7 +17,7 @@ class AllExercisesResponse {
   @JsonKey(name: "exercises")
   final List<ExerciseResponse>? exercises;
 
-  AllExercisesResponse ({
+  AllExercisesResponse({
     this.message,
     this.totalExercises,
     this.totalPages,
@@ -34,17 +33,15 @@ class AllExercisesResponse {
     return _$AllExercisesResponseToJson(this);
   }
 
-  AllExercisesEntity toEntity(){
+  AllExercisesEntity toEntity() {
     return AllExercisesEntity(
       message: message,
-     currentPage:currentPage,
-     totalExercises:totalExercises,
-     totalPages :totalPages,
+      currentPage: currentPage,
+      totalExercises: totalExercises,
+      totalPages: totalPages,
       exercises: exercises
           ?.map((exerciseResponse) => exerciseResponse.toEntity())
           .toList(),
     );
   }
 }
-
-
