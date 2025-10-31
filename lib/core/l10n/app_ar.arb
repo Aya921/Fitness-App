@@ -24,7 +24,7 @@
   "trueBeast": "محترف قوي",
   "yourRegularPhysical": "ما هو مستوى نشاطك البدني المعتاد؟",
   "next": "التالي",
-
+  "foodRecommendation": "الاطعمة الموصى بها",
   "heyThere": "مرحبًا",
   "createAnAccount": "إنشاء حساب",
   "register": "تسجيل",
@@ -97,5 +97,7 @@
   "upcomingWorkOutsText": "التمارين القادمة",
   "seeAllHomeText": "عرض الكل",
   "recommendationForYouText": "توصيات لك",
-  "popularTrainingText": "التمارين الشائعة"
+  "popularTrainingText": "التمارين الشائعة",
+  "recommendation":"اقتراحات",
+  "ingredients":"المكونات"
 }

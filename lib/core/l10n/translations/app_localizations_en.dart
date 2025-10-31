@@ -97,6 +97,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get level5 => 'level5';
 
   @override
+  String get foodRecommendation => 'Food Recommendation';
+
+  @override
   String get heyThere => 'Hey There';
 
   @override
@@ -304,4 +307,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get popularTrainingText => 'Popular Training';
+
+  @override
+  String get recommendation => 'Recommendation';
+
+  @override
+  String get ingredients => 'Ingredients';
 }

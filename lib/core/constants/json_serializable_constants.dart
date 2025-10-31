@@ -5,7 +5,7 @@ abstract class JsonSerializableConstants{
   static const String token = "token";
   static const String error = "error";
 
-  //user response
+  //categories
   static const String firstName = "firstName";
   static const String lastName = "lastName";
   static const String email = "email";
@@ -24,6 +24,17 @@ abstract class JsonSerializableConstants{
   static const String newPassword = "newPassword";
   static const String resetCode = "resetCode";
   static const String status = "status";
+  static const String categories = "categories";
+
+  static const String idCategory = "idCategory";
+  static const String strCategory = "strCategory";
+  static const String strCategoryThumb = "strCategoryThumb";
+  static const String strCategoryDescription = "strCategoryDescription";
+  static const String meals = "meals";
+
+  static const String idMeal = "idMeal";
+  static const String strMeal = "strMeal";
+  static const String strMealThumb = "strMealThumb";
 
 
 

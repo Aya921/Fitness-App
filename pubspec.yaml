@@ -27,6 +27,7 @@ dependencies:
   injectable:
   get_it:
   dio: ^5.9.0
+  network_image_mock: ^2.1.1
   pretty_dio_logger: ^1.4.0
   shared_preferences: ^2.5.3
   provider: ^6.1.2
@@ -54,7 +55,10 @@ dependencies:
   smooth_page_indicator: ^1.2.1
   flutter_svg_provider: ^1.0.7
   skeletonizer: ^2.1.0+1
+  shimmer_animation: ^2.2.2
   cached_network_image: ^3.4.1
+  youtube_player_flutter: ^9.1.3
+
 
 
 
