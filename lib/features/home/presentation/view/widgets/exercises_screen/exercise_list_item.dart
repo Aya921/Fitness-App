@@ -1,3 +1,4 @@
+import 'package:fitness/core/constants/app_widgets_key.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/routes/app_routes.dart';
@@ -23,6 +24,7 @@ class ExerciseListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      key: const Key(WidgetKey.exerciseListItemTapKey),
         onTap: () {
           Navigator.pushNamed(context, AppRoutes.exeVideoScreen,
           arguments: videoLink);
@@ -34,6 +36,7 @@ class ExerciseListItem extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(context.setWidth(30)),
             child: Image.network(
+              key: const Key(WidgetKey.exerciseImageKey),
               primeMoverMuscleImage,
               height: context.setHight(88),
               width: context.setWidth(81),
@@ -47,6 +50,7 @@ class ExerciseListItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
+                  key: const Key(WidgetKey.exerciseNameKey),
                   exerciseName,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
@@ -56,6 +60,7 @@ class ExerciseListItem extends StatelessWidget {
                   ),
                 ),
                 Text(
+                  key: const Key(WidgetKey.exerciseGroupLabelKey),
                  context.loc.exerciseGroup,
                   style: getRegularStyle(
                     color: AppColors.white,
@@ -67,6 +72,7 @@ class ExerciseListItem extends StatelessWidget {
           ),
           const Spacer(),
           Container(
+            key: const Key(WidgetKey.playIconContainerKey),
             width: context.setWidth(24),
             height: context.setWidth(24),
             decoration: BoxDecoration(
@@ -74,6 +80,7 @@ class ExerciseListItem extends StatelessWidget {
               color: AppColors.orange,
             ),
             child: Icon(
+              key: const Key(WidgetKey.playIconKey),
               Icons.play_arrow,
               size: context.setWidth(20),
               color: AppColors.gray[90],

@@ -1,6 +1,7 @@
+import 'package:equatable/equatable.dart';
 import 'package:fitness/features/home/domain/entity/exercises/difficulty_level_entity.dart';
 
-class DifficultyByPrimeMoverMusclesEntity {
+class DifficultyByPrimeMoverMusclesEntity extends Equatable{
   final String? message;
   final int? totalLevels;
   final List<LevelEntity>? difficultyLevels;
@@ -10,4 +11,7 @@ class DifficultyByPrimeMoverMusclesEntity {
     this.totalLevels,
     this.difficultyLevels,
   });
+
+  @override
+  List<Object?> get props => [message,totalLevels,difficultyLevels];
 }

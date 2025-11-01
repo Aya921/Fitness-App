@@ -26,6 +26,10 @@ class SkeletonLoadingExercises extends StatelessWidget {
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
             child: Skeletonizer(
+              effect: ShimmerEffect(
+                baseColor: AppColors.gray[AppColors.colorCode70]!,
+                highlightColor: AppColors.gray[AppColors.colorCode40]!,
+              ),
               enabled: true,
               child: ListView.separated(
                 padding: EdgeInsets.zero,

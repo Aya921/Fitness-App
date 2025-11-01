@@ -86,9 +86,11 @@ class _ExercisesScreenState extends State<ExercisesScreen>
                   tabController: _tabController,
                 ),
 
-                ExercisesListSection(
-                  primeMoverMuscleImage: widget.primMoverMuscle!.image,
-                  scrollController: _scrollController,
+                Expanded(
+                  child: ExercisesListSection(
+                    primeMoverMuscleImage: widget.primMoverMuscle!.image,
+                    scrollController: _scrollController,
+                  ),
                 ),
               ],
             );

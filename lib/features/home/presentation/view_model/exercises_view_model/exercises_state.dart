@@ -1,8 +1,9 @@
+import 'package:equatable/equatable.dart';
 import 'package:fitness/core/enum/request_state.dart';
 import 'package:fitness/features/home/domain/entity/exercises/difficulty_level_entity.dart';
 import 'package:fitness/features/home/domain/entity/exercises/exercise_entity.dart';
 
-class ExercisesStates {
+class ExercisesStates extends Equatable{
   final StateStatus<List<LevelEntity>> levelsByMuscleStatus;
   final StateStatus<List<ExerciseEntity>> exercisesByLevelAndMuscleStatus;
   final String? selectedLevelId;
@@ -30,4 +31,7 @@ class ExercisesStates {
       youtubeIdStatus: youtubeIdStatus ?? this.youtubeIdStatus,
     );
   }
+
+  @override
+  List<Object?> get props => [levelsByMuscleStatus,exercisesByLevelAndMuscleStatus,selectedLevelId,youtubeIdStatus];
 }
