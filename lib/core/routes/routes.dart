@@ -9,8 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fitness/core/widget/video_widgets/vido_player_screen.dart';
 import 'package:fitness/features/meal_details/presentaion/view/pages/details_food_sceen.dart';
-
-
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/features/auth/presentation/views/screens/forget_pass/create_password_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/forget_pass/forget_password_screen.dart';
@@ -20,8 +18,6 @@ import 'package:fitness/features/auth/presentation/view_model/login_view_model/l
 import 'package:fitness/features/auth/presentation/views/screens/login/login_screen.dart';
 import '../../features/foods/presentaion/view/screens/food_detials_screen.dart';
 import '../../features/on_boarding/view/on_boarding_view.dart';
-
-
 
 abstract class Routes {
   static final GlobalKey<NavigatorState> navigatorKey =
@@ -90,6 +86,27 @@ abstract class Routes {
             return CreatePasswordScreen(email: email);
           },
         );
+
+      case AppRoutes.exercises:
+        // final primMoverMuscle = setting.arguments as MoverMuscleEntity;
+        // return MaterialPageRoute(
+        //   builder: (context) {
+        //     return
+        //       BlocProvider(
+        //       create: (context) => getIt<ExercisesCubit>()..doIntent(intent: LoadLevelsByMuscleIntent(muscleId: "67c8499726895f87ce0aa9bf")),
+        //       // create: (context) => getIt<WorkoutCubit>()..loadLevelsByMuscle(primMoverMuscle.id),
+        //       child:
+        //       const ExercisesScreen(primMoverMuscle: MoverMuscleEntity(
+        //           id: "67c8499726895f87ce0aa9bf",
+        //           name: "Posterior Deltoids",
+        //           image: "https://iili.io/33p7ene.png"
+        //       ),),
+        //     );
+        //   },
+        // );
+
+
+
       case AppRoutes.videoPage:
         final videourl = setting.arguments as String;
         return PageRouteBuilder(

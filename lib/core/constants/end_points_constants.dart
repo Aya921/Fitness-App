@@ -1,7 +1,6 @@
 abstract class EndPointsConstants {
   static const String baseUrl = "https://fitness.elevateegy.com/api/v1/";
   static const String baseUrlFood = "https://www.themealdb.com/api/json/v1/";
-
   static const String detailsFoodBaseUrl = "https://www.themealdb.com/api/json/v1/1/lookup.php";
   static const String authEndPoint = "auth/";
    //signUpEndPoint
@@ -14,6 +13,11 @@ abstract class EndPointsConstants {
 
   static const String mealsCategories = "1/categories.php";
   static const String mealsByCategories = "1/filter.php?";
-
-
+  //exercises
+  static const String difficultyByPrimeMoverMuscle="levels/difficulty-levels/by-prime-mover";
+  static const String exercisesByMuscleAndDifficulty="exercises/by-muscle-difficulty";
+  static const String difficultyLevelId="difficultyLevelId";
+  static const String primeMoverMuscleId="primeMoverMuscleId";
+  static const String page="page";
+  static const String limit="limit";
 }
