@@ -7,7 +7,7 @@ import 'package:fitness/features/auth/presentation/views/screens/register/regist
 import 'package:fitness/features/foods/domain/entities/meals_by_category.dart';
 import 'package:fitness/features/home/domain/entity/exercises/mover_muscle_entity.dart';
 import 'package:fitness/features/home/presentation/view/screens/exercise_screen/exercises_screen.dart';
-import 'package:fitness/features/home/presentation/view/screens/exercise_screen/video_screen.dart' hide VideoPlayerScreen;
+import 'package:fitness/features/home/presentation/view/screens/exercise_screen/video_screen.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_intent.dart';
 import 'package:flutter/material.dart';
@@ -120,7 +120,7 @@ abstract class Routes {
         return PageRouteBuilder(
           opaque: false,
           pageBuilder: (context, animation, secondaryAnimation) =>
-              VideoPlayerScreen(videoUrl: videourl),
+              ExercisesVideoPlayerScreen(videoUrl: videourl),
     );
 
       case AppRoutes.videoPage:
@@ -144,7 +144,6 @@ abstract class Routes {
           },
         );
 
-        );
       default:
         return MaterialPageRoute(
           builder: (context) {

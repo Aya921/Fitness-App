@@ -8,13 +8,13 @@ class TabBarWidget extends StatefulWidget {
     required this.titles,
     this.initialSelectedIndex = 0,
     this.onTabSelected,
-    required this.onTabChanged
+     this.onTabChanged
   });
 
   final List<String> titles;
-  final Function(int) onTabChanged;
+  final Function(int)? onTabChanged;
   final int initialSelectedIndex;
-  final ValueChanged<int>? onTabSelected; // 👈 هنا
+  final ValueChanged<int>? onTabSelected;
 
   @override
   State<TabBarWidget> createState() => _TabBarWidgetState();
@@ -39,7 +39,7 @@ class _TabBarWidgetState extends State<TabBarWidget> {
           onTap: () {
             setState(() => selectedIndex = index);
             widget.onTabSelected?.call(index);
-            widget.onTabChanged(index);
+            widget.onTabChanged!(index);
           },
         );
       },

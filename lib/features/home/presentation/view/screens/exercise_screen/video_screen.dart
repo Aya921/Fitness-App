@@ -11,16 +11,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class VideoPlayerScreen extends StatefulWidget {
+class ExercisesVideoPlayerScreen extends StatefulWidget {
   final String videoUrl;
 
-  const VideoPlayerScreen({super.key, required this.videoUrl});
+  const ExercisesVideoPlayerScreen({super.key, required this.videoUrl});
 
   @override
-  State<VideoPlayerScreen> createState() => _VideoPlayerScreenState();
+  State<ExercisesVideoPlayerScreen> createState() => _VideoPlayerScreenState();
 }
 
-class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
+class _VideoPlayerScreenState extends State<ExercisesVideoPlayerScreen> {
   YoutubePlayerController? _controller;
   final ExercisesCubit _cubit = getIt<ExercisesCubit>();
 
