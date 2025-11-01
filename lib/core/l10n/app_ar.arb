@@ -89,6 +89,16 @@
   "forgetPass": "نسيت كلمة المرور؟",
   "welcomeBack": "مرحبًا بعودتك",
   "doNotHaveAccount": "ليس لديك حساب؟ ",
+  "errorLoadingVideo":"فشل تحميل الفيديو",
+  "exerciseGroup":"مجموعات 15 مره3 ",
+  "errorLoadingExercises":"خطأ اثناء تحميل التدريبات",
+  "noExercises":"لا يوجد تدريبات",
+  "exercise":"تدريب",
+  "exerciseSlug":"ابدأ اليوم، وكن أقوى غدًا… كل تمرين يقربك أكثر من أفضل نسخة من نفسك!",
+   "min":"30 دقيقه",
+    "cal": "130 كالوري",
+      "error":"خطأ",
+      "back":"رجوع",
   "recommendation":"اقتراحات",
   "ingredients":"المكونات"
 }

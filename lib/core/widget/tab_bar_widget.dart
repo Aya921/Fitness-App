@@ -8,9 +8,11 @@ class TabBarWidget extends StatefulWidget {
     required this.titles,
     this.initialSelectedIndex = 0,
     this.onTabSelected,
+    required this.onTabChanged
   });
 
   final List<String> titles;
+  final Function(int) onTabChanged;
   final int initialSelectedIndex;
   final ValueChanged<int>? onTabSelected; // 👈 هنا
 
@@ -37,13 +39,14 @@ class _TabBarWidgetState extends State<TabBarWidget> {
           onTap: () {
             setState(() => selectedIndex = index);
             widget.onTabSelected?.call(index);
+            widget.onTabChanged(index);
           },
         );
       },
-      separatorBuilder: (context, index) =>
-          SizedBox(width: context.setWidth(10)),
+      separatorBuilder: (context, index) {
+        return SizedBox(width: context.setWidth(10));
+      },
       itemCount: widget.titles.length,
     );
   }
 }
-

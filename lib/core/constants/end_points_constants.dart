@@ -3,7 +3,6 @@ abstract class EndPointsConstants {
   static const String baseUrlFood = "https://www.themealdb.com/api/json/v1/";
   static const String detailsFoodBaseUrl = "https://www.themealdb.com/api/json/v1/1/lookup.php";
   static const String authEndPoint = "auth/";
-
   //signUpEndPoint
   static const String signUpEndPoint = "signup";
   static const String signIn = "signin";

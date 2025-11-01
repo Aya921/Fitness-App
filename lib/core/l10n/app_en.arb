@@ -95,5 +95,16 @@
   "welcomeBack": "WELCOME BACK",
   "doNotHaveAccount": "Don’t have an account? ",
   "recommendation":"Recommendation",
-  "ingredients":"Ingredients"
+  "ingredients":"Ingredients",
+  "doNotHaveAccount": "Don’t have an account? ",
+  "errorLoadingVideo":"Error when loading the video",
+  "exerciseGroup":"3 groups * 15 times",
+  "errorLoadingExercises":"Failed to load exercises",
+  "noExercises":"No exercises found",
+  "exercise":"exercise",
+  "exerciseSlug":"Start today, get stronger tomorrow… every workout brings you closer to your best self!",
+  "min":"30 MIN",
+  "cal": "130 Cal",
+  "error":"Error",
+  "back":"Back"
 }
