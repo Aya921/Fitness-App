@@ -289,4 +289,32 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ingredients => 'Ingredients';
+
+  @override
+  String get errorLoadingVideo => 'Error when loading the video';
+
+  @override
+  String get exerciseGroup => '3 groups * 15 times';
+
+  @override
+  String get errorLoadingExercises => 'Failed to load exercises';
+
+  @override
+  String get noExercises => 'No exercises found';
+
+  @override
+  String get exercise => 'exercise';
+
+  @override
+  String get exerciseSlug =>
+      'Start today, get stronger tomorrow… every workout brings you closer to your best self!';
+
+  @override
+  String get min => '30 MIN';
+
+  @override
+  String get cal => '130 Cal';
+
+  @override
+  String get error => 'Error';
 }

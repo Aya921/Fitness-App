@@ -290,4 +290,32 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get ingredients => 'المكونات';
+
+  @override
+  String get errorLoadingVideo => 'فشل تحميل الفيديو';
+
+  @override
+  String get exerciseGroup => 'مجموعات 15 مره3 ';
+
+  @override
+  String get errorLoadingExercises => 'خطأ اثناء تحميل التدريبات';
+
+  @override
+  String get noExercises => 'لا يوجد تدريبات';
+
+  @override
+  String get exercise => 'تدريب';
+
+  @override
+  String get exerciseSlug =>
+      'ابدأ اليوم، وكن أقوى غدًا… كل تمرين يقربك أكثر من أفضل نسخة من نفسك!';
+
+  @override
+  String get min => '30 دقيقه';
+
+  @override
+  String get cal => '130 كالوري';
+
+  @override
+  String get error => 'خطأ';
 }

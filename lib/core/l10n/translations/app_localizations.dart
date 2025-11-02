@@ -649,6 +649,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Ingredients'**
   String get ingredients;
+
+  /// No description provided for @errorLoadingVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Error when loading the video'**
+  String get errorLoadingVideo;
+
+  /// No description provided for @exerciseGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'3 groups * 15 times'**
+  String get exerciseGroup;
+
+  /// No description provided for @errorLoadingExercises.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load exercises'**
+  String get errorLoadingExercises;
+
+  /// No description provided for @noExercises.
+  ///
+  /// In en, this message translates to:
+  /// **'No exercises found'**
+  String get noExercises;
+
+  /// No description provided for @exercise.
+  ///
+  /// In en, this message translates to:
+  /// **'exercise'**
+  String get exercise;
+
+  /// No description provided for @exerciseSlug.
+  ///
+  /// In en, this message translates to:
+  /// **'Start today, get stronger tomorrow… every workout brings you closer to your best self!'**
+  String get exerciseSlug;
+
+  /// No description provided for @min.
+  ///
+  /// In en, this message translates to:
+  /// **'30 MIN'**
+  String get min;
+
+  /// No description provided for @cal.
+  ///
+  /// In en, this message translates to:
+  /// **'130 Cal'**
+  String get cal;
+
+  /// No description provided for @error.
+  ///
+  /// In en, this message translates to:
+  /// **'Error'**
+  String get error;
 }
 
 class _AppLocalizationsDelegate
