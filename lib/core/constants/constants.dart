@@ -24,22 +24,21 @@ abstract class Constants {
    // 🔸 Validation patterns
   static const String emailPattern =
       r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
-// لازم يحتوي على حرف كبير واحد على الأقل
+
   static const String uppercasePattern = r'(?=.*[A-Z])';
 
-  // لازم يحتوي على حرف صغير واحد على الأقل
+ 
   static const String lowercasePattern = r'(?=.*[a-z])';
 
-  // لازم يحتوي على رقم واحد على الأقل
+
   static const String numberPattern = r'(?=.*[0-9])';
 
-  // لازم يحتوي على رمز خاص واحد على الأقل
+
   static const String specialCharPattern = r'(?=.*[#?!@$%^&*-])';
 
-  // الطول الأدنى 8 حروف
+
   static const String lengthPattern = r'.{8,}';
 
-  // النمط الكامل (مركّب)
   static const String passwordPattern =
       r'^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@$%^&*-]).{8,}$';
 
