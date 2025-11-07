@@ -318,4 +318,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get error => 'خطأ';
+
+  @override
+  String get yourWeight => 'وزنك';
+
+  @override
+  String get yourGoal => 'هدفك';
+
+  @override
+  String get yourLevel => 'مستوى نشاطك';
+
+  @override
+  String get edit => 'تعديل';
+
+  @override
+  String get tabToEdit => 'اضغط للتعديل';
 }

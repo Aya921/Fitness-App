@@ -100,5 +100,10 @@
       "error":"خطأ",
       "back":"رجوع",
   "recommendation":"اقتراحات",
-  "ingredients":"المكونات"
+  "ingredients":"المكونات",
+  "yourWeight": "وزنك",
+  "yourGoal": "هدفك",
+  "yourLevel": "مستوى نشاطك",
+  "edit": "تعديل",
+  "tabToEdit": "اضغط للتعديل"
 }

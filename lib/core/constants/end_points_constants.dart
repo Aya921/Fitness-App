@@ -21,4 +21,9 @@ abstract class EndPointsConstants {
   static const String primeMoverMuscleId = "primeMoverMuscleId";
   static const String page = "page";
   static const String limit = "limit";
+
+  //edit profile
+static const String editProfile="auth/editProfile";
+static const String uploadPhoto="auth/upload-photo";
+static const String photo="photo";
 }

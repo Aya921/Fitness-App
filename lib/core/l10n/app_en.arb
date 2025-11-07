@@ -106,5 +106,10 @@
   "min":"30 MIN",
   "cal": "130 Cal",
   "error":"Error",
-  "back":"Back"
+  "back":"Back",
+  "yourWeight":"Your Weight",
+  "yourGoal":"Your Goal",
+  "yourLevel":"Your activity level" ,
+  "edit":"Edit",
+  "tabToEdit":"Tap to Edit"
 }

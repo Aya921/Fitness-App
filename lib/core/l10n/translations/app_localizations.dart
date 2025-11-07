@@ -703,6 +703,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Error'**
   String get error;
+
+  /// No description provided for @yourWeight.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Weight'**
+  String get yourWeight;
+
+  /// No description provided for @yourGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Goal'**
+  String get yourGoal;
+
+  /// No description provided for @yourLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Your activity level'**
+  String get yourLevel;
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
+  /// No description provided for @tabToEdit.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to Edit'**
+  String get tabToEdit;
 }
 
 class _AppLocalizationsDelegate

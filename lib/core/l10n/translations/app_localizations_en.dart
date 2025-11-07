@@ -317,4 +317,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get error => 'Error';
+
+  @override
+  String get yourWeight => 'Your Weight';
+
+  @override
+  String get yourGoal => 'Your Goal';
+
+  @override
+  String get yourLevel => 'Your activity level';
+
+  @override
+  String get edit => 'Edit';
+
+  @override
+  String get tabToEdit => 'Tap to Edit';
 }

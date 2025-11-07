@@ -1,5 +1,9 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:fitness/core/constants/end_points_constants.dart';
+import 'package:fitness/features/auth/api/models/auth_response/auth_response.dart';
+import 'package:fitness/features/home/api/models/edit_profile/request/edit_profile_request.dart';
 import 'package:fitness/features/home/api/models/exercises/all_exercises_response.dart';
 import 'package:fitness/features/home/api/models/exercises/difficulty_by_prime_mover_muscles_response.dart';
 import 'package:injectable/injectable.dart';
@@ -26,4 +30,11 @@ abstract class ApiServices {
     @Query(EndPointsConstants.page) int page = 1,
     @Query(EndPointsConstants.limit) int limit = 10,
   });
+
+  @PUT(EndPointsConstants.editProfile)
+  Future<AuthResponse> editProfile(@Body() EditProfileRequest request);
+
+  @PUT(EndPointsConstants.uploadPhoto)
+  @MultiPart()
+  Future<String> uploadUserPhoto(@Part(name:EndPointsConstants.photo) File photo,);
 }
