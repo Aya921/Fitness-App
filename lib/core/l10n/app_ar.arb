@@ -101,7 +101,6 @@
       "back":"رجوع",
   "recommendation":"اقتراحات",
   "ingredients":"المكونات",
-
   "iAmYourSmartCoach": "أنا مدربك الذكي",
   "howCanIAssistYouToday": "كيف يمكنني مساعدتك اليوم؟",
   "getStarted": "ابدأ الآن",
@@ -121,7 +120,11 @@
 "level2": "المستوى الثاني",
 "level3": "المستوى الثالث",
 "level4": "المستوى الرابع",
-"level5": "المستوى الخامس"
-
-
+"level5": "المستوى الخامس",
+  "ingredients":"المكونات",
+  "yourWeight": "وزنك",
+  "yourGoal": "هدفك",
+  "yourLevel": "مستوى نشاطك",
+  "edit": "تعديل",
+  "tabToEdit": "اضغط للتعديل"
 }

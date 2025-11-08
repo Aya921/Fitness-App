@@ -24,4 +24,9 @@ abstract class EndPointsConstants {
 
   //change password
   static const String changePassword = "auth/change-password";
+
+  //edit profile
+static const String editProfile="auth/editProfile";
+static const String uploadPhoto="auth/upload-photo";
+static const String photo="photo";
 }

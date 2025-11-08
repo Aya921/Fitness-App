@@ -33,6 +33,7 @@ abstract class AssetsManager {
   static const String chatBg="assets/images/chat_bg.jpg";
   static const String menuIcon="assets/icons/menu.svg";
   static const String astron="assets/images/robot.png";
-
+  static const String editSvg="assets/icons/edit.svg";
+  static const String defaultUser="assets/images/user.png";
   static const String smartCoachProfile="assets/images/chat_bot.png";
 }

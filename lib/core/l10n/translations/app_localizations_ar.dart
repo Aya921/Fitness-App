@@ -82,19 +82,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get next => 'التالي';
 
   @override
-  String get level1 => 'المستوى الأول';
+  String get level1 => 'level1';
 
   @override
-  String get level2 => 'المستوى الثاني';
+  String get level2 => 'level2';
 
   @override
-  String get level3 => 'المستوى الثالث';
+  String get level3 => 'level3';
 
   @override
-  String get level4 => 'المستوى الرابع';
+  String get level4 => 'level4';
 
   @override
-  String get level5 => 'المستوى الخامس';
+  String get level5 => 'level5';
 
   @override
   String get foodRecommendation => 'الاطعمة الموصى بها';
@@ -292,9 +292,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get ingredients => 'المكونات';
 
   @override
-  String get hiHomeText => 'مرحبًا';
-
-  @override
   String get errorLoadingVideo => 'فشل تحميل الفيديو';
 
   @override
@@ -323,45 +320,17 @@ class AppLocalizationsAr extends AppLocalizations {
   String get error => 'خطأ';
 
   @override
-  String get iAmYourSmartCoach => 'أنا مدربك الذكي';
+  String get yourWeight => 'وزنك';
 
   @override
-  String get howCanIAssistYouToday => 'كيف يمكنني مساعدتك اليوم؟';
+  String get yourGoal => 'هدفك';
 
   @override
-  String get getStarted => 'ابدأ الآن';
+  String get yourLevel => 'مستوى نشاطك';
 
   @override
-  String get smartCoach => 'المدرب الذكي';
+  String get edit => 'تعديل';
 
   @override
-  String get typeYourMessage => 'اكتب رسالتك';
-
-  @override
-  String get previousConversations => 'المحادثات السابقة';
-
-  @override
-  String get delete => 'حذف';
-
-  @override
-  String get oldPassword => 'كلمة المرور القديمة';
-
-  @override
-  String get passNotMatch => 'كلمة المرور غير صحيحة';
-
-  @override
-  String get passwordMustContainLowerCase =>
-      'يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل';
-
-  @override
-  String get passwordMustContainUpperCase =>
-      'يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل';
-
-  @override
-  String get passwordMustContainNumber =>
-      'يجب أن تحتوي كلمة المرور على رقم واحد على الأقل';
-
-  @override
-  String get passwordMustContainSpecialChar =>
-      'يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل';
+  String get tabToEdit => 'اضغط للتعديل';
 }

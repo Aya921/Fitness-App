@@ -97,7 +97,6 @@
   "recommendation":"Recommendation",
   "ingredients":"Ingredients",
   "hiHomeText": "Hi",
-
   "doNotHaveAccount": "Don’t have an account? ",
   "errorLoadingVideo":"Error when loading the video",
   "exerciseGroup":"3 groups * 15 times",
@@ -123,6 +122,10 @@
   "passwordMustContainLowerCase":"Password must contain at least one lowercase letter",
   "passwordMustContainUpperCase":"Password must contain at least one uppercase letter",
   "passwordMustContainNumber":"Password must contain at least one number",
-  "passwordMustContainSpecialChar":"Password must contain at least one special character"
-
+  "passwordMustContainSpecialChar":"Password must contain at least one special character",
+  "yourWeight":"Your Weight",
+  "yourGoal":"Your Goal",
+  "yourLevel":"Your activity level" ,
+  "edit":"Edit",
+  "tabToEdit":"Tap to Edit"
 }

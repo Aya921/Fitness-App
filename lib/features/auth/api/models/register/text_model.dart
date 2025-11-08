@@ -1,7 +1,7 @@
 class TextModel {
   final String title;
-  final String subTitle;
+  final String? subTitle;
 
-  const TextModel({required this.title, required this.subTitle});
+  const TextModel({required this.title,  this.subTitle});
 
 }

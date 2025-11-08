@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
+    this.initialValue,
     this.hintText,
     this.onChanged,
     this.onSaved,
@@ -27,15 +28,16 @@ class CustomTextFormField extends StatelessWidget {
     this.maxLength,
     this.prefixIcon,
     this.prefixIconConstraints,
-    required this.label,
+     this.label,
     this.labelStyle,
     this.borderRadius = 100,
     this.disabledBorderColor,
     this.isReadOnly = false,
     this.floatingLabelBehavior = FloatingLabelBehavior.auto,
   });
+  final String? initialValue;
   final String? hintText;
-  final String label;
+  final String? label;
   final void Function(String)? onChanged;
   final void Function(String?)? onSaved;
   final Widget? suffixIcon;
@@ -62,6 +64,9 @@ class CustomTextFormField extends StatelessWidget {
   final FloatingLabelBehavior floatingLabelBehavior;
   @override
   Widget build(BuildContext context) {
+    final TextEditingController internalController =
+        controller ?? TextEditingController(text: initialValue);
+
     return TextFormField(
       onTap: onTap,
       style:
@@ -70,7 +75,7 @@ class CustomTextFormField extends StatelessWidget {
             color: AppColors.white,
             fontSize: context.setSp(FontSize.s16),
           ),
-      controller: controller,
+      controller: internalController,
       keyboardType: keyboardType,
       obscureText: obscureText,
       obscuringCharacter: obscuringCharacter,
@@ -84,18 +89,22 @@ class CustomTextFormField extends StatelessWidget {
               horizontal: context.setMinSize(16),
               vertical: context.setMinSize(4),
             ),
-        filled: false,
+        filled: isReadOnly,
+        fillColor: isReadOnly == true
+            ? AppColors.gray[10]?.withAlpha(50)
+            : null,
         label: FittedBox(
           fit: BoxFit.scaleDown,
-          child: Text(
-            label,
+          child:( label!=null)? Text(
+            label!,
             style:
                 labelStyle ??
                 getRegularStyle(
                   color: AppColors.gray[AppColors.colorCode10]!,
                   fontSize: context.setSp(FontSize.s12),
                 ),
-          ),
+          )
+          :null
         ),
         hintStyle:
             hintStyle ??
@@ -128,7 +137,7 @@ class CustomTextFormField extends StatelessWidget {
         disabledBorder: buildOutlinedBorder(
           context: context,
           borderColor:
-              disabledBorderColor ?? Theme.of(context).colorScheme.onSecondary,
+              AppColors.white,
           borderRadius: borderRadius,
         ),
         prefixIcon: Padding(

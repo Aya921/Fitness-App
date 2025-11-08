@@ -6,8 +6,13 @@ import 'package:fitness/features/auth/presentation/views/screens/compelete_regis
 import 'package:fitness/features/auth/presentation/views/screens/register/register_screen.dart';
 import 'package:fitness/features/foods/domain/entities/meals_by_category.dart';
 import 'package:fitness/features/home/domain/entity/exercises/mover_muscle_entity.dart';
+import 'package:fitness/features/home/presentation/view/screens/edit_profile/edit_activity_level_screen.dart';
+import 'package:fitness/features/home/presentation/view/screens/edit_profile/edit_goal_screen.dart';
+import 'package:fitness/features/home/presentation/view/screens/edit_profile/edit_profile_screen.dart';
+import 'package:fitness/features/home/presentation/view/screens/edit_profile/edit_weight_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/exercise_screen/exercises_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/exercise_screen/video_screen.dart';
+import 'package:fitness/features/home/presentation/view_model/edit_profile/edit_profile_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_intent.dart';
 import 'package:flutter/material.dart';
@@ -147,11 +152,41 @@ abstract class Routes {
         final index = args['index'] as int;
         return MaterialPageRoute(
           builder: (context) {
-            return DetailsFoodScreen(
-              meals: meals,
-              index: index,
-            );
+            return DetailsFoodScreen(meals: meals, index: index);
           },
+        );
+
+      case AppRoutes.editProfile:
+        return MaterialPageRoute(
+          builder: (context) => const EditProfileScreen(),
+        );
+
+      case AppRoutes.editWeight:
+        final cubit = setting.arguments as EditProfileCubit;
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: cubit,
+            child: const EditWeightScreen(),
+          ),
+        );
+
+      case AppRoutes.editGoal:
+        final cubit = setting.arguments as EditProfileCubit;
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: cubit,
+            child: const EditGoalScreen(),
+          ),
+        );
+
+
+      case AppRoutes.editLevel:
+        final cubit = setting.arguments as EditProfileCubit;
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: cubit,
+            child: const EditActivityLevelScreen(),
+          ),
         );
 
       default:

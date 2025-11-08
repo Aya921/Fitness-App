@@ -26,9 +26,11 @@ duration: const Duration(
         getBoldStyle(color: AppColors.white,
             fontSize:context.setSp(20) ),),
         SizedBox(height: context.setHight(12),),
-        Text(textModel.subTitle,style:
+        textModel.subTitle != null?
+          Text(textModel.subTitle!,style:
         getRegularStyle(color: AppColors.white,
-            fontSize:context.setSp(16) ),),
+            fontSize:context.setSp(16) ),)
+        :SizedBox(height: context.setHight(0),)
       ],
     ));
   }
