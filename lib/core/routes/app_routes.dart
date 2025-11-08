@@ -17,5 +17,7 @@ abstract class AppRoutes {
   static const String videoPage = "videoPage";
   static const String detailsFoodPage = "detailsFoodPage";
   static const String food = "/food";
+//SmartCoachScreen
+  static const String smartCoach = "/SmartCoachScreen";
 
 }

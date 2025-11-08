@@ -53,7 +53,7 @@
   "confirmPass": "تأكيد كلمة المرور",
   "done": "تأكيد",
   "next": "التالي",
-  "back": "رجوع",
+
   "doIt": "ابدأ الآن",
   "skip": "تخطي",
   "onBoardingtitleOne": "ثمن التميز\nهو الانضباط",
@@ -109,5 +109,14 @@
   "recommendationForYouText": "توصيات لك",
   "popularTrainingText": "التمارين الشائعة",
   "recommendation":"اقتراحات",
-  "ingredients":"المكونات"
+  "ingredients":"المكونات",
+  "iAmYourSmartCoach": "أنا مدربك الذكي",
+  "howCanIAssistYouToday": "كيف يمكنني مساعدتك اليوم؟",
+  "getStarted": "يمكنك البدء",
+  "smartCoach": "الكابتن الذكى ",
+  "typeYourMessage": "اكتب رسالتك",
+  "previousConversations": "المحادثات السابقة",
+  "delete": "حذف"
+
+
 }

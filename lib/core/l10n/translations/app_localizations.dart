@@ -236,12 +236,6 @@ abstract class AppLocalizations {
   /// **'your regular physical\nactivity level ?'**
   String get yourRegularPhysical;
 
-  /// No description provided for @next.
-  ///
-  /// In en, this message translates to:
-  /// **'Next'**
-  String get next;
-
   /// No description provided for @level1.
   ///
   /// In en, this message translates to:
@@ -433,6 +427,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Done'**
   String get done;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
 
   /// No description provided for @back.
   ///
@@ -632,12 +632,6 @@ abstract class AppLocalizations {
   /// **'WELCOME BACK'**
   String get welcomeBack;
 
-  /// No description provided for @doNotHaveAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Don’t have an account? '**
-  String get doNotHaveAccount;
-
   /// No description provided for @hiHomeText.
   ///
   /// In en, this message translates to:
@@ -697,6 +691,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Ingredients'**
   String get ingredients;
+
+  /// No description provided for @doNotHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don’t have an account? '**
+  String get doNotHaveAccount;
+
+  /// No description provided for @errorLoadingVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Error when loading the video'**
+  String get errorLoadingVideo;
+
+  /// No description provided for @exerciseGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'3 groups * 15 times'**
+  String get exerciseGroup;
+
+  /// No description provided for @errorLoadingExercises.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load exercises'**
+  String get errorLoadingExercises;
+
+  /// No description provided for @noExercises.
+  ///
+  /// In en, this message translates to:
+  /// **'No exercises found'**
+  String get noExercises;
+
+  /// No description provided for @exercise.
+  ///
+  /// In en, this message translates to:
+  /// **'exercise'**
+  String get exercise;
+
+  /// No description provided for @exerciseSlug.
+  ///
+  /// In en, this message translates to:
+  /// **'Start today, get stronger tomorrow… every workout brings you closer to your best self!'**
+  String get exerciseSlug;
+
+  /// No description provided for @min.
+  ///
+  /// In en, this message translates to:
+  /// **'30 MIN'**
+  String get min;
+
+  /// No description provided for @cal.
+  ///
+  /// In en, this message translates to:
+  /// **'130 Cal'**
+  String get cal;
+
+  /// No description provided for @error.
+  ///
+  /// In en, this message translates to:
+  /// **'Error'**
+  String get error;
+
+  /// No description provided for @iAmYourSmartCoach.
+  ///
+  /// In en, this message translates to:
+  /// **'I Am Your Smart Coach'**
+  String get iAmYourSmartCoach;
+
+  /// No description provided for @howCanIAssistYouToday.
+  ///
+  /// In en, this message translates to:
+  /// **'How Can I Assist You\n Today?'**
+  String get howCanIAssistYouToday;
+
+  /// No description provided for @getStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Get Started'**
+  String get getStarted;
+
+  /// No description provided for @smartCoach.
+  ///
+  /// In en, this message translates to:
+  /// **'Smart Coach'**
+  String get smartCoach;
+
+  /// No description provided for @typeYourMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'type Your Message'**
+  String get typeYourMessage;
+
+  /// No description provided for @previousConversations.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous conversations'**
+  String get previousConversations;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
 }
 
 class _AppLocalizationsDelegate

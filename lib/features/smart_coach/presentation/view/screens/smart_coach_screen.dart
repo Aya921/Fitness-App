@@ -2,23 +2,18 @@ import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
-import 'package:fitness/core/widget/custom_pop_icon.dart';
 import 'package:fitness/core/widget/home_back_ground.dart';
 import 'package:fitness/features/smart_coach/presentation/view/widgets/chat_section.dart';
 import 'package:fitness/features/smart_coach/presentation/view/widgets/user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-
 import '../../../../../core/enum/sender.dart';
 import '../../../../../core/theme/app_colors.dart';
-import '../../../../../core/theme/app_theme.dart';
 import '../../view_model/smart_coach_cubit.dart';
 import '../../view_model/smart_coach_state.dart';
 import '../widgets/chat.dart';
 import '../widgets/smart_coach_profile.dart';
-
-
 class SmartCoachScreen extends StatefulWidget {
   const SmartCoachScreen({super.key});
 
@@ -53,6 +48,7 @@ class _SmartCoachScreenState extends State<SmartCoachScreen> {
       cubit.sendMessage(text);
       message.clear();
     }
+    cubit.fetchConversationSummaries();
   }
 
   @override
@@ -102,22 +98,22 @@ setState(() {
                           itemCount: messages.length,
                           itemBuilder: (context, index) {
                             final message = messages[index];
-                            final isBot = message.role == Sender.model;
+                            final isSmartCoach = message.role == Sender.model;
                             final text = message.text;
 
                             return Padding(
                               padding:
                               const EdgeInsets.symmetric(vertical: 8),
                               child: Row(
-                                mainAxisAlignment: isBot
+                                mainAxisAlignment: isSmartCoach
                                     ? MainAxisAlignment.start
                                     : MainAxisAlignment.end,
                                 crossAxisAlignment:
                                 CrossAxisAlignment.end,
                                 children: [
-                                  isBot?
+                                  isSmartCoach?
                                     const SmartCoachProfile():const SizedBox.shrink(),
-                                  if (!isBot) const SizedBox(width: 40),
+                                  if (!isSmartCoach) const SizedBox(width: 40),
                                   Flexible(
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
@@ -125,7 +121,7 @@ setState(() {
                                       margin: const EdgeInsets.symmetric(
                                           horizontal: 8),
                                       decoration: BoxDecoration(
-                                        color: isBot
+                                        color: isSmartCoach
                                             ? AppColors.gray
                                             .withOpacity(0.07)
                                             : AppColors.orange
@@ -136,9 +132,9 @@ setState(() {
                                           bottomRight:
                                           const Radius.circular(20),
                                           topLeft: Radius.circular(
-                                              isBot ? 0 : 20),
+                                              isSmartCoach ? 0 : 20),
                                           topRight: Radius.circular(
-                                              isBot ? 20 : 0),
+                                              isSmartCoach ? 20 : 0),
                                         ),
                                       ),
                                       child: Text(
@@ -148,9 +144,9 @@ setState(() {
                                       ),
                                     ),
                                   ),
-                                  if (!isBot)
+                                  if (!isSmartCoach)
                                     const UserProfile(),
-                                  if (isBot) const SizedBox(width: 40),
+                                  if (isSmartCoach) const SizedBox(width: 40),
                                 ],
                               ),
                             );
@@ -174,7 +170,7 @@ setState(() {
                                   color: Colors.black.withOpacity(0.4),
                                   borderRadius: BorderRadius.circular(25),
                                 ),
-                                child: TextField(
+                                child: TextFormField(
                                   controller: message,
                                   style: const TextStyle(
                                       color: Colors.white),
@@ -188,11 +184,14 @@ setState(() {
                                         horizontal: 20, vertical: 15),
                                   ),
                                   enabled: !isLoading,
-                                  onSubmitted: (_) => _sendMessage(context),
+                                  onFieldSubmitted: (_){
+                                    _sendMessage(context);
+                                  },
+
                                 ),
                               ),
                             ),
-                            const SizedBox(width: 10),
+                             SizedBox(width: context.setWidth(12)),
                             IconButton(
                               icon: isLoading
                                   ?  SizedBox(
@@ -218,12 +217,12 @@ setState(() {
                 ],
               ))
             ),
-            AnimatedPositioned(
+            AnimatedPositionedDirectional(
               duration: const Duration(milliseconds: 300),
               curve: Curves.fastOutSlowIn,
               top: 0,
               bottom: 0,
-              right:
+              end:
               _showPreviousChat ? 0 : -MediaQuery.of(context).size.width
                   * 0.7,
               child: SizedBox(

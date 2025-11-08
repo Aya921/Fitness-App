@@ -27,12 +27,14 @@ class ExploreCubit extends Cubit<ExploreState> {
   }
 
 Future<void> _getHomeData() async{
-  _getMealsCategories();
+
   _getMuscleGroupes();
   _getRandomMuscles();
 }
   Future<void> _getRandomMuscles() async{
     emit(state.copyWith(randomMusclesState: const StateStatus.loading()));
+    await Future.delayed(const Duration(seconds: 2)); // بس علشان تشوفي الـ skeleton
+
     final randomMusclesData = await _exploreUseCase.getRandomMuscles();
     switch(randomMusclesData){
       case SuccessResult<List<MusclesRandomEntity>>():
@@ -57,7 +59,6 @@ Future<void> _getHomeData() async{
         emit(state.copyWith(musclesGroupState: StateStatus.success(muscleGroupsData.successResult)));
         break;
       case FailedResult<List<MusclesGroupEntity>>():
-    
          emit(state.copyWith(musclesGroupState: StateStatus.failure(
            ResponseException(message: muscleGroupsData.errorMessage)
          )));
@@ -66,20 +67,5 @@ Future<void> _getHomeData() async{
   }
 
 
-   Future<void> _getMealsCategories() async{
-    emit(state.copyWith(mealsCategorysState: const StateStatus.loading()));
-    final mealsCategoriesData = await _exploreUseCase.getMealsCategories();
-    switch(mealsCategoriesData){
-      case SuccessResult<List<MealsCategoriesEntity>>():
-       
-        emit(state.copyWith(mealsCategorysState: StateStatus.success(mealsCategoriesData.successResult)));
-        break;
-      case FailedResult<List<MealsCategoriesEntity>>():
-    
-         emit(state.copyWith(mealsCategorysState: StateStatus.failure(
-           ResponseException(message: mealsCategoriesData.errorMessage)
-         )));
-       break;
-    }
-  }
+
 }

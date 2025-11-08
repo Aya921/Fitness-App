@@ -65,8 +65,7 @@ class _PreviousChatMenuState extends State<PreviousChatMenu> {
                   final chats = context
                       .watch<SmartCoachCubit>()
                       .conversationSummaries;
-                  print(chats);
-                  return state.baseState!.isLoading == true
+                  return state.stateStatus!.isLoading == true
                       ? Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -117,7 +116,6 @@ class _PreviousChatMenuState extends State<PreviousChatMenu> {
                                               chats[index][Constants.id],
                                             );
                                         widget.onConversationSelected();
-                                        print(chats[index][Constants.id]);
                                       },
                                       icon: Icon(
                                         Icons.arrow_back_ios_rounded,

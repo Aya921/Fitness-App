@@ -23,7 +23,6 @@
   "advance": "Advance",
   "trueBeast": "True Beast",
   "yourRegularPhysical": "your regular physical\nactivity level ?",
-  "next": "Next",
   "level1": "level1",
   "level2": "level2",
   "level3": "level3",
@@ -93,7 +92,6 @@
   "login": "Login",
   "forgetPass": "Forget Password?",
   "welcomeBack": "WELCOME BACK",
-  "doNotHaveAccount": "Don’t have an account? ",
 
   "hiHomeText": "Hi",
   "letsStartDoingYourDay": "Let's Start Your Day",
@@ -115,5 +113,11 @@
   "min":"30 MIN",
   "cal": "130 Cal",
   "error":"Error",
-  "back":"Back"
+  "iAmYourSmartCoach": "I Am Your Smart Coach",
+  "howCanIAssistYouToday": "How Can I Assist You\n Today?",
+  "getStarted": "Get Started",
+  "smartCoach": "Smart Coach",
+  "typeYourMessage": "type Your Message",
+  "previousConversations": "Previous conversations",
+"delete": "Delete"
 }

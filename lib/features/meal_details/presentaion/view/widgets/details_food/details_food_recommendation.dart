@@ -7,6 +7,8 @@ import 'package:fitness/core/widget/custom_card_fitness.dart';
 import 'package:fitness/features/foods/domain/entities/meals_by_category.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../../core/routes/app_routes.dart';
+
 class DetailsFoodRecommendation extends StatelessWidget {
   const DetailsFoodRecommendation({
     super.key,required this.meals
@@ -15,7 +17,7 @@ final List<MealsByCategory>meals;
 
   @override
   Widget build(BuildContext context) {
-    final foodMeadls=List.from(meals)..shuffle();
+    final List<MealsByCategory> foodMeadls=List.from(meals)..shuffle();
 
     return Padding(
       padding: EdgeInsets.all(context.setWidth(5)),
@@ -42,16 +44,27 @@ final List<MealsByCategory>meals;
               itemCount: foodMeadls.length,
               itemBuilder: (context, index) {
 
-                return Container(
-                  margin: EdgeInsets.only(right: context.setWidth(10)),
-                  width: context.setWidth(163),
-                  height: context.setHight(160),
-                  child:  CustomCardFitness(
-                    image: foodMeadls[index].strMealThumb??"",
-                    title: foodMeadls[index].strMeal??"Pasta With chicks",
+                return GestureDetector(
+                    onTap: (){
+                      Navigator.of(context).pushNamed(AppRoutes
+                          .detailsFoodPage,
+                          arguments:{
+                            'meal': foodMeadls,
+                            'index': index,
+                          } );
+                    },
+                  child:   Container(
+                    margin: EdgeInsets.only(right: context.setWidth(10)),
+                    width: context.setWidth(163),
+                    height: context.setHight(160),
+                    child:  CustomCardFitness(
+                      image: foodMeadls[index].strMealThumb??"",
+                      title: foodMeadls[index].strMeal??"Pasta With chicks",
 
-                  ),
+                    ),
+                  )
                 );
+
               },
             ),
           ),

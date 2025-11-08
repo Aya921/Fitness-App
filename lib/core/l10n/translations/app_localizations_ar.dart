@@ -79,9 +79,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get yourRegularPhysical => 'ما هو مستوى نشاطك البدني المعتاد؟';
 
   @override
-  String get next => 'التالي';
-
-  @override
   String get level1 => 'level1';
 
   @override
@@ -176,6 +173,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get done => 'تأكيد';
+
+  @override
+  String get next => 'التالي';
 
   @override
   String get back => 'رجوع';
@@ -283,9 +283,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get welcomeBack => 'مرحبًا بعودتك';
 
   @override
-  String get doNotHaveAccount => 'ليس لديك حساب؟ ';
-
-  @override
   String get hiHomeText => 'مرحبًا';
 
   @override
@@ -314,4 +311,56 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get ingredients => 'المكونات';
+
+  @override
+  String get doNotHaveAccount => 'ليس لديك حساب؟ ';
+
+  @override
+  String get errorLoadingVideo => 'فشل تحميل الفيديو';
+
+  @override
+  String get exerciseGroup => 'مجموعات 15 مره3 ';
+
+  @override
+  String get errorLoadingExercises => 'خطأ اثناء تحميل التدريبات';
+
+  @override
+  String get noExercises => 'لا يوجد تدريبات';
+
+  @override
+  String get exercise => 'تدريب';
+
+  @override
+  String get exerciseSlug =>
+      'ابدأ اليوم، وكن أقوى غدًا… كل تمرين يقربك أكثر من أفضل نسخة من نفسك!';
+
+  @override
+  String get min => '30 دقيقه';
+
+  @override
+  String get cal => '130 كالوري';
+
+  @override
+  String get error => 'خطأ';
+
+  @override
+  String get iAmYourSmartCoach => 'أنا مدربك الذكي';
+
+  @override
+  String get howCanIAssistYouToday => 'كيف يمكنني مساعدتك اليوم؟';
+
+  @override
+  String get getStarted => 'يمكنك البدء';
+
+  @override
+  String get smartCoach => 'الكابتن الذكى ';
+
+  @override
+  String get typeYourMessage => 'اكتب رسالتك';
+
+  @override
+  String get previousConversations => 'المحادثات السابقة';
+
+  @override
+  String get delete => 'حذف';
 }

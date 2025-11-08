@@ -1,5 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:fitness/core/constants/assets_manager.dart';
+
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
@@ -46,7 +45,8 @@ class ExploreScreenProfileSection extends StatelessWidget {
               const Icon(Icons.info),
           radius: context.setMinSize(18),
           backgroundColor: Colors.transparent,
-          backgroundImage: NetworkImage(UserManager().currentUser!.personalInfo!.photo ?? ""),
+          backgroundImage: NetworkImage(UserManager().
+          currentUser!.personalInfo!.photo ?? ""),
         ),
       ],
     );

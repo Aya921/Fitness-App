@@ -15,11 +15,12 @@ import '../../domain/entity/message_entity.dart';
 //   Future<Result<List<Map<String, dynamic>>>> getConversationSummaries();
 // }
 abstract class SmartCoachRemoteDataSource {
-  Stream<Candidates?> getSmartCoachResponseStream(List<Content> chatHistory,{String? model});
-  Future<List<Map<String, dynamic>>> fetchConversationSummaries();
-  Future<List<MessageEntity>> fetchMessages(String conversationId);
+  Stream<Candidates?> getSmartCoachResponseStream(List<Content> chatHistory,
+      {String? model});
+  Future<Result<List<Map<String, dynamic>>>> fetchConversationSummaries();
+  Future<Result<List<MessageEntity>>> fetchMessages(String conversationId);
   Future<void> deleteConversation(String conversationId);
   Future<Result<String>> startNewConversation();
-  Future<void> saveMessage(String conversationId, MessageEntity message);
+  Future<Result<void>> saveMessage(String conversationId, MessageEntity message);
   Future<Result<void>> setConversationTitle(String conversationId, String title);
 }

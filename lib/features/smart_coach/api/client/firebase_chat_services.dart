@@ -331,12 +331,10 @@ class FirebaseChatService {
           .limit(1)
           .get();
 
-      // ✅ عنوان افتراضي
       String title = 'No messages yet';
 
       if (messageSnapshot.docs.isNotEmpty) {
         final data = messageSnapshot.docs.first.data();
-        // ✅ تأكد من وجود النص فقط بدون شرط الـ user
         if (data[Constants.fieldText] != null && data[Constants.fieldText].toString().trim().isNotEmpty) {
           title = data[Constants.fieldText];
         }

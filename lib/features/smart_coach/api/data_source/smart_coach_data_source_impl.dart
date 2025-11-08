@@ -110,13 +110,17 @@ class SmartCoachRemoteDataSourceImpl implements SmartCoachRemoteDataSource {
   }
 
   @override
-  Future<List<Map<String, dynamic>>> fetchConversationSummaries() {
-    return _firebaseChatService.fetchConversationSummaries();
+  Future<Result<List<Map<String, dynamic>>>> fetchConversationSummaries() {
+    return runSafeResult(()async{
+      return _firebaseChatService.fetchConversationSummaries();
+    });
   }
 
   @override
-  Future<List<MessageEntity>> fetchMessages(String conversationId) {
-    return _firebaseChatService.fetchMessages(conversationId);
+  Future<Result<List<MessageEntity>>> fetchMessages(String conversationId) {
+    return runSafeResult(()async{
+      return _firebaseChatService.fetchMessages(conversationId);
+    });
   }
 
   @override
@@ -132,13 +136,11 @@ class SmartCoachRemoteDataSourceImpl implements SmartCoachRemoteDataSource {
   }
 
   @override
-  Future<void> saveMessage(String conversationId, MessageEntity message) async {
-    try {
-      await _firebaseChatService.saveMessage(conversationId, message);
-    } on FirebaseException catch (e) {
-      throw FirestoreHandledException(
-          code: e.code, errorMessage: e.message.toString());
-    }
+  Future<Result<void>> saveMessage(String conversationId, MessageEntity message) async {
+return runSafeResult(()async{
+return  await _firebaseChatService.saveMessage(conversationId, message);
+
+});
   }
 
 

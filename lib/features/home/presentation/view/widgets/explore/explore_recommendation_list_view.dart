@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
+import '../../../../domain/entities/explore_entity/muscles_random_entity/muscles_random_entity.dart';
+
 class ExploreRecommendationListView extends StatelessWidget {
   const ExploreRecommendationListView({super.key});
 
@@ -27,24 +29,37 @@ class ExploreRecommendationListView extends StatelessWidget {
           ),
         ),
         SizedBox(height: context.setHight(8)),
+
         BlocBuilder<ExploreCubit, ExploreState>(
           builder: (context, state) {
             return SizedBox(
               height: context.setHight(104),
               child: ListView.builder(
-                itemCount: state.randomMusclesState.data?.length ?? 0,
+                itemCount: state.randomMusclesState.data?.length ?? _dummyrecommended.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return Skeletonizer(
-                    effect: ShimmerEffect(
-                  baseColor: AppColors.gray[AppColors.colorCode70]!,
-                  highlightColor: AppColors.gray[AppColors.colorCode40]!,
-                ),
-                     enabled:
-                    state.randomMusclesState.isLoading ||
-                    state.randomMusclesState.isInitial ||
-                    state.randomMusclesState.isFailure,
-                    child: ExploreRecommendationListItem(randomMusclesData:state.randomMusclesState.data![index]));
+                  final recommended=state.randomMusclesState.data ??_dummyrecommended;
+                  return
+
+
+                   Skeletonizer(
+                      effect: ShimmerEffect(
+                        baseColor: AppColors.gray[AppColors.colorCode70]!,
+                        highlightColor: AppColors.gray[AppColors.colorCode40]!,
+                      ),
+                      enabled:
+                      state.randomMusclesState.isLoading ||
+                          state.randomMusclesState.isInitial ||
+                          state.randomMusclesState.isFailure,
+
+                      child:
+                      ExploreRecommendationListItem(
+                          randomMusclesData:recommended[index])
+
+                      )
+
+
+                    ;
                 },
               ),
             );
@@ -54,3 +69,11 @@ class ExploreRecommendationListView extends StatelessWidget {
     );
   }
 }
+final _dummyrecommended= List.generate(
+  8,
+      (i) => const MusclesRandomEntity(
+   image: "",
+        name: "",
+        id: ""
+  ),
+);

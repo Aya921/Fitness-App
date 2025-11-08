@@ -1,37 +1,54 @@
 // main file
+import 'package:firebase_core/firebase_core.dart';
+import 'package:fitness/core/constants/constants.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/routes/routes.dart';
-import 'package:fitness/test_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'config/app_language/app_language_config.dart';
 import 'config/di/di.dart';
 import 'package:device_preview/device_preview.dart';
+import 'core/routes/app_routes.dart';
 import 'core/theme/app_theme.dart';
 import 'core/user/user_session_handler.dart';
+import 'package:flutter_gemini/flutter_gemini.dart';
+
+import 'firebase_options.dart';
+
 void main() async {
-  ///ensure engine is Oky
-//  final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   await configureDependencies();
   await getIt.allReady();
-  final appLanguageConfig = getIt.get<AppLanguageConfig>();
+
+  Gemini.init(
+    apiKey: Constants.gemeniKey,
+    enableDebugging: true,
+  );
+
+  final appLanguageConfig = getIt<AppLanguageConfig>();
   await appLanguageConfig.setSelectedLocal();
 
   final userSession = getIt<UserSessionHandler>();
   final isLoggedIn = await userSession.checkIfUserLoggedIn();
+
   runApp(
     DevicePreview(
       enabled: false,
       builder: (context) => ChangeNotifierProvider.value(
-        value: appLanguageConfig, // Use the instance here
-        child:  FitnessApp(isLoggedIn: isLoggedIn),
+        value: appLanguageConfig,
+        child: FitnessApp(isLoggedIn: isLoggedIn),
       ),
     ),
   );
 }
+
 class FitnessApp extends StatelessWidget {
   final bool isLoggedIn;
   const FitnessApp({required this.isLoggedIn, super.key});
@@ -49,9 +66,9 @@ class FitnessApp extends StatelessWidget {
         theme: AppTheme.darkTheme,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: Routes.onGenerate,
-        home: const TestScreen(),
-       //  initialRoute: AppRoutes.food,
-       // initialRoute: isLoggedIn ? AppRoutes.home : AppRoutes.onBoarding,
+       // home:  const SmartCoachScreen(),
+         //initialRoute: AppRoutes.home,
+       initialRoute: isLoggedIn ? AppRoutes.home : AppRoutes.onBoarding,
         navigatorKey: Routes.navigatorKey,
       ),
     );

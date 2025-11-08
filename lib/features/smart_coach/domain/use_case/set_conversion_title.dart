@@ -3,7 +3,7 @@
 import 'package:injectable/injectable.dart';
 
 import '../../../../core/result/result.dart';
-import '../repo/smart_coach_repo_impl.dart';
+import '../repo/smart_coach_repo.dart';
 
 
 @injectable

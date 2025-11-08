@@ -2,7 +2,7 @@
 import 'package:injectable/injectable.dart';
 
 import '../entity/message_entity.dart';
-import '../repo/smart_coach_repo_impl.dart';
+import '../repo/smart_coach_repo.dart';
 
 
 @injectable

@@ -1,14 +1,13 @@
 import 'package:fitness/core/error/gemeni_error_exception.dart';
 import 'package:fitness/core/result/result.dart';
 import 'package:fitness/features/smart_coach/data/data_source/smart_coach_data_source.dart';
-import 'package:fitness/features/smart_coach/domain/repo/smart_coach_repo_impl.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
-import 'package:flutter_gemini/src/models/content/content.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../core/constants/constants.dart';
 import '../../../../core/enum/sender.dart';
 import '../../domain/entity/message_entity.dart';
+import '../../domain/repo/smart_coach_repo.dart';
 //
 // @Injectable(as: SmartCoachRepository)
 // class SmartCoachRepositoryImpl implements SmartCoachRepository {
@@ -158,7 +157,7 @@ class SmartCoachRepositoryImpl implements SmartCoachRepository {
       final geminiChatHistory = _mapMessagesToGeminiContent(chatHistory);
       final geminiResponseStream = remoteDataSource.
       getSmartCoachResponseStream(geminiChatHistory,
-        model: Constants.gemeniModel ,  );
+        model: Constants.gemeniModel,  );
 
       return geminiResponseStream.map((candidate) {
         if (candidate == null || candidate.content == null) {
@@ -167,7 +166,7 @@ class SmartCoachRepositoryImpl implements SmartCoachRepository {
 
         final contentParts = candidate.content!.parts;
         final StringBuffer buffer = StringBuffer();
-        for (var part in contentParts!) {
+        for (final part in contentParts!) {
           if (part is TextPart) {
             buffer.write(part.text);
           }
@@ -186,12 +185,12 @@ class SmartCoachRepositoryImpl implements SmartCoachRepository {
   }
 
   @override
-  Future<List<Map<String, dynamic>>> fetchConversationSummaries() {
+  Future<Result<List<Map<String, dynamic>>>> fetchConversationSummaries() {
     return remoteDataSource.fetchConversationSummaries();
   }
 
   @override
-  Future<List<MessageEntity>> fetchMessages(String conversationId) {
+  Future<Result<List<MessageEntity>>> fetchMessages(String conversationId) {
     return remoteDataSource.fetchMessages(conversationId);
   }
 
@@ -206,7 +205,7 @@ class SmartCoachRepositoryImpl implements SmartCoachRepository {
   }
 
   @override
-  Future<void> saveMessage(String conversationId, MessageEntity message) {
+  Future<Result<void>> saveMessage(String conversationId, MessageEntity message) {
     return remoteDataSource.saveMessage(conversationId, message);
   }
 

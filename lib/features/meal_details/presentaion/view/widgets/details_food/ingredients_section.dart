@@ -28,7 +28,6 @@ class IngredientsSection extends StatelessWidget {
               ),
             ),
           ),
-
           Container(
             width: double.infinity,
             decoration: BoxDecoration(

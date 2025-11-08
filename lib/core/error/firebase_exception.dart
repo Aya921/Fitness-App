@@ -81,7 +81,6 @@ class FirestoreExceptionHandler {
   }
 }
 
-/// Wrapper for Firestore operations that returns Result<T>
 Future<Result<T>> runSafeResult<T>(Future<T> Function() action) async {
   try {
     final result = await action();

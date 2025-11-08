@@ -79,9 +79,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get yourRegularPhysical => 'your regular physical\nactivity level ?';
 
   @override
-  String get next => 'Next';
-
-  @override
   String get level1 => 'level1';
 
   @override
@@ -176,6 +173,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get done => 'Done';
+
+  @override
+  String get next => 'Next';
 
   @override
   String get back => 'Back';
@@ -282,9 +282,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get welcomeBack => 'WELCOME BACK';
 
   @override
-  String get doNotHaveAccount => 'Don’t have an account? ';
-
-  @override
   String get hiHomeText => 'Hi';
 
   @override
@@ -313,4 +310,56 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ingredients => 'Ingredients';
+
+  @override
+  String get doNotHaveAccount => 'Don’t have an account? ';
+
+  @override
+  String get errorLoadingVideo => 'Error when loading the video';
+
+  @override
+  String get exerciseGroup => '3 groups * 15 times';
+
+  @override
+  String get errorLoadingExercises => 'Failed to load exercises';
+
+  @override
+  String get noExercises => 'No exercises found';
+
+  @override
+  String get exercise => 'exercise';
+
+  @override
+  String get exerciseSlug =>
+      'Start today, get stronger tomorrow… every workout brings you closer to your best self!';
+
+  @override
+  String get min => '30 MIN';
+
+  @override
+  String get cal => '130 Cal';
+
+  @override
+  String get error => 'Error';
+
+  @override
+  String get iAmYourSmartCoach => 'I Am Your Smart Coach';
+
+  @override
+  String get howCanIAssistYouToday => 'How Can I Assist You\n Today?';
+
+  @override
+  String get getStarted => 'Get Started';
+
+  @override
+  String get smartCoach => 'Smart Coach';
+
+  @override
+  String get typeYourMessage => 'type Your Message';
+
+  @override
+  String get previousConversations => 'Previous conversations';
+
+  @override
+  String get delete => 'Delete';
 }

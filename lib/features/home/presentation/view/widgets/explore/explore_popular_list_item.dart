@@ -25,7 +25,7 @@ class ExplorePopularListItem extends StatelessWidget {
                 Radius.circular(context.setMinSize(20)),
               ),
               image: DecorationImage(
-                image: const AssetImage(AssetsManager.homeImageTest),
+                image:  const AssetImage(AssetsManager.homeImageTest),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
                   AppColors.black.withValues(alpha: 0.2),

@@ -18,7 +18,7 @@ class ExploreScreen extends StatelessWidget {
         BlocProvider(create: (context) => getIt.get<ExploreCubit>()..doIntent(intent:GetHomeData()),),
           BlocProvider(create: (context) => getIt.get<FoodCubit>()..doIntent(intent:FoodInitializationIntent()),)
       ],
-      child: const Scaffold(body: ExploreScreenViewBody()),
+      child: const  ExploreScreenViewBody(),
     );
   }
 }

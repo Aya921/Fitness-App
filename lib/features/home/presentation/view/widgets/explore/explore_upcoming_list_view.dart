@@ -4,7 +4,6 @@ import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
 import 'package:fitness/core/widget/tab_bar_widget.dart';
-import 'package:fitness/features/home/presentation/view/widgets/explore/explore_recommendation_list_item.dart';
 import 'package:fitness/features/home/presentation/view/widgets/explore/explore_upcoming_list_item.dart';
 import 'package:fitness/features/home/presentation/view_model/explore_view_model/explore_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/explore_view_model/explore_state.dart';

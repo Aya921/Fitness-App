@@ -8,5 +8,4 @@ abstract class ExploreDataSource {
 
  Future<Result<List<MusclesGroupEntity>>> getMusclesGroup();
 
- Future<Result<List<MealsCategoriesEntity>>> getMealsCategories();
 }

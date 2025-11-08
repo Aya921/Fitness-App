@@ -4,7 +4,6 @@ import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_style.dart';
 import 'package:fitness/core/widget/custom_pop_icon.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 class ChatSection extends StatelessWidget {

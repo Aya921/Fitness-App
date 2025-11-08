@@ -30,43 +30,41 @@ class GymScreen extends StatelessWidget {
       }
     }
 
-    return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(AssetsManager.backGroundImageGym),
-            fit: BoxFit.cover,
-          ),
+    return  Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(AssetsManager.backGroundImageGym),
+          fit: BoxFit.cover,
         ),
-        child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(height: context.setHight(20)),
-              Text(
-                Constants.workouts,
-                style: getBoldStyle(
-                  color: AppColors.white,
-                  fontSize: context.setSp(30),
-                ),
+      ),
+      child: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: context.setHight(20)),
+            Text(
+              Constants.workouts,
+              style: getBoldStyle(
+                color: AppColors.white,
+                fontSize: context.setSp(30),
               ),
-              SizedBox(height: context.setHight(10)),
-              Container(
-                height: context.setHight(40),
-                margin:
-                EdgeInsets.symmetric(horizontal: context.setWidth(16)),
-                child: TabBarWidget(
-                  titles: titleTebBar,
-                  initialSelectedIndex: initialIndex,
-                ),
+            ),
+            SizedBox(height: context.setHight(10)),
+            Container(
+              height: context.setHight(40),
+              margin:
+              EdgeInsets.symmetric(horizontal: context.setWidth(16)),
+              child: TabBarWidget(
+                titles: titleTebBar,
+                initialSelectedIndex: initialIndex,
               ),
-              SizedBox(height: context.setHight(10)),
-              GridviewWidget(
-                images: images,
-                titles: titles,
-              ),
-            ],
-          ),
+            ),
+            SizedBox(height: context.setHight(10)),
+            GridviewWidget(
+              images: images,
+              titles: titles,
+            ),
+          ],
         ),
       ),
     );

@@ -11,14 +11,7 @@ class ExploreDataSourceImpl implements ExploreDataSource{
   final ApiServices _apiServices;
 
   ExploreDataSourceImpl(this._apiServices); 
-  @override
-  Future<Result<List<MealsCategoriesEntity>>> getMealsCategories() {
-    return safeApiCall(()async{
-      final response =  await _apiServices.getAllMealsCategories();
-      final data =response.categories;
-      return data?.map((model) => model.toEntity()).toList() ?? [];
-    });
-  }
+
 
   @override
   Future<Result<List<MusclesGroupEntity>>> getMusclesGroup() {

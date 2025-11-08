@@ -155,14 +155,14 @@ import '../../domain/entity/message_entity.dart';
 class SmartCoachChatState extends Equatable {
   const SmartCoachChatState({
 
-    this.baseState,
+    this.stateStatus,
     this.messages,
     this.isLoading = false,
     this.errorMessage,
   });
 
 
-  final StateStatus? baseState;
+  final StateStatus? stateStatus;
   final List<MessageEntity>? messages;
   final bool isLoading;
   final String? errorMessage;
@@ -170,14 +170,14 @@ class SmartCoachChatState extends Equatable {
   SmartCoachChatState copyWith({
     String? firstName,
     String? photo,
-  StateStatus? baseState,
+  StateStatus? stateStatus,
     List<MessageEntity>? messages,
     bool? isLoading,
     String? errorMessage,
   }) {
     return SmartCoachChatState(
 
-      baseState: baseState ?? this.baseState,
+      stateStatus: stateStatus ?? this.stateStatus,
       messages: messages ?? this.messages,
       isLoading: isLoading ?? this.isLoading,
       errorMessage: errorMessage ?? this.errorMessage,
@@ -185,5 +185,5 @@ class SmartCoachChatState extends Equatable {
   }
 
   @override
-  List<Object?> get props => [ baseState, messages, isLoading, errorMessage];
+  List<Object?> get props => [ stateStatus, messages, isLoading, errorMessage];
 }

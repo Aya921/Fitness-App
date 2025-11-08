@@ -4,12 +4,10 @@ import 'package:fitness/core/enum/request_state.dart';
 import 'package:fitness/core/enum/sender.dart';
 import 'package:fitness/core/error/response_exception.dart';
 import 'package:fitness/core/result/result.dart';
-import 'package:fitness/core/user/user_manager.dart';
 import 'package:fitness/features/smart_coach/presentation/view_model/smart_coach_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../core/constants/constants.dart';
 import '../../domain/use_case/delete_conversion_use_case.dart';
 import '../../domain/use_case/get_connversation_summaries_use_case.dart';
 import '../../domain/use_case/get_message_use_case.dart';
@@ -114,7 +112,7 @@ class SmartCoachCubit extends Cubit<SmartCoachChatState> {
       this._getMessagesUseCase,
       this._getConversationSummariesUseCase,
       this._deleteConversationUseCase)
-      : super(const SmartCoachChatState(baseState: StateStatus.initial())) {
+      : super(const SmartCoachChatState(stateStatus: StateStatus.initial())) {
     _startNewConversation();
   }
   final DeleteConversationUseCase _deleteConversationUseCase;
@@ -136,7 +134,7 @@ class SmartCoachCubit extends Cubit<SmartCoachChatState> {
 
 
   Future<void> _startNewConversation() async {
-    emit(state.copyWith(baseState: const StateStatus.loading()));
+    emit(state.copyWith(stateStatus: const StateStatus.loading()));
 
       final result = await _startNewConversationUseCase.call();
 
@@ -145,12 +143,12 @@ class SmartCoachCubit extends Cubit<SmartCoachChatState> {
 
        emit(state.copyWith(
 
-         baseState: StateStatus.success(result.successResult)
+           stateStatus: StateStatus.success(result.successResult)
        ));
        _currentConversationId=result.successResult;
        case FailedResult<String>():
          emit(state.copyWith(
-             baseState: StateStatus.failure(
+             stateStatus: StateStatus.failure(
                  ResponseException(message: result.errorMessage))
          ));
      }
@@ -166,34 +164,45 @@ class SmartCoachCubit extends Cubit<SmartCoachChatState> {
   _conversationSummaries;
 
   Future<void> fetchConversationSummaries() async {
-    emit(state.copyWith(baseState: const StateStatus.loading()));
-    try {
-      _conversationSummaries = await _getConversationSummariesUseCase.call();
-      emit(state.copyWith(baseState: StateStatus.success(_conversationSummaries)));
-    } catch (e) {
-      emit(state.copyWith(baseState:
-      StateStatus.failure( ResponseException(
-          message: e.toString()))
-      )
-      );
+    emit(state.copyWith(stateStatus: const StateStatus.loading()));
+    final result=await _getConversationSummariesUseCase.call();
+    switch(result){
+
+      case SuccessResult<List<Map<String, dynamic>>>():
+        _conversationSummaries=result.successResult;
+       emit(state.copyWith(
+           stateStatus: StateStatus.success(result.successResult)
+       ));
+      case FailedResult<List<Map<String, dynamic>>>():
+      emit(state.copyWith(
+        errorMessage: result.errorMessage,
+          stateStatus: StateStatus.failure(ResponseException(message: result.errorMessage))
+      ));
     }
+
   }
 
-  Future<List<MessageEntity>?> fetchMessagesByConversationId(String conversationId) async {
-    emit(state.copyWith(baseState: const StateStatus.loading()));
-    try {
-      final messages = await _getMessagesUseCase.call(conversationId);
-      _currentConversationId = conversationId;
-      emit(state.copyWith(
-        messages: messages,
-        baseState: StateStatus.success(messages),
-      ));
-    } catch (e) {
-      emit(state.copyWith(
-        baseState: StateStatus.failure( ResponseException(
-            message: e.toString())),
-      ));
+  Future<List<MessageEntity>> fetchMessagesByConversationId(String conversationId) async {
+    emit(state.copyWith(stateStatus: const StateStatus.loading()));
+
+    final result=await _getMessagesUseCase.call(conversationId);
+    _currentConversationId=conversationId;
+     List<MessageEntity> messages=[];
+    switch(result){
+      
+      case SuccessResult<List<MessageEntity>>():
+        messages=result.successResult;
+    emit(state.copyWith(
+      messages: result.successResult,
+        stateStatus: StateStatus.success(result.successResult)
+    ));
+      case FailedResult<List<MessageEntity>>():
+     emit(state.copyWith(
+       errorMessage: result.errorMessage,
+         stateStatus: StateStatus.failure(ResponseException(message: result.errorMessage))
+     ));
     }
+    return messages;
   }
 
 
@@ -202,7 +211,7 @@ class SmartCoachCubit extends Cubit<SmartCoachChatState> {
       await _deleteConversationUseCase.call(id);
       await fetchConversationSummaries();
     } catch (e) {
-      emit(state.copyWith(baseState:StateStatus.failure(ResponseException(message: 
+      emit(state.copyWith(stateStatus:StateStatus.failure(ResponseException(message:
       e.toString()))));
     }
   }
@@ -210,7 +219,7 @@ class SmartCoachCubit extends Cubit<SmartCoachChatState> {
 
   void sendMessage(String prompt) async {
     emit(state.copyWith(
-      baseState: const StateStatus.loading(),
+      stateStatus: const StateStatus.loading(),
       isLoading: true,
       errorMessage: null,
     ));
@@ -226,6 +235,7 @@ class SmartCoachCubit extends Cubit<SmartCoachChatState> {
 
     await _saveMessagesUseCase.call(
         _currentConversationId!, message);
+
 
     final messagesWithNewUser = [...?state.messages, message];
     emit(state.copyWith(messages: messagesWithNewUser));
@@ -276,14 +286,14 @@ class SmartCoachCubit extends Cubit<SmartCoachChatState> {
             _updateLastMessageWithError(displayErrorMessage, errorMessagesList);
 
             emit(state.copyWith(
-              baseState: StateStatus.failure(ResponseException(message: error)),
+              stateStatus: StateStatus.failure(ResponseException(message: error)),
               isLoading: false,
               errorMessage: displayErrorMessage,
             ));
           },
           onDone: () async {
             emit(state.copyWith(
-              baseState: StateStatus.success(updatedList),
+              stateStatus: StateStatus.success(updatedList),
               isLoading: false,
               errorMessage: null,
             ));
