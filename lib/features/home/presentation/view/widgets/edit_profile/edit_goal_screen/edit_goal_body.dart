@@ -81,9 +81,7 @@ class EditGoalBody extends StatelessWidget {
                     SizedBox(height: context.setHight(24),),
                     CustomElevatedButton(
                       isText: !(state.editProfileStatus?.isLoading ?? false),
-                      onPressed: selectedGoal == user?.goal
-                          ? null
-                          : () {
+                      onPressed: selectedGoal == user?.goal? null: () {
                         cubit.doIntent(
                           intent: EditBtnSubmittedIntent(
                             request: EditProfileRequest(

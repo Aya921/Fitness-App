@@ -1,3 +1,4 @@
+import 'package:fitness/core/constants/app_widgets_key.dart';
 import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
@@ -36,9 +37,11 @@ class ProfilePhotoSection extends StatelessWidget {
         }
 
         return Stack(
+          key: const Key(WidgetKey.photoSectionStack),
           clipBehavior: Clip.none,
           children: [
             Container(
+              key: const Key(WidgetKey.shadowBehindPhoto),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 boxShadow: [
@@ -56,6 +59,7 @@ class ProfilePhotoSection extends StatelessWidget {
             ),
             Positioned.fill(
               child: Container(
+                key: const Key(WidgetKey.transparentLayer),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: AppColors.gray[90]?.withAlpha(120),
@@ -69,6 +73,7 @@ class ProfilePhotoSection extends StatelessWidget {
                 onTap: () => cubit.doIntent(intent: PickPhotoIntent()),
 
                 child: Container(
+                  key: const Key(WidgetKey.editIconContainer),
                   width: context.setWidth(25),
                   height: context.setHight(25),
                   decoration: BoxDecoration(
@@ -80,6 +85,7 @@ class ProfilePhotoSection extends StatelessWidget {
                     ),
                   ),
                   child: SvgPicture.asset(
+                    key: const Key(WidgetKey.editIcon),
                     AssetsManager.editSvg,
                     fit: BoxFit.fitHeight,
                     height: context.setHight(25),

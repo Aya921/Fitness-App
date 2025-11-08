@@ -1,3 +1,4 @@
+import 'package:fitness/core/constants/app_widgets_key.dart';
 import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
@@ -18,6 +19,7 @@ class ProfileTextFields extends StatelessWidget {
       child: Column(
         children: [
           CustomTextFormField(
+            key:const Key(WidgetKey.firstNameFormField),
             controller: cubit.firstNameController,
             label: context.loc.firtNameRegister,
             keyboardType: TextInputType.name,
@@ -27,6 +29,7 @@ class ProfileTextFields extends StatelessWidget {
           ),
           SizedBox(height: context.setHight(16)),
           CustomTextFormField(
+            key: const Key(WidgetKey.lastNameFormField),
             controller: cubit.lastNameController,
             label: context.loc.lastNameRegister,
             keyboardType: TextInputType.name,
@@ -36,6 +39,7 @@ class ProfileTextFields extends StatelessWidget {
           ),
           SizedBox(height: context.setHight(16)),
           CustomTextFormField(
+            key:const Key(WidgetKey.emailFormField),
             controller: cubit.emailController,
             label: context.loc.emailRegister,
             keyboardType: TextInputType.emailAddress,

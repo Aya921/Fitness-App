@@ -43,7 +43,7 @@ class EditActivityLevelBody extends StatelessWidget {
           ),
           SizedBox(height: context.setHight(88)),
           Padding(
-            padding:  EdgeInsets.only(left: context.setWidth(24)),
+            padding: EdgeInsets.only(left: context.setWidth(24)),
             child: AnimateText(
               textModel: TextModel(title: context.loc.yourRegularPhysical),
             ),

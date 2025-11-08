@@ -139,7 +139,7 @@ void main() {
           width: 375,
           child: BlocProvider<DetailsFoodCubit>.value(
             value: mockDetailsFoodCubit,
-            child: const DetailsFoodScreen(meals: [], index: 0),
+            child:  DetailsFoodScreen(meals: fakeMeals, index: 0),
           ),
         ),
       ),

@@ -333,4 +333,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get tabToEdit => 'اضغط للتعديل';
+
+  @override
+  String get profileEditedSuccessfully => 'تم التعديل بنجاح';
 }

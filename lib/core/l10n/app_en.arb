@@ -127,5 +127,6 @@
   "yourGoal":"Your Goal",
   "yourLevel":"Your activity level" ,
   "edit":"Edit",
-  "tabToEdit":"Tap to Edit"
+  "tabToEdit":"Tap to Edit",
+  "profileEditedSuccessfully":"Profile updated successfully!"
 }

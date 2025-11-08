@@ -1,6 +1,6 @@
 import 'package:fitness/core/result/result.dart';
 import 'package:fitness/features/home/api/client/api_services.dart';
-import 'package:fitness/features/home/api/data_source_impl/exercises_ds_impl.dart';
+import 'package:fitness/features/home/api/data_source_impl/exercises/exercises_ds_impl.dart';
 import 'package:fitness/features/home/api/models/exercises/all_exercises_response.dart';
 import 'package:fitness/features/home/api/models/exercises/difficulty_by_prime_mover_muscles_response.dart';
 import 'package:fitness/features/home/api/models/exercises/exercise_response.dart';
@@ -12,6 +12,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
 import 'exercises_ds_impl_test.mocks.dart';
+
 
 @GenerateMocks([ApiServices])
 void main() {

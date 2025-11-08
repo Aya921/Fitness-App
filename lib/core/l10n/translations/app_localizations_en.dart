@@ -332,4 +332,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tabToEdit => 'Tap to Edit';
+
+  @override
+  String get profileEditedSuccessfully => 'Profile updated successfully!';
 }

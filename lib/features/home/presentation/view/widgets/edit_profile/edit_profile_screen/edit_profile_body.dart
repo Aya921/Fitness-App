@@ -1,3 +1,4 @@
+import 'package:fitness/core/constants/app_widgets_key.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/helper/string_to_activity_level.dart';
 import 'package:flutter/material.dart';
@@ -28,9 +29,7 @@ class EditProfileBody extends StatelessWidget {
       listener: (context, state) {
         if (state.editProfileStatus!.isSuccess) {
           user = state.editProfileStatus?.data?.user;
-          showCustomSnackBar(context, "Profile updated successfully!");
-        } else if (state.editProfileStatus!.isFailure) {
-          showCustomSnackBar(context, state.editProfileStatus!.error!.message);
+          showCustomSnackBar(context, context.loc.profileEditedSuccessfully);
         } else if (state.editProfileStatus!.isFailure) {
           showCustomSnackBar(context, state.editProfileStatus!.error!.message);
         }
@@ -41,6 +40,7 @@ class EditProfileBody extends StatelessWidget {
           key: cubit.formKey,
           child: SingleChildScrollView(
             child: Column(
+              key: const Key(WidgetKey.editProfileBodyColumn),
               children: [
                 Row(
                   children: [
@@ -57,7 +57,7 @@ class EditProfileBody extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: context.setHight(40)),
-                 ProfilePhotoSection(cubit: cubit,user: user!,),
+                ProfilePhotoSection(cubit: cubit, user: user!),
                 SizedBox(height: context.setHight(8)),
                 Text(
                   "${user?.personalInfo?.firstName} ${user?.personalInfo?.lastName}",
@@ -76,13 +76,18 @@ class EditProfileBody extends StatelessWidget {
                 ),
                 ProfileTabToEditField(
                   title: context.loc.yourGoal,
-                  value: "${state.updatedGoal ?? state.editProfileStatus?.data?.user?.goal ?? user?.goal}",
+                  value:
+                      "${state.updatedGoal ?? state.editProfileStatus?.data?.user?.goal ?? user?.goal}",
                   routeToNavigate: AppRoutes.editGoal,
                 ),
                 ProfileTabToEditField(
                   title: context.loc.yourLevel,
-                  value: state.updatedLevel?.displayName?? activityLevelFromString( user?.activityLevel)
-                      ?.getLocalizedName(context) ?? '',
+                  value:
+                      state.updatedLevel?.displayName ??
+                      activityLevelFromString(
+                        user?.activityLevel,
+                      )?.getLocalizedName(context) ??
+                      '',
                   routeToNavigate: AppRoutes.editLevel,
                 ),
                 SizedBox(height: context.setHight(24)),
@@ -96,4 +101,3 @@ class EditProfileBody extends StatelessWidget {
     );
   }
 }
-

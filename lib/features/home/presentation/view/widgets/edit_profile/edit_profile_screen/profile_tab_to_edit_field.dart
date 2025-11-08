@@ -1,3 +1,4 @@
+import 'package:fitness/core/constants/app_widgets_key.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
@@ -30,6 +31,7 @@ class ProfileTabToEditField extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 8.0),
             child: Text.rich(
+              key: const Key(WidgetKey.tabToEditNTextRich),
               TextSpan(
                 children: [
                   TextSpan(
@@ -58,6 +60,7 @@ class ProfileTabToEditField extends StatelessWidget {
             ),
           ),
           GestureDetector(
+            key:const Key(WidgetKey.tabToEditNavigator),
             onTap: () {
               final cubit = context.read<EditProfileCubit>();
               Navigator.pushNamed(

@@ -733,6 +733,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tap to Edit'**
   String get tabToEdit;
+
+  /// No description provided for @profileEditedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile updated successfully!'**
+  String get profileEditedSuccessfully;
 }
 
 class _AppLocalizationsDelegate
