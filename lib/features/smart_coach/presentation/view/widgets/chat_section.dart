@@ -18,7 +18,9 @@ class ChatSection extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          CustomPopIcon(onTap: () {}),
+          CustomPopIcon(onTap: () {
+            Navigator.of(context).pop();
+          }),
           Text.rich(
             textAlign: TextAlign.center,
             TextSpan(
