@@ -4,6 +4,7 @@ import 'package:fitness/features/home/api/models/change_pass/change_pass_request
 import 'package:fitness/features/home/api/models/change_pass/change_pass_response.dart';
 import 'package:fitness/features/home/api/models/exercises/all_exercises_response.dart';
 import 'package:fitness/features/home/api/models/exercises/difficulty_by_prime_mover_muscles_response.dart';
+import 'package:fitness/features/home/api/models/logout/logout_response.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -33,4 +34,7 @@ abstract class ApiServices {
   Future<ChangePassResponse> changePassword({
     @Body() required ChangePassRequestModel changePasswordRequest,
   });
+
+  @GET(EndPointsConstants.logout)
+  Future<LogoutResponse>logout();
 }

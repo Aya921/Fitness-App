@@ -24,4 +24,7 @@ abstract class EndPointsConstants {
 
   //change password
   static const String changePassword = "auth/change-password";
+
+  //logout
+  static const String logout="auth/logout";
 }
