@@ -1,4 +1,5 @@
 import 'package:fitness/config/di/di.dart';
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/user/user_manager.dart';
 import 'package:fitness/core/widget/home_back_ground.dart';
 import 'package:fitness/features/auth/domain/entity/auth/user_entity.dart';
@@ -17,6 +18,7 @@ class EditProfileScreen extends StatelessWidget {
 
     return Scaffold(
       body: HomeBackground(
+        image:  AssetsManager.homeBackground,
         alpha: 0.12,
         child: SafeArea(
           child: BlocProvider(
