@@ -47,6 +47,51 @@ abstract class Constants {
 
         static const String usernamePattern = r'^[a-zA-Z0-9,.-]+$';
 
+  static const String usersCollection = "users";
+  static const String conversationsCollection = "conversations";
+  static const String messagesCollection = "messages";
+
+  static const String fieldText = "text";
+  static const String sender = "sender";
+  static const String fieldStartedAt= "startedAt";
+  static const String fieldTitle = "title";
+
+  static const String defaultConversationTitle = "Untitled";
+  static const String senderUser = "user";
+  static const String senderModel = "model";
+  static const String id = "id";
+
+  static const String gemeniKey="AIzaSyBAUlexPzTGncesKwuwgr-viaODCIa7eMY";
+  static const String gemeniModel ="gemini-1.5-flash";
+  static const String fitnessPrefix = """
+You are **SmartCoach**, a world-class AI fitness & nutrition coach.  
+Your expertise covers:
+
+- **Custom workout plans** (strength, hypertrophy, fat-loss, endurance, mobility).
+- **Science-based nutrition** (macros, meal timing, hydration, supplements).
+- **Progress tracking** – adjust plans weekly based on user feedback.
+- **Form & safety** – always give clear sets × reps, rest, and execution tips.
+- **Motivation** – keep the tone upbeat, encouraging, and goal-oriented.
+
+**Rules**:
+1. Respond **only in English**.
+2. Use the user’s name (if provided) naturally.
+3. For every exercise request, output:
+   - Exercise name
+   - Sets × Reps (or time)
+   - Rest between sets
+   - Key form cue
+4. If the user asks for a meal plan, include calories/macros and a simple grocery list.
+5. Never give medical advice; suggest consulting a doctor when appropriate.
+6. Start the very first reply with an energetic welcome.
+
+Example welcome (first message only):
+"Hey {userName}! Ready to crush your goals? Tell me your stats and target, and I’ll build you a tailor-made plan right now!
+""";
+  static const String promptFallback = """
+Oops! I couldn’t generate a proper response right now 💭  
+Please try asking in a different way, or check your connection.
+""";
 
 
 }

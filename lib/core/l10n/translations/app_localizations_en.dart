@@ -291,6 +291,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get ingredients => 'Ingredients';
 
   @override
+  String get hiHomeText => 'Hi';
+
+  @override
   String get errorLoadingVideo => 'Error when loading the video';
 
   @override
@@ -317,4 +320,47 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get error => 'Error';
+
+  @override
+  String get iAmYourSmartCoach => 'I Am Your Smart Coach';
+
+  @override
+  String get howCanIAssistYouToday => 'How Can I Assist You\n Today?';
+
+  @override
+  String get getStarted => 'Get Started';
+
+  @override
+  String get smartCoach => 'Smart Coach';
+
+  @override
+  String get typeYourMessage => 'type Your Message';
+
+  @override
+  String get previousConversations => 'Previous conversations';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get oldPassword => 'Old Password';
+
+  @override
+  String get passNotMatch => 'Password not correct';
+
+  @override
+  String get passwordMustContainLowerCase =>
+      'Password must contain at least one lowercase letter';
+
+  @override
+  String get passwordMustContainUpperCase =>
+      'Password must contain at least one uppercase letter';
+
+  @override
+  String get passwordMustContainNumber =>
+      'Password must contain at least one number';
+
+  @override
+  String get passwordMustContainSpecialChar =>
+      'Password must contain at least one special character';
 }

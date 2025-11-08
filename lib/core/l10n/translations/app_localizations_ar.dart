@@ -82,19 +82,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get next => 'التالي';
 
   @override
-  String get level1 => 'level1';
+  String get level1 => 'المستوى الأول';
 
   @override
-  String get level2 => 'level2';
+  String get level2 => 'المستوى الثاني';
 
   @override
-  String get level3 => 'level3';
+  String get level3 => 'المستوى الثالث';
 
   @override
-  String get level4 => 'level4';
+  String get level4 => 'المستوى الرابع';
 
   @override
-  String get level5 => 'level5';
+  String get level5 => 'المستوى الخامس';
 
   @override
   String get foodRecommendation => 'الاطعمة الموصى بها';
@@ -292,6 +292,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get ingredients => 'المكونات';
 
   @override
+  String get hiHomeText => 'مرحبًا';
+
+  @override
   String get errorLoadingVideo => 'فشل تحميل الفيديو';
 
   @override
@@ -318,4 +321,47 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get error => 'خطأ';
+
+  @override
+  String get iAmYourSmartCoach => 'أنا مدربك الذكي';
+
+  @override
+  String get howCanIAssistYouToday => 'كيف يمكنني مساعدتك اليوم؟';
+
+  @override
+  String get getStarted => 'ابدأ الآن';
+
+  @override
+  String get smartCoach => 'المدرب الذكي';
+
+  @override
+  String get typeYourMessage => 'اكتب رسالتك';
+
+  @override
+  String get previousConversations => 'المحادثات السابقة';
+
+  @override
+  String get delete => 'حذف';
+
+  @override
+  String get oldPassword => 'كلمة المرور القديمة';
+
+  @override
+  String get passNotMatch => 'كلمة المرور غير صحيحة';
+
+  @override
+  String get passwordMustContainLowerCase =>
+      'يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل';
+
+  @override
+  String get passwordMustContainUpperCase =>
+      'يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل';
+
+  @override
+  String get passwordMustContainNumber =>
+      'يجب أن تحتوي كلمة المرور على رقم واحد على الأقل';
+
+  @override
+  String get passwordMustContainSpecialChar =>
+      'يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل';
 }

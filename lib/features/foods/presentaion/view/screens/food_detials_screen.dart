@@ -1,3 +1,4 @@
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/features/foods/presentaion/view/widgets/food_detials_body.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/widget/home_back_ground.dart';
@@ -13,6 +14,7 @@ class FoodDetialsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: HomeBackground(
+        image: AssetsManager.homeBackground,
         alpha: 0.12,
         child: SafeArea(
           child: FoodDetialsBody(index: index),

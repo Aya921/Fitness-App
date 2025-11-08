@@ -650,6 +650,12 @@ abstract class AppLocalizations {
   /// **'Ingredients'**
   String get ingredients;
 
+  /// No description provided for @hiHomeText.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi'**
+  String get hiHomeText;
+
   /// No description provided for @errorLoadingVideo.
   ///
   /// In en, this message translates to:
@@ -703,6 +709,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Error'**
   String get error;
+
+  /// No description provided for @iAmYourSmartCoach.
+  ///
+  /// In en, this message translates to:
+  /// **'I Am Your Smart Coach'**
+  String get iAmYourSmartCoach;
+
+  /// No description provided for @howCanIAssistYouToday.
+  ///
+  /// In en, this message translates to:
+  /// **'How Can I Assist You\n Today?'**
+  String get howCanIAssistYouToday;
+
+  /// No description provided for @getStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Get Started'**
+  String get getStarted;
+
+  /// No description provided for @smartCoach.
+  ///
+  /// In en, this message translates to:
+  /// **'Smart Coach'**
+  String get smartCoach;
+
+  /// No description provided for @typeYourMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'type Your Message'**
+  String get typeYourMessage;
+
+  /// No description provided for @previousConversations.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous conversations'**
+  String get previousConversations;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// No description provided for @oldPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Old Password'**
+  String get oldPassword;
+
+  /// No description provided for @passNotMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Password not correct'**
+  String get passNotMatch;
+
+  /// No description provided for @passwordMustContainLowerCase.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one lowercase letter'**
+  String get passwordMustContainLowerCase;
+
+  /// No description provided for @passwordMustContainUpperCase.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one uppercase letter'**
+  String get passwordMustContainUpperCase;
+
+  /// No description provided for @passwordMustContainNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one number'**
+  String get passwordMustContainNumber;
+
+  /// No description provided for @passwordMustContainSpecialChar.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one special character'**
+  String get passwordMustContainSpecialChar;
 }
 
 class _AppLocalizationsDelegate
