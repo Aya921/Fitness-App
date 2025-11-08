@@ -1,8 +1,8 @@
 import 'package:fitness/core/result/result.dart';
-import 'package:fitness/features/home/data/data_source/exercises_ds.dart';
+import 'package:fitness/features/home/data/data_source/exercises/exercises_ds.dart';
 import 'package:fitness/features/home/domain/entity/exercises/difficulty_level_entity.dart';
 import 'package:fitness/features/home/domain/entity/exercises/exercise_entity.dart';
-import 'package:fitness/features/home/domain/repo/exercises_repo.dart';
+import 'package:fitness/features/home/domain/repo/exercises/exercises_repo.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: ExercisesRepo)
