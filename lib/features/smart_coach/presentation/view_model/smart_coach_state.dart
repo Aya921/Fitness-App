@@ -159,6 +159,8 @@ class SmartCoachChatState extends Equatable {
     this.messages,
     this.isLoading = false,
     this.errorMessage,
+    this.name,
+    this.photo
   });
 
 
@@ -166,14 +168,18 @@ class SmartCoachChatState extends Equatable {
   final List<MessageEntity>? messages;
   final bool isLoading;
   final String? errorMessage;
+final String? photo;
+final String? name;
 
   SmartCoachChatState copyWith({
     String? firstName,
-    String? photo,
+
   StateStatus? stateStatus,
     List<MessageEntity>? messages,
     bool? isLoading,
     String? errorMessage,
+    String? photo,
+     String? name
   }) {
     return SmartCoachChatState(
 
@@ -181,9 +187,11 @@ class SmartCoachChatState extends Equatable {
       messages: messages ?? this.messages,
       isLoading: isLoading ?? this.isLoading,
       errorMessage: errorMessage ?? this.errorMessage,
+      photo: photo??this.photo,
+      name: name??this.name
     );
   }
 
   @override
-  List<Object?> get props => [ stateStatus, messages, isLoading, errorMessage];
+  List<Object?> get props => [ stateStatus, messages, isLoading, errorMessage,photo,name];
 }

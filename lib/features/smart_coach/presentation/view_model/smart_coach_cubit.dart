@@ -4,6 +4,7 @@ import 'package:fitness/core/enum/request_state.dart';
 import 'package:fitness/core/enum/sender.dart';
 import 'package:fitness/core/error/response_exception.dart';
 import 'package:fitness/core/result/result.dart';
+import 'package:fitness/core/user/user_manager.dart';
 import 'package:fitness/features/smart_coach/presentation/view_model/smart_coach_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
@@ -112,9 +113,8 @@ class SmartCoachCubit extends Cubit<SmartCoachChatState> {
       this._getMessagesUseCase,
       this._getConversationSummariesUseCase,
       this._deleteConversationUseCase)
-      : super(const SmartCoachChatState(stateStatus: StateStatus.initial())) {
-    _startNewConversation();
-  }
+      : super(const SmartCoachChatState(
+      stateStatus: StateStatus.initial())) ;
   final DeleteConversationUseCase _deleteConversationUseCase;
   final GetConversationSummariesUseCase _getConversationSummariesUseCase;
   final GetMessagesUseCase _getMessagesUseCase;
@@ -131,9 +131,14 @@ class SmartCoachCubit extends Cubit<SmartCoachChatState> {
     return super.close();
   }
 
+  late String photo;
+  late String name;
+  void loadUserData(){
+    photo=UserManager().currentUser!.personalInfo!.photo!;
+    name=UserManager().currentUser!.personalInfo!.firstName!;
+  }
 
-
-  Future<void> _startNewConversation() async {
+  Future<void> startNewConversation() async {
     emit(state.copyWith(stateStatus: const StateStatus.loading()));
 
       final result = await _startNewConversationUseCase.call();
@@ -189,7 +194,7 @@ class SmartCoachCubit extends Cubit<SmartCoachChatState> {
     _currentConversationId=conversationId;
      List<MessageEntity> messages=[];
     switch(result){
-      
+
       case SuccessResult<List<MessageEntity>>():
         messages=result.successResult;
     emit(state.copyWith(
@@ -206,14 +211,31 @@ class SmartCoachCubit extends Cubit<SmartCoachChatState> {
   }
 
 
-  Future<void> deleteConversation(String id) async {
-    try {
-      await _deleteConversationUseCase.call(id);
-      await fetchConversationSummaries();
-    } catch (e) {
-      emit(state.copyWith(stateStatus:StateStatus.failure(ResponseException(message:
-      e.toString()))));
-    }
+  Future<void> deleteConversation(String conversationId) async {
+
+    final result=await _deleteConversationUseCase.
+    call(conversationId);
+   switch(result){
+
+     case SuccessResult<void>():
+
+    emit(state.copyWith(
+
+      stateStatus: const StateStatus.success({})
+    ));
+
+    await fetchConversationSummaries();
+
+     case FailedResult<void>():
+       emit(state.copyWith(
+         stateStatus: StateStatus.failure(
+             ResponseException(message: result.errorMessage)),
+         isLoading: false,
+         errorMessage: result.errorMessage,
+       ));
+
+   }
+
   }
 
 
@@ -227,8 +249,9 @@ class SmartCoachCubit extends Cubit<SmartCoachChatState> {
     final message = MessageEntity(text: prompt, role: Sender.user);
 
     if (_currentConversationId == null) {
-      _currentConversationId =
-      (await _startNewConversationUseCase.call()) as String?;
+      final result =
+      (await _startNewConversationUseCase.call()) ;
+      _currentConversationId=(result as SuccessResult).successResult;
       await _setConversationTitleUseCase.call(
           _currentConversationId!, prompt);
     }
@@ -309,6 +332,7 @@ class SmartCoachCubit extends Cubit<SmartCoachChatState> {
           },
         );
   }
+
 
   void _updateLastMessageWithError(
       String errorMessage, List<MessageEntity>? currentMessages) {

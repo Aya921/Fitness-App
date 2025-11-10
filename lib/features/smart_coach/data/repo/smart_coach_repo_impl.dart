@@ -133,7 +133,7 @@ class SmartCoachRepositoryImpl implements SmartCoachRepository {
   SmartCoachRepositoryImpl(this.remoteDataSource);
   final SmartCoachRemoteDataSource remoteDataSource;
 
-  List<Content> _mapMessagesToGeminiContent(List<MessageEntity> messages) {
+  List<Content> mapMessagesToGeminiContent(List<MessageEntity> messages) {
     final List<Content> geminiContent = [];
     for (int i = 0; i < messages.length; i++) {
       final msg = messages[i];
@@ -154,7 +154,7 @@ class SmartCoachRepositoryImpl implements SmartCoachRepository {
   @override
   Stream<String> getSmartCoachReplyStream(List<MessageEntity> chatHistory) {
     try {
-      final geminiChatHistory = _mapMessagesToGeminiContent(chatHistory);
+      final geminiChatHistory = mapMessagesToGeminiContent(chatHistory);
       final geminiResponseStream = remoteDataSource.
       getSmartCoachResponseStream(geminiChatHistory,
         model: Constants.gemeniModel,  );
@@ -195,7 +195,7 @@ class SmartCoachRepositoryImpl implements SmartCoachRepository {
   }
 
   @override
-  Future<void> deleteConversation(String conversationId) {
+  Future<Result<void>>  deleteConversation(String conversationId) {
     return remoteDataSource.deleteConversation(conversationId);
   }
 

@@ -54,7 +54,7 @@ class _SmartCoachScreenState extends State<SmartCoachScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<SmartCoachCubit>(),
+      create: (context) => getIt<SmartCoachCubit>()..startNewConversation(),
       child: Builder(
         builder: (_) => Stack(
           children: [
@@ -113,7 +113,8 @@ setState(() {
                                 children: [
                                   isSmartCoach?
                                     const SmartCoachProfile():const SizedBox.shrink(),
-                                  if (!isSmartCoach) const SizedBox(width: 40),
+                                  if (!isSmartCoach) const
+                                  SizedBox(width: 40),
                                   Flexible(
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(

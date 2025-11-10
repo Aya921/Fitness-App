@@ -92,14 +92,15 @@ class _PreviousChatMenuState extends State<PreviousChatMenu> {
                                           AppColors.orange[AppColors.baseColor],
                                       backgroundColor: Colors.transparent,
                                       label: context.loc.delete,
-                                      onPressed: (con) {
+                                      onPressed: (con) async {
                                         con
                                             .read<SmartCoachCubit>()
                                             .deleteConversation(
                                               chats[index][Constants.id],
 
                                             );
-                                        con.read<SmartCoachCubit>().fetchConversationSummaries();
+
+
                                       },
                                     ),
                                   ],

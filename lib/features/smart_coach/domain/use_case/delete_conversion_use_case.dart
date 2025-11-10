@@ -1,6 +1,7 @@
 
 import 'package:injectable/injectable.dart';
 
+import '../../../../core/result/result.dart';
 import '../repo/smart_coach_repo.dart';
 
 
@@ -12,7 +13,7 @@ class DeleteConversationUseCase {
   DeleteConversationUseCase(this._repository);
   final SmartCoachRepository _repository;
 
-  Future<void> call(String conversationId) {
+  Future<Result<void>> call(String conversationId) {
     return _repository.deleteConversation(conversationId);
   }
 }
