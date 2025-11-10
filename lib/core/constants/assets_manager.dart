@@ -34,5 +34,12 @@ abstract class AssetsManager {
   static const String test="assets/images/test.jpg";
   static const String notFound="assets/images/not_found.png";
   static const String popularTrainingImg="assets/images/popular_training_img.jpg";
+  static const String helpSvg= "assets/icons/help_icon.svg";
+  static const String logoutSvg= "assets/icons/logout_icon.svg";
+  static const String privacyIcon= "assets/icons/privacy_icon.svg";
+  static const String securitySvg= "assets/icons/security_icon.svg";
+  static const String selectLanguageSvg= "assets/icons/select_language_icon.svg";
+  static const String changePasswordProfileIcon= "assets/icons/change_password_profile_icon.svg";
+  static const String profileUserIcon= "assets/icons/profile_user_icon.svg";
 
 }

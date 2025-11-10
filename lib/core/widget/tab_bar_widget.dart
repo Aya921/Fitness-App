@@ -8,7 +8,6 @@ class TabBarWidget extends StatefulWidget {
     required this.titles,
     this.initialSelectedIndex = 0,
     this.onTabSelected,
-<<<<<<< HEAD
      this.onTabChanged
   });
 
@@ -16,13 +15,6 @@ class TabBarWidget extends StatefulWidget {
   final Function(int)? onTabChanged;
   final int initialSelectedIndex;
   final ValueChanged<int>? onTabSelected;
-=======
-  });
-
-  final List<String> titles;
-  final int initialSelectedIndex;
-  final ValueChanged<int>? onTabSelected; // 👈 هنا
->>>>>>> origin/feature/FA-13-Workouts
 
   @override
   State<TabBarWidget> createState() => _TabBarWidgetState();
@@ -47,10 +39,7 @@ class _TabBarWidgetState extends State<TabBarWidget> {
           onTap: () {
             setState(() => selectedIndex = index);
             widget.onTabSelected?.call(index);
-<<<<<<< HEAD
             widget.onTabChanged?.call(index);
-=======
->>>>>>> origin/feature/FA-13-Workouts
           },
         );
       },
@@ -59,9 +48,4 @@ class _TabBarWidgetState extends State<TabBarWidget> {
       itemCount: widget.titles.length,
    );
   }
-<<<<<<< HEAD
 }
-=======
-}
-
->>>>>>> origin/feature/FA-13-Workouts

@@ -6,7 +6,6 @@ import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_style.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscle_entity/muscle_entity.dart';
 import 'package:flutter/material.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
 class ExploreRecommendationListItem extends StatelessWidget {
   final MuscleEntity randomMusclesData;

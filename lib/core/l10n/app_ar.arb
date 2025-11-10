@@ -100,5 +100,15 @@
   "popularTrainingText": "التمارين الشائعة",
   "recommendation":"اقتراحات",
   "ingredients":"المكونات",
-  "not": "غير متوفر"
+  "not": "غير متوفر",
+
+  "profileText": "الملف الشخصي",
+  "editProfile":"تعديل الملف الشخصي",
+  "changePassword":"تغيير كلمةالمرور",
+  "selectLanguage":"إختيار اللغة",
+  "language":"العربية",
+  "security":"الأمن",
+  "privacyPolicy":"سياسة الخصوصية",
+  "help": "مساعدة",
+  "logoutProfile":"تسجيل الخروج"
 }

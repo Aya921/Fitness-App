@@ -3,8 +3,6 @@ import 'package:fitness/core/error/response_exception.dart';
 import 'package:fitness/core/result/result.dart';
 import 'package:fitness/features/auth/domain/entity/auth/auth_entity.dart';
 import 'package:fitness/features/auth/domain/use_case/get_logged_user_use_case.dart';
-import 'package:fitness/features/home/domain/entities/explore_entity/exercise_model/exercise_model.dart';
-import 'package:fitness/features/home/domain/entities/explore_entity/meals_categories_entity/meals_categories_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscle_entity/muscle_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_by_id_response_entity/muscles_group_id_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_entity/muscles_group_entity.dart';
@@ -93,30 +91,6 @@ class ExploreCubit extends Cubit<ExploreState> {
     }
   }
 
-  Future<void> _getMealsCategories() async {
-    emit(state.copyWith(mealsCategorysState: const StateStatus.loading()));
-    final mealsCategoriesData = await _exploreUseCase.getMealsCategories();
-    switch (mealsCategoriesData) {
-      case SuccessResult<List<MealsCategoriesEntity>>():
-        emit(
-          state.copyWith(
-            mealsCategorysState: StateStatus.success(
-              mealsCategoriesData.successResult,
-            ),
-          ),
-        );
-        break;
-      case FailedResult<List<MealsCategoriesEntity>>():
-        emit(
-          state.copyWith(
-            mealsCategorysState: StateStatus.failure(
-              ResponseException(message: mealsCategoriesData.errorMessage),
-            ),
-          ),
-        );
-        break;
-    }
-  }
 
   Future<void> _prefetchAllGroups(List<MusclesGroupEntity> groups) async {
     if (_isPrefetching) return;

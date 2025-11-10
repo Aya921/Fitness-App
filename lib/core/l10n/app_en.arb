@@ -105,5 +105,15 @@
   "popularTrainingText": "Popular Training",
   "recommendation":"Recommendation",
   "ingredients":"Ingredients",
-  "notAvailable": "Not Available"
+  "notAvailable": "Not Available",
+
+  "profileText":"Profile",
+  "editProfile":"Edit Profile",
+  "changePassword":"Change Password",
+  "selectLanguage":"Select Language",
+  "security":"Security",
+  "language":"English",
+  "privacyPolicy":"Privacy Policy",
+  "help": "Help",
+  "logoutProfile":"Logut"
 }

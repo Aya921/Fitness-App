@@ -317,4 +317,31 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get notAvailable => 'Not Available';
+
+  @override
+  String get profileText => 'الملف الشخصي';
+
+  @override
+  String get editProfile => 'تعديل الملف الشخصي';
+
+  @override
+  String get changePassword => 'تغيير كلمةالمرور';
+
+  @override
+  String get selectLanguage => 'إختيار اللغة';
+
+  @override
+  String get security => 'الأمن';
+
+  @override
+  String get language => 'العربية';
+
+  @override
+  String get privacyPolicy => 'سياسة الخصوصية';
+
+  @override
+  String get help => 'مساعدة';
+
+  @override
+  String get logoutProfile => 'تسجيل الخروج';
 }

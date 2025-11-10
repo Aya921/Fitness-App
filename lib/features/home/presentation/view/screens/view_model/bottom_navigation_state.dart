@@ -6,22 +6,26 @@ class BottomNavigationState extends Equatable{
   final int index;
   final List<MusclesGroupEntity>? muscleGroupsData;
   final Map<String,MusclesGroupIdResponseEntity>? muscleByGroupId;
+   final String? selectedGroupId;
 
   const BottomNavigationState({
     required this.index,
     this.muscleGroupsData,
     this.muscleByGroupId,
+    this.selectedGroupId
   });
 
   BottomNavigationState copyWith({
     int? index,
     List<MusclesGroupEntity>? muscleGroupsData,
     Map<String, MusclesGroupIdResponseEntity>? muscleByGroupId,
+    String? selectedGroupId
   }) {
     return BottomNavigationState(
       index: index ?? this.index,
       muscleGroupsData: muscleGroupsData ?? this.muscleGroupsData,
       muscleByGroupId: muscleByGroupId ?? this.muscleByGroupId,
+      selectedGroupId: selectedGroupId ?? this.selectedGroupId
     );
   }
   
@@ -30,6 +34,7 @@ class BottomNavigationState extends Equatable{
   List<Object?> get props => [
     index,
     muscleGroupsData,
-    muscleByGroupId
+    muscleByGroupId,
+    selectedGroupId
   ];
 }

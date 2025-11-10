@@ -10,35 +10,38 @@ class BottomNavigationCubit extends Cubit<BottomNavigationState> {
  
  void doIntent(BottomNavigationIntents intent){
   switch(intent){
-
-    case GoToTabWithData():
-      _changeTabWithData(
-        index: intent.index,
-        muscleGroupsData: intent.muscleGroupsData,
-        muscleByGroupId: intent.muscleByGroupId
-      );
-      break;
-
     case GoToTab():
     _changeTab(index: intent.index);
     break;
+    case SelectGroupIntent():
+    _selectGroup(intent.groupId);
+     break;
+    case SyncDataIntent():
+    _syncData(
+      muscleGroupsData: intent.muscleGroupsData,
+      muscleByGroupId: intent.muscleByGroupId
+    );
+      break;
   }
  }
 
-  void _changeTabWithData(
-      {required int index,List<MusclesGroupEntity>? muscleGroupsData,
-      Map<String, MusclesGroupIdResponseEntity>? muscleByGroupId}) {
-    emit(state.copyWith(
-      index: index,
-      muscleGroupsData: muscleGroupsData ??state.muscleGroupsData,
-      muscleByGroupId: muscleByGroupId ?? state.muscleByGroupId 
-    ));
-  }
 
   void _changeTab(
       {required int index}) {
     emit(state.copyWith(
       index: index,
+    ));
+  }
+
+  void _selectGroup(String groupId) {
+    emit(state.copyWith(selectedGroupId: groupId));
+  }
+
+  void _syncData({List<MusclesGroupEntity>? muscleGroupsData,
+      Map<String, MusclesGroupIdResponseEntity>? muscleByGroupId}){
+ emit(state.copyWith(
+      muscleGroupsData: muscleGroupsData ??state.muscleGroupsData,
+      muscleByGroupId: muscleByGroupId ?? state.muscleByGroupId 
     ));
   }
 }

@@ -2,8 +2,6 @@ import 'package:fitness/core/result/result.dart';
 import 'package:fitness/core/safe_api_call/safe_api_call.dart';
 import 'package:fitness/features/home/api/client/api_services.dart';
 import 'package:fitness/features/home/data/data_source/explore_data_source/explore_data_source.dart';
-import 'package:fitness/features/home/domain/entities/explore_entity/exercise_model/exercise_model.dart';
-import 'package:fitness/features/home/domain/entities/explore_entity/meals_categories_entity/meals_categories_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscle_entity/muscle_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_by_id_response_entity/muscles_group_id_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_entity/muscles_group_entity.dart';
@@ -13,14 +11,7 @@ class ExploreDataSourceImpl implements ExploreDataSource{
   final ApiServices _apiServices;
 
   ExploreDataSourceImpl(this._apiServices); 
-  @override
-  Future<Result<List<MealsCategoriesEntity>>> getMealsCategories() {
-    return safeApiCall(()async{
-      final response =  await _apiServices.getAllMealsCategories();
-      final data =response.categories;
-      return data?.map((model) => model.toEntity()).toList() ?? [];
-    });
-  }
+ 
 
   @override
   Future<Result<List<MusclesGroupEntity>>> getMusclesGroup() {

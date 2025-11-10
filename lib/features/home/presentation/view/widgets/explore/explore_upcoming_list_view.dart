@@ -1,4 +1,3 @@
-import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
@@ -18,14 +17,28 @@ import 'package:skeletonizer/skeletonizer.dart';
 
 class ExploreUpcomingListView extends StatelessWidget {
   const ExploreUpcomingListView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ExploreCubit, ExploreState>(
       builder: (context, state) {
         final cubit = context.read<ExploreCubit>();
         final items = state.musclesGroupState.data;
-        final isLoading =state.musclesGroupById.isLoading;
+        final isLoading = state.musclesGroupById.isLoading;
         final muscles = state.musclesGroupById.data?.muscles ?? [];
+        final bottomNavCubit = context.read<BottomNavigationCubit>();
+
+        if ((state.musclesGroupState.data?.isNotEmpty ?? false) &&
+            cubit.cachedMuscleGroups.isNotEmpty &&
+            (bottomNavCubit.state.muscleGroupsData?.isEmpty ?? true)) {
+          bottomNavCubit.doIntent(
+            SyncDataIntent(
+              muscleGroupsData: state.musclesGroupState.data,
+              muscleByGroupId: cubit.cachedMuscleGroups,
+            ),
+          );
+        }
+
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -43,12 +56,11 @@ class ExploreUpcomingListView extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    if (state.musclesGroupState.data == null || cubit.cachedMuscleGroups.isEmpty) return;
-                    context.read<BottomNavigationCubit>().doIntent(
-                      GoToTabWithData(index: 2
-                      , muscleGroupsData: state.musclesGroupState.data
-                      , muscleByGroupId:cubit.cachedMuscleGroups )
-                    );
+                    if (state.musclesGroupState.data == null ||
+                        cubit.cachedMuscleGroups.isEmpty) {
+                      return;
+                    }
+                    bottomNavCubit.doIntent(GoToTab(index: 2));
                   },
                   child: FittedBox(
                     child: Text(
@@ -64,48 +76,58 @@ class ExploreUpcomingListView extends StatelessWidget {
                 ),
               ],
             ),
+
             SizedBox(height: context.setHight(8)),
-            if(items != null && items.isNotEmpty)
-            Skeletonizer(
-               effect: ShimmerEffect(
-                    baseColor: AppColors.gray[AppColors.colorCode70]!,
-                    highlightColor: AppColors.gray[AppColors.colorCode40]!,
+
+            if (items != null && items.isNotEmpty)
+              Skeletonizer(
+                effect: ShimmerEffect(
+                  baseColor: AppColors.gray[AppColors.colorCode70]!,
+                  highlightColor: AppColors.gray[AppColors.colorCode40]!,
+                ),
+                enabled: isLoading,
+                child: SizedBox(
+                  height: context.setHight(30),
+                  child: TabBarWidget(
+                    titles: items.map((muscle) => muscle.name ?? '').toList(),
+                    onTabSelected: (value) {
+                      final selectedId = items[value].id;
+                      cubit.doIntent(
+                        intent: GetMusclesGroupByIdIntent(id: selectedId),
+                      );
+                    },
                   ),
-                  enabled: isLoading,
-              child: SizedBox(
-                height: context.setHight(30),
-                child: TabBarWidget(
-                  titles:
-                      items.map((muscle) => muscle.name ?? '').toList(),
-                  onTabSelected: (value) {
-                    final selectedId = items[value].id;
-                    cubit.doIntent(
-                      intent: GetMusclesGroupByIdIntent(id: selectedId),
-                    );
-                  },
                 ),
               ),
-            ),
+
             SizedBox(height: context.setHight(8)),
+
             SizedBox(
               height: context.setHight(80),
-              child:  Skeletonizer(
-                 effect: ShimmerEffect(
-                    baseColor: AppColors.gray[AppColors.colorCode70]!,
-                    highlightColor: AppColors.gray[AppColors.colorCode40]!,
-                  ),
-                  enabled: isLoading,
-                child: ListView.builder(
-                  itemCount: isLoading ? 6 : muscles.length ,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return ExploreUpcomingListItem(
-                      musclesentity:
-                      isLoading ? const MuscleEntity(
-                        image: "",
-                        name: ""
-                      ) :
-                         muscles[index],
+              child: Skeletonizer(
+                effect: ShimmerEffect(
+                  baseColor: AppColors.gray[AppColors.colorCode70]!,
+                  highlightColor: AppColors.gray[AppColors.colorCode40]!,
+                ),
+                enabled: isLoading,
+                child: Builder(
+                  builder: (context) {
+                    if (isLoading) {
+                      return ListView.builder(
+                        itemCount: 6,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) =>
+                            const ExploreUpcomingListItem(
+                              musclesentity: MuscleEntity(image: "", name: ""),
+                            ),
+                      );
+                    }
+                    return ListView.builder(
+                      itemCount: muscles.length,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) => ExploreUpcomingListItem(
+                        musclesentity: muscles[index],
+                      ),
                     );
                   },
                 ),

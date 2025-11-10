@@ -19,8 +19,7 @@ class ExploreScreenViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<ExploreCubit, ExploreState>(
       listenWhen: (previous, current) { 
-       return current.mealsCategorysState.isFailure ||
-           current.musclesGroupState.isFailure ||
+       return current.musclesGroupState.isFailure ||
            current.randomMusclesState.isFailure||
            current.musclesGroupById.isFailure ||
            current.userData.isFailure ||
@@ -35,11 +34,6 @@ class ExploreScreenViewBody extends StatelessWidget {
         }else if (state.musclesGroupState.isFailure) {
           Loaders.showErrorMessage(
             message: state.musclesGroupState.error?.message ?? "",
-            context: context,
-          );
-        } else if (state.mealsCategorysState.isFailure) {
-          Loaders.showErrorMessage(
-            message: state.mealsCategorysState.error?.message ?? "",
             context: context,
           );
         }else if (state.musclesGroupById.isFailure) {

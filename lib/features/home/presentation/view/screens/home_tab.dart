@@ -27,17 +27,7 @@ class _HomeTabState extends State<HomeTab> {
   List<Widget> screens = [
     const ExploreScreen(),
     const ChatAiScreen(),
-    const GymScreen(
-      titleTebBar: [
-
-      ],
-      images: [
-
-      ],
-      titles: [
-
-      ],
-    ),
+    const GymScreen(),
     const ProfileScreen(),
   ];
   int currIndex = 0;

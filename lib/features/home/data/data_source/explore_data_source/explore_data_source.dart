@@ -1,6 +1,4 @@
 import 'package:fitness/core/result/result.dart';
-import 'package:fitness/features/home/domain/entities/explore_entity/exercise_model/exercise_model.dart';
-import 'package:fitness/features/home/domain/entities/explore_entity/meals_categories_entity/meals_categories_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscle_entity/muscle_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_by_id_response_entity/muscles_group_id_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_entity/muscles_group_entity.dart';
@@ -10,7 +8,6 @@ abstract class ExploreDataSource {
 
  Future<Result<List<MusclesGroupEntity>>> getMusclesGroup();
 
- Future<Result<List<MealsCategoriesEntity>>> getMealsCategories();
   Future<Result<MusclesGroupIdResponseEntity>> getAllMusclesGroupById(String? id);
 
 }
