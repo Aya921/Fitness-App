@@ -96,7 +96,7 @@ class ProfileScreenSettingsSection extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (_) => BlocProvider.value(
                         value: context
-                            .read<ProfileCubit>(), 
+                            .read<ProfileCubit>()..doIntent(SecurityIntent()),
                         child: ProfileScreenJsonData(
                           title: context.loc.security,
                           intent: SecurityIntent(),
@@ -115,7 +115,7 @@ class ProfileScreenSettingsSection extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (_) => BlocProvider.value(
                         value: context
-                            .read<ProfileCubit>(),
+                            .read<ProfileCubit>()..doIntent(PrivacyPolicyIntent()),
                         child: ProfileScreenJsonData(
                           title: context.loc.privacyPolicy,
                           intent: PrivacyPolicyIntent(),
@@ -134,7 +134,7 @@ class ProfileScreenSettingsSection extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (_) => BlocProvider.value(
                         value: context
-                            .read<ProfileCubit>(),
+                            .read<ProfileCubit>()..doIntent(HelpIntent()),
                         child: ProfileScreenJsonData(
                           title: context.loc.help,
                           intent: HelpIntent(),
