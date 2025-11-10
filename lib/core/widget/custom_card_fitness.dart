@@ -58,7 +58,6 @@ class CustomCardFitness extends StatelessWidget {
             child: Text(
               title,
               maxLines: 2,
-
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
               style: getBoldStyle(

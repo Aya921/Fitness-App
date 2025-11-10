@@ -12,6 +12,7 @@ abstract class Constants {
   static const String password = "password";
   static const String error = "error";
   static const String message = "message";
+  static const String workouts = "Workouts";
   static const String titleOnBoarding = "the price of excellent \n is discipline";
   static const String titleTwoBoarding = "Fitness has never been so \n much fun";
   static const String titleThreeBoarding = "NO MORE EXCUSES \n Do It Now";
