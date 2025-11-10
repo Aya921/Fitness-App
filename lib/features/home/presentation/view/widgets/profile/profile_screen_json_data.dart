@@ -1,6 +1,5 @@
 import 'package:fitness/config/app_language/app_language_config.dart';
 import 'package:fitness/config/di/di.dart';
-import 'package:fitness/core/constants/constants.dart';
 import 'package:fitness/core/manager_helper/manager_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/widget/custom_pop_icon.dart';
@@ -23,8 +22,9 @@ class ProfileScreenJsonData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      // final appLanConfig = getIt.get<AppLanguageConfig>();
-    final isArabic = Localizations.localeOf(context).languageCode == 'er';
+      final appLanConfig = getIt.get<AppLanguageConfig>();
+      appLanConfig.selectedLocal;
+    final isArabic = Localizations.localeOf(context).languageCode == 'ar';
 
     return Scaffold(
       body: HomeBackground(

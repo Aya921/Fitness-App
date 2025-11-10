@@ -134,7 +134,7 @@ class ProfileScreenSettingsSection extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (_) => BlocProvider.value(
                         value: context
-                            .read<ProfileCubit>(), // reuse the same instance
+                            .read<ProfileCubit>(),
                         child: ProfileScreenJsonData(
                           title: context.loc.help,
                           intent: HelpIntent(),
