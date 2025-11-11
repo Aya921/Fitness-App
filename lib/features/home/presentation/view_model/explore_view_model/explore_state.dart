@@ -8,8 +8,8 @@ import 'package:fitness/features/home/domain/entities/explore_entity/muscles_gro
 class ExploreState extends Equatable {
   final StateStatus<List<MuscleEntity>> randomMusclesState;
   final StateStatus<List<MusclesGroupEntity>> musclesGroupState;
-  final StateStatus<MusclesGroupIdResponseEntity> musclesGroupById;
-  final StateStatus<AuthEntity> userData;
+   final StateStatus<MusclesGroupIdResponseEntity> musclesGroupById;
+   final StateStatus<AuthEntity> userData;
   const ExploreState({
     this.randomMusclesState = const StateStatus.initial(),
     this.musclesGroupState = const StateStatus.initial(),

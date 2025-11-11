@@ -3,7 +3,6 @@ import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_style.dart';
 import 'package:fitness/core/widget/home_back_ground.dart';
-import 'package:fitness/features/home/presentation/view/screens/tabs/chat_ai_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/tabs/explore_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/tabs/gym_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/tabs/profile_screen.dart';
