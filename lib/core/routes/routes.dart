@@ -15,10 +15,13 @@ import 'package:fitness/features/home/presentation/view/screens/exercise_screen/
 import 'package:fitness/features/home/presentation/view_model/edit_profile/edit_profile_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_intent.dart';
+import 'package:fitness/features/home/presentation/view/screens/view_model/bottom_navigation_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fitness/core/widget/video_widgets/vido_player_screen.dart';
 import 'package:fitness/features/meal_details/presentaion/view/pages/details_food_sceen.dart';
+
+
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/features/auth/presentation/views/screens/forget_pass/create_password_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/forget_pass/forget_password_screen.dart';
@@ -30,10 +33,11 @@ import '../../features/foods/presentaion/view/screens/food_detials_screen.dart';
 import '../../features/on_boarding/view/on_boarding_view.dart';
 import '../../features/smart_coach/presentation/view/screens/smart_coach_screen.dart';
 
+
+
 abstract class Routes {
   static final GlobalKey<NavigatorState> navigatorKey =
-  GlobalKey<NavigatorState>();
-
+      GlobalKey<NavigatorState>();
   static Route onGenerate(RouteSettings setting) {
     final url = Uri.parse(setting.name ?? "");
     switch (url.path) {
@@ -41,7 +45,12 @@ abstract class Routes {
         return MaterialPageRoute(builder: (context) => const OnBoardingView());
 
       case AppRoutes.home:
-        return MaterialPageRoute(builder: (context) => const HomeTab());
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => getIt.get<BottomNavigationCubit>() ,
+            child: const HomeTab(),
+          ),
+        );
 
       case AppRoutes.forgetPassScreen:
         return MaterialPageRoute(
@@ -82,6 +91,7 @@ abstract class Routes {
           },
         );
 
+   
 
       case AppRoutes.otpScreen:
         final email = setting.arguments as String;

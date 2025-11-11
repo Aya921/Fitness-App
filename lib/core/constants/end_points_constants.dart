@@ -10,9 +10,14 @@ abstract class EndPointsConstants {
   static const String forgetPassEndPoint = "forgotPassword";
   static const String verifyResetCode = "verifyResetCode";
   static const String resetPass = "resetPassword";
+  static const String musclesRandom = "muscles/random";
+  static const String allMusclesGroups = "muscles";
+  //static const String mealsCategories = "categories.php";
 
   static const String mealsCategories = "1/categories.php";
   static const String mealsByCategories = "1/filter.php?";
+  static const String musclesGroupById = "/musclesGroup/{id}";
+  static const String  getAllExercisesExplore = "exercises";
 
   //exercises
   static const String difficultyByPrimeMoverMuscle = "levels/difficulty-levels/by-prime-mover";
@@ -24,6 +29,9 @@ abstract class EndPointsConstants {
 
   //change password
   static const String changePassword = "auth/change-password";
+
+  //logout
+  static const String logout="auth/logout";
 
   //edit profile
 static const String editProfile="auth/editProfile";

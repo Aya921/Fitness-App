@@ -89,6 +89,15 @@
   "forgetPass": "نسيت كلمة المرور؟",
   "welcomeBack": "مرحبًا بعودتك",
   "doNotHaveAccount": "ليس لديك حساب؟ ",
+
+   "hiHomeText": "مرحبًا",
+  "letsStartDoingYourDay": "لنبدأ يومك",
+  "categoryHomeText": "الفئات",
+  "recommendationTodyText": "توصيات اليوم",
+  "upcomingWorkOutsText": "التمارين القادمة",
+  "seeAllHomeText": "عرض الكل",
+  "recommendationForYouText": "توصيات لك",
+  "popularTrainingText": "التمارين الشائعة",
   "errorLoadingVideo":"فشل تحميل الفيديو",
   "exerciseGroup":"مجموعات 15 مره3 ",
   "errorLoadingExercises":"خطأ اثناء تحميل التدريبات",
@@ -128,4 +137,22 @@
   "edit": "تعديل",
   "tabToEdit": "اضغط للتعديل",
   "profileEditedSuccessfully":"تم التعديل بنجاح"
+"level5": "المستوى الخامس",
+
+
+  "ingredients":"المكونات",
+  "not": "غير متوفر",
+
+  "profileText": "الملف الشخصي",
+  "editProfile":"تعديل الملف الشخصي",
+  "changePassword":"تغيير كلمةالمرور",
+  "selectLanguage":"إختيار اللغة",
+  "language":"العربية",
+  "security":"الأمن",
+  "privacyPolicy":"سياسة الخصوصية",
+  "help": "مساعدة",
+  "logoutProfile":"تسجيل الخروج",
+  "sureToLogout": "هل أنت متأكد من إغلاق التطبيق؟",
+    "yes": "نعم",
+    "no": "لا"
 }

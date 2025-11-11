@@ -60,7 +60,7 @@ const userEntity = UserEntity(
     blocTest<RegisterCubit, RegisterState>(
       'emits initial state when RegisterInitializationIntent is called',
       build: () => registerCubit,
-      act: (cubit) {}, // No action needed - already initialized in setUp
+      act: (cubit) {}, 
       verify: (cubit) {
         expect(cubit.firstNameController, isNotNull);
         expect(cubit.lastNameController, isNotNull);

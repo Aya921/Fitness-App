@@ -285,13 +285,64 @@ class AppLocalizationsEn extends AppLocalizations {
   String get doNotHaveAccount => 'Don’t have an account? ';
 
   @override
+  String get hiHomeText => 'Hi';
+
+  @override
+  String get letsStartDoingYourDay => 'Let\'s Start Your Day';
+
+  @override
+  String get categoryHomeText => 'Category';
+
+  @override
+  String get recommendationTodyText => 'Recommendation To Day';
+
+  @override
+  String get upcomingWorkOutsText => 'Upcoming Workouts';
+
+  @override
+  String get seeAllHomeText => 'See All';
+
+  @override
+  String get recommendationForYouText => 'Recommendation For You';
+
+  @override
+  String get popularTrainingText => 'Popular Training';
+
+  @override
   String get recommendation => 'Recommendation';
 
   @override
   String get ingredients => 'Ingredients';
 
   @override
-  String get hiHomeText => 'Hi';
+  String get notAvailable => 'Not Available';
+
+  @override
+  String get profileText => 'Profile';
+
+  @override
+  String get editProfile => 'Edit Profile';
+
+  @override
+  String get changePassword => 'Change Password';
+
+  @override
+  String get selectLanguage => 'Select Language';
+
+  @override
+  String get security => 'Security';
+
+  @override
+  String get language => 'English';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get help => 'Help';
+
+  @override
+  String get logoutProfile => 'Logout';
 
   @override
   String get errorLoadingVideo => 'Error when loading the video';
@@ -322,27 +373,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get error => 'Error';
 
   @override
-  String get iAmYourSmartCoach => 'I Am Your Smart Coach';
-
-  @override
-  String get howCanIAssistYouToday => 'How Can I Assist You\n Today?';
-
-  @override
-  String get getStarted => 'Get Started';
-
-  @override
-  String get smartCoach => 'Smart Coach';
-
-  @override
-  String get typeYourMessage => 'type Your Message';
-
-  @override
-  String get previousConversations => 'Previous conversations';
-
-  @override
-  String get delete => 'Delete';
-
-  @override
   String get oldPassword => 'Old Password';
 
   @override
@@ -365,20 +395,11 @@ class AppLocalizationsEn extends AppLocalizations {
       'Password must contain at least one special character';
 
   @override
-  String get yourWeight => 'Your Weight';
+  String get sureToLogout => 'Are You Sure To Close The Application?';
 
   @override
-  String get yourGoal => 'Your Goal';
+  String get yes => 'Yes';
 
   @override
-  String get yourLevel => 'Your activity level';
-
-  @override
-  String get edit => 'Edit';
-
-  @override
-  String get tabToEdit => 'Tap to Edit';
-
-  @override
-  String get profileEditedSuccessfully => 'Profile updated successfully!';
+  String get no => 'No';
 }

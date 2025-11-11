@@ -29,6 +29,8 @@ abstract class AssetsManager {
   static const String gymCategory4="assets/images/gym_category4.png";
   static const String gymCategory5="assets/images/gym_category5.png";
   static const String chatBackground="assets/images/chat_bg.png";
+  static const String profileTestImage="assets/images/profile_test_image.png";
+  static const String homeImageTest="assets/images/home_image_test.png";
   static const String test="assets/images/test.jpg";
   static const String chatBg="assets/images/chat_bg.jpg";
   static const String menuIcon="assets/icons/menu.svg";
@@ -36,4 +38,14 @@ abstract class AssetsManager {
   static const String editSvg="assets/icons/edit.svg";
   static const String defaultUser="assets/images/user.png";
   static const String smartCoachProfile="assets/images/chat_bot.png";
+  static const String notFound="assets/images/not_found.png";
+  static const String popularTrainingImg="assets/images/popular_training_img.jpg";
+  static const String helpSvg= "assets/icons/help_icon.svg";
+  static const String logoutSvg= "assets/icons/logout_icon.svg";
+  static const String privacyIcon= "assets/icons/privacy_icon.svg";
+  static const String securitySvg= "assets/icons/security_icon.svg";
+  static const String selectLanguageSvg= "assets/icons/select_language_icon.svg";
+  static const String changePasswordProfileIcon= "assets/icons/change_password_profile_icon.svg";
+  static const String profileUserIcon= "assets/icons/profile_user_icon.svg";
+
 }

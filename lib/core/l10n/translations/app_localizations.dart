@@ -638,6 +638,54 @@ abstract class AppLocalizations {
   /// **'Don’t have an account? '**
   String get doNotHaveAccount;
 
+  /// No description provided for @hiHomeText.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi'**
+  String get hiHomeText;
+
+  /// No description provided for @letsStartDoingYourDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s Start Your Day'**
+  String get letsStartDoingYourDay;
+
+  /// No description provided for @categoryHomeText.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get categoryHomeText;
+
+  /// No description provided for @recommendationTodyText.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommendation To Day'**
+  String get recommendationTodyText;
+
+  /// No description provided for @upcomingWorkOutsText.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming Workouts'**
+  String get upcomingWorkOutsText;
+
+  /// No description provided for @seeAllHomeText.
+  ///
+  /// In en, this message translates to:
+  /// **'See All'**
+  String get seeAllHomeText;
+
+  /// No description provided for @recommendationForYouText.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommendation For You'**
+  String get recommendationForYouText;
+
+  /// No description provided for @popularTrainingText.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular Training'**
+  String get popularTrainingText;
+
   /// No description provided for @recommendation.
   ///
   /// In en, this message translates to:
@@ -650,11 +698,65 @@ abstract class AppLocalizations {
   /// **'Ingredients'**
   String get ingredients;
 
-  /// No description provided for @hiHomeText.
+  /// No description provided for @notAvailable.
   ///
   /// In en, this message translates to:
-  /// **'Hi'**
-  String get hiHomeText;
+  /// **'Not Available'**
+  String get notAvailable;
+
+  /// No description provided for @profileText.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profileText;
+
+  /// No description provided for @editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfile;
+
+  /// No description provided for @changePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Password'**
+  String get changePassword;
+
+  /// No description provided for @selectLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Language'**
+  String get selectLanguage;
+
+  /// No description provided for @security.
+  ///
+  /// In en, this message translates to:
+  /// **'Security'**
+  String get security;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get language;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// No description provided for @help.
+  ///
+  /// In en, this message translates to:
+  /// **'Help'**
+  String get help;
+
+  /// No description provided for @logoutProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get logoutProfile;
 
   /// No description provided for @errorLoadingVideo.
   ///
@@ -710,48 +812,6 @@ abstract class AppLocalizations {
   /// **'Error'**
   String get error;
 
-  /// No description provided for @iAmYourSmartCoach.
-  ///
-  /// In en, this message translates to:
-  /// **'I Am Your Smart Coach'**
-  String get iAmYourSmartCoach;
-
-  /// No description provided for @howCanIAssistYouToday.
-  ///
-  /// In en, this message translates to:
-  /// **'How Can I Assist You\n Today?'**
-  String get howCanIAssistYouToday;
-
-  /// No description provided for @getStarted.
-  ///
-  /// In en, this message translates to:
-  /// **'Get Started'**
-  String get getStarted;
-
-  /// No description provided for @smartCoach.
-  ///
-  /// In en, this message translates to:
-  /// **'Smart Coach'**
-  String get smartCoach;
-
-  /// No description provided for @typeYourMessage.
-  ///
-  /// In en, this message translates to:
-  /// **'type Your Message'**
-  String get typeYourMessage;
-
-  /// No description provided for @previousConversations.
-  ///
-  /// In en, this message translates to:
-  /// **'Previous conversations'**
-  String get previousConversations;
-
-  /// No description provided for @delete.
-  ///
-  /// In en, this message translates to:
-  /// **'Delete'**
-  String get delete;
-
   /// No description provided for @oldPassword.
   ///
   /// In en, this message translates to:
@@ -788,41 +848,23 @@ abstract class AppLocalizations {
   /// **'Password must contain at least one special character'**
   String get passwordMustContainSpecialChar;
 
-  /// No description provided for @yourWeight.
+  /// No description provided for @sureToLogout.
   ///
   /// In en, this message translates to:
-  /// **'Your Weight'**
-  String get yourWeight;
+  /// **'Are You Sure To Close The Application?'**
+  String get sureToLogout;
 
-  /// No description provided for @yourGoal.
+  /// No description provided for @yes.
   ///
   /// In en, this message translates to:
-  /// **'Your Goal'**
-  String get yourGoal;
+  /// **'Yes'**
+  String get yes;
 
-  /// No description provided for @yourLevel.
+  /// No description provided for @no.
   ///
   /// In en, this message translates to:
-  /// **'Your activity level'**
-  String get yourLevel;
-
-  /// No description provided for @edit.
-  ///
-  /// In en, this message translates to:
-  /// **'Edit'**
-  String get edit;
-
-  /// No description provided for @tabToEdit.
-  ///
-  /// In en, this message translates to:
-  /// **'Tap to Edit'**
-  String get tabToEdit;
-
-  /// No description provided for @profileEditedSuccessfully.
-  ///
-  /// In en, this message translates to:
-  /// **'Profile updated successfully!'**
-  String get profileEditedSuccessfully;
+  /// **'No'**
+  String get no;
 }
 
 class _AppLocalizationsDelegate

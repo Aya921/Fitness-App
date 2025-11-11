@@ -286,13 +286,64 @@ class AppLocalizationsAr extends AppLocalizations {
   String get doNotHaveAccount => 'ليس لديك حساب؟ ';
 
   @override
+  String get hiHomeText => 'مرحبًا';
+
+  @override
+  String get letsStartDoingYourDay => 'لنبدأ يومك';
+
+  @override
+  String get categoryHomeText => 'الفئات';
+
+  @override
+  String get recommendationTodyText => 'توصيات اليوم';
+
+  @override
+  String get upcomingWorkOutsText => 'التمارين القادمة';
+
+  @override
+  String get seeAllHomeText => 'عرض الكل';
+
+  @override
+  String get recommendationForYouText => 'توصيات لك';
+
+  @override
+  String get popularTrainingText => 'التمارين الشائعة';
+
+  @override
   String get recommendation => 'اقتراحات';
 
   @override
   String get ingredients => 'المكونات';
 
   @override
-  String get hiHomeText => 'مرحبًا';
+  String get notAvailable => 'Not Available';
+
+  @override
+  String get profileText => 'الملف الشخصي';
+
+  @override
+  String get editProfile => 'تعديل الملف الشخصي';
+
+  @override
+  String get changePassword => 'تغيير كلمةالمرور';
+
+  @override
+  String get selectLanguage => 'إختيار اللغة';
+
+  @override
+  String get security => 'الأمن';
+
+  @override
+  String get language => 'العربية';
+
+  @override
+  String get privacyPolicy => 'سياسة الخصوصية';
+
+  @override
+  String get help => 'مساعدة';
+
+  @override
+  String get logoutProfile => 'تسجيل الخروج';
 
   @override
   String get errorLoadingVideo => 'فشل تحميل الفيديو';
@@ -323,27 +374,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get error => 'خطأ';
 
   @override
-  String get iAmYourSmartCoach => 'أنا مدربك الذكي';
-
-  @override
-  String get howCanIAssistYouToday => 'كيف يمكنني مساعدتك اليوم؟';
-
-  @override
-  String get getStarted => 'ابدأ الآن';
-
-  @override
-  String get smartCoach => 'المدرب الذكي';
-
-  @override
-  String get typeYourMessage => 'اكتب رسالتك';
-
-  @override
-  String get previousConversations => 'المحادثات السابقة';
-
-  @override
-  String get delete => 'حذف';
-
-  @override
   String get oldPassword => 'كلمة المرور القديمة';
 
   @override
@@ -366,20 +396,11 @@ class AppLocalizationsAr extends AppLocalizations {
       'يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل';
 
   @override
-  String get yourWeight => 'وزنك';
+  String get sureToLogout => 'هل أنت متأكد من إغلاق التطبيق؟';
 
   @override
-  String get yourGoal => 'هدفك';
+  String get yes => 'نعم';
 
   @override
-  String get yourLevel => 'مستوى نشاطك';
-
-  @override
-  String get edit => 'تعديل';
-
-  @override
-  String get tabToEdit => 'اضغط للتعديل';
-
-  @override
-  String get profileEditedSuccessfully => 'تم التعديل بنجاح';
+  String get no => 'لا';
 }
