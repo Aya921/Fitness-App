@@ -374,6 +374,27 @@ class AppLocalizationsAr extends AppLocalizations {
   String get error => 'خطأ';
 
   @override
+  String get iAmYourSmartCoach => 'أنا مدربك الذكي';
+
+  @override
+  String get howCanIAssistYouToday => 'كيف يمكنني مساعدتك اليوم؟';
+
+  @override
+  String get getStarted => 'ابدأ الآن';
+
+  @override
+  String get smartCoach => 'المدرب الذكي';
+
+  @override
+  String get typeYourMessage => 'اكتب رسالتك';
+
+  @override
+  String get previousConversations => 'المحادثات السابقة';
+
+  @override
+  String get delete => 'حذف';
+
+  @override
   String get oldPassword => 'كلمة المرور القديمة';
 
   @override
@@ -403,4 +424,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get no => 'لا';
+
+  @override
+  String get yourWeight => 'وزنك';
+
+  @override
+  String get yourGoal => 'هدفك';
+
+  @override
+  String get yourLevel => 'مستوى نشاطك';
+
+  @override
+  String get edit => 'تعديل';
+
+  @override
+  String get tabToEdit => 'اضغط للتعديل';
+
+  @override
+  String get profileEditedSuccessfully => 'تم التعديل بنجاح';
 }

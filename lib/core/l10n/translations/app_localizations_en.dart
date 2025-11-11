@@ -373,6 +373,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String get error => 'Error';
 
   @override
+  String get iAmYourSmartCoach => 'I Am Your Smart Coach';
+
+  @override
+  String get howCanIAssistYouToday => 'How Can I Assist You\n Today?';
+
+  @override
+  String get getStarted => 'Get Started';
+
+  @override
+  String get smartCoach => 'Smart Coach';
+
+  @override
+  String get typeYourMessage => 'type Your Message';
+
+  @override
+  String get previousConversations => 'Previous conversations';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
   String get oldPassword => 'Old Password';
 
   @override
@@ -402,4 +423,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get no => 'No';
+
+  @override
+  String get yourWeight => 'Your Weight';
+
+  @override
+  String get yourGoal => 'Your Goal';
+
+  @override
+  String get yourLevel => 'Your activity level';
+
+  @override
+  String get edit => 'Edit';
+
+  @override
+  String get tabToEdit => 'Tap to Edit';
+
+  @override
+  String get profileEditedSuccessfully => 'Profile updated successfully!';
 }

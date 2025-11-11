@@ -1,5 +1,6 @@
 import 'package:fitness/config/app_language/app_language_config.dart';
 import 'package:fitness/config/di/di.dart';
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/constants/constants.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/widget/custom_pop_icon.dart';
@@ -19,6 +20,7 @@ class HelpView extends StatelessWidget {
 
     return Scaffold(
       body: HomeBackground(
+        image: AssetsManager.homeBackground,
         alpha: .12,
         child: SafeArea(
           child: Padding(

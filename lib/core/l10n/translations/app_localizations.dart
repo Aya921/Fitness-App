@@ -812,6 +812,48 @@ abstract class AppLocalizations {
   /// **'Error'**
   String get error;
 
+  /// No description provided for @iAmYourSmartCoach.
+  ///
+  /// In en, this message translates to:
+  /// **'I Am Your Smart Coach'**
+  String get iAmYourSmartCoach;
+
+  /// No description provided for @howCanIAssistYouToday.
+  ///
+  /// In en, this message translates to:
+  /// **'How Can I Assist You\n Today?'**
+  String get howCanIAssistYouToday;
+
+  /// No description provided for @getStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Get Started'**
+  String get getStarted;
+
+  /// No description provided for @smartCoach.
+  ///
+  /// In en, this message translates to:
+  /// **'Smart Coach'**
+  String get smartCoach;
+
+  /// No description provided for @typeYourMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'type Your Message'**
+  String get typeYourMessage;
+
+  /// No description provided for @previousConversations.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous conversations'**
+  String get previousConversations;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
   /// No description provided for @oldPassword.
   ///
   /// In en, this message translates to:
@@ -865,6 +907,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No'**
   String get no;
+
+  /// No description provided for @yourWeight.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Weight'**
+  String get yourWeight;
+
+  /// No description provided for @yourGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Goal'**
+  String get yourGoal;
+
+  /// No description provided for @yourLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Your activity level'**
+  String get yourLevel;
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
+  /// No description provided for @tabToEdit.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to Edit'**
+  String get tabToEdit;
+
+  /// No description provided for @profileEditedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile updated successfully!'**
+  String get profileEditedSuccessfully;
 }
 
 class _AppLocalizationsDelegate

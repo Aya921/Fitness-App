@@ -1,3 +1,4 @@
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/loaders/loaders.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/widget/home_back_ground.dart';
@@ -56,6 +57,7 @@ class ExploreScreenViewBody extends StatelessWidget {
       
        
      child: HomeBackground(
+       image: AssetsManager.homeBackground,
       alpha: .12,
        child: SafeArea(
               child: SingleChildScrollView(
