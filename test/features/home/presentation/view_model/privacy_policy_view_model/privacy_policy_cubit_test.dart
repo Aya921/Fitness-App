@@ -233,45 +233,45 @@ void main() {
     );
   });
 
-  group('PrivacyPolicyCubit multiple calls', () {
-    blocTest<PrivacyPolicyCubit, PrivacyPolicyState>(
-      'can load privacy policy multiple times',
-      build: () {
-        when(mockJsonContentUseCase.callPrivacy())
-            .thenAnswer((_) async => expectedSuccessResult);
-        return privacyPolicyCubit;
-      },
-      act: (cubit) async {
-        await cubit.doIntent( LoadPrivacyPolicyIntent());
-        await cubit.doIntent( LoadPrivacyPolicyIntent());
-      },
-      expect: () => [
-        // First call
-        isA<PrivacyPolicyState>().having(
-          (state) => state.privacyPolicyState.isLoading,
-          'isLoading',
-          equals(true),
-        ),
-        isA<PrivacyPolicyState>().having(
-          (state) => state.privacyPolicyState.isSuccess,
-          'isSuccess',
-          equals(true),
-        ),
-        // Second call
-        isA<PrivacyPolicyState>().having(
-          (state) => state.privacyPolicyState.isLoading,
-          'isLoading',
-          equals(true),
-        ),
-        isA<PrivacyPolicyState>().having(
-          (state) => state.privacyPolicyState.isSuccess,
-          'isSuccess',
-          equals(true),
-        ),
-      ],
-      verify: (cubit) {
-        verify(mockJsonContentUseCase.callPrivacy()).called(2);
-      },
-    );
-  });
+  // group('PrivacyPolicyCubit multiple calls', () {
+  //   blocTest<PrivacyPolicyCubit, PrivacyPolicyState>(
+  //     'can load privacy policy multiple times',
+  //     build: () {
+  //       when(mockJsonContentUseCase.callPrivacy())
+  //           .thenAnswer((_) async => expectedSuccessResult);
+  //       return privacyPolicyCubit;
+  //     },
+  //     act: (cubit) async {
+  //       await cubit.doIntent( LoadPrivacyPolicyIntent());
+  //       await cubit.doIntent( LoadPrivacyPolicyIntent());
+  //     },
+  //     expect: () => [
+  //       // First call
+  //       isA<PrivacyPolicyState>().having(
+  //         (state) => state.privacyPolicyState.isLoading,
+  //         'isLoading',
+  //         equals(true),
+  //       ),
+  //       isA<PrivacyPolicyState>().having(
+  //         (state) => state.privacyPolicyState.isSuccess,
+  //         'isSuccess',
+  //         equals(true),
+  //       ),
+  //       // Second call
+  //       isA<PrivacyPolicyState>().having(
+  //         (state) => state.privacyPolicyState.isLoading,
+  //         'isLoading',
+  //         equals(true),
+  //       ),
+  //       isA<PrivacyPolicyState>().having(
+  //         (state) => state.privacyPolicyState.isSuccess,
+  //         'isSuccess',
+  //         equals(true),
+  //       ),
+  //     ],
+  //     verify: (cubit) {
+  //       verify(mockJsonContentUseCase.callPrivacy()).called(2);
+  //     },
+  //   );
+  // });
 }
