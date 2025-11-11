@@ -73,6 +73,7 @@ class ProfileScreenSettingsSection extends StatelessWidget {
                       {
                         final result =await  Navigator.pushNamed(context, AppRoutes.editProfile);
                         if(result == true){
+                          // ignore: use_build_context_synchronously
                           context.read<ProfileCubit>().doIntent(GetLoggedUserIntent());
                           }
                        

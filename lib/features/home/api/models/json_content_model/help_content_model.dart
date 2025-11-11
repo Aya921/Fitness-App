@@ -171,7 +171,7 @@ class LocalizedText {
     );
   }
 
-  /// Returns either a String or List<String> depending on what exists.
+  /// Returns either a String or List String depending on what exists.
   dynamic getText(bool isArabic) {
     if (isArabic) return ar ?? arList;
     return en ?? enList;

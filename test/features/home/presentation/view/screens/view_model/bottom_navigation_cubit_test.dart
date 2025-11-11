@@ -44,18 +44,18 @@ void main() {
   });
 
   group('GoToTabWithDataIntent', () {
-    final musclesGroupList = [
-      const MusclesGroupEntity(id: "1", name: "Chest"),
-      const MusclesGroupEntity(id: "2", name: "Back"),
-    ];
+    // final musclesGroupList = [
+    //   const MusclesGroupEntity(id: "1", name: "Chest"),
+    //   const MusclesGroupEntity(id: "2", name: "Back"),
+    // ];
 
-    final musclesGroupByIdMap = {
-      "1": const MusclesGroupIdResponseEntity(
-        message: "Success",
-        musclesGroup: MusclesGroupEntity(id: "1", name: "Chest"),
-        muscles: [],
-      ),
-    };
+    // final musclesGroupByIdMap = {
+    //   "1": const MusclesGroupIdResponseEntity(
+    //     message: "Success",
+    //     musclesGroup: MusclesGroupEntity(id: "1", name: "Chest"),
+    //     muscles: [],
+    //   ),
+    // };
 
    
 

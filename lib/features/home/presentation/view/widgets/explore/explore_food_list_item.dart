@@ -29,7 +29,7 @@ class ExploreFoodListItem extends StatelessWidget {
                 child: ColorFiltered(
                 colorFilter: ColorFilter.mode(AppColors.black.withValues(alpha: 0.2)
                 , BlendMode.darken),
-                child: CachedNetworkImage(imageUrl:mealCategoryEntity.strCategoryThumb ?? ""
+                child: CachedNetworkImage(imageUrl:mealCategoryEntity.strCategoryThumb 
                 ,fit: BoxFit.cover,
                 errorWidget: (context, url, error) {
                   return Container(
@@ -74,7 +74,7 @@ class ExploreFoodListItem extends StatelessWidget {
                     fit: BoxFit.scaleDown,
                     child: Text(
                       textAlign: TextAlign.center,
-                       mealCategoryEntity.strCategory ?? "",
+                       mealCategoryEntity.strCategory ,
                       style: getRegularStyle(
                         color: AppColors.white,
                       ).copyWith(fontFamily: "BalooThambi2",

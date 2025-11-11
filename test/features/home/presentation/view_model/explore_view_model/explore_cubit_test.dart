@@ -1,6 +1,4 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:fitness/core/error/api_error.dart';
-import 'package:fitness/core/error/response_exception.dart';
 import 'package:fitness/core/result/result.dart';
 import 'package:fitness/features/auth/domain/entity/auth/auth_entity.dart';
 import 'package:fitness/features/auth/domain/entity/auth/body_info_entity.dart';
