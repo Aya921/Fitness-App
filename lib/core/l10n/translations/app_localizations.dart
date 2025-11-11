@@ -638,6 +638,54 @@ abstract class AppLocalizations {
   /// **'Don’t have an account? '**
   String get doNotHaveAccount;
 
+  /// No description provided for @hiHomeText.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi'**
+  String get hiHomeText;
+
+  /// No description provided for @letsStartDoingYourDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s Start Your Day'**
+  String get letsStartDoingYourDay;
+
+  /// No description provided for @categoryHomeText.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get categoryHomeText;
+
+  /// No description provided for @recommendationTodyText.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommendation To Day'**
+  String get recommendationTodyText;
+
+  /// No description provided for @upcomingWorkOutsText.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming Workouts'**
+  String get upcomingWorkOutsText;
+
+  /// No description provided for @seeAllHomeText.
+  ///
+  /// In en, this message translates to:
+  /// **'See All'**
+  String get seeAllHomeText;
+
+  /// No description provided for @recommendationForYouText.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommendation For You'**
+  String get recommendationForYouText;
+
+  /// No description provided for @popularTrainingText.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular Training'**
+  String get popularTrainingText;
+
   /// No description provided for @recommendation.
   ///
   /// In en, this message translates to:
@@ -649,6 +697,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Ingredients'**
   String get ingredients;
+
+  /// No description provided for @notAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Not Available'**
+  String get notAvailable;
+
+  /// No description provided for @profileText.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profileText;
+
+  /// No description provided for @editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfile;
+
+  /// No description provided for @changePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Password'**
+  String get changePassword;
+
+  /// No description provided for @selectLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Language'**
+  String get selectLanguage;
+
+  /// No description provided for @security.
+  ///
+  /// In en, this message translates to:
+  /// **'Security'**
+  String get security;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get language;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// No description provided for @help.
+  ///
+  /// In en, this message translates to:
+  /// **'Help'**
+  String get help;
+
+  /// No description provided for @logoutProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get logoutProfile;
 
   /// No description provided for @errorLoadingVideo.
   ///
@@ -703,6 +811,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Error'**
   String get error;
+
+  /// No description provided for @oldPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Old Password'**
+  String get oldPassword;
+
+  /// No description provided for @passNotMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Password not correct'**
+  String get passNotMatch;
+
+  /// No description provided for @passwordMustContainLowerCase.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one lowercase letter'**
+  String get passwordMustContainLowerCase;
+
+  /// No description provided for @passwordMustContainUpperCase.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one uppercase letter'**
+  String get passwordMustContainUpperCase;
+
+  /// No description provided for @passwordMustContainNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one number'**
+  String get passwordMustContainNumber;
+
+  /// No description provided for @passwordMustContainSpecialChar.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one special character'**
+  String get passwordMustContainSpecialChar;
+
+  /// No description provided for @sureToLogout.
+  ///
+  /// In en, this message translates to:
+  /// **'Are You Sure To Close The Application?'**
+  String get sureToLogout;
+
+  /// No description provided for @yes.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get yes;
+
+  /// No description provided for @no.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get no;
 }
 
 class _AppLocalizationsDelegate

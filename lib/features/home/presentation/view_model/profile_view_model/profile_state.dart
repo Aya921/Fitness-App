@@ -6,22 +6,26 @@ class ProfileState extends Equatable {
   final StateStatus<List<dynamic>> dataState;
   final bool switchLanguage;
   final StateStatus<AuthEntity> userData;
+  final StateStatus<void>? logoutStatus;
 
   const ProfileState({
     this.dataState =const StateStatus.initial(),
     this.switchLanguage = true,
        this.userData =const StateStatus.initial(),
+    this.logoutStatus=const StateStatus.loading(),
   });
 
   ProfileState copyWith({
     final StateStatus<List<dynamic>>? dataState,
     final StateStatus<AuthEntity>? userData,
     final bool? switchLanguage,
+  final StateStatus<void>? logoutStatus
   }) {
     return ProfileState(
       dataState: dataState ?? this.dataState,
       userData: userData ?? this.userData,
       switchLanguage: switchLanguage ?? this.switchLanguage,
+        logoutStatus: logoutStatus ?? this.logoutStatus
     );
   }
 
@@ -30,5 +34,6 @@ class ProfileState extends Equatable {
     dataState,
     userData,
     switchLanguage,
+    logoutStatus
   ];
 }

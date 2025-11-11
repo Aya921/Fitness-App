@@ -285,10 +285,64 @@ class AppLocalizationsEn extends AppLocalizations {
   String get doNotHaveAccount => 'Don’t have an account? ';
 
   @override
+  String get hiHomeText => 'Hi';
+
+  @override
+  String get letsStartDoingYourDay => 'Let\'s Start Your Day';
+
+  @override
+  String get categoryHomeText => 'Category';
+
+  @override
+  String get recommendationTodyText => 'Recommendation To Day';
+
+  @override
+  String get upcomingWorkOutsText => 'Upcoming Workouts';
+
+  @override
+  String get seeAllHomeText => 'See All';
+
+  @override
+  String get recommendationForYouText => 'Recommendation For You';
+
+  @override
+  String get popularTrainingText => 'Popular Training';
+
+  @override
   String get recommendation => 'Recommendation';
 
   @override
   String get ingredients => 'Ingredients';
+
+  @override
+  String get notAvailable => 'Not Available';
+
+  @override
+  String get profileText => 'Profile';
+
+  @override
+  String get editProfile => 'Edit Profile';
+
+  @override
+  String get changePassword => 'Change Password';
+
+  @override
+  String get selectLanguage => 'Select Language';
+
+  @override
+  String get security => 'Security';
+
+  @override
+  String get language => 'English';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get help => 'Help';
+
+  @override
+  String get logoutProfile => 'Logout';
 
   @override
   String get errorLoadingVideo => 'Error when loading the video';
@@ -317,4 +371,35 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get error => 'Error';
+
+  @override
+  String get oldPassword => 'Old Password';
+
+  @override
+  String get passNotMatch => 'Password not correct';
+
+  @override
+  String get passwordMustContainLowerCase =>
+      'Password must contain at least one lowercase letter';
+
+  @override
+  String get passwordMustContainUpperCase =>
+      'Password must contain at least one uppercase letter';
+
+  @override
+  String get passwordMustContainNumber =>
+      'Password must contain at least one number';
+
+  @override
+  String get passwordMustContainSpecialChar =>
+      'Password must contain at least one special character';
+
+  @override
+  String get sureToLogout => 'Are You Sure To Close The Application?';
+
+  @override
+  String get yes => 'Yes';
+
+  @override
+  String get no => 'No';
 }

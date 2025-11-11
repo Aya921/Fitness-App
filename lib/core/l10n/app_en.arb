@@ -115,7 +115,7 @@
   "language":"English",
   "privacyPolicy":"Privacy Policy",
   "help": "Help",
-  "logoutProfile":"Logut"
+  "logoutProfile":"Logout",
   "ingredients":"Ingredients",
 
   "errorLoadingVideo":"Error when loading the video",
@@ -133,6 +133,9 @@
   "passwordMustContainLowerCase":"Password must contain at least one lowercase letter",
   "passwordMustContainUpperCase":"Password must contain at least one uppercase letter",
   "passwordMustContainNumber":"Password must contain at least one number",
-  "passwordMustContainSpecialChar":"Password must contain at least one special character"
+  "passwordMustContainSpecialChar":"Password must contain at least one special character",
+  "sureToLogout":"Are You Sure To Close The Application?",
+  "yes":"Yes",
+  "no":"No"
 
 }

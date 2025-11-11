@@ -82,19 +82,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get next => 'التالي';
 
   @override
-  String get level1 => 'level1';
+  String get level1 => 'المستوى الأول';
 
   @override
-  String get level2 => 'level2';
+  String get level2 => 'المستوى الثاني';
 
   @override
-  String get level3 => 'level3';
+  String get level3 => 'المستوى الثالث';
 
   @override
-  String get level4 => 'level4';
+  String get level4 => 'المستوى الرابع';
 
   @override
-  String get level5 => 'level5';
+  String get level5 => 'المستوى الخامس';
 
   @override
   String get foodRecommendation => 'الاطعمة الموصى بها';
@@ -286,10 +286,64 @@ class AppLocalizationsAr extends AppLocalizations {
   String get doNotHaveAccount => 'ليس لديك حساب؟ ';
 
   @override
+  String get hiHomeText => 'مرحبًا';
+
+  @override
+  String get letsStartDoingYourDay => 'لنبدأ يومك';
+
+  @override
+  String get categoryHomeText => 'الفئات';
+
+  @override
+  String get recommendationTodyText => 'توصيات اليوم';
+
+  @override
+  String get upcomingWorkOutsText => 'التمارين القادمة';
+
+  @override
+  String get seeAllHomeText => 'عرض الكل';
+
+  @override
+  String get recommendationForYouText => 'توصيات لك';
+
+  @override
+  String get popularTrainingText => 'التمارين الشائعة';
+
+  @override
   String get recommendation => 'اقتراحات';
 
   @override
   String get ingredients => 'المكونات';
+
+  @override
+  String get notAvailable => 'Not Available';
+
+  @override
+  String get profileText => 'الملف الشخصي';
+
+  @override
+  String get editProfile => 'تعديل الملف الشخصي';
+
+  @override
+  String get changePassword => 'تغيير كلمةالمرور';
+
+  @override
+  String get selectLanguage => 'إختيار اللغة';
+
+  @override
+  String get security => 'الأمن';
+
+  @override
+  String get language => 'العربية';
+
+  @override
+  String get privacyPolicy => 'سياسة الخصوصية';
+
+  @override
+  String get help => 'مساعدة';
+
+  @override
+  String get logoutProfile => 'تسجيل الخروج';
 
   @override
   String get errorLoadingVideo => 'فشل تحميل الفيديو';
@@ -318,4 +372,35 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get error => 'خطأ';
+
+  @override
+  String get oldPassword => 'كلمة المرور القديمة';
+
+  @override
+  String get passNotMatch => 'كلمة المرور غير صحيحة';
+
+  @override
+  String get passwordMustContainLowerCase =>
+      'يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل';
+
+  @override
+  String get passwordMustContainUpperCase =>
+      'يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل';
+
+  @override
+  String get passwordMustContainNumber =>
+      'يجب أن تحتوي كلمة المرور على رقم واحد على الأقل';
+
+  @override
+  String get passwordMustContainSpecialChar =>
+      'يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل';
+
+  @override
+  String get sureToLogout => 'هل أنت متأكد من إغلاق التطبيق؟';
+
+  @override
+  String get yes => 'نعم';
+
+  @override
+  String get no => 'لا';
 }
