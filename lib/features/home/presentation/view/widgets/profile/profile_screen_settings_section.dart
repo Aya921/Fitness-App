@@ -1,13 +1,25 @@
 import 'dart:ui';
+import 'package:fitness/config/app_language/app_language_config.dart';
+import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/constants/assets_manager.dart';
+import 'package:fitness/core/constants/constants.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
-import 'package:fitness/features/home/presentation/view/widgets/profile/profile_screen_json_data.dart';
+import 'package:fitness/features/home/presentation/view/widgets/profile/help_view.dart';
+import 'package:fitness/features/home/presentation/view/widgets/profile/privacy_policy_view.dart';
+import 'package:fitness/features/home/presentation/view/widgets/profile/security_view.dart';
+import 'package:fitness/features/home/presentation/view_model/help_view_model/help_cubit.dart';
+import 'package:fitness/features/home/presentation/view_model/help_view_model/help_intents.dart';
+import 'package:fitness/features/home/presentation/view_model/privacy_policy_view_model/privacy_policy_cubit.dart';
+import 'package:fitness/features/home/presentation/view_model/privacy_policy_view_model/privacy_policy_intent.dart';
 import 'package:fitness/features/home/presentation/view_model/profile_view_model/profile_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/profile_view_model/profile_intents.dart';
+import 'package:fitness/features/home/presentation/view_model/profile_view_model/profile_state.dart';
+import 'package:fitness/features/home/presentation/view_model/security_view_model/security_cubit.dart';
+import 'package:fitness/features/home/presentation/view_model/security_view_model/security_intent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -17,6 +29,7 @@ class ProfileScreenSettingsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appLanConfig = getIt.get<AppLanguageConfig>();  
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: BackdropFilter(
@@ -69,20 +82,23 @@ class ProfileScreenSettingsSection extends StatelessWidget {
                   height: context.setHight(20),
                   width: context.setWidth(34),
                   child: Switch.adaptive(
-                    inactiveThumbColor: AppColors.lightWhite,
-                    inactiveTrackColor: AppColors.darkBackground,
-                    activeColor: AppColors.orange,
-                    activeTrackColor: AppColors.orange,
-                    activeThumbColor: AppColors.white,
-                    trackOutlineColor: MaterialStateProperty.all(
-                      Colors.transparent,
-                    ),
-                    trackOutlineWidth: MaterialStateProperty.all(0),
-                    value: true,
-                    onChanged: (value) {
-
-                    },
-                    applyCupertinoTheme:false,
+                  inactiveThumbColor: AppColors.lightWhite,
+                  inactiveTrackColor: AppColors.darkBackground,
+                  activeColor: AppColors.orange,
+                  activeTrackColor: AppColors.orange,
+                  activeThumbColor: AppColors.white,
+                  trackOutlineColor: MaterialStateProperty.all(
+                    Colors.transparent,
+                  ),
+                  trackOutlineWidth: MaterialStateProperty.all(0),
+                  value: appLanConfig.isEn(),
+                  onChanged: (value) async {
+                    if (value) {
+                    await appLanConfig.changeLocal(Constants.enLocal);
+                    } else {
+                    await appLanConfig.changeLocal(Constants.arLocal);
+                    }
+                  },
                   ),
                 ),
                 onTap: null,
@@ -94,13 +110,11 @@ class ProfileScreenSettingsSection extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => BlocProvider.value(
-                        value: context
-                            .read<ProfileCubit>()..doIntent(SecurityIntent()),
-                        child: ProfileScreenJsonData(
-                          title: context.loc.security,
-                          intent: SecurityIntent(),
-                        ),
+                      builder: (_) => BlocProvider(
+                        create: (context) =>
+                            getIt.get<SecurityCubit>()
+                              ..doIntent(LoadSecurityPolicyIntent()),
+                        child: const SecurityView(),
                       ),
                     ),
                   );
@@ -113,13 +127,11 @@ class ProfileScreenSettingsSection extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => BlocProvider.value(
-                        value: context
-                            .read<ProfileCubit>()..doIntent(PrivacyPolicyIntent()),
-                        child: ProfileScreenJsonData(
-                          title: context.loc.privacyPolicy,
-                          intent: PrivacyPolicyIntent(),
-                        ),
+                      builder: (_) => BlocProvider(
+                        create: (context) =>
+                            getIt.get<PrivacyPolicyCubit>()
+                              ..doIntent(LoadPrivacyPolicyIntent()),
+                        child: const PrivacyPolicyView(),
                       ),
                     ),
                   );
@@ -132,13 +144,11 @@ class ProfileScreenSettingsSection extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => BlocProvider.value(
-                        value: context
-                            .read<ProfileCubit>()..doIntent(HelpIntent()),
-                        child: ProfileScreenJsonData(
-                          title: context.loc.help,
-                          intent: HelpIntent(),
-                        ),
+                      builder: (_) => BlocProvider(
+                        create: (context) =>
+                            getIt.get<HelpCubit>()
+                              ..doIntent(LoadHelpContentIntent()),
+                        child: const HelpView(),
                       ),
                     ),
                   );
