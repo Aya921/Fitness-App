@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:fitness/features/home/domain/entity/exercises/exercise_entity.dart';
+import 'exercise_entity.dart';
 
 class AllExercisesEntity extends Equatable {
   final String? message;

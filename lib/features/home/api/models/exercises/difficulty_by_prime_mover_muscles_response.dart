@@ -1,6 +1,6 @@
 import 'package:fitness/features/home/api/models/exercises/level_response.dart';
-import 'package:fitness/features/home/domain/entity/exercises/difficulty_by_prime_mover_muscles_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../../domain/entities/exercises/difficulty_by_prime_mover_muscles_entity.dart';
 
 part 'difficulty_by_prime_mover_muscles_response.g.dart';
 

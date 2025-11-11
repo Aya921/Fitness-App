@@ -2,17 +2,17 @@ import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
-import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/validator/validator.dart';
 import 'package:fitness/core/widget/custum_fields_button.dart';
 import 'package:fitness/core/widget/custum_text_field.dart';
 import 'package:fitness/core/widget/cusum_scaffold_messanger.dart';
-import 'package:fitness/features/home/domain/entity/chage_pass/change_pass_request.dart';
 import 'package:fitness/features/home/presentation/view_model/change_pass_view_model/change_pass_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/change_pass_view_model/change_pass_event.dart';
 import 'package:fitness/features/home/presentation/view_model/change_pass_view_model/change_pass_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../domain/entities/chage_pass/change_pass_request.dart';
 
 class ChangePassSection extends StatefulWidget {
   const ChangePassSection({super.key});

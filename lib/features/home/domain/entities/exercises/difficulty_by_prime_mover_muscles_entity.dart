@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:fitness/features/home/domain/entity/exercises/difficulty_level_entity.dart';
+
+import 'difficulty_level_entity.dart';
 
 class DifficultyByPrimeMoverMusclesEntity extends Equatable{
   final String? message;

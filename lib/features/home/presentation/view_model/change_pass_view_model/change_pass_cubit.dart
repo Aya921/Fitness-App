@@ -1,7 +1,7 @@
 import 'package:fitness/core/enum/request_state.dart';
 import 'package:fitness/core/error/response_exception.dart';
 import 'package:fitness/core/result/result.dart';
-import 'package:fitness/features/home/domain/entity/chage_pass/change_pass_request.dart';
+import 'package:fitness/features/home/domain/entities/chage_pass/change_pass_request.dart';
 import 'package:fitness/features/home/domain/usecase/change_pass_usecase/change_pass_usecase.dart';
 import 'package:fitness/features/home/presentation/view_model/change_pass_view_model/change_pass_event.dart';
 import 'package:fitness/features/home/presentation/view_model/change_pass_view_model/change_pass_state.dart';

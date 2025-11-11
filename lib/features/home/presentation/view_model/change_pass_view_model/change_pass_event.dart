@@ -1,4 +1,4 @@
-import 'package:fitness/features/home/domain/entity/chage_pass/change_pass_request.dart';
+import 'package:fitness/features/home/domain/entities/chage_pass/change_pass_request.dart';
 
 sealed class ChangePassEvent {}
 

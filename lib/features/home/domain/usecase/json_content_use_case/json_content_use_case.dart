@@ -2,8 +2,9 @@ import 'package:fitness/core/result/result.dart';
 import 'package:fitness/features/home/domain/entities/json_content_entity/help_content_entity.dart';
 import 'package:fitness/features/home/domain/entities/json_content_entity/privacy_content_entity.dart';
 import 'package:fitness/features/home/domain/entities/json_content_entity/security_roles_entity.dart';
-import 'package:fitness/features/home/domain/repositories/json_content_repository/json_content_repository.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../repo/json_content_repository/json_content_repository.dart';
 @injectable
 class JsonContentUseCase {
   final JsonContentRepository _jsonContentRepository;

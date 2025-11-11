@@ -6,7 +6,6 @@ import 'package:fitness/features/auth/presentation/views/screens/compelete_regis
 import 'package:fitness/features/auth/presentation/views/screens/register/register_screen.dart';
 import 'package:fitness/features/foods/domain/entities/meals_by_category.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscle_entity/muscle_entity.dart';
-import 'package:fitness/features/home/domain/entity/exercises/mover_muscle_entity.dart';
 import 'package:fitness/features/home/presentation/view/screens/change_pass_screen/change_pass_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/edit_profile/edit_activity_level_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/edit_profile/edit_goal_screen.dart';

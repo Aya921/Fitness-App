@@ -2,14 +2,15 @@ import 'package:bloc/bloc.dart';
 import 'package:fitness/core/enum/request_state.dart';
 import 'package:fitness/core/error/response_exception.dart';
 import 'package:fitness/core/result/result.dart';
-import 'package:fitness/features/home/domain/entity/exercises/difficulty_level_entity.dart';
-import 'package:fitness/features/home/domain/entity/exercises/exercise_entity.dart';
 import 'package:fitness/features/home/domain/usecase/exercises/get_difficulty_levels_by_muscle_use_case.dart';
 import 'package:fitness/features/home/domain/usecase/exercises/get_exercises_by_difficulty_and_muscle_use_case.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_intent.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_state.dart';
 import 'package:injectable/injectable.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
+import '../../../domain/entities/exercises/difficulty_level_entity.dart';
+import '../../../domain/entities/exercises/exercise_entity.dart';
 
 @injectable
 class ExercisesCubit extends Cubit<ExercisesStates> {

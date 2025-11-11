@@ -1,10 +1,10 @@
 import 'package:fitness/core/result/result.dart';
 import 'package:fitness/features/home/data/repo_impl/exercises/exercises_repo_impl.dart';
-import 'package:fitness/features/home/domain/entity/exercises/equipment_entity.dart';
-import 'package:fitness/features/home/domain/entity/exercises/exercise_entity.dart';
-import 'package:fitness/features/home/domain/entity/exercises/exercise_video_entity.dart';
-import 'package:fitness/features/home/domain/entity/exercises/motion_entity.dart';
-import 'package:fitness/features/home/domain/entity/exercises/muscle_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/equipment_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/exercise_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/exercise_video_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/motion_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/muscle_entity.dart';
 import 'package:fitness/features/home/domain/usecase/exercises/get_exercises_by_difficulty_and_muscle_use_case.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';

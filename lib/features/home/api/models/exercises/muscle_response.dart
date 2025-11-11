@@ -1,5 +1,6 @@
-import 'package:fitness/features/home/domain/entity/exercises/mover_muscle_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import '../../../domain/entities/exercises/mover_muscle_entity.dart';
 
 part 'muscle_response.g.dart';
 

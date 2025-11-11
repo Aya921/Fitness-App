@@ -2,9 +2,9 @@ import 'package:fitness/core/result/result.dart';
 import 'package:fitness/core/safe_api_call/safe_api_call.dart';
 import 'package:fitness/features/home/api/client/api_services.dart';
 import 'package:fitness/features/home/data/data_source/exercises/exercises_ds.dart';
-import 'package:fitness/features/home/domain/entity/exercises/difficulty_level_entity.dart';
-import 'package:fitness/features/home/domain/entity/exercises/exercise_entity.dart';
 import 'package:injectable/injectable.dart';
+import '../../../domain/entities/exercises/difficulty_level_entity.dart';
+import '../../../domain/entities/exercises/exercise_entity.dart';
 
 @Injectable(as: ExercisesDs)
 class ExercisestDsImpl implements ExercisesDs {

@@ -1,7 +1,8 @@
 import 'package:fitness/core/result/result.dart';
-import 'package:fitness/features/home/domain/entity/chage_pass/change_pass_request.dart';
 import 'package:fitness/features/home/domain/repo/change_pass_repo/change_pass_repo.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../entities/chage_pass/change_pass_request.dart';
 
 @injectable
 class ChangePassUsecase {

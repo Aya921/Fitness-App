@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
-import 'package:fitness/features/home/domain/entity/exercises/equipment_entity.dart';
-import 'package:fitness/features/home/domain/entity/exercises/exercise_video_entity.dart';
-import 'package:fitness/features/home/domain/entity/exercises/motion_entity.dart';
-import 'package:fitness/features/home/domain/entity/exercises/muscle_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/equipment_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/exercise_video_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/motion_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/muscle_entity.dart';
 
 class ExerciseEntity extends Equatable {
   final String? id;

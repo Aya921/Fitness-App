@@ -3,8 +3,8 @@ import 'package:fitness/features/home/data/data_source/explore_data_source/explo
 import 'package:fitness/features/home/domain/entities/explore_entity/muscle_entity/muscle_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_by_id_response_entity/muscles_group_id_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_entity/muscles_group_entity.dart';
-import 'package:fitness/features/home/domain/repositories/explore_repositories/explore_repositories.dart';
 import 'package:injectable/injectable.dart';
+import '../../../domain/repo/explore_repositories/explore_repositories.dart';
 
 @Injectable(as : ExploreRepositories)
 class ExploreRepositoriesImpl implements ExploreRepositories {

@@ -23,8 +23,8 @@ class ExploreScreenViewBody extends StatelessWidget {
        return current.musclesGroupState.isFailure ||
            current.randomMusclesState.isFailure||
            current.musclesGroupById.isFailure ||
-           current.userData.isFailure ||
-           current.exersicesState.isFailure;
+           current.userData.isFailure ;
+
         },
       listener: (context, state) {
        if (state.randomMusclesState.isFailure) {
@@ -45,11 +45,6 @@ class ExploreScreenViewBody extends StatelessWidget {
         }else if (state.userData.isFailure) {
           Loaders.showErrorMessage(
             message: state.userData.error?.message ?? "",
-            context: context,
-          );
-        }else if (state.exersicesState.isFailure) {
-          Loaders.showErrorMessage(
-            message: state.exersicesState.error?.message ?? "",
             context: context,
           );
         }

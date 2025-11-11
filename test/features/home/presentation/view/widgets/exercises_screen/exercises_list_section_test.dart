@@ -3,7 +3,7 @@ import 'package:fitness/core/enum/request_state.dart';
 import 'package:fitness/core/error/response_exception.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
-import 'package:fitness/features/home/domain/entity/exercises/exercise_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/exercise_entity.dart';
 import 'package:fitness/features/home/presentation/view/widgets/exercises_screen/exercises_list_section.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_state.dart';

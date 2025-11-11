@@ -1,6 +1,6 @@
 import 'package:fitness/core/result/result.dart';
 import 'package:fitness/features/home/data/repo_impl/exercises/exercises_repo_impl.dart';
-import 'package:fitness/features/home/domain/entity/exercises/difficulty_level_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/difficulty_level_entity.dart';
 import 'package:fitness/features/home/domain/usecase/exercises/get_difficulty_levels_by_muscle_use_case.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';

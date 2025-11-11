@@ -1,6 +1,6 @@
 import 'package:fitness/core/result/result.dart';
-import 'package:fitness/features/home/domain/entity/exercises/difficulty_level_entity.dart';
-import 'package:fitness/features/home/domain/entity/exercises/exercise_entity.dart';
+import '../../entities/exercises/difficulty_level_entity.dart';
+import '../../entities/exercises/exercise_entity.dart';
 
 abstract interface class ExercisesRepo {
   Future<Result<List<LevelEntity>>> getDifficultyLevelsByPrimeMoverMuscles(

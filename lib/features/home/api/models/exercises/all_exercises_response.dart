@@ -1,5 +1,5 @@
 import 'package:fitness/features/home/api/models/exercises/exercise_response.dart';
-import 'package:fitness/features/home/domain/entity/exercises/all_exercises_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/all_exercises_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'all_exercises_response.g.dart';

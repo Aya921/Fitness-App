@@ -1,7 +1,8 @@
 import 'package:fitness/core/result/result.dart';
-import 'package:fitness/features/home/domain/entity/exercises/difficulty_level_entity.dart';
 import 'package:fitness/features/home/domain/repo/exercises/exercises_repo.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../entities/exercises/difficulty_level_entity.dart';
 
 @injectable
 class GetDifficultyLevelsByMuscleUseCase {

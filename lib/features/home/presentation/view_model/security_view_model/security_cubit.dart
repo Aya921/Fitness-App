@@ -2,11 +2,12 @@ import 'package:fitness/core/enum/request_state.dart';
 import 'package:fitness/core/error/response_exception.dart';
 import 'package:fitness/core/result/result.dart';
 import 'package:fitness/features/home/domain/entities/json_content_entity/security_roles_entity.dart';
-import 'package:fitness/features/home/domain/use_case/json_content_use_case/json_content_use_case.dart';
 import 'package:fitness/features/home/presentation/view_model/security_view_model/security_intent.dart';
 import 'package:fitness/features/home/presentation/view_model/security_view_model/security_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../../domain/usecase/json_content_use_case/json_content_use_case.dart';
 
 @injectable
 class SecurityCubit extends Cubit<SecurityState> {

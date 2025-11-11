@@ -1,6 +1,3 @@
-import 'package:fitness/features/home/domain/entities/explore_entity/muscle_entity/muscle_entity.dart';
-import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_entity/muscles_group_entity.dart';
-import 'package:fitness/features/home/domain/entity/exercises/mover_muscle_entity.dart';
 import 'package:fitness/features/home/presentation/view/widgets/exercises_screen/exercises_list_section.dart';
 import 'package:fitness/features/home/presentation/view/widgets/exercises_screen/header_section.dart';
 import 'package:fitness/features/home/presentation/view/widgets/exercises_screen/level_tabs_section.dart';
@@ -10,6 +7,9 @@ import 'package:fitness/features/home/presentation/view_model/exercises_view_mod
 import 'package:flutter/material.dart';
 import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../domain/entities/explore_entity/muscle_entity/muscle_entity.dart' show MuscleEntity;
+
 
 class ExercisesScreen extends StatefulWidget {
   final MuscleEntity? primMoverMuscle;

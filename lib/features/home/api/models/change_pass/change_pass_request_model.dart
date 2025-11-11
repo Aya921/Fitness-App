@@ -1,6 +1,7 @@
 import 'package:fitness/core/constants/json_serializable_constants.dart';
-import 'package:fitness/features/home/domain/entity/chage_pass/change_pass_request.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import '../../../domain/entities/chage_pass/change_pass_request.dart';
 part 'change_pass_request_model.g.dart';
 
 @JsonSerializable()

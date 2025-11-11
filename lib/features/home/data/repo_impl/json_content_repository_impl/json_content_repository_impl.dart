@@ -3,8 +3,9 @@ import 'package:fitness/features/home/data/data_source/json_content_data_source/
 import 'package:fitness/features/home/domain/entities/json_content_entity/help_content_entity.dart';
 import 'package:fitness/features/home/domain/entities/json_content_entity/privacy_content_entity.dart';
 import 'package:fitness/features/home/domain/entities/json_content_entity/security_roles_entity.dart';
-import 'package:fitness/features/home/domain/repositories/json_content_repository/json_content_repository.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../../domain/repo/json_content_repository/json_content_repository.dart';
 @Injectable(as: JsonContentRepository)
 class JsonContentRepositoryImpl implements JsonContentRepository{
   final JsonContentDataSource _jsonContentDataSource;

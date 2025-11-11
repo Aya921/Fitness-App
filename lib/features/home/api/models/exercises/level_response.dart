@@ -1,5 +1,5 @@
-import 'package:fitness/features/home/domain/entity/exercises/difficulty_level_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../../domain/entities/exercises/difficulty_level_entity.dart';
 
 part 'level_response.g.dart';
 

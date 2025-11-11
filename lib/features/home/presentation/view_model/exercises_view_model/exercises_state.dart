@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:fitness/core/enum/request_state.dart';
-import 'package:fitness/features/home/domain/entity/exercises/difficulty_level_entity.dart';
-import 'package:fitness/features/home/domain/entity/exercises/exercise_entity.dart';
+import '../../../domain/entities/exercises/difficulty_level_entity.dart';
+import '../../../domain/entities/exercises/exercise_entity.dart';
 
 class ExercisesStates extends Equatable{
   final StateStatus<List<LevelEntity>> levelsByMuscleStatus;

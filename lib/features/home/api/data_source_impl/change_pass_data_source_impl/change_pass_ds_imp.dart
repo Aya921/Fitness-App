@@ -4,8 +4,9 @@ import 'package:fitness/core/storage/secure_storage_service.dart';
 import 'package:fitness/features/home/api/client/api_services.dart';
 import 'package:fitness/features/home/api/models/change_pass/change_pass_request_model.dart';
 import 'package:fitness/features/home/data/data_source/change_pass_ds/change_pass_ds.dart';
-import 'package:fitness/features/home/domain/entity/chage_pass/change_pass_request.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../../domain/entities/chage_pass/change_pass_request.dart';
 
 @Injectable(as: ChangePassDs)
 class ChangePassDsImp implements ChangePassDs {

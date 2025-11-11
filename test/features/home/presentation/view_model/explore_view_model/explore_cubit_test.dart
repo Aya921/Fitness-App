@@ -10,7 +10,7 @@ import 'package:fitness/features/auth/domain/use_case/get_logged_user_use_case.d
 import 'package:fitness/features/home/domain/entities/explore_entity/muscle_entity/muscle_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_by_id_response_entity/muscles_group_id_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_entity/muscles_group_entity.dart';
-import 'package:fitness/features/home/domain/use_case/explore_use_case/explore_use_case.dart';
+import 'package:fitness/features/home/domain/usecase/explore_use_case/explore_use_case.dart';
 import 'package:fitness/features/home/presentation/view_model/explore_view_model/explore_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/explore_view_model/explore_intents.dart';
 import 'package:fitness/features/home/presentation/view_model/explore_view_model/explore_state.dart';

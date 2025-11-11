@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:fitness/features/home/domain/entity/exercises/mover_muscle_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/mover_muscle_entity.dart';
 
 class PrimeMoverMuscleEntity extends Equatable{
   final String message;
