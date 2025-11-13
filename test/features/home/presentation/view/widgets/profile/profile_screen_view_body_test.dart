@@ -21,7 +21,6 @@ import 'profile_screen_view_body_test.mocks.dart';
 void main() {
   late MockProfileCubit mockProfileCubit;
   late MockAppLanguageConfig mockAppLanguageConfig;
-
   final getItInstance = GetIt.instance;
 
   setUp(() {
