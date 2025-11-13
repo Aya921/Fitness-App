@@ -8,7 +8,9 @@ import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/features/home/presentation/view/widgets/logout/logout_dialog.dart';
 import 'package:fitness/features/home/presentation/view/widgets/profile/profile_screen_settings_section.dart';
 import 'package:fitness/features/home/presentation/view_model/help_view_model/help_cubit.dart';
+import 'package:fitness/features/home/presentation/view_model/help_view_model/help_state.dart';
 import 'package:fitness/features/home/presentation/view_model/privacy_policy_view_model/privacy_policy_cubit.dart';
+import 'package:fitness/features/home/presentation/view_model/privacy_policy_view_model/privacy_policy_state.dart';
 import 'package:fitness/features/home/presentation/view_model/profile_view_model/profile_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/profile_view_model/profile_state.dart';
 import 'package:fitness/features/home/presentation/view_model/security_view_model/security_cubit.dart';
@@ -33,14 +35,12 @@ import 'profile_screen_settings_section_test.mocks.dart';
 void main() {
   late MockProfileCubit mockProfileCubit;
   late MockAppLanguageConfig mockAppLanguageConfig;
-  late MockSecurityCubit mockSecurityCubit;
 
   final getItInstance = GetIt.instance;
 
   setUp(() {
     mockProfileCubit = MockProfileCubit();
     mockAppLanguageConfig = MockAppLanguageConfig();
-    mockSecurityCubit = MockSecurityCubit();
 
     when(
       mockProfileCubit.stream,
@@ -54,15 +54,10 @@ void main() {
     when(mockAppLanguageConfig.selectedLocal).thenReturn('en');
     when(mockAppLanguageConfig.changeLocal(any)).thenAnswer((_) async {});
 
-    when(mockSecurityCubit.stream).thenAnswer((_) => const Stream.empty());
-    when(mockSecurityCubit.state).thenReturn(const SecurityState());
-
     getItInstance.registerFactory<ProfileCubit>(() => mockProfileCubit);
     getItInstance.registerFactory<AppLanguageConfig>(
       () => mockAppLanguageConfig,
     );
-
-    getItInstance.registerFactory<SecurityCubit>(() => mockSecurityCubit);
   });
 
   tearDown(getItInstance.reset);
@@ -303,67 +298,93 @@ void main() {
       expect(find.text('Change Password Screen'), findsOneWidget);
     });
 
-    // testWidgets('navigates to security screen when tapped', (tester) async {
-    //   await tester.pumpWidget(
-    //     SizeProvider(
-    //       baseSize: const Size(375, 812),
-    //       height: 812,
-    //       width: 375,
-    //       child: MaterialApp(
-    //         localizationsDelegates: AppLocalizations.localizationsDelegates,
-    //         supportedLocales: AppLocalizations.supportedLocales,
-    //         locale: const Locale('en'),
-    //         home: Scaffold(
-    //           body: BlocProvider<ProfileCubit>(
-    //             create: (context) => mockProfileCubit,
-    //             child: const ProfileScreenSettingsSection(),
-    //           ),
-    //         ),
-    //       ),
-    //     ),
-    //   );
-    //
-    //   expect(find.byType(SecurityView), findsOneWidget);
-    // });
+    testWidgets('security item is tappable and triggers cubit intent', (
+      WidgetTester tester,
+    ) async {
+      final mockSecurityCubit = MockSecurityCubit();
+      when(
+        mockSecurityCubit.stream,
+      ).thenAnswer((_) => const Stream<SecurityState>.empty());
+      when(mockSecurityCubit.state).thenReturn(const SecurityState());
+      when(mockSecurityCubit.doIntent(any)).thenAnswer((_) async {});
 
-    // testWidgets('navigates to privacy policy screen when tapped', (
-    //   WidgetTester tester,
-    // ) async {
-    //   await tester.pumpWidget(prepareWidget());
-    //   await tester.pumpAndSettle();
-    //
-    //   final privacyItem = find.byWidgetPredicate(
-    //     (widget) =>
-    //         widget is SettingsItem &&
-    //         widget.iconPath == AssetsManager.privacyIcon,
-    //   );
-    //
-    //   expect(privacyItem, findsOneWidget);
-    //
-    //   await tester.tap(privacyItem);
-    //   await tester.pumpAndSettle();
-    //
-    //   expect(privacyItem, findsNothing);
-    // });
+      getItInstance.registerFactory<SecurityCubit>(() => mockSecurityCubit);
 
-    // testWidgets('navigates to help screen when tapped', (
-    //   WidgetTester tester,
-    // ) async {
-    //   await tester.pumpWidget(prepareWidget());
-    //   await tester.pumpAndSettle();
-    //
-    //   final helpItem = find.byWidgetPredicate(
-    //     (widget) =>
-    //         widget is SettingsItem && widget.iconPath == AssetsManager.helpSvg,
-    //   );
-    //
-    //   expect(helpItem, findsOneWidget);
-    //
-    //   await tester.tap(helpItem);
-    //   await tester.pumpAndSettle();
-    //
-    //   expect(helpItem, findsNothing);
-    // });
+      await tester.pumpWidget(prepareWidget());
+      await tester.pumpAndSettle();
+
+      final securityItem = find.byWidgetPredicate(
+        (widget) =>
+            widget is SettingsItem &&
+            widget.iconPath == AssetsManager.securitySvg,
+      );
+
+      expect(securityItem, findsOneWidget);
+
+      await tester.tap(securityItem);
+      await tester.pump();
+
+      verify(mockSecurityCubit.doIntent(any)).called(1);
+    });
+
+    testWidgets('privacy policy item is tappable and triggers cubit intent', (
+      WidgetTester tester,
+    ) async {
+      final mockPrivacyPolicyCubit = MockPrivacyPolicyCubit();
+      when(
+        mockPrivacyPolicyCubit.stream,
+      ).thenAnswer((_) => const Stream<PrivacyPolicyState>.empty());
+      when(mockPrivacyPolicyCubit.state).thenReturn(const PrivacyPolicyState());
+      when(mockPrivacyPolicyCubit.doIntent(any)).thenAnswer((_) async {});
+
+      getItInstance.registerFactory<PrivacyPolicyCubit>(
+        () => mockPrivacyPolicyCubit,
+      );
+
+      await tester.pumpWidget(prepareWidget());
+      await tester.pumpAndSettle();
+
+      final privacyItem = find.byWidgetPredicate(
+        (widget) =>
+            widget is SettingsItem &&
+            widget.iconPath == AssetsManager.privacyIcon,
+      );
+
+      expect(privacyItem, findsOneWidget);
+
+      await tester.tap(privacyItem);
+      await tester.pump();
+
+      verify(mockPrivacyPolicyCubit.doIntent(any)).called(1);
+    });
+
+    testWidgets('help item is tappable and triggers cubit intent', (
+      WidgetTester tester,
+    ) async {
+      final mockHelpCubit = MockHelpCubit();
+      when(
+        mockHelpCubit.stream,
+      ).thenAnswer((_) => const Stream<HelpState>.empty());
+      when(mockHelpCubit.state).thenReturn(const HelpState());
+      when(mockHelpCubit.doIntent(any)).thenAnswer((_) async {});
+
+      getItInstance.registerFactory<HelpCubit>(() => mockHelpCubit);
+
+      await tester.pumpWidget(prepareWidget());
+      await tester.pumpAndSettle();
+
+      final helpItem = find.byWidgetPredicate(
+        (widget) =>
+            widget is SettingsItem && widget.iconPath == AssetsManager.helpSvg,
+      );
+
+      expect(helpItem, findsOneWidget);
+
+      await tester.tap(helpItem);
+      await tester.pump();
+
+      verify(mockHelpCubit.doIntent(any)).called(1);
+    });
   });
 
   group('ProfileScreenSettingsSection - Logout Tests', () {
