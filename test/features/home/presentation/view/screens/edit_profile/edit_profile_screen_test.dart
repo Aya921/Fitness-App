@@ -92,3 +92,4 @@ void main() {
     expect(find.byType(EditProfileBody), findsOneWidget);
   });
 }
+

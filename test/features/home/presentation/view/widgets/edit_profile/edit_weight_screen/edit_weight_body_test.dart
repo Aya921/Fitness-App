@@ -3,7 +3,6 @@ import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/widget/custom_pop_icon.dart';
 import 'package:fitness/core/widget/logo.dart';
-import 'package:fitness/features/auth/domain/entity/auth/user_entity.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/compelete_register/animate_text.dart';
 import 'package:fitness/features/home/presentation/view/widgets/edit_profile/edit_weight_screen/edit_weight_body.dart';
 import 'package:fitness/features/home/presentation/view/widgets/edit_profile/edit_weight_screen/weight_picker_section.dart';
@@ -15,7 +14,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() {
   late EditProfileCubit cubit;
   late EditProfileState state;
-  late UserEntity? user;
+  // late UserEntity? user;
 
   setUpAll(() async {
   

@@ -5,7 +5,6 @@ import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/widget/blur_container.dart';
 import 'package:fitness/core/widget/custom_elevated_button.dart';
-import 'package:fitness/features/auth/domain/entity/auth/user_entity.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/compelete_register/animate_text.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/compelete_register/select_widget_item.dart';
 import 'package:fitness/features/home/presentation/view/widgets/edit_profile/edit_goal_screen/edit_goal_body.dart';
@@ -17,7 +16,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() {
   late EditProfileCubit cubit;
   late EditProfileState state;
-  late UserEntity? user;
+  // late UserEntity? user;
 
   setUpAll(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
