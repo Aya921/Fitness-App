@@ -1,4 +1,4 @@
-import 'package:fitness/features/home/domain/entity/exercises/all_exercises_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/all_exercises_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fitness/features/home/api/models/exercises/all_exercises_response.dart';
 import 'package:fitness/features/home/api/models/exercises/exercise_response.dart';
@@ -52,7 +52,7 @@ void main() {
       final entity = response.toEntity();
 
       expect(entity, isA<AllExercisesEntity>());
-      expect(entity.exercises!.first.name, "Push Up");
+      expect(entity.exercises?.first.name, "Push Up");
       expect(entity.exercises!.first.bodyRegion, "Chest");
       expect(entity.exercises!.first.muscle?.primeMover, "Pectoralis Major");
     });

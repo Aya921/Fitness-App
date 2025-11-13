@@ -1,6 +1,6 @@
+import 'package:fitness/features/home/domain/entities/exercises/mover_muscle_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fitness/features/home/api/models/exercises/muscle_response.dart';
-import 'package:fitness/features/home/domain/entity/exercises/mover_muscle_entity.dart';
 
 void main() {
   group('MuscleResponse', () {

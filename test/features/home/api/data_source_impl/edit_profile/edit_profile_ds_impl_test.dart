@@ -5,7 +5,7 @@ import 'package:fitness/features/auth/api/models/auth_response/auth_response.dar
 import 'package:fitness/features/auth/api/models/auth_response/user_response.dart';
 import 'package:fitness/features/auth/domain/entity/auth/auth_entity.dart';
 import 'package:fitness/features/home/api/client/api_services.dart';
-import 'package:fitness/features/home/api/data_source_impl/edit_profile/edit_profile_ds_impl.dart';
+import 'package:fitness/features/home/api/data_source_impl/edit_profile_data_source_impl/edit_profile_ds_impl.dart';
 import 'package:fitness/features/home/api/models/edit_profile/request/edit_profile_request.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';

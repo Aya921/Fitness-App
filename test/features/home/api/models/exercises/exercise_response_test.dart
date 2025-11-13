@@ -1,6 +1,6 @@
+import 'package:fitness/features/home/domain/entities/exercises/exercise_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fitness/features/home/api/models/exercises/exercise_response.dart';
-import 'package:fitness/features/home/domain/entity/exercises/exercise_entity.dart';
 
 void main() {
   group('ExerciseResponse', () {

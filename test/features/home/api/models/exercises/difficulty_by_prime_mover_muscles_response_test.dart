@@ -1,8 +1,8 @@
-import 'package:fitness/features/home/domain/entity/exercises/difficulty_level_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/difficulty_by_prime_mover_muscles_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/difficulty_level_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fitness/features/home/api/models/exercises/difficulty_by_prime_mover_muscles_response.dart';
 import 'package:fitness/features/home/api/models/exercises/level_response.dart';
-import 'package:fitness/features/home/domain/entity/exercises/difficulty_by_prime_mover_muscles_entity.dart';
 
 void main() {
   group('DifficultyByPrimeMoverMusclesResponse', () {
@@ -43,7 +43,7 @@ void main() {
       expect(entity.totalLevels, 2);
       expect(entity.difficultyLevels!.length, 2);
       expect(entity.difficultyLevels!.first, isA<LevelEntity>());
-      expect(entity.difficultyLevels!.first.name, "Beginner");
+      expect(entity.difficultyLevels?.first.name, "Beginner");
     });
 
     test('should handle null values gracefully', () {

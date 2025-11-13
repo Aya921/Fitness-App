@@ -1,6 +1,6 @@
+import 'package:fitness/features/home/domain/entities/exercises/difficulty_level_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fitness/features/home/api/models/exercises/level_response.dart';
-import 'package:fitness/features/home/domain/entity/exercises/difficulty_level_entity.dart';
 
 void main() {
   group('LevelResponse', () {
