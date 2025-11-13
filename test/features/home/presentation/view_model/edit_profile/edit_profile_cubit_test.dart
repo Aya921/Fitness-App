@@ -97,9 +97,4 @@ void main() {
       cubit.state.copyWith(updatedLevel: ActivityLevel.level1),
     ],
   );
-
- 
-
- 
-
 }

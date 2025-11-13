@@ -58,15 +58,6 @@ void main() {
     expect(find.byType(SelectWidgetItem), findsAtLeast(1));
     expect(find.byType(CustomElevatedButton), findsAtLeast(1));
     expect(find.byType(SingleChildScrollView), findsAtLeast(1));
-
-
-     
-
-
-
-
-
-
   });
 
   testWidgets('select level1', (tester) async {
