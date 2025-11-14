@@ -56,61 +56,66 @@ class ExplorePopularListItem extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(context.setMinSize(20)),
-                        ),
-                        child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                          child: Container(
-                            alignment: Alignment.center,
-                             padding: EdgeInsets.symmetric(
-                              horizontal: context.setWidth(8),
-                              vertical: context.setHight(8)),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(context.setMinSize(20)),
+                      Expanded(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(context.setMinSize(20)),
+                          ),
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                            child: Container(
+                              alignment: Alignment.center,
+                               padding: EdgeInsets.symmetric(
+                                horizontal: context.setWidth(8),
+                                vertical: context.setHight(8)),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(context.setMinSize(20)),
+                                ),
+                                color: AppColors.gray[AppColors.colorCode90]!
+                                    .withValues(alpha: 0.5),
                               ),
-                              color: AppColors.gray[AppColors.colorCode90]!
-                                  .withValues(alpha: 0.5),
-                            ),
-                            child: Text(
-                              textAlign: TextAlign.center,
-                              "24 Tasks",
-                              style: getRegularStyle(
-                                color: AppColors.white,
-                              ).copyWith(fontFamily: "BalooThambi2",
-                              fontSize: context.setSp(FontSize.s12)),
+                              child: Text(
+                                textAlign: TextAlign.center,
+                                "24 Tasks",
+                                style: getRegularStyle(
+                                  color: AppColors.white,
+                                ).copyWith(fontFamily: "BalooThambi2",
+                                fontSize: context.setSp(FontSize.s12)),
+                              ),
                             ),
                           ),
                         ),
                       ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(context.setMinSize(20)),
-                        ),
-                        child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: context.setWidth(8),
-                              vertical: context.setHight(8)
-                            ),
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(context.setMinSize(20)),
+                       SizedBox(width: context.setWidth(28)),
+                      Expanded(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(context.setMinSize(20)),
+                          ),
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: context.setWidth(8),
+                                vertical: context.setHight(8)
                               ),
-                              color: AppColors.gray[AppColors.colorCode90]!
-                                  .withValues(alpha: 0.5),
-                            ),
-                            child: Text(
-                              textAlign: TextAlign.center,
-                              "Beginner",
-                              style: getBoldStyle(
-                                color: AppColors.orange,
-                              ).copyWith(fontFamily: "BalooThambi2",
-                              fontSize: context.setSp(FontSize.s12)),
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(context.setMinSize(20)),
+                                ),
+                                color: AppColors.gray[AppColors.colorCode90]!
+                                    .withValues(alpha: 0.5),
+                              ),
+                              child: Text(
+                                textAlign: TextAlign.center,
+                                "Beginner",
+                                style: getBoldStyle(
+                                  color: AppColors.orange,
+                                ).copyWith(fontFamily: "BalooThambi2",
+                                fontSize: context.setSp(FontSize.s12)),
+                              ),
                             ),
                           ),
                         ),

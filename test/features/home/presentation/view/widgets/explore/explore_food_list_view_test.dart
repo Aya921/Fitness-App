@@ -78,7 +78,7 @@ void main() {
     );
   }
 
-  testWidgets('renders titles and structure correctly', (tester) async {
+  testWidgets('verify structure', (tester) async {
     await tester.pumpWidget(prepareWidget());
     await tester.pumpAndSettle();
 
@@ -100,7 +100,7 @@ void main() {
 
 
 
-  testWidgets('renders correct number of items when data is loaded',
+  testWidgets('verify correct number of items when data is loaded',
       (tester) async {
     await tester.pumpWidget(prepareWidget());
     await tester.pumpAndSettle();
@@ -109,7 +109,7 @@ void main() {
     expect(find.text('Beef'), findsOneWidget);
   });
 
-  testWidgets('applies proper text and style for title', (tester) async {
+  testWidgets('apply proper text and style for title', (tester) async {
     await tester.pumpWidget(prepareWidget());
     await tester.pumpAndSettle();
 
@@ -122,7 +122,7 @@ void main() {
     expect(titleWidget.style!.fontFamily, 'BalooThambi2');
   });
 
-  testWidgets('applies correct underline style for "See All" text',
+  testWidgets('apply correct underline style for "See All" text',
       (tester) async {
     await tester.pumpWidget(prepareWidget());
     await tester.pumpAndSettle();

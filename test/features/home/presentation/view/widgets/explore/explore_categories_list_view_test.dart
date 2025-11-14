@@ -22,27 +22,27 @@ void main() {
       );
     }
 
-    // testWidgets('renders ExploreCategoriesListView correctly', (tester) async {
-    //   await tester.pumpWidget(prepareWidget());
-    //   await tester.pumpAndSettle();
+    testWidgets('verify ExploreCategoriesListView structure', (tester) async {
+      await tester.pumpWidget(prepareWidget());
+      await tester.pumpAndSettle();
 
-    //   // ✅ Column and its children
-    //   expect(find.byType(Column), findsOneWidget);
-    //   expect(find.byType(FittedBox), findsNWidgets(2)); // one for title, one for each text in items
-    //   expect(find.byType(ListView), findsOneWidget);
-    //   expect(find.byType(Image), findsNWidgets(5));
+  
+      expect(find.byType(Column), findsNWidgets(6));
+      expect(find.byType(FittedBox), findsNWidgets(6));
+      expect(find.byType(ListView), findsOneWidget);
+      expect(find.byType(Image), findsNWidgets(5));
 
-    //   // ✅ Text for the title
-    //   final l10n = await AppLocalizations.delegate.load(const Locale('en'));
-    //   expect(find.text(l10n.categoryHomeText), findsOneWidget);
+     
+      final l10n = await AppLocalizations.delegate.load(const Locale('en'));
+      expect(find.text(l10n.categoryHomeText), findsOneWidget);
 
-    //   // ✅ Category labels
-    //   expect(find.text('Gym'), findsOneWidget);
-    //   expect(find.text('Fitness'), findsOneWidget);
-    //   expect(find.text('Yoga'), findsOneWidget);
-    //   expect(find.text('Aerobics'), findsOneWidget);
-    //   expect(find.text('Trainer'), findsOneWidget);
-    // });
+ 
+      expect(find.text('Gym'), findsOneWidget);
+      expect(find.text('Fitness'), findsOneWidget);
+      expect(find.text('Yoga'), findsOneWidget);
+      expect(find.text('Aerobics'), findsOneWidget);
+      expect(find.text('Trainer'), findsOneWidget);
+    });
 
     testWidgets('list view should contain 5 category items with separators', (
       tester,
@@ -63,11 +63,11 @@ void main() {
       await tester.pumpWidget(prepareWidget());
       await tester.pumpAndSettle();
 
-      // Verify BackdropFilter & ClipRRect presence
+    
       expect(find.byType(BackdropFilter), findsOneWidget);
       expect(find.byType(ClipRRect), findsOneWidget);
 
-      // Verify blurred container styling
+  
       final containerFinder = find.descendant(
         of: find.byType(ClipRRect),
         matching: find.byType(Container),

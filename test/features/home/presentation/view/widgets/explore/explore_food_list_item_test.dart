@@ -27,7 +27,7 @@ void main() {
       );
     }
 
-    testWidgets('renders structure correctly', (tester) async {
+    testWidgets('verify structure', (tester) async {
       const testEntity = MealCategoryEntity(
         idCategory: "1",
         strCategory: "Beef",
@@ -37,7 +37,6 @@ void main() {
       await tester.pumpWidget(prepareWidget(testEntity));
       await tester.pumpAndSettle();
 
-      // Structure
       expect(find.byType(Padding), findsNWidgets(2));
       expect(find.byType(Stack), findsNWidgets(2));
       expect(find.byType(SizedBox), findsNWidgets(2));
@@ -48,13 +47,12 @@ void main() {
       expect(find.byType(Container), findsWidgets);
       expect(find.byType(FittedBox), findsOneWidget);
       expect(find.byType(Text), findsOneWidget);
-
-      // Text content
+      
       expect(find.text("Beef"), findsOneWidget);
     });
 
 
-   testWidgets('applies correct blur and color overlay', (tester) async {
+   testWidgets('apply correct blur and color overlay', (tester) async {
   const testEntity = MealCategoryEntity(
     idCategory: "1",
     strCategory: "Chicken",
@@ -92,7 +90,7 @@ void main() {
   expect(boxDecoration.color!.opacity, moreOrLessEquals(0.5, epsilon: 0.1));
 });
 
-    testWidgets('uses correct text style and alignment', (tester) async {
+    testWidgets('use correct text style and alignment', (tester) async {
       const testEntity = MealCategoryEntity(
         idCategory: "1",
         strCategory: "Vegan",
