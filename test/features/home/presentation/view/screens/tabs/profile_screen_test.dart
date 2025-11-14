@@ -67,6 +67,7 @@ void main() {
     expect(find.byType(ProfileScreenViewBody), findsOneWidget);
   });
 
+
   testWidgets('ProfileCubit should call GetLoggedUserIntent on init',
           (WidgetTester tester) async {
         await tester.pumpWidget(prepareWidget());

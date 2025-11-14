@@ -135,6 +135,9 @@ class ExploreCubit extends Cubit<ExploreState> {
             ),
           ),
         );
+        // print(
+        //   "Loaded group: ${musclesGroupById.successResult.muscles?.length}",
+        // );
         break;
       case FailedResult<MusclesGroupIdResponseEntity>():
         emit(

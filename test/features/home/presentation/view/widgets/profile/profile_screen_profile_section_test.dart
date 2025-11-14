@@ -26,7 +26,6 @@ import 'profile_screen_profile_section_test.mocks.dart';
 void main() {
   late MockProfileCubit mockProfileCubit;
   late MockAppLanguageConfig mockAppLanguageConfig;
-
   final getItInstance = GetIt.instance;
 
   const fakeUser = UserEntity(

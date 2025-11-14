@@ -104,4 +104,5 @@ void main() {
       verify(mockEditProfileDs.uploadUserPhoto(dummyFile)).called(1);
     });
   });
+  
 }

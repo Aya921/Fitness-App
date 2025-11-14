@@ -69,16 +69,16 @@ class ProfileScreenSettingsSection extends StatelessWidget {
                   SettingsItem(
                     iconPath: AssetsManager.profileUserIcon,
                     title: context.loc.editProfile,
-                    onTap: ()async {
-                      {
-                        final result =await  Navigator.pushNamed(context, AppRoutes.editProfile);
-                        if(result == true){
-                          // ignore: use_build_context_synchronously
+                      onTap: () async {
+                        final result = await Navigator.pushNamed(context, AppRoutes.editProfile);
+
+                        if (!context.mounted) return;
+
+                        if (result == true) {
                           context.read<ProfileCubit>().doIntent(GetLoggedUserIntent());
-                          }
-                       
+                        }
                       }
-                    },
+
                   ),
                   SettingsItem(
                     iconPath: AssetsManager.changePasswordProfileIcon,

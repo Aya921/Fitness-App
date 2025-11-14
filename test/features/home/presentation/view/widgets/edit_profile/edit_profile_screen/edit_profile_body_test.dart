@@ -24,7 +24,6 @@ import 'edit_profile_body_test.mocks.dart';
 @GenerateMocks([EditProfileCubit])
 void main() {
   late MockEditProfileCubit mockEditProfileCubit;
-
   final getItInstance = GetIt.instance;
 
   const fakeUser = UserEntity(

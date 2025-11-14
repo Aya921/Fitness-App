@@ -16,7 +16,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() {
   late EditProfileCubit cubit;
   late EditProfileState state;
- // late UserEntity? user;
+  // late UserEntity? user;
 
   setUpAll(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
