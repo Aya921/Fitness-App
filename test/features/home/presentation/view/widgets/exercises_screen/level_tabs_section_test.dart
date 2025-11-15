@@ -2,7 +2,7 @@ import 'package:fitness/core/enum/request_state.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/widget/tab_bar_widget.dart';
-import 'package:fitness/features/home/domain/entity/exercises/difficulty_level_entity.dart';
+import 'package:fitness/features/home/domain/entities/exercises/difficulty_level_entity.dart';
 import 'package:fitness/features/home/presentation/view/widgets/exercises_screen/level_tabs_section.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_state.dart';
@@ -13,6 +13,7 @@ import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
 
 import 'level_tabs_section_test.mocks.dart';
+
 
 @GenerateMocks([ExercisesCubit, TabController])
 void main() {
@@ -103,7 +104,7 @@ void main() {
       );
 
       // Simulate tab change to index 1 (Intermediate)
-      tabBarWidget.onTabChanged(1);
+      tabBarWidget.onTabChanged!(1);
       await tester.pumpAndSettle();
 
       verify(
@@ -123,7 +124,7 @@ void main() {
       );
 
       // Simulate tab change to index 2 (Advanced)
-      tabBarWidget.onTabChanged(2);
+      tabBarWidget.onTabChanged!(2);
       await tester.pumpAndSettle();
 
       // Verify TabController's animateTo was called with correct index
@@ -140,13 +141,13 @@ void main() {
           );
 
           // Simulate multiple tab changes
-          tabBarWidget.onTabChanged(0);
+          tabBarWidget.onTabChanged!(0);
           await tester.pumpAndSettle();
 
-          tabBarWidget.onTabChanged(1);
+          tabBarWidget.onTabChanged!(1);
           await tester.pumpAndSettle();
 
-          tabBarWidget.onTabChanged(2);
+          tabBarWidget.onTabChanged!(2);
           await tester.pumpAndSettle();
 
           // Verify cubit's doIntent was called 3 times
@@ -204,7 +205,7 @@ void main() {
             find.byType(TabBarWidget),
           );
 
-          tabBarWidget.onTabChanged(0);
+          tabBarWidget.onTabChanged!(0);
           await tester.pumpAndSettle();
 
           verify(

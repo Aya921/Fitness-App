@@ -14,6 +14,7 @@ import 'package:mockito/annotations.dart';
 
 import 'change_pass_section.mocks.dart';
 
+
 @GenerateMocks([ChangePassCubit])
 void main() {
   late MockChangePassCubit mockChangePassCubit;

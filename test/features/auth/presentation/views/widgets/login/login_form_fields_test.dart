@@ -1,4 +1,4 @@
-import 'package:fitness/core/constants/assets_maneger.dart';
+import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/widget/custum_text_field.dart';
@@ -76,7 +76,7 @@ void main() {
 
           final emailField = find.byWidgetPredicate(
                 (widget) =>
-            widget is CustomTextField && widget.icon == AssetsManeger.mail,
+            widget is CustomTextField && widget.icon == AssetsManager.mailSvg,
           );
 
           expect(emailField, findsOneWidget);
@@ -93,7 +93,7 @@ void main() {
 
           final passwordField = find.byWidgetPredicate(
                 (widget) =>
-            widget is CustomTextField && widget.icon == AssetsManeger.lock,
+            widget is CustomTextField && widget.icon == AssetsManager.lockSvg,
           );
 
           expect(passwordField, findsOneWidget);
@@ -111,7 +111,7 @@ void main() {
           // Find email field
           final emailField = find.byWidgetPredicate(
                 (widget) =>
-            widget is CustomTextField && widget.icon == AssetsManeger.mail,
+            widget is CustomTextField && widget.icon == AssetsManager.mailSvg,
           );
 
           // Enter text in email field
@@ -130,7 +130,7 @@ void main() {
           // Find password field
           final passwordField = find.byWidgetPredicate(
                 (widget) =>
-            widget is CustomTextField && widget.icon == AssetsManeger.lock,
+            widget is CustomTextField && widget.icon == AssetsManager.lockSvg,
           );
 
           // Enter text in password field
@@ -147,7 +147,7 @@ void main() {
 
       final emailField = find.byWidgetPredicate(
             (widget) =>
-        widget is CustomTextField && widget.icon == AssetsManeger.mail,
+        widget is CustomTextField && widget.icon == AssetsManager.mailSvg,
       );
 
       final emailWidget = tester.widget<CustomTextField>(emailField);
@@ -167,7 +167,7 @@ void main() {
 
       final passwordField = find.byWidgetPredicate(
             (widget) =>
-        widget is CustomTextField && widget.icon == AssetsManeger.lock,
+        widget is CustomTextField && widget.icon == AssetsManager.lockSvg,
       );
 
       final passwordWidget = tester.widget<CustomTextField>(passwordField);
@@ -192,10 +192,10 @@ void main() {
       final fieldsList = textFields.toList();
 
       // Verify email field is first
-      expect(fieldsList[0].icon, equals(AssetsManeger.mail));
+      expect(fieldsList[0].icon, equals(AssetsManager.mailSvg));
 
       // Verify password field is second
-      expect(fieldsList[1].icon, equals(AssetsManeger.lock));
+      expect(fieldsList[1].icon, equals(AssetsManager.lockSvg));
     });
 
     testWidgets('verify controllers are connected to fields', (tester) async {
@@ -204,7 +204,7 @@ void main() {
 
       final emailField = find.byWidgetPredicate(
             (widget) =>
-        widget is CustomTextField && widget.icon == AssetsManeger.mail,
+        widget is CustomTextField && widget.icon == AssetsManager.mailSvg,
       );
 
       // Enter text in email field
@@ -217,7 +217,7 @@ void main() {
       // Find password field
       final passwordField = find.byWidgetPredicate(
             (widget) =>
-        widget is CustomTextField && widget.icon == AssetsManeger.lock,
+        widget is CustomTextField && widget.icon == AssetsManager.lockSvg,
       );
 
       // Enter text in password field

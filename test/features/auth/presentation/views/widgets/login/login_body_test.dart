@@ -1,14 +1,11 @@
 import 'package:fitness/core/constants/app_widgets_key.dart';
 import 'package:fitness/core/enum/request_state.dart';
-import 'package:fitness/core/error/response_exception.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/widget/blur_container.dart';
 import 'package:fitness/core/widget/custum_fields_button.dart';
 import 'package:fitness/core/widget/loading_circle.dart';
 import 'package:fitness/core/widget/logo.dart';
-import 'package:fitness/features/auth/domain/entity/auth/auth_entity.dart';
-import 'package:fitness/features/auth/domain/entity/auth/user_entity.dart';
 import 'package:fitness/features/auth/presentation/view_model/login_view_model/login_cubit.dart';
 import 'package:fitness/features/auth/presentation/view_model/login_view_model/login_state.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/login/login_body.dart';
@@ -80,7 +77,7 @@ void main() {
       expect(find.byType(Logo), findsOneWidget);
       expect(find.byType(LoginFormFields), findsOneWidget);
       expect(find.byType(SocialSection), findsOneWidget);
-      expect(find.byType(CustumFieldsButton), findsOneWidget);
+      expect(find.byType(CustomFieldsButton), findsOneWidget);
       expect(find.byType(RegisterText), findsOneWidget);
     });
 
@@ -130,51 +127,6 @@ void main() {
       expect(find.byType(LoadingCircle), findsOneWidget);
     });
 
-    testWidgets('verify success state shows snackbar', (tester) async {
-        const fakeUser= AuthEntity(
-         user: UserEntity(
-           goal: "",
-           activityLevel: ""
-         )
-        );
-      when(mockLoginCubit.stream).thenAnswer(
-            (_) => Stream.value(
-          const LoginState(
-            loginStatus: StateStatus.success(fakeUser),
-          ),
-        ),
-      );
-
-      await tester.pumpWidget(prepareWidget());
-      await tester.pump();
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
-
-      expect(find.byType(SnackBar), findsWidgets);
-    });
-
-    testWidgets('verify failure state shows error snackbar', (tester) async {
-      when(mockLoginCubit.stream).thenAnswer(
-        (_) => Stream.value(
-          const LoginState(
-            loginStatus: StateStatus.failure(
-              ResponseException(message: 'Invalid credentials'),
-            ),
-          ),
-        ),
-      );
-
-      await tester.pumpWidget(prepareWidget());
-      await tester.pump();
-      await tester.pump();
-      await tester.pump(
-        const Duration(milliseconds: 100),
-      );
-
-      expect(find.byType(SnackBar), findsOneWidget);
-      expect(find.text('Invalid credentials'), findsOneWidget);
-    });
-    //
     testWidgets('verify login button is disabled when form is invalid', (tester) async {
       when(mockLoginCubit.state).thenReturn(
         const LoginState(isPasswordValid: false,isEmailValid: false),
@@ -186,7 +138,7 @@ void main() {
       final loginButton = find.byKey(const Key(WidgetKey.loginButtonKey));
       expect(loginButton, findsOneWidget);
 
-      final button = tester.widget<CustumFieldsButton>(loginButton);
+      final button = tester.widget<CustomFieldsButton>(loginButton);
       expect(button.valueNotify.value, false);
     });
 

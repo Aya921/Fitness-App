@@ -11,7 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 
-import '../../screens/forget_password_screen_test.mocks.dart';
+import '../../screens/forget_pass/forget_password_screen_test.mocks.dart';
+
 @GenerateNiceMocks([MockSpec<ForgetPassCubit>()])
 void main() {
 
