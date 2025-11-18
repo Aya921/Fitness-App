@@ -4,11 +4,9 @@ import 'package:fitness/features/auth/presentation/view_model/register_view_mode
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_intent.dart';
 import 'package:fitness/features/auth/presentation/views/screens/compelete_register/screen/complete_register_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/register/register_screen.dart';
-import 'package:fitness/features/foods/domain/entities/meals_by_category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fitness/core/widget/video_widgets/vido_player_screen.dart';
-import 'package:fitness/features/meal_details/presentaion/view/pages/details_food_sceen.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/features/auth/presentation/views/screens/forget_pass/create_password_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/forget_pass/forget_password_screen.dart';
@@ -126,18 +124,18 @@ abstract class Routes {
               VideoPlayerScreen(videoUrl: videourl),
 
         );
-      case AppRoutes.detailsFoodPage:
-        final args = setting.arguments as Map<String, dynamic>;
-        final meals = args['meal'] as List<MealsByCategory>;
-        final index = args['index'] as int;
-        return MaterialPageRoute(
-          builder: (context) {
-            return DetailsFoodScreen(
-              meals: meals,
-              index: index,
-            );
-          },
-        );
+      // case AppRoutes.detailsFoodPage:
+      //   final args = setting.arguments as Map<String, dynamic>;
+      //   final meals = args['meal'] as List<MealsByCategory>;
+      //   final index = args['index'] as int;
+      //   return MaterialPageRoute(
+      //     builder: (context) {
+      //       return DetailsFoodScreen(
+      //         meals: meals,
+      //         index: index,
+      //       );
+      //     },
+      //   );
 
       default:
         return MaterialPageRoute(

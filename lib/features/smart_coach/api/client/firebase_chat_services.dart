@@ -278,42 +278,7 @@ class FirebaseChatService {
       );
     }).toList();
   }
-  //
-  // Future<List<Map<String, dynamic>>> fetchConversationSummaries() async {
-  //   final snapshot = await _conversationRef
-  //       .orderBy(Constants.fieldStartedAt, descending: true)
-  //       .get();
-  //
-  //   final List<Map<String, dynamic>> summaries = [];
-  //
-  //   for (final doc in snapshot.docs) {
-  //     final convoId = doc.id;
-  //
-  //     final messageSnapshot =await _conversationRef
-  //         .doc(convoId)
-  //         .collection(Constants.messagesCollection)
-  //         .orderBy(Constants.fieldStartedAt,descending: true)
-  //         .limit(1)
-  //         .get();
-  //
-  //   late  String title ;
-  //     if (messageSnapshot.docs.isNotEmpty) {
-  //       final data = messageSnapshot.docs.first.data();
-  //       if (data[Constants.sender] == 'user' && data[Constants.fieldText] != null) {
-  //         title = data[Constants.fieldText];
-  //       }
-  //     }
-  //
-  //     summaries.add({
-  //       Constants.id: convoId,
-  //       Constants.fieldStartedAt: doc[ Constants.fieldStartedAt],
-  //       Constants.fieldText: title,
-  //     });
-  //   }
-  //
-  //   return summaries;
-  // }
-  //
+
   Future<List<Map<String, dynamic>>> fetchConversationSummaries() async {
     final snapshot = await _conversationRef
         .orderBy(Constants.fieldStartedAt, descending: true)
