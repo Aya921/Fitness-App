@@ -22,7 +22,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fitness/core/widget/video_widgets/vido_player_screen.dart';
 import 'package:fitness/features/meal_details/presentaion/view/pages/details_food_sceen.dart';
 
-
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/features/auth/presentation/views/screens/forget_pass/create_password_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/forget_pass/forget_password_screen.dart';
@@ -33,8 +32,6 @@ import 'package:fitness/features/auth/presentation/views/screens/login/login_scr
 import '../../features/foods/presentaion/view/screens/food_detials_screen.dart';
 import '../../features/on_boarding/view/on_boarding_view.dart';
 import '../../features/smart_coach/presentation/view/screens/smart_coach_screen.dart';
-
-
 
 abstract class Routes {
   static final GlobalKey<NavigatorState> navigatorKey =
@@ -47,10 +44,14 @@ abstract class Routes {
 
       case AppRoutes.home:
         return MaterialPageRoute(
-          builder: (context) => BlocProvider(
-            create: (context) => getIt.get<BottomNavigationCubit>() ,
-            child: const HomeTab(),
-          ),
+          builder: (context) {
+            final ind = (setting.arguments as int?) ?? 0;
+
+            return BlocProvider(
+              create: (context) => getIt.get<BottomNavigationCubit>(),
+              child: HomeTab(index: ind),
+            );
+          },
         );
 
       case AppRoutes.forgetPassScreen:
@@ -60,7 +61,7 @@ abstract class Routes {
           },
         );
 
-        case AppRoutes.changePassword:
+      case AppRoutes.changePassword:
         return MaterialPageRoute(
           builder: (context) {
             return const ChangePassScreen();
@@ -70,18 +71,16 @@ abstract class Routes {
         final index = setting.arguments as int;
 
         return MaterialPageRoute(
-
           builder: (context) {
-            return
-              FoodDetialsScreen(index: index,
-
-              );
+            return FoodDetialsScreen(index: index);
           },
         );
- case AppRoutes.registerScreen:
+      case AppRoutes.registerScreen:
         return MaterialPageRoute(
           builder: (context) => BlocProvider<RegisterCubit>(
-            create: (context) => getIt.get<RegisterCubit>()..doIntent(intent: const RegisterInitializationIntent()),
+            create: (context) =>
+                getIt.get<RegisterCubit>()
+                  ..doIntent(intent: const RegisterInitializationIntent()),
             child: const RegisterScreen(),
           ),
         );
@@ -98,8 +97,6 @@ abstract class Routes {
             );
           },
         );
-
-   
 
       case AppRoutes.otpScreen:
         final email = setting.arguments as String;
@@ -128,9 +125,7 @@ abstract class Routes {
                   ),
                 ),
               // create: (context) => getIt<WorkoutCubit>()..loadLevelsByMuscle(primMoverMuscle.id),
-              child:  ExercisesScreen(
-                primMoverMuscle: primMoverMuscle,
-              ),
+              child: ExercisesScreen(primMoverMuscle: primMoverMuscle),
             );
           },
         );
@@ -141,14 +136,11 @@ abstract class Routes {
           opaque: false,
           pageBuilder: (context, animation, secondaryAnimation) =>
               ExercisesVideoPlayerScreen(videoUrl: videourl),
-    );
+        );
       case AppRoutes.smartCoach:
-
         return MaterialPageRoute(
-
           builder: (context) {
-            return
-              const SmartCoachScreen();
+            return const SmartCoachScreen();
           },
         );
 
@@ -158,7 +150,6 @@ abstract class Routes {
           opaque: false,
           pageBuilder: (context, animation, secondaryAnimation) =>
               VideoPlayerScreen(videoUrl: videourl),
-
         );
       case AppRoutes.detailsFoodPage:
         final args = setting.arguments as Map<String, dynamic>;
@@ -178,21 +169,16 @@ abstract class Routes {
       case AppRoutes.editWeight:
         final cubit = setting.arguments as EditProfileCubit;
         return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: cubit,
-            child: const EditWeightScreen(),
-          ),
+          builder: (_) =>
+              BlocProvider.value(value: cubit, child: const EditWeightScreen()),
         );
 
       case AppRoutes.editGoal:
         final cubit = setting.arguments as EditProfileCubit;
         return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: cubit,
-            child: const EditGoalScreen(),
-          ),
+          builder: (_) =>
+              BlocProvider.value(value: cubit, child: const EditGoalScreen()),
         );
-
 
       case AppRoutes.editLevel:
         final cubit = setting.arguments as EditProfileCubit;

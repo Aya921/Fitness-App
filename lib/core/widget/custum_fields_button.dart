@@ -1,6 +1,3 @@
-
-
-import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/widget/loading_circle.dart';
 import 'package:flutter/material.dart';
@@ -31,11 +28,11 @@ class CustomFieldsButton extends StatelessWidget {
               child: ElevatedButton(
                 style: const ButtonStyle().copyWith(
                   backgroundColor: WidgetStatePropertyAll(
-                    valueNotify.value ? AppColors.orange : AppColors.gray[70],
+                    valueNotify.value ? AppColors.orange : AppColors.orange[AppColors.baseColor]!.withOpacity(0.4),
                   ),
                 ),
                 onPressed: onPress,
-                child:Padding(padding: EdgeInsets.symmetric(vertical: context.setHight(5)),child:  isLoading ? const LoadingCircle() : myChild,),
+                child:isLoading ? const LoadingCircle() : myChild,
               ),
             ),
           ],

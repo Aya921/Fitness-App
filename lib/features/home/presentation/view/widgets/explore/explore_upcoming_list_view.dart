@@ -26,7 +26,7 @@ class ExploreUpcomingListView extends StatelessWidget {
         final items = state.musclesGroupState.data;
         final isLoading = state.musclesGroupById.isLoading;
         final muscles = state.musclesGroupById.data?.muscles ?? [];
-        final bottomNavCubit = context.read<BottomNavigationCubit>();
+       final bottomNavCubit = context.read<BottomNavigationCubit>();
 
         if ((state.musclesGroupState.data?.isNotEmpty ?? false) &&
             cubit.cachedMuscleGroups.isNotEmpty &&

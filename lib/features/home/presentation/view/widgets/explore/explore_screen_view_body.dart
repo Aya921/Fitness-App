@@ -18,7 +18,8 @@ class ExploreScreenViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<ExploreCubit, ExploreState>(
+    return 
+    BlocListener<ExploreCubit, ExploreState>(
       listenWhen: (previous, current) { 
        return current.musclesGroupState.isFailure ||
            current.randomMusclesState.isFailure||
@@ -69,7 +70,7 @@ class ExploreScreenViewBody extends StatelessWidget {
                       SizedBox(height: context.setHight(24)),
                       const ExploreRecommendationListView(),
                       SizedBox(height: context.setHight(24)),
-                      const ExploreUpcomingListView(),
+                       const ExploreUpcomingListView(),
                       SizedBox(height: context.setHight(24)),
                       const ExploreFoodListView(),
                       SizedBox(height: context.setHight(24)),
@@ -83,5 +84,7 @@ class ExploreScreenViewBody extends StatelessWidget {
         
       
     );
+  
+  
   }
 }

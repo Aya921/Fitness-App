@@ -20,41 +20,39 @@ class OnBoardingViewBody extends StatelessWidget {
         final pageIndex = state.pageIndex;
         final isLastPage = pageIndex == cubit.images.length - 1;
 
-        return SafeArea(
-          child: Scaffold(
-            body: Stack(
-              children: [
-                SizedBox.expand(
-                  child: Image.asset(
-                    AssetsManager.onBoardingBackGround,
-                    fit: BoxFit.cover,
-                  ),
+        return Scaffold(
+          body: Stack(
+            children: [
+              SizedBox.expand(
+                child: Image.asset(
+                  AssetsManager.onBoardingBackGround,
+                  fit: BoxFit.cover,
                 ),
-                PageBuilder(images: cubit.images),
-                Positioned(
-                  top: context.setHight(40),
-                  right: context.setWidth(16),
-                  child: GestureDetector(
-                    onTap: () {
-                     Navigator.pushReplacementNamed(context, AppRoutes.loginRoute);
-                    },
-                    child: isLastPage
-                        ? const SizedBox.shrink()
-                        : Text(
-                      Constants.skip,
-                      style: TextStyle(
-                        color: AppColors.white,
-                        fontSize: context.setSp(16),
-                      ),
+              ),
+              PageBuilder(images: cubit.images),
+              Positioned(
+                top: context.setHight(40),
+                right: context.setWidth(16),
+                child: GestureDetector(
+                  onTap: () {
+                   Navigator.pushReplacementNamed(context, AppRoutes.loginRoute);
+                  },
+                  child: isLastPage
+                      ? const SizedBox.shrink()
+                      : Text(
+                    Constants.skip,
+                    style: TextStyle(
+                      color: AppColors.white,
+                      fontSize: context.setSp(16),
                     ),
                   ),
                 ),
-                OnBoardingBottomSection(
-                  titles: cubit.titles,
-                  images: cubit.images,
-                ),
-              ],
-            ),
+              ),
+              OnBoardingBottomSection(
+                titles: cubit.titles,
+                images: cubit.images,
+              ),
+            ],
           ),
         );
       },

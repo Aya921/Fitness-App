@@ -12,13 +12,14 @@ class ExploreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   
     return MultiBlocProvider(
-     
+
       providers: [
         BlocProvider(create: (context) => getIt.get<ExploreCubit>()..doIntent(intent:GetHomeData()),),
-          BlocProvider(create: (context) => getIt.get<FoodCubit>()..doIntent(intent:FoodInitializationIntent()),)
+        BlocProvider(create: (context) => getIt.get<FoodCubit>()..doIntent(intent:FoodInitializationIntent()),)
       ],
-      child: const Scaffold(body: ExploreScreenViewBody()),
+      child: const ExploreScreenViewBody(),
     );
   }
 }

@@ -39,7 +39,7 @@ class _TabBarWidgetState extends State<TabBarWidget> {
           onTap: () {
             setState(() => selectedIndex = index);
             widget.onTabSelected?.call(index);
-            widget.onTabChanged!(index);
+            widget.onTabChanged?.call(index);
           },
         );
       },

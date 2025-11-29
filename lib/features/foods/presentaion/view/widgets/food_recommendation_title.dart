@@ -17,7 +17,7 @@ class FoodRecommendationTitle extends StatelessWidget {
         CustomPopIcon(onTap: () {
           Navigator.of(context).pop();
         }),
-        SizedBox(width: context.setWidth(48)),
+        SizedBox(width: context.setWidth(30)),
         Text(
           context.loc.foodRecommendation,
           style: getBoldStyle(color: AppColors.white, fontSize: 

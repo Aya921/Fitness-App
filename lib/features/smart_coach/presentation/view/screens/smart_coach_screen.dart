@@ -80,7 +80,7 @@ class _SmartCoachScreenState extends State<SmartCoachScreen> {
                         listener: (context, state) {
                           if (state.errorMessage != null &&
                               state.errorMessage!.isNotEmpty) {}
-
+            
                           WidgetsBinding.instance.addPostFrameCallback((_) {
                             if (_scrollController.hasClients) {
                               _scrollController.animateTo(
@@ -93,7 +93,7 @@ class _SmartCoachScreenState extends State<SmartCoachScreen> {
                         },
                         builder: (context, state) {
                           final messages = state.messages ?? [];
-
+            
                           return ListView.builder(
                             controller: _scrollController,
                             padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -102,7 +102,7 @@ class _SmartCoachScreenState extends State<SmartCoachScreen> {
                               final message = messages[index];
                               final isSmartCoach = message.role == Sender.model;
                               final text = message.text;
-
+            
                               return Padding(
                                 padding: const EdgeInsets.symmetric(
                                   vertical: 8,
@@ -169,7 +169,7 @@ class _SmartCoachScreenState extends State<SmartCoachScreen> {
                     BlocBuilder<SmartCoachCubit, SmartCoachChatState>(
                       builder: (context, state) {
                         final bool isLoading = state.isLoading;
-
+            
                         return Padding(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 16,

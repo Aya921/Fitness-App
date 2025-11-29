@@ -15,6 +15,7 @@ final String firstName;
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsetsDirectional.symmetric(
+        vertical: context.setHight(10),
         horizontal: context.setWidth(20),
       ),
       child: Row(
