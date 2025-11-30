@@ -13,38 +13,48 @@ class ChangePassScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       body: AppBackground(
         child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-            Row(
-                children: [
-                  SizedBox(width: context.setWidth(16)),
-                  CustomPopIcon(
-                    onTap: () {
-                      Navigator.pop(context,true);
-                    },
-                  ),
-                  SizedBox(width: context.setWidth(100)),
-                  const Logo(),
-                ],
-              ),
-              const Spacer(),
-              TextSection(
-                text1: context.loc.makeSure8Char,
-                text2: context.loc.createNewPass,
-              ),
-               const BlurContainer(blurChild:  ChangePassSection()),
-              const Spacer(),
-              const Spacer(),
-            ],
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    SizedBox(width: context.setWidth(16)),
+                    CustomPopIcon(
+                      onTap: () {
+                        Navigator.pop(context, true);
+                      },
+                    ),
+                    SizedBox(width: context.setWidth(100)),
+                    const Logo(),
+                  ],
+                ),
+
+                SizedBox(height: context.setHight(40)),
+
+                TextSection(
+                  text1: context.loc.makeSure8Char,
+                  text2: context.loc.createNewPass,
+                ),
+
+                SizedBox(height: context.setHight(20)),
+
+                const BlurContainer(
+                  blurChild: ChangePassSection(),
+                ),
+
+                SizedBox(height: context.setHight(40)),
+
+                SizedBox(height: context.setHight(20)),
+              ],
+            ),
           ),
         ),
       ),
     );
-  
-  
   }
 }

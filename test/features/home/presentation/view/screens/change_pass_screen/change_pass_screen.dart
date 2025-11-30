@@ -68,6 +68,7 @@ void main() {
           expect(find.byType(TextSection), findsOneWidget);
           expect(find.byType(BlurContainer), findsOneWidget);
           expect(find.byType(ChangePassSection), findsOneWidget);
+          expect(find.byType(SingleChildScrollView), findsOneWidget);
           expect(find.byType(Logo), findsOneWidget);
           expect(find.byType(Spacer), findsNWidgets(3));
         });

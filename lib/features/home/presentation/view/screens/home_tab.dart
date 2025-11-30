@@ -1,5 +1,7 @@
 import 'package:fitness/core/extension/app_localization_extension.dart';
+import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
+import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
 import 'package:fitness/core/widget/home_back_ground.dart';
 import 'package:fitness/features/home/presentation/view/screens/tabs/explore_screen.dart';
@@ -61,14 +63,14 @@ class _HomeTabState extends State<HomeTab> {
                   GoToTab(index: index),
                 );
               },
-              iconSize: 30,
+              iconSize: context.setSp(FontSize.s24),
               selectedItemColor: AppColors.orange[AppColors.baseColor],
               unselectedItemColor: AppColors.white,
               showSelectedLabels: true,
               showUnselectedLabels: false,
               backgroundColor: AppColors.gray[AppColors.colorCode90],
               selectedLabelStyle: getRegularStyle(
-                fontSize: 15,
+                fontSize: context.setSp(FontSize.s12),
                 color: AppColors.orange[AppColors.baseColor]!,
               ),
               items: [
