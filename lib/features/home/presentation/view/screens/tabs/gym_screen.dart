@@ -7,7 +7,6 @@ import 'package:fitness/features/home/presentation/view/screens/view_model/botto
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../core/constants/assets_manager.dart';
-import '../../../../../../core/constants/constants.dart';
 import '../../../../../../core/theme/font_style.dart';
 import '../../../../../../core/widget/tab_bar_widget.dart';
 import '../../widgets/gym/gridview_widget.dart';
@@ -60,7 +59,7 @@ class GymScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: context.setHight(20)),
                   Text(
-                    Constants.workouts,
+                    context.loc.gym,
                     style: getBoldStyle(
                       color: AppColors.white,
                       fontSize: context.setSp(30),

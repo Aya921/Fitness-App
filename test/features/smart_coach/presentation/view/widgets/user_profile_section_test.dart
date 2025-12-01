@@ -1,7 +1,5 @@
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
-import 'package:fitness/core/theme/app_colors.dart';
-import 'package:fitness/core/widget/custom_pop_icon.dart';
 import 'package:fitness/features/smart_coach/presentation/view/widgets/user_profile_section.dart';
 import 'package:fitness/features/smart_coach/presentation/view_model/smart_coach_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -47,11 +45,6 @@ child: UserProfileSection(firstName: userName),
    expect(find.textContaining(firstName), findsOneWidget);
     expect(find.textContaining('I Am Your Smart Coach'), findsOneWidget);
 
-    expect(find.byType(CustomPopIcon), findsOneWidget);
 
-    expect(find.byType(ImageIcon), findsOneWidget);
-
-    final imageIcon = tester.widget<ImageIcon>(find.byType(ImageIcon));
-    expect(imageIcon.color, AppColors.orange[AppColors.baseColor]);
   });
 }

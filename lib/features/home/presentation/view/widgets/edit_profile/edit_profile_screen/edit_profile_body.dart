@@ -46,14 +46,15 @@ class EditProfileBody extends StatelessWidget {
                   children: [
                     SizedBox(width: context.setWidth(22)),
                     CustomPopIcon(onTap: ()=>Navigator.pop(context,true)),
-                    SizedBox(width: context.setWidth(88)),
+                    const Spacer(),
                     Text(
-                      "Edit profile",
+                      context.loc.editProfile,
                       style: getSemiBoldStyle(
                         color: AppColors.white,
                         fontSize: context.setSp(FontSize.s24),
                       ),
                     ),
+                    const Spacer()
                   ],
                 ),
                 SizedBox(height: context.setHight(40)),
