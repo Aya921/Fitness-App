@@ -9,8 +9,8 @@ final Widget child;
     return   Padding(
       padding:  EdgeInsetsDirectional.only(
         top: context.setMinSize(10),
-        end: context.setMinSize(16),
-        start:context.setMinSize(16),
+        end: context.setMinSize(12),
+        start:context.setMinSize(12),
         bottom: context.setMinSize(20),
       ),
 

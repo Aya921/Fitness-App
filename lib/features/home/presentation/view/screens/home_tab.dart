@@ -11,6 +11,7 @@ import 'package:fitness/features/home/presentation/view/screens/view_model/botto
 import 'package:fitness/features/home/presentation/view/screens/view_model/bottom_navigation_intents.dart';
 import 'package:fitness/features/home/presentation/view/screens/view_model/bottom_navigation_state.dart';
 import 'package:fitness/features/home/presentation/view/widgets/app_section_widget.dart';
+import 'package:fitness/features/home/presentation/view/widgets/test.dart';
 import 'package:fitness/features/smart_coach/presentation/view/screens/on_boarding_chat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -55,42 +56,13 @@ class _HomeTabState extends State<HomeTab> {
           extendBody: true,
           backgroundColor: Colors.transparent,
           bottomNavigationBar: AppSectionWidget(
-            child: BottomNavigationBar(
-              type: BottomNavigationBarType.fixed,
+            child: CustomNavBar(
               currentIndex: state.index,
-              onTap: (index) {
+              onTap: (i) {
                 context.read<BottomNavigationCubit>().doIntent(
-                  GoToTab(index: index),
+                  GoToTab(index: i),
                 );
               },
-              iconSize: context.setSp(FontSize.s24),
-              selectedItemColor: AppColors.orange[AppColors.baseColor],
-              unselectedItemColor: AppColors.white,
-              showSelectedLabels: true,
-              showUnselectedLabels: false,
-              backgroundColor: AppColors.gray[AppColors.colorCode90],
-              selectedLabelStyle: getRegularStyle(
-                fontSize: context.setSp(FontSize.s12),
-                color: AppColors.orange[AppColors.baseColor]!,
-              ),
-              items: [
-                BottomNavigationBarItem(
-                  label: context.loc.explore,
-                  icon: const ImageIcon(Svg(AssetsManager.homeSvg)),
-                ),
-                BottomNavigationBarItem(
-                  label: context.loc.chatAi,
-                  icon: const ImageIcon(Svg(AssetsManager.chatSvg)),
-                ),
-                BottomNavigationBarItem(
-                  label: context.loc.gym,
-                  icon: const ImageIcon(Svg(AssetsManager.gymSvg)),
-                ),
-                BottomNavigationBarItem(
-                  label: context.loc.profile,
-                  icon: const ImageIcon(Svg(AssetsManager.profileSvg)),
-                ),
-              ],
             ),
           ),
         );
