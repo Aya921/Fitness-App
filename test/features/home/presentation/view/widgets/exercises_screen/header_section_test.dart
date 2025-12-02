@@ -1,3 +1,5 @@
+import 'package:fitness/config/app_language/app_language_config.dart';
+import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/theme/app_colors.dart';
@@ -5,9 +7,19 @@ import 'package:fitness/features/home/presentation/view/widgets/exercises_screen
 import 'package:fitness/core/widget/custom_pop_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:network_image_mock/network_image_mock.dart';
+import 'header_section_test.mocks.dart';
 
+@GenerateNiceMocks([MockSpec<AppLanguageConfig>()])
 void main() {
+late MockAppLanguageConfig mockAppLanguageConfig;
+setUpAll((){
+  mockAppLanguageConfig = MockAppLanguageConfig();
+    if (!getIt.isRegistered<AppLanguageConfig>()) {
+      getIt.registerLazySingleton<AppLanguageConfig>(() => mockAppLanguageConfig);
+    }
+});   
   Widget prepareWidget({required String name, required String image}) {
     return SizeProvider(
       baseSize: const Size(375, 812),

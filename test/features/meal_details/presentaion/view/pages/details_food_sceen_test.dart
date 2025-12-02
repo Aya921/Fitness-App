@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:fitness/config/app_language/app_language_config.dart';
 import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/enum/request_state.dart';
 import 'package:fitness/core/error/response_exception.dart';
@@ -25,17 +26,18 @@ import 'package:mockito/mockito.dart';
 
 import 'details_food_sceen_test.mocks.dart';
 
-@GenerateNiceMocks([MockSpec<DetailsFoodCubit>()])
+@GenerateNiceMocks([MockSpec<DetailsFoodCubit>(), MockSpec<AppLanguageConfig>()])
 late MockDetailsFoodCubit mockDetailsFoodCubit;
 late DetailsFoodCubit detailsFoodCubit;
 late List<MealsByCategory> fakeMeals;
+ late MockAppLanguageConfig mockAppLanguageConfig;
 void main() {
   late MockDetailsFoodCubit mockDetailsFoodCubit;
 
   setUpAll(() {
     HttpOverrides.global = null;
     mockDetailsFoodCubit = MockDetailsFoodCubit();
-
+     mockAppLanguageConfig = MockAppLanguageConfig();
     fakeMeals = [
       const MealsByCategory(
         idMeal: "1",
@@ -47,6 +49,9 @@ void main() {
 
     if (!getIt.isRegistered<DetailsFoodCubit>()) {
       getIt.registerLazySingleton<DetailsFoodCubit>(() => mockDetailsFoodCubit);
+    }
+     if (!getIt.isRegistered<AppLanguageConfig>()) {
+      getIt.registerLazySingleton<AppLanguageConfig>(() => mockAppLanguageConfig);
     }
   });
 

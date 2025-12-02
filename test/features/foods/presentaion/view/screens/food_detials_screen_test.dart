@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:fitness/config/app_language/app_language_config.dart';
 import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/enum/request_state.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
@@ -17,6 +18,7 @@ import 'package:flutter/material.dart';
 import 'package:mockito/mockito.dart';
 
 import 'food_detials_screen_test.mocks.dart';
+@GenerateMocks([AppLanguageConfig])
 class _FakeHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
@@ -32,6 +34,7 @@ class _FakeHttpClient implements HttpClient {
 
 void main() {
   late MockFoodCubit mockFoodCubit;
+  late MockAppLanguageConfig mockAppLanguageConfig;
 
 
 
@@ -40,11 +43,17 @@ void main() {
 mockFoodCubit=MockFoodCubit();
     // Mock لأي Network Images
     HttpOverrides.global = _FakeHttpOverrides();
+    mockAppLanguageConfig = MockAppLanguageConfig();
+    when(mockAppLanguageConfig.isEn()).thenReturn(true);
+    getIt.registerFactory<AppLanguageConfig>(() => mockAppLanguageConfig);
   });
 
   tearDown(() {
     if (getIt.isRegistered<FoodCubit>()) {
       getIt.unregister<FoodCubit>();
+    }
+    if (getIt.isRegistered<AppLanguageConfig>()) {
+      getIt.unregister<AppLanguageConfig>();
     }
   });
   Widget prepareWidget({required int index}) {

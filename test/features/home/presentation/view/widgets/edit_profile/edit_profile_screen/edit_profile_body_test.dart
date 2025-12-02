@@ -1,3 +1,5 @@
+import 'package:fitness/config/app_language/app_language_config.dart';
+import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/user/user_manager.dart';
@@ -21,10 +23,12 @@ import 'package:fitness/core/constants/app_widgets_key.dart';
 
 import 'edit_profile_body_test.mocks.dart';
 
-@GenerateMocks([EditProfileCubit])
+@GenerateMocks([EditProfileCubit,AppLanguageConfig])
 void main() {
   late MockEditProfileCubit mockEditProfileCubit;
+  late MockAppLanguageConfig mockAppLanguageConfig;
   final getItInstance = GetIt.instance;
+
 
   const fakeUser = UserEntity(
     personalInfo: PersonalInfoEntity(
@@ -44,7 +48,8 @@ void main() {
 
   setUp(() {
     mockEditProfileCubit = MockEditProfileCubit();
-
+mockAppLanguageConfig = MockAppLanguageConfig();
+    when(mockAppLanguageConfig.isEn()).thenReturn(true);
     UserManager().setUser(fakeUser);
 
     when(
@@ -65,6 +70,7 @@ void main() {
     ).thenReturn(TextEditingController());
 
     getItInstance.registerFactory<EditProfileCubit>(() => mockEditProfileCubit);
+    getItInstance.registerFactory<AppLanguageConfig>(() => mockAppLanguageConfig);
   });
 
   tearDown(getItInstance.reset);

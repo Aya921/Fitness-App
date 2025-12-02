@@ -264,7 +264,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get chatAi => 'chat bot';
 
   @override
-  String get gym => 'Gym';
+  String get gym => 'Workouts';
 
   @override
   String get profile => 'Profile';

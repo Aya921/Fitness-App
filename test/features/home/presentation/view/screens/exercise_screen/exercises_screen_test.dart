@@ -1,3 +1,4 @@
+import 'package:fitness/config/app_language/app_language_config.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscle_entity/muscle_entity.dart';
@@ -10,14 +11,17 @@ import 'package:fitness/features/home/presentation/view_model/exercises_view_mod
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get_it/get_it.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:network_image_mock/network_image_mock.dart';
 import 'exercises_screen_test.mocks.dart';
 
-@GenerateMocks([ExercisesCubit])
+@GenerateMocks([ExercisesCubit,AppLanguageConfig])
 void main() {
   late MockExercisesCubit mockCubit;
+  late MockAppLanguageConfig mockAppLanguageConfig;
+   final getItInstance = GetIt.instance;
 
   const MuscleEntity fakeMuscle = MuscleEntity(
     id: "1",
@@ -27,7 +31,9 @@ void main() {
 
   setUp(() {
     mockCubit = MockExercisesCubit();
-
+    mockAppLanguageConfig = MockAppLanguageConfig();
+    getItInstance.registerFactory<AppLanguageConfig>(() => mockAppLanguageConfig);
+    when(mockAppLanguageConfig.isEn()).thenReturn(true);
     when(mockCubit.stream)
         .thenAnswer((_) => const Stream<ExercisesStates>.empty());
     when(mockCubit.state).thenReturn(const ExercisesStates());

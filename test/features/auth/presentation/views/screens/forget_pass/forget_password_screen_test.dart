@@ -1,3 +1,4 @@
+import 'package:fitness/config/app_language/app_language_config.dart';
 import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
@@ -12,16 +13,26 @@ import 'package:fitness/features/auth/presentation/views/widgets/forget_pass/tex
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 
 
 import 'forget_password_screen_test.mocks.dart';
-@GenerateNiceMocks([MockSpec<ForgetPassCubit>()])
+@GenerateNiceMocks([MockSpec<ForgetPassCubit>(), MockSpec<AppLanguageConfig>()])
 late MockForgetPassCubit mockForgetPassCubit;
+
+
 void main() {
+  late MockAppLanguageConfig mockAppLanguageConfig;
   setUpAll(() {
+    mockAppLanguageConfig = MockAppLanguageConfig();
+    
      if (!getIt.isRegistered<ForgetPassCubit>()) {
       getIt.registerLazySingleton<ForgetPassCubit>(MockForgetPassCubit.new);
     }
+    //      if (!getIt.isRegistered<AppLanguageConfig>()) {
+    //   getIt.registerLazySingleton<AppLanguageConfig>(() => mockAppLanguageConfig);
+    // }
+    getIt.registerLazySingleton<AppLanguageConfig>(() => mockAppLanguageConfig);
   });
 
   testWidgets('test forget password screen structure ...', (

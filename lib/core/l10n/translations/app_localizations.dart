@@ -599,7 +599,7 @@ abstract class AppLocalizations {
   /// No description provided for @gym.
   ///
   /// In en, this message translates to:
-  /// **'Gym'**
+  /// **'Workouts'**
   String get gym;
 
   /// No description provided for @profile.

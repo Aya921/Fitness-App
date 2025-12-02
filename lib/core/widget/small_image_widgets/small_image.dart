@@ -1,3 +1,5 @@
+import 'package:fitness/config/app_language/app_language_config.dart';
+import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/widget/custom_pop_icon.dart';
 import 'package:fitness/core/widget/small_image_widgets/small_image_background.dart';
@@ -27,13 +29,22 @@ class SmallImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appLanConfig = getIt.get<AppLanguageConfig>();
     return Stack(
       alignment: Alignment.center,
       children: [
         SmallBackGroundImage(smallImage: imageUrl),
-        Positioned(
+         appLanConfig.isEn() ? Positioned(
           top: context.setHight(30),
-          left: context.setWidth(20),
+          left:context.setWidth(20),
+          child: CustomPopIcon(
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+        ) :Positioned(
+          top: context.setHight(30),
+          right:context.setWidth(20),
           child: CustomPopIcon(
             onTap: () {
               Navigator.pop(context);

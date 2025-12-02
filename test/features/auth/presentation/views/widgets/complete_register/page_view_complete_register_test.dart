@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:fitness/config/app_language/app_language_config.dart';
 import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/enum/request_state.dart';
 import 'package:fitness/core/error/response_exception.dart';
@@ -26,12 +27,16 @@ import 'package:mockito/mockito.dart';
 
 import 'page_view_complete_register_test.mocks.dart';
 
-@GenerateMocks([RegisterCubit])
+@GenerateMocks([RegisterCubit,AppLanguageConfig])
 void main(){
   TestWidgetsFlutterBinding.ensureInitialized();
   late MockRegisterCubit mockCubit;
+  late MockAppLanguageConfig mockAppLanguageConfig;
   setUp((){
     mockCubit =MockRegisterCubit();
+    mockAppLanguageConfig = MockAppLanguageConfig();
+    when(mockAppLanguageConfig.isEn()).thenReturn(true);
+    getIt.registerFactory<AppLanguageConfig>(() => mockAppLanguageConfig);
     getIt.registerFactory<RegisterCubit>(() => mockCubit);
     provideDummy<RegisterState>(const RegisterState());
      when(mockCubit.state).thenReturn(const RegisterState());

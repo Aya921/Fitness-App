@@ -19,6 +19,7 @@ abstract class AssetsManager {
   static const String mailSvg = "assets/icons/mail.svg";
   static const String maleSvg = "assets/icons/male.svg";
   static const String popIconSvg = "assets/icons/back.svg";
+  static const String popIconArSvg = "assets/icons/back_ar.svg";
   static const String profileSvg = "assets/icons/profile.svg";
   static const String userSvg = "assets/icons/user.svg";
   static const String logoPng = "assets/icons/fitpng.png";
