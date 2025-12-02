@@ -32,7 +32,9 @@ void main() {
   setUp(() {
     mockCubit = MockExercisesCubit();
     mockAppLanguageConfig = MockAppLanguageConfig();
-    getItInstance.registerFactory<AppLanguageConfig>(() => mockAppLanguageConfig);
+     if (!getItInstance.isRegistered<AppLanguageConfig>()) {
+      getItInstance.registerFactory<AppLanguageConfig>(() => mockAppLanguageConfig);
+    }
     when(mockAppLanguageConfig.isEn()).thenReturn(true);
     when(mockCubit.stream)
         .thenAnswer((_) => const Stream<ExercisesStates>.empty());
