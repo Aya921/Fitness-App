@@ -75,17 +75,21 @@ class ExploreFoodListItem extends StatelessWidget {
                       alpha: 0.5,
                     ),
                   ),
-                  child: FittedBox(
+                  child:
+                   FittedBox(
                     fit: BoxFit.scaleDown,
                     child: Text(
                       textAlign: TextAlign.center,
                        mealCategoryEntity.strCategory ,
                       style: getRegularStyle(
+                        fontSize: context.setSp(9),
                         color: AppColors.white,
                       ).copyWith(fontFamily: "BalooThambi2",
-                      fontSize: context.setSp(FontSize.s12)),
+                      //fontSize: context.setSp(FontSize.s12)
+                      ),
                     ),
                   ),
+                
                 ),
               ),
             ),

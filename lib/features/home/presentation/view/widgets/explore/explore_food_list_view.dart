@@ -29,7 +29,7 @@ class ExploreFoodListView extends StatelessWidget {
                 context.loc.recommendationForYouText,
                 style: getSemiBoldStyle(
                   color: AppColors.white,
-                ).copyWith(fontSize: FontSize.s16, fontFamily: 'BalooThambi2'),
+                ).copyWith(fontSize: context.setSp(FontSize.s16), fontFamily: 'BalooThambi2'),
               ),
             ),
             GestureDetector(

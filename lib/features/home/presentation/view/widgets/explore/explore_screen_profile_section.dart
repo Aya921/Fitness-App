@@ -34,7 +34,7 @@ class ExploreScreenProfileSection extends StatelessWidget {
                       child: Text(
                         "${context.loc.hiHomeText} ${userData?.firstName ?? ""},",
                         style: getMediumStyle(color: AppColors.white).copyWith(
-                          fontSize: FontSize.s16,
+                          fontSize: context.setSp(FontSize.s16),
                           fontFamily: 'BalooThambi2',
                         ),
                       ),
@@ -43,7 +43,7 @@ class ExploreScreenProfileSection extends StatelessWidget {
                       child: Text(
                         context.loc.letsStartDoingYourDay,
                         style: getBoldStyle(color: AppColors.white).copyWith(
-                          fontSize: FontSize.s18,
+                          fontSize: context.setSp(FontSize.s18),
                           fontFamily: 'BalooThambi2',
                         ),
                       ),
@@ -53,8 +53,8 @@ class ExploreScreenProfileSection extends StatelessWidget {
               ),
              ClipOval(
   child: SizedBox(
-    width: context.setMinSize(36),
-    height: context.setMinSize(36),
+    width: context.setMinSize(45),
+    height: context.setMinSize(45),
     child: CachedNetworkImage(
       imageUrl: userData?.photo ?? "",
       fit: BoxFit.cover,

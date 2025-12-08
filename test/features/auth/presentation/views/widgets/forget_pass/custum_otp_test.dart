@@ -66,7 +66,7 @@ void main() {
       );
 
       final context = tester.firstElement(find.byType(TextField));
-      final expectedFontSize = context.setSp(FontSize.s18);
+      final expectedFontSize = context.setSp(FontSize.s16);
       final textField = tester.widget<TextField>(find.byType(TextField).first);
       final container = tester.widget<Container>(find.byType(Container).first);
       expect(textField.style?.fontSize, expectedFontSize);
@@ -74,12 +74,12 @@ void main() {
         textField.style,
         getMediumStyle(
           color: AppColors.orange,
-          fontSize: context.setSp(FontSize.s18),
+          fontSize: context.setSp(FontSize.s16),
         ),
       );
       expect(
         container.margin,
-        EdgeInsets.symmetric(horizontal: context.setWidth(8)),
+        EdgeInsets.symmetric(horizontal: context.setWidth(4)),
       );
      
     });

@@ -21,7 +21,7 @@ class ExplorePopularTrainingListView extends StatelessWidget {
             context.loc.popularTrainingText,
             style: getSemiBoldStyle(color: AppColors.white)
                 .copyWith(
-                  fontSize: FontSize.s16,
+                  fontSize: context.setSp(FontSize.s16),
                   fontFamily: 'BalooThambi2',
                 ),
           ),

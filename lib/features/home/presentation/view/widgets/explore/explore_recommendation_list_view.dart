@@ -24,7 +24,7 @@ class ExploreRecommendationListView extends StatelessWidget {
             context.loc.recommendationTodyText,
             style: getSemiBoldStyle(
               color: AppColors.white,
-            ).copyWith(fontSize: FontSize.s16, fontFamily: 'BalooThambi2'),
+            ).copyWith(fontSize:context.setSp(FontSize.s16), fontFamily: 'BalooThambi2'),
           ),
         ),
         SizedBox(height: context.setHight(8)),

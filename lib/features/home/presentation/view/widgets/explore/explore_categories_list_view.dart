@@ -36,7 +36,7 @@ final List<String> images =[
         FittedBox(
           child: Text(context.loc.categoryHomeText,
           style: getSemiBoldStyle(color: AppColors.white).copyWith(
-            fontSize: FontSize.s16,
+            fontSize: context.setSp(FontSize.s16),
             fontFamily: 'BalooThambi2'
           ),),
         ),

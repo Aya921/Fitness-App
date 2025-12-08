@@ -64,7 +64,7 @@ class _CustomOtpFieldState extends State<CustomOtpField> {
       children: List.generate(widget.numberOfFields, (index) {
         return Flexible(
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: context.setWidth(8)),
+            margin: EdgeInsets.symmetric(horizontal: context.setWidth(4)),
             child: TextField(
               controller: controllers[index],
               focusNode: focusNodes[index],
@@ -73,7 +73,7 @@ class _CustomOtpFieldState extends State<CustomOtpField> {
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
               style: getMediumStyle(
                 color: AppColors.orange,
-                fontSize: context.setSp(FontSize.s18),
+                fontSize: context.setSp(FontSize.s16),
               ),
               decoration: InputDecoration(
                 counterText: "",

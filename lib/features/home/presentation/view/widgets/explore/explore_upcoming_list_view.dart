@@ -49,7 +49,7 @@ class ExploreUpcomingListView extends StatelessWidget {
                   child: Text(
                     context.loc.upcomingWorkOutsText,
                     style: getSemiBoldStyle(color: AppColors.white).copyWith(
-                      fontSize: FontSize.s16,
+                      fontSize: context.setSp(FontSize.s16),
                       fontFamily: 'BalooThambi2',
                     ),
                   ),
