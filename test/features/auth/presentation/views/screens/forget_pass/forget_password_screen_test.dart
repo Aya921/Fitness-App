@@ -13,7 +13,6 @@ import 'package:fitness/features/auth/presentation/views/widgets/forget_pass/tex
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
 
 
 import 'forget_password_screen_test.mocks.dart';

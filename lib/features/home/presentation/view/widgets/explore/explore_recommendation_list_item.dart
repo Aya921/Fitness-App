@@ -4,7 +4,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/theme/app_colors.dart';
-import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscle_entity/muscle_entity.dart';
 import 'package:flutter/material.dart';

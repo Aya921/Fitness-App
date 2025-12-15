@@ -1,8 +1,3 @@
-import 'package:fitness/core/extension/app_localization_extension.dart';
-import 'package:fitness/core/responsive/size_helper.dart';
-import 'package:fitness/core/theme/app_colors.dart';
-import 'package:fitness/core/theme/font_manager.dart';
-import 'package:fitness/core/theme/font_style.dart';
 import 'package:fitness/core/widget/home_back_ground.dart';
 import 'package:fitness/features/home/presentation/view/screens/tabs/explore_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/tabs/gym_screen.dart';
@@ -17,7 +12,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/constants/assets_manager.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 
 class HomeTab extends StatefulWidget {
   final int index;

@@ -1,5 +1,4 @@
 import 'package:fitness/config/app_language/app_language_config.dart';
-import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/user/user_manager.dart';

@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
-import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
 import 'package:fitness/features/foods/domain/entities/meals_categories.dart';
 import 'package:flutter/material.dart';
