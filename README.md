@@ -35,7 +35,7 @@
 
 ## 🎬 Demo Video
 
-<a href="https://drive.google.com/file/d/1txNlJW6CKO-D9vfiIb1i_m0iANKHV9SF/view">
+<a href="https://drive.google.com/file/d/1SMstQdiddmeaz1EJTkE8tUKjN8lN7q1w/view?usp=sharing">
   <img src="https://github.com/user-attachments/assets/306e4876-4a3b-4585-8508-0f5f1d226a9f" width="600" alt="Demo Video"/>
 </a>
 
@@ -91,7 +91,7 @@ It is built using **Clean Architecture** and **Bloc** for state management, ensu
 - **Clean Architecture:** Ensures scalability, maintainability, and testability  
 - **Repository Pattern:** Abstracts data sources for clean data management  
 - **Dependency Injection:** Improves modularity and testability  
-- **Supabase:** Cloud database, authentication, and API backend  
+- **SonarQube:** Used for code quality analysis and maintainability checking 
 - **Gemini:** Handles analytics, reporting, or other backend services  
 
 ---
