@@ -91,7 +91,7 @@ It is built using **Clean Architecture** and **Bloc** for state management, ensu
 - **Clean Architecture:** Ensures scalability, maintainability, and testability  
 - **Repository Pattern:** Abstracts data sources for clean data management  
 - **Dependency Injection:** Improves modularity and testability  
-- **SonarQube:** Platform for continuous code quality inspection, including static analysis, bug detection, security vulnerability analysis, and code maintainability metrics.  
+- **SonarQube:** Used for code quality analysis and maintainability checking
 - **Gemini:** Handles analytics, reporting, or other backend services  
 
 ---
